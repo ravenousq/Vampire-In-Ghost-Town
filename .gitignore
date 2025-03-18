@@ -1,0 +1,34 @@
+# ====== Unity Generated Files ======
+Library/
+Logs/
+Temp/
+UserSettings/
+MemoryCaptures/
+
+# ====== Package Management ======
+Packages/
+Packages/manifest.json  # Keep this if you're using custom packages
+Packages/packages-lock.json  # Keep this for consistent dependencies
+
+# ====== Builds ======
+Builds/
+Build/
+
+# ====== IDE / Editor Files ======
+.vscode/
+*.code-workspace
+*.sln
+*.csproj
+*.unityproj
+*.pidb
+*.suo
+*.user
+*.userprefs
+
+# ====== OS-Specific Files ======
+.DS_Store
+Thumbs.db
+
+# ====== Crash and Debugging ======
+*.log
+*.stacktrace
