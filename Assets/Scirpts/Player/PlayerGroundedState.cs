@@ -12,6 +12,7 @@ public class PlayerGroundedState : PlayerState
         base.Enter();
 
         player.canWallSlide = true;
+        player.canDash = true;
     }
 
     public override void Update()

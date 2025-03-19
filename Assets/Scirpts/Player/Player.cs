@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
+    public SpriteRenderer sr { get; private set; }
 
     #region States
     public PlayerStateMachine stateMachine { get; private set; }
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
     public PlayerWallSlideState wallSlide { get; private set; }
     public PlayerWallJumpState wallJump { get; private set; }
     public  PlayerClimbState climb { get; private set; }
+    public PlayerDashState dash { get; private set; }
     #endregion
 
     [Header("Collision")]
@@ -30,15 +32,26 @@ public class Player : MonoBehaviour
     public BoxCollider2D ladderToClimb { get; private set; }
 
     [Header("Movement")]
-    [HideInInspector] public bool playStartAnim = true;
     public float movementSpeed;
     public float jumpForce;
-    [HideInInspector] public bool allowCoyote;
     public float coyoteJumpWindow;
-    [HideInInspector] public bool executeBuffer;
     public float bufferJumpWindow;
     public float wallSlideTime;
     public float climbSpeed;
+    public float dashSpeed;
+    public float dashDuration;
+    public float dashCooldown;
+    private float lastDash;
+
+    [Header("Prefabs")]
+    [SerializeField] private GameObject afterImage;
+    #region Flags
+    [HideInInspector] public bool playStartAnim = true;
+    [HideInInspector] public bool allowCoyote;
+    [HideInInspector] public bool executeBuffer;
+    [HideInInspector] public bool canDash = true;
+    [HideInInspector] public bool creatingAfterImage;
+    #endregion
 
 
     public int facingDir { get; private set; } = 1;
@@ -48,6 +61,7 @@ public class Player : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponentInChildren<SpriteRenderer>();
 
         stateMachine = new PlayerStateMachine();
         idle = new PlayerIdleState(this, stateMachine, "idle");
@@ -56,7 +70,8 @@ public class Player : MonoBehaviour
         airborne = new PlayerAirborneState(this, stateMachine, "jump");
         wallSlide = new PlayerWallSlideState(this, stateMachine, "wallSlide");
         wallJump = new PlayerWallJumpState(this, stateMachine, "jump");
-        climb = new PlayerClimbState(this, stateMachine, "idle");
+        climb = new PlayerClimbState(this, stateMachine, "climb");
+        dash = new PlayerDashState(this, stateMachine, "dash");
     }
 
     void Start()
@@ -70,6 +85,11 @@ public class Player : MonoBehaviour
 
         if(!playStartAnim)
             Invoke(nameof(ResetMoveStart), .5f);
+    }
+
+    private void LateUpdate() 
+    {
+        CheckForDashInput();
     }
 
     public void SetVelocity(Vector2 velocity)
@@ -116,12 +136,55 @@ public class Player : MonoBehaviour
         transform.Rotate(0, 180, 0);
     }
 
+    private void CheckForDashInput()
+    {
+        if(!canDash || lastDash > Time.time - dashCooldown)
+            return;
+
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            lastDash = Time.time;
+            stateMachine.ChangeState(dash);
+            creatingAfterImage = true;
+            InvokeRepeating(nameof(CreateAfterImage), 0, .02f);
+        }
+    }
+
+    public void PostDash() => StartCoroutine(ZeroGravityFor(.1f));
+
+    private IEnumerator ZeroGravityFor(float seconds)
+    {
+        float gravity = rb.gravityScale;
+        rb.gravityScale = 0;
+
+        yield return new WaitForSeconds(seconds);
+
+        rb.gravityScale = gravity;
+    }
+
     public void TriggerLadder(BoxCollider2D ladder) => ladderToClimb = ladder;
+
+    public void ReenableDash()
+    {
+        canDash = true;
+        lastDash = 0;
+    }
+
+    private void CreateAfterImage()
+    {
+        if(!creatingAfterImage)
+        {
+            CancelInvoke(nameof(CreateAfterImage));
+            return;
+        }
+
+        GameObject newAfterImage = Instantiate(afterImage, transform.position, Quaternion.identity);
+        newAfterImage.GetComponent<AfterImage>().SetUpSprite(sr.sprite, facingRight);
+    }
 
     public void OnDrawGizmos()
     {
         Gizmos.DrawLine(groundCheck.position, groundCheck.position + new Vector3(0, -groundCheckDistance));
         Gizmos.DrawLine(wallCheck.position, wallCheck.position + new Vector3(wallCheckDistance * facingDir, 0));
     }
-
 }

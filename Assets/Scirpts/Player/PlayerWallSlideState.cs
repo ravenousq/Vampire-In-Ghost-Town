@@ -16,6 +16,7 @@ public class PlayerWallSlideState : PlayerState
 
         stateTimer = player.wallSlideTime;
         flipTrigger = false;
+        player.ReenableDash();
     }
 
     public override void Update()

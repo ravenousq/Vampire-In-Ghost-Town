@@ -13,6 +13,7 @@ public class PlayerClimbState : PlayerState
     {
         base.Enter();
 
+        player.canDash = false;
         stateTimer = 1f;
         rb.bodyType = RigidbodyType2D.Kinematic;
         sideToExit = player.ladderToClimb.GetComponent<Ladder>().sideToExit;
@@ -24,6 +25,8 @@ public class PlayerClimbState : PlayerState
 
         player.ResetVelocity();
 
+        player.anim.speed = yInput == 0 ? 0 : 1;
+
         if(player.ladderToClimb && player.transform.position.x != player.ladderToClimb.transform.position.x)
         {
             player.transform.position = Vector2.MoveTowards(player.transform.position, new Vector3(player.ladderToClimb.transform.position.x, player.transform.position.y), 13 * Time.deltaTime);
@@ -31,9 +34,16 @@ public class PlayerClimbState : PlayerState
         }
             
         if(Input.GetKey(KeyCode.LeftShift) && yInput == -1)
+        {
+            player.anim.SetBool("ladderSlide", true);
             player.transform.position += new Vector3(0, yInput * player.climbSpeed * 2 * Time.deltaTime, 0);
+        }
         else
+        {
+            player.anim.SetBool("ladderSlide", false);    
             player.transform.position += new Vector3(0, yInput * player.climbSpeed * Time.deltaTime, 0);
+        }
+        
 
         if(player.IsGroundDetected() && yInput == -1)
             stateMachine.ChangeState(player.idle);
@@ -46,9 +56,11 @@ public class PlayerClimbState : PlayerState
     {
         base.Exit();
 
+        player.canDash = true;
         rb.bodyType = RigidbodyType2D.Dynamic;
         sideToExit = sideToExit == 0 ? player.facingDir : sideToExit;
         player.SetVelocity(3 * sideToExit, 3);
         player.StartCoroutine(player.BusyFor(.4f));
+        player.anim.speed = 1;
     }
 }
