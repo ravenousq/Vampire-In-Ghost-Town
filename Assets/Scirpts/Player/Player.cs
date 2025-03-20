@@ -1,13 +1,10 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Entity
 {
-    public Animator anim { get; private set; }
-    public Rigidbody2D rb { get; private set; }
-    public SpriteRenderer sr { get; private set; }
-
     #region States
     public PlayerStateMachine stateMachine { get; private set; }
 
@@ -19,17 +16,10 @@ public class Player : MonoBehaviour
     public PlayerWallJumpState wallJump { get; private set; }
     public  PlayerClimbState climb { get; private set; }
     public PlayerDashState dash { get; private set; }
+    public PlayerPrimaryAttackState attack { get; private set; }
+    public PlayerReloadState reload { get; private set; }
     #endregion
 
-    [Header("Collision")]
-    [SerializeField] private LayerMask whatIsGround;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundCheckDistance;
-    [SerializeField] private Transform wallCheck;
-    [SerializeField] private float wallCheckDistance;
-    [HideInInspector] public bool isBusy;
-    [HideInInspector] public bool canWallSlide = true;
-    public BoxCollider2D ladderToClimb { get; private set; }
 
     [Header("Movement")]
     public float movementSpeed;
@@ -37,31 +27,36 @@ public class Player : MonoBehaviour
     public float coyoteJumpWindow;
     public float bufferJumpWindow;
     public float wallSlideTime;
+    public float wallSlideSpeed;
     public float climbSpeed;
     public float dashSpeed;
     public float dashDuration;
     public float dashCooldown;
     private float lastDash;
 
+    [Header("Combat")]
+    public int maxAmmo;
+    public  int currentAmmo { get; private set; }
+    public float reloadMovementSpeed;
+
+
     [Header("Prefabs")]
     [SerializeField] private GameObject afterImage;
+
     #region Flags
     [HideInInspector] public bool playStartAnim = true;
     [HideInInspector] public bool allowCoyote;
     [HideInInspector] public bool executeBuffer;
+    [HideInInspector] public bool canWallSlide = true;
     [HideInInspector] public bool canDash = true;
     [HideInInspector] public bool creatingAfterImage;
     #endregion
 
+    public BoxCollider2D ladderToClimb { get; private set; }
 
-    public int facingDir { get; private set; } = 1;
-    public bool facingRight { get; private set; } = true;
-
-    void Awake()
+    protected override void Awake()
     {
-        anim = GetComponentInChildren<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponentInChildren<SpriteRenderer>();
+        base.Awake();
 
         stateMachine = new PlayerStateMachine();
         idle = new PlayerIdleState(this, stateMachine, "idle");
@@ -72,19 +67,28 @@ public class Player : MonoBehaviour
         wallJump = new PlayerWallJumpState(this, stateMachine, "jump");
         climb = new PlayerClimbState(this, stateMachine, "climb");
         dash = new PlayerDashState(this, stateMachine, "dash");
+        attack = new PlayerPrimaryAttackState(this, stateMachine, "attack");
+        reload = new PlayerReloadState(this, stateMachine, "reload");
     }
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
         stateMachine.Initialize(idle);
+
+        Reload();
     }
 
-    void Update()
+    protected override void Update()
     {
         stateMachine.current.Update();
 
         if(!playStartAnim)
             Invoke(nameof(ResetMoveStart), .5f);
+
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+            ModifyBullets(-1);
     }
 
     private void LateUpdate() 
@@ -92,49 +96,9 @@ public class Player : MonoBehaviour
         CheckForDashInput();
     }
 
-    public void SetVelocity(Vector2 velocity)
-    {
-        rb.linearVelocity = velocity;
-
-        FlipController(velocity.x);
-    }
-
-    public void SetVelocity(float x, float y)
-    {
-        rb.linearVelocity = new Vector2(x, y);
-
-        FlipController(x);
-    }
-
-    public void ResetVelocity() => rb.linearVelocity = Vector2.zero;
-
-    public bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
-
-    public bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
-
-    public IEnumerator BusyFor(float seconds)
-    {
-        isBusy = true;
-
-        yield return new WaitForSeconds(seconds);
-
-        isBusy = false;
-    }
-
-    public void FlipController(float x)
-    {
-        if ((facingRight && x < 0) || (!facingRight && x > 0))
-            Flip();
-    }
-
     private void ResetMoveStart() => playStartAnim = true;
 
-    public void Flip()
-    {
-        facingDir *= -1;
-        facingRight = !facingRight;
-        transform.Rotate(0, 180, 0);
-    }
+    public void TriggerLadder(BoxCollider2D ladder) => ladderToClimb = ladder;
 
     private void CheckForDashInput()
     {
@@ -149,20 +113,6 @@ public class Player : MonoBehaviour
             InvokeRepeating(nameof(CreateAfterImage), 0, .02f);
         }
     }
-
-    public void PostDash() => StartCoroutine(ZeroGravityFor(.1f));
-
-    private IEnumerator ZeroGravityFor(float seconds)
-    {
-        float gravity = rb.gravityScale;
-        rb.gravityScale = 0;
-
-        yield return new WaitForSeconds(seconds);
-
-        rb.gravityScale = gravity;
-    }
-
-    public void TriggerLadder(BoxCollider2D ladder) => ladderToClimb = ladder;
 
     public void ReenableDash()
     {
@@ -182,9 +132,28 @@ public class Player : MonoBehaviour
         newAfterImage.GetComponent<AfterImage>().SetUpSprite(sr.sprite, facingRight);
     }
 
-    public void OnDrawGizmos()
+    public void Reload()
     {
-        Gizmos.DrawLine(groundCheck.position, groundCheck.position + new Vector3(0, -groundCheckDistance));
-        Gizmos.DrawLine(wallCheck.position, wallCheck.position + new Vector3(wallCheckDistance * facingDir, 0));
+        currentAmmo = maxAmmo;
+    }
+
+    public bool CanReload()
+    {
+        if(currentAmmo < maxAmmo)
+            return true;
+        
+        return false;
+    }
+
+    private void ModifyBullets(int bullets)
+    {
+        currentAmmo += bullets;
+
+        if(currentAmmo < 0)
+            currentAmmo = 0;
+        else if(currentAmmo > maxAmmo)
+            currentAmmo = maxAmmo;
+        
+        Debug.Log("Added " + bullets + " bullets");
     }
 }

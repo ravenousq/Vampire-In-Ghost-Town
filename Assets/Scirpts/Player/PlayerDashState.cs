@@ -44,7 +44,7 @@ public class PlayerDashState : PlayerState
         player.creatingAfterImage = false;
         player.canDash = false;
         player.ResetVelocity();
-        player.PostDash();
+        player.ZeroGravityFor(.1f);
     }
 
     

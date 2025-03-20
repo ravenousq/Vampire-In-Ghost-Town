@@ -23,7 +23,10 @@ public class PlayerWallSlideState : PlayerState
     {
         base.Update();
 
-        float slideSpeed = yInput == -1 ? rb.linearVelocityY : rb.linearVelocityY * .7f;
+        float slideSpeed = yInput == -1 ? player.wallSlideSpeed * 3 : player.wallSlideSpeed * .5f;
+
+        if(yInput == -1)
+            stateTimer += Time.deltaTime;
 
         player.SetVelocity(0, slideSpeed);
 
