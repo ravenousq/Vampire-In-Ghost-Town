@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerDashState : PlayerState
 {
-    private Vector2 finalDirections;
+    public Vector2 finalDirections;
 
     public PlayerDashState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
@@ -15,16 +15,14 @@ public class PlayerDashState : PlayerState
     {
         base.Enter();
 
+        stateTimer = player.dashDuration;
+            
         finalDirections = Vector2.zero;
         float xDirection, yDirection;
 
         GetDashInput(out xDirection, out yDirection);
 
         finalDirections = new Vector2(xDirection * player.dashSpeed, yDirection * player.dashSpeed * .8f);
-
-        stateTimer = player.dashDuration;
-
-        
     }
 
     public override void Update()
@@ -50,29 +48,23 @@ public class PlayerDashState : PlayerState
     
     private void GetDashInput(out float xDirection, out float yDirection)
     {
-        if (xInput == 0 && yInput == 0)
-        {
-            xDirection = player.facingDir;
+        xDirection = xInput;
+        yDirection = yInput;
+
+        if(yInput <= 0)
             yDirection = 0;
-        }
-        else if (xInput == 0 && yInput != 0)
+
+        if(xInput == 0)
+            xDirection = player.facingDir;
+        
+        if (xInput == 0 && yInput == 1 && !player.IsWallDetected())
         {
             xDirection = 0;
             yDirection = yInput;
         }
-        else
-        {
-            xDirection = player.facingDir;
-            yDirection = yInput;
-        }
+
 
         if (player.IsWallDetected() && !player.IsGroundDetected())
             xDirection *= -1;
-
-        if (yDirection < 0)
-        {
-            yDirection = 0;
-            xDirection = player.facingDir;
-        }
     }
 }

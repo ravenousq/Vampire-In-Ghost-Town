@@ -119,10 +119,10 @@ TextureImporter:
       name: Testing_Running_Start_0
       rect:
         serializedVersion: 2
-        x: 79
+        x: 0
         y: 0
-        width: 152
-        height: 281
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: Testing_Running_Start_1
       rect:
         serializedVersion: 2
-        x: 394
+        x: 320
         y: 0
-        width: 172
-        height: 276
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ebd8b32c1cc905948a4c5838c5e10aec
     internalID: 0
     vertices: []
     indices: 

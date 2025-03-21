@@ -122,20 +122,20 @@ TextureImporter:
       name: Testing_Wallclimb_0
       rect:
         serializedVersion: 2
-        x: 104
-        y: 19
-        width: 152
-        height: 262
+        x: 0
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c2a04645742c94080800000000000000
-      internalID: -9202610751940589012
+      spriteID: 7ea8a99104fc1974cab37c4cfc1c8a92
+      internalID: 664630968
       vertices: []
       indices: 
       edges: []
@@ -144,20 +144,20 @@ TextureImporter:
       name: Testing_Wallclimb_1
       rect:
         serializedVersion: 2
-        x: 424
-        y: 19
-        width: 152
-        height: 262
+        x: 320
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 06208b92ffe68b0f0800000000000000
-      internalID: -1101008066696445344
+      spriteID: 81d950abb23415749aac8048c98ad1ef
+      internalID: -1811780390
       vertices: []
       indices: 
       edges: []
@@ -166,20 +166,20 @@ TextureImporter:
       name: Testing_Wallclimb_2
       rect:
         serializedVersion: 2
-        x: 744
-        y: 19
-        width: 152
-        height: 262
+        x: 640
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7b003c0d417feb200800000000000000
-      internalID: 197867102424727735
+      spriteID: 7e7f882a690d6fc44967cef2fa5147fe
+      internalID: -1924510698
       vertices: []
       indices: 
       edges: []
@@ -188,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ab7530c2ba4792e4a8fdc9bcd5597f96
     internalID: 0
     vertices: []
     indices: 
@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Testing_Wallclimb_0: 664630968
+      Testing_Wallclimb_1: -1811780390
+      Testing_Wallclimb_2: -1924510698
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

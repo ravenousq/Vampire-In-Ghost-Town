@@ -116,12 +116,12 @@ TextureImporter:
       name: Testing_Dash_0
       rect:
         serializedVersion: 2
-        x: 74
-        y: 9
-        width: 177
-        height: 242
+        x: 0
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8e2950aa083a68f4881b3944baec5559
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Testing_Dash_0: -2090863002454199099
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

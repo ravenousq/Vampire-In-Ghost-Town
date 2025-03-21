@@ -18,6 +18,7 @@ public class Player : Entity
     public PlayerDashState dash { get; private set; }
     public PlayerPrimaryAttackState attack { get; private set; }
     public PlayerReloadState reload { get; private set; }
+    public PlayerQuickstepState quickstep { get; private set; }
     #endregion
 
 
@@ -33,11 +34,14 @@ public class Player : Entity
     public float dashDuration;
     public float dashCooldown;
     private float lastDash;
+    public float quickstepSpeed;
 
     [Header("Combat")]
     public int maxAmmo;
     public  int currentAmmo { get; private set; }
     public float reloadMovementSpeed;
+    public float attackWindow;
+    public int[] attackMovement;
 
 
     [Header("Prefabs")]
@@ -69,6 +73,7 @@ public class Player : Entity
         dash = new PlayerDashState(this, stateMachine, "dash");
         attack = new PlayerPrimaryAttackState(this, stateMachine, "attack");
         reload = new PlayerReloadState(this, stateMachine, "reload");
+        quickstep = new PlayerQuickstepState(this, stateMachine, "quickstep");
     }
 
     protected override void Start()
@@ -82,6 +87,7 @@ public class Player : Entity
 
     protected override void Update()
     {
+
         stateMachine.current.Update();
 
         if(!playStartAnim)
@@ -89,6 +95,7 @@ public class Player : Entity
 
         if(Input.GetKeyDown(KeyCode.Mouse0))
             ModifyBullets(-1);
+
     }
 
     private void LateUpdate() 

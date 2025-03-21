@@ -131,10 +131,10 @@ TextureImporter:
       name: Testing_Idle_0
       rect:
         serializedVersion: 2
-        x: 94
+        x: 0
         y: 0
-        width: 127
-        height: 286
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: Testing_Idle_1
       rect:
         serializedVersion: 2
-        x: 414
+        x: 320
         y: 0
-        width: 127
-        height: 286
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: Testing_Idle_2
       rect:
         serializedVersion: 2
-        x: 734
+        x: 640
         y: 0
-        width: 127
-        height: 286
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: Testing_Idle_3
       rect:
         serializedVersion: 2
-        x: 1054
+        x: 960
         y: 0
-        width: 127
-        height: 291
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +219,10 @@ TextureImporter:
       name: Testing_Idle_4
       rect:
         serializedVersion: 2
-        x: 1374
+        x: 1280
         y: 0
-        width: 127
-        height: 291
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +241,10 @@ TextureImporter:
       name: Testing_Idle_5
       rect:
         serializedVersion: 2
-        x: 1694
+        x: 1600
         y: 0
-        width: 127
-        height: 291
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 015c78fcc1e406c4e8a7ec912f882c48
     internalID: 0
     vertices: []
     indices: 

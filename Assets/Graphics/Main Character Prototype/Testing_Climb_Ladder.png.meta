@@ -125,20 +125,20 @@ TextureImporter:
       name: Testing_Climb_Ladder_0
       rect:
         serializedVersion: 2
-        x: 89
+        x: 0
         y: 0
-        width: 162
-        height: 306
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9a73744db79dc6b00800000000000000
-      internalID: 823271957767600041
+      spriteID: 86ae9b1cc87aa6845b16975abc4e88fb
+      internalID: -1169507834
       vertices: []
       indices: 
       edges: []
@@ -147,20 +147,20 @@ TextureImporter:
       name: Testing_Climb_Ladder_1
       rect:
         serializedVersion: 2
-        x: 399
-        y: 19
-        width: 162
-        height: 267
+        x: 320
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6d17b9f71a4c1b500800000000000000
-      internalID: 410325238977098198
+      spriteID: 1f91659a9e05b544ba8ca589251c34dd
+      internalID: 291729393
       vertices: []
       indices: 
       edges: []
@@ -169,20 +169,20 @@ TextureImporter:
       name: Testing_Climb_Ladder_2
       rect:
         serializedVersion: 2
-        x: 719
+        x: 640
         y: 0
-        width: 162
-        height: 296
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 957dbccbb7ad63c50800000000000000
-      internalID: 6644738525215053657
+      spriteID: aed6db505c836274bb1d3f8b1b41ca71
+      internalID: 823570289
       vertices: []
       indices: 
       edges: []
@@ -191,20 +191,20 @@ TextureImporter:
       name: Testing_Climb_Ladder_3
       rect:
         serializedVersion: 2
-        x: 1049
-        y: 29
-        width: 157
-        height: 257
+        x: 960
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c60f47f0314c4bcf0800000000000000
-      internalID: -237349294201048980
+      spriteID: d000a622d2b88684297d2a63d3d4673e
+      internalID: 1778235987
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 79fa22427f147e64985ff7cdc526dfb4
     internalID: 0
     vertices: []
     indices: 
@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Testing_Climb_Ladder_0: -1169507834
+      Testing_Climb_Ladder_1: 291729393
+      Testing_Climb_Ladder_2: 823570289
+      Testing_Climb_Ladder_3: 1778235987
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

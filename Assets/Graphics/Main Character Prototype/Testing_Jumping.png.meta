@@ -134,20 +134,20 @@ TextureImporter:
       name: Testing_Jumping_0
       rect:
         serializedVersion: 2
-        x: 94
+        x: 0
         y: 0
-        width: 127
-        height: 286
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 30641f1409276d050800000000000000
-      internalID: 5824969131957503491
+      spriteID: 933cab1d784250f41a48f35cf8b862f7
+      internalID: 2026124048
       vertices: []
       indices: 
       edges: []
@@ -156,20 +156,20 @@ TextureImporter:
       name: Testing_Jumping_1
       rect:
         serializedVersion: 2
-        x: 414
-        y: 9
-        width: 162
-        height: 272
+        x: 320
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f7b8639531628fdf0800000000000000
-      internalID: -146325123346560129
+      spriteID: d181215e017001548b9586ee8bce3cef
+      internalID: 1582000177
       vertices: []
       indices: 
       edges: []
@@ -178,20 +178,20 @@ TextureImporter:
       name: Testing_Jumping_2
       rect:
         serializedVersion: 2
-        x: 734
-        y: 9
-        width: 172
-        height: 267
+        x: 640
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1cfe3ed25b0c82e10800000000000000
-      internalID: 2173198704597790657
+      spriteID: 5d1906c84f880bf47ba8b998441fa3a9
+      internalID: 1980742682
       vertices: []
       indices: 
       edges: []
@@ -200,20 +200,20 @@ TextureImporter:
       name: Testing_Jumping_3
       rect:
         serializedVersion: 2
-        x: 1054
-        y: 19
-        width: 142
-        height: 257
+        x: 960
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6831aab3fc31dc6e0800000000000000
-      internalID: -1815773293980281978
+      spriteID: 1dd8b6349fcca0347a6c00013690acb9
+      internalID: -1508245900
       vertices: []
       indices: 
       edges: []
@@ -222,20 +222,20 @@ TextureImporter:
       name: Testing_Jumping_4
       rect:
         serializedVersion: 2
-        x: 1374
-        y: 34
-        width: 142
-        height: 242
+        x: 1280
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 87923022c11430f80800000000000000
-      internalID: -8141592112270202504
+      spriteID: 3ef9e54a2e4cc8e4faec15cbacf644e0
+      internalID: 1173083132
       vertices: []
       indices: 
       edges: []
@@ -244,20 +244,20 @@ TextureImporter:
       name: Testing_Jumping_5
       rect:
         serializedVersion: 2
-        x: 1699
-        y: 44
-        width: 132
-        height: 237
+        x: 1600
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: caca291b0a786f180800000000000000
-      internalID: -9081922474302329684
+      spriteID: c79840cd499686d4d8e43def5e95f741
+      internalID: 2005237908
       vertices: []
       indices: 
       edges: []
@@ -266,20 +266,20 @@ TextureImporter:
       name: Testing_Jumping_6
       rect:
         serializedVersion: 2
-        x: 2019
-        y: 34
-        width: 142
-        height: 247
+        x: 1920
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7e1825de61e9818a0800000000000000
-      internalID: -6334139054588526105
+      spriteID: 01e58ee16c0945640a857a408b503560
+      internalID: -965319906
       vertices: []
       indices: 
       edges: []
@@ -288,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 82c5e670a1b90b84794023c600590de1
     internalID: 0
     vertices: []
     indices: 
@@ -297,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Testing_Jumping_0: 2026124048
+      Testing_Jumping_1: 1582000177
+      Testing_Jumping_2: 1980742682
+      Testing_Jumping_3: -1508245900
+      Testing_Jumping_4: 1173083132
+      Testing_Jumping_5: 2005237908
+      Testing_Jumping_6: -965319906
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

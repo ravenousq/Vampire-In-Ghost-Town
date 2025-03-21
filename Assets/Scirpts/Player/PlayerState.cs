@@ -27,12 +27,26 @@ public class PlayerState
         player.anim.SetBool(animBoolName, true);
         rb = player.rb;
         trigger = false;
+
+        AxisInput();
     }
 
     public virtual void Update()
     {
         stateTimer -= Time.deltaTime;
 
+        AxisInput();
+    }
+
+    public virtual void Exit()
+    {
+        player.anim.SetBool(animBoolName, false);
+
+        AxisInput();
+    }
+
+    protected virtual void AxisInput()
+    {
         xInput = Input.GetAxisRaw("Horizontal");
         yInput = Input.GetAxisRaw("Vertical");
 
@@ -40,8 +54,5 @@ public class PlayerState
         player.anim.SetFloat("xVelocity", rb.linearVelocityX);
     }
 
-    public virtual void Exit()
-    {
-        player.anim.SetBool(animBoolName, false);
-    }
+    public virtual void CallTrigger() => trigger = true;
 }

@@ -60,7 +60,7 @@ public class PlayerClimbState : PlayerState
         rb.bodyType = RigidbodyType2D.Dynamic;
         sideToExit = sideToExit == 0 ? player.facingDir : sideToExit;
         player.SetVelocity(3 * sideToExit, 3);
-        player.StartCoroutine(player.BusyFor(.4f));
+        player.BusyFor(.4f);
         player.anim.speed = 1;
     }
 }

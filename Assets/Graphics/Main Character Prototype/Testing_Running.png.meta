@@ -134,12 +134,12 @@ TextureImporter:
       name: Testing_Running_0
       rect:
         serializedVersion: 2
-        x: 55
+        x: 0
         y: 0
-        width: 213
-        height: 249
+        width: 320
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,12 +156,12 @@ TextureImporter:
       name: Testing_Running_1
       rect:
         serializedVersion: 2
-        x: 379
+        x: 320
         y: 0
-        width: 192
-        height: 261
+        width: 320
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,12 +178,12 @@ TextureImporter:
       name: Testing_Running_2
       rect:
         serializedVersion: 2
-        x: 729
-        y: 149
-        width: 7
-        height: 7
+        x: 640
+        y: 0
+        width: 320
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,12 +200,12 @@ TextureImporter:
       name: Testing_Running_3
       rect:
         serializedVersion: 2
-        x: 739
+        x: 960
         y: 0
-        width: 152
-        height: 266
+        width: 320
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -222,12 +222,12 @@ TextureImporter:
       name: Testing_Running_4
       rect:
         serializedVersion: 2
-        x: 1034
+        x: 1280
         y: 0
-        width: 177
-        height: 261
+        width: 320
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -244,12 +244,12 @@ TextureImporter:
       name: Testing_Running_5
       rect:
         serializedVersion: 2
-        x: 1364
+        x: 1600
         y: 0
-        width: 167
-        height: 251
+        width: 320
+        height: 320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -258,28 +258,6 @@ TextureImporter:
       bones: []
       spriteID: a7969131bb7b08750800000000000000
       internalID: 6305241492425894266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Testing_Running_6
-      rect:
-        serializedVersion: 2
-        x: 1689
-        y: 0
-        width: 162
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 26f68db950584eca0800000000000000
-      internalID: -5988515345359933598
       vertices: []
       indices: 
       edges: []
@@ -304,7 +282,6 @@ TextureImporter:
       Testing_Running_3: 3198549158091481370
       Testing_Running_4: -4563511322040214529
       Testing_Running_5: 6305241492425894266
-      Testing_Running_6: -5988515345359933598
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

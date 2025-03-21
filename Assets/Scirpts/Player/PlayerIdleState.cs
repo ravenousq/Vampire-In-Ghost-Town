@@ -18,7 +18,7 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.Update();
 
-        if(xInput != 0 && !player.executeBuffer)
+        if(!player.isBusy && xInput != 0 && !player.executeBuffer)
             player.stateMachine.ChangeState(player.move);
     }
 

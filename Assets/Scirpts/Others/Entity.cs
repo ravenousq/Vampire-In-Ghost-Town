@@ -73,7 +73,9 @@ public class Entity : MonoBehaviour
         rb.gravityScale = gravity;
     }
 
-    public IEnumerator BusyFor(float seconds)
+    public virtual void BusyFor(float seconds) => StartCoroutine(BusyRoutine(seconds));
+
+    protected IEnumerator BusyRoutine(float seconds)
     {
         isBusy = true;
 
