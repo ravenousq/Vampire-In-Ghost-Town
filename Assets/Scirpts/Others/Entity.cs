@@ -5,9 +5,10 @@ public class Entity : MonoBehaviour
 {
     #region Components
     public Rigidbody2D rb { get; private set; }
-    public Collider2D cd { get; private set; }
-    protected SpriteRenderer sr { get; private set; }
+    public CapsuleCollider2D cd { get; private set; }
+    public SpriteRenderer sr { get; private set; }
     public Animator anim { get; private set; }
+    public FX fx { get; private set; }
     #endregion
 
     [Header("Collision")]
@@ -28,9 +29,10 @@ public class Entity : MonoBehaviour
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        cd = GetComponent<Collider2D>();
+        cd = GetComponent<CapsuleCollider2D>();
         sr = GetComponentInChildren<SpriteRenderer>();
         anim = GetComponentInChildren<Animator>();
+        fx = GetComponent<FX>();
     }
 
     protected virtual void Start()
@@ -103,6 +105,12 @@ public class Entity : MonoBehaviour
 
     public bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
     #endregion
+
+    public virtual void Damage()
+    {
+        fx.Flashing();
+        Debug.Log(gameObject.name + " recieved damage.");
+    }
 
     protected virtual void OnDrawGizmos()
     {

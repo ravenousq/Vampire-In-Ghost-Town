@@ -3,5 +3,14 @@ using UnityEngine.UI;
 
 public class PlayerAnimationTrigger : MonoBehaviour
 {
-    public void AnimationTriggers() => GetComponentInParent<Player>().stateMachine.current.CallTrigger();
+    private Player player;
+
+    private void Awake() 
+    {
+        player = GetComponentInParent<Player>();    
+    }
+
+    public void AnimationTriggers() => player.stateMachine.current.CallTrigger();
+
+    public void DealDamage() => player.attackTrigger = true;
 }

@@ -1,7 +1,10 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class PlayerQuickstepState : PlayerGroundedState
+public class PlayerQuickstepState : PlayerState
 {
+    private float direction;
+
     public PlayerQuickstepState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
 
@@ -11,15 +14,18 @@ public class PlayerQuickstepState : PlayerGroundedState
     {
         base.Enter();
 
-        int direction = xInput == 0 ? -player.facingDir : Mathf.RoundToInt(xInput) ;
+        player.ResetVelocity();
 
-        rb.linearVelocity = new Vector2(player.quickstepSpeed * direction, rb.linearVelocityY);
+        direction = xInput == 0 ? -player.facingDir : xInput;
     }
 
     public override void Update()
     {
         base.Update();
-
+        if(!player.CloseToEdge())
+            rb.linearVelocity = new Vector2(player.quickstepSpeed * direction, rb.linearVelocityY);
+        else
+            player.ResetVelocity();
         //ignore damage
 
         if(trigger)

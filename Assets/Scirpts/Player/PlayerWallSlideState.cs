@@ -57,5 +57,8 @@ public class PlayerWallSlideState : PlayerState
 
         if(flipTrigger)
             player.Flip();
+
+        if(yInput == -1)
+            player.BusyFor(.2f);
     }
 }

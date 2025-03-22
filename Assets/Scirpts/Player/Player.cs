@@ -19,6 +19,7 @@ public class Player : Entity
     public PlayerPrimaryAttackState attack { get; private set; }
     public PlayerReloadState reload { get; private set; }
     public PlayerQuickstepState quickstep { get; private set; }
+    public PlayerCrouchState crouch { get; private set; }
     #endregion
 
 
@@ -38,10 +39,13 @@ public class Player : Entity
 
     [Header("Combat")]
     public int maxAmmo;
-    public  int currentAmmo { get; private set; }
+    public  int currentAmmo;
     public float reloadMovementSpeed;
     public float attackWindow;
     public int[] attackMovement;
+
+    [Header("Abilities")]
+    public bool voculFenMah;
 
 
     [Header("Prefabs")]
@@ -54,6 +58,8 @@ public class Player : Entity
     [HideInInspector] public bool canWallSlide = true;
     [HideInInspector] public bool canDash = true;
     [HideInInspector] public bool creatingAfterImage;
+    [HideInInspector] public bool attackTrigger;
+    private bool thirdAttack;
     #endregion
 
     public BoxCollider2D ladderToClimb { get; private set; }
@@ -72,8 +78,9 @@ public class Player : Entity
         climb = new PlayerClimbState(this, stateMachine, "climb");
         dash = new PlayerDashState(this, stateMachine, "dash");
         attack = new PlayerPrimaryAttackState(this, stateMachine, "attack");
-        reload = new PlayerReloadState(this, stateMachine, "reload");
-        quickstep = new PlayerQuickstepState(this, stateMachine, "quickstep");
+        reload = new PlayerReloadState(this, stateMachine, "placeholder");
+        quickstep = new PlayerQuickstepState(this, stateMachine, "placeholder");
+        crouch = new PlayerCrouchState(this, stateMachine, "placeholder");
     }
 
     protected override void Start()
@@ -92,10 +99,6 @@ public class Player : Entity
 
         if(!playStartAnim)
             Invoke(nameof(ResetMoveStart), .5f);
-
-        if(Input.GetKeyDown(KeyCode.Mouse0))
-            ModifyBullets(-1);
-
     }
 
     private void LateUpdate() 
@@ -152,7 +155,7 @@ public class Player : Entity
         return false;
     }
 
-    private void ModifyBullets(int bullets)
+    public void ModifyBullets(int bullets)
     {
         currentAmmo += bullets;
 
@@ -160,7 +163,39 @@ public class Player : Entity
             currentAmmo = 0;
         else if(currentAmmo > maxAmmo)
             currentAmmo = maxAmmo;
-        
-        Debug.Log("Added " + bullets + " bullets");
+    }
+
+    public void ThirdAttack() => StartCoroutine(ThirdAttackRoutine());
+
+    private IEnumerator ThirdAttackRoutine()
+    {
+        thirdAttack = true;
+
+        yield return new WaitForSeconds(attackWindow);
+
+        thirdAttack = false;
+    }
+
+    public bool CanShoot()
+    {
+        if(currentAmmo > 0 && !thirdAttack)
+            return true;
+        else if(currentAmmo > 0 && thirdAttack)
+            return true;
+
+        return false;
+    }
+
+    public bool CloseToEdge()
+    {
+        Vector2 edgeCheck = groundCheck.transform.position;
+        int edgeToCheck = rb.linearVelocityX > 0 ? 1 : -1;
+
+        edgeCheck += new Vector2(cd.size.x / 2 * edgeToCheck, 0);
+
+        if(Physics2D.OverlapCircle(edgeCheck, .3f, whatIsGround))
+            return false;
+
+        return true;
     }
 }

@@ -348,7 +348,7 @@ Transform:
   m_GameObject: {fileID: 163144633}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.427, z: 0}
+  m_LocalPosition: {x: -0.22, y: -1.427, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1505,6 +1505,7 @@ MonoBehaviour:
   maxAmmo: 12
   reloadMovementSpeed: 3
   attackWindow: 2
+  attackMovement: 00000000f6fffffff1ffffff
   afterImage: {fileID: 3278896037813613646, guid: 906d0012e9b713849b3b14e8e0b01375, type: 3}
   playStartAnim: 1
   allowCoyote: 0

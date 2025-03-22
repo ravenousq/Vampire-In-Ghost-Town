@@ -19,8 +19,17 @@ public class PlayerGroundedState : PlayerState
     {
         base.Update();
 
+        if(Input.GetKey(KeyCode.S) && !player.isBusy)
+            stateMachine.ChangeState(player.crouch);
+
         if(Input.GetKeyDown(KeyCode.Mouse0))
-            stateMachine.ChangeState(player.attack);
+        {
+            if(player.CanShoot())
+                stateMachine.ChangeState(player.attack);
+            else
+                stateMachine.ChangeState(player.reload);
+        }
+        
 
         if(Input.GetKeyDown(KeyCode.Mouse1))
             stateMachine.ChangeState(player.quickstep);
