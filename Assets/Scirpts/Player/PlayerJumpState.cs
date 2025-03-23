@@ -13,7 +13,10 @@ public class PlayerJumpState : PlayerAirborneState
 
         player.StartCoroutine(nameof(player.BusyFor), .1f);
 
-        rb.linearVelocity = new Vector2(rb.linearVelocityX, player.jumpForce);
+        if(player.floorParry)
+            rb.linearVelocity = new Vector2(rb.linearVelocityX, player.jumpForce * 2);
+        else
+            rb.linearVelocity = new Vector2(rb.linearVelocityX, player.jumpForce);
     }
 
     public override void Update()
@@ -29,5 +32,6 @@ public class PlayerJumpState : PlayerAirborneState
         base.Exit();
 
         player.executeBuffer = false;
+        player.floorParry = false;
     }
 }

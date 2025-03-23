@@ -12,7 +12,7 @@ public class Entity : MonoBehaviour
     #endregion
 
     [Header("Collision")]
-    [SerializeField] protected LayerMask whatIsGround;
+    [SerializeField] public LayerMask whatIsGround;
     [SerializeField] protected Transform groundCheck;
     [SerializeField] protected float groundCheckDistance;
     [SerializeField] protected Transform wallCheck;
@@ -20,6 +20,7 @@ public class Entity : MonoBehaviour
 
     #region Flags
     [HideInInspector] public bool isBusy;
+    [HideInInspector] public bool isKnocked;
     #endregion
 
 
@@ -86,12 +87,34 @@ public class Entity : MonoBehaviour
         isBusy = false;
     }
 
+    public virtual void Knockback(Vector2 direction, float xPosition, float seconds)
+    {
+        if(isKnocked)
+            return;
+
+        StartCoroutine(KnockbackRoutine(seconds));
+
+        int knockbackDirection = xPosition > transform.position.x ? -1 : 1;
+        Vector2 forceToAdd = new Vector2(direction.x * knockbackDirection, direction.y);
+        rb.AddForce(forceToAdd, ForceMode2D.Impulse);
+    }
+
+    private IEnumerator KnockbackRoutine(float seconds)
+    {
+        isKnocked = true;
+
+        yield return new WaitForSeconds(seconds);
+
+        isKnocked = false;
+    }
+
     #region Flip
     public virtual void FlipController(float x)
     {
         if ((facingRight && x < 0) || (!facingRight && x > 0))
             Flip();
     }
+
     public virtual void Flip()
     {
         facingDir *= -1;

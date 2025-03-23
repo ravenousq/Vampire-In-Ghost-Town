@@ -7,7 +7,6 @@ public class PlayerPrimaryAttackState : PlayerState
 {
     private int comboCounter;
     private float lastTimeAttacked;
-    private List<Collider2D> targets = new List<Collider2D>();
 
     public PlayerPrimaryAttackState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
@@ -63,7 +62,6 @@ public class PlayerPrimaryAttackState : PlayerState
         player.BusyFor(.15f);
         lastTimeAttacked = Time.time;
         comboCounter++;
-        targets.Clear();
 
         if(comboCounter == 2)
             player.ThirdAttack();
@@ -71,25 +69,20 @@ public class PlayerPrimaryAttackState : PlayerState
 
     private void DamageTargets()
     {
-        RaycastHit2D[] hits = Physics2D.RaycastAll(new Vector2(player.transform.position.x + player.cd.size.x / 2, player.transform.position.y + player.cd.size.y / 3), Vector2.right * player.facingDir);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(new Vector2(player.transform.position.x + player.cd.size.x / 1.5f * player.facingDir, player.transform.position.y + player.cd.size.y / 3), Vector2.right * player.facingDir);
 
         foreach (var hit in hits)
         {
             if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
                 break;
 
-            if (hit.collider.gameObject.GetComponent<Enemy>())
-                targets.Add(hit.collider);
-        }
-
-        foreach(var target in targets)
-        {
-            target.gameObject.GetComponent<Entity>().Damage();
+            
+            hit.collider.gameObject.GetComponent<Enemy>()?.Damage();
 
             if(!player.voculFenMah)
                 return;
 
-            //Decrease damage by fixed ammount
+            //Decrease damage by some value
         }
     }
 }

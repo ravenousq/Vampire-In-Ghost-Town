@@ -20,6 +20,7 @@ public class Player : Entity
     public PlayerReloadState reload { get; private set; }
     public PlayerQuickstepState quickstep { get; private set; }
     public PlayerCrouchState crouch { get; private set; }
+    public PlayerDiveState dive{ get; private set; }
     #endregion
 
 
@@ -36,6 +37,7 @@ public class Player : Entity
     public float dashCooldown;
     private float lastDash;
     public float quickstepSpeed;
+    public float diveSpeed;
 
     [Header("Combat")]
     public int maxAmmo;
@@ -59,6 +61,7 @@ public class Player : Entity
     [HideInInspector] public bool canDash = true;
     [HideInInspector] public bool creatingAfterImage;
     [HideInInspector] public bool attackTrigger;
+    [HideInInspector] public bool floorParry;
     private bool thirdAttack;
     #endregion
 
@@ -81,6 +84,7 @@ public class Player : Entity
         reload = new PlayerReloadState(this, stateMachine, "placeholder");
         quickstep = new PlayerQuickstepState(this, stateMachine, "placeholder");
         crouch = new PlayerCrouchState(this, stateMachine, "placeholder");
+        dive = new PlayerDiveState(this, stateMachine, "placeholder");
     }
 
     protected override void Start()

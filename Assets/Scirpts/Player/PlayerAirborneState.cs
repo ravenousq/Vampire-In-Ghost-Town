@@ -45,6 +45,9 @@ public class PlayerAirborneState : PlayerState
 
         if(player.ladderToClimb && yInput != 0 && !player.isBusy)
             stateMachine.ChangeState(player.climb);
+
+        if(Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Mouse0))
+            stateMachine.ChangeState(player.dive);
     }
 
     public override void Exit()
