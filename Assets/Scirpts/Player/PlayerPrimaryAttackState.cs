@@ -79,7 +79,7 @@ public class PlayerPrimaryAttackState : PlayerState
             
             hit.collider.gameObject.GetComponent<Enemy>()?.Damage();
 
-            if(!player.voculFenMah)
+            if(!player.skills.isSkillUnlocked("Vokul Fen Mah"))
                 return;
 
             //Decrease damage by some value

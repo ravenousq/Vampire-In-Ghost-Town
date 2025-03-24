@@ -40,7 +40,7 @@ public class PlayerDashState : PlayerState
         base.Exit();
 
         player.creatingAfterImage = false;
-        player.canDash = false;
+        player.skills.dash.SwitchBlockade(true);
         player.ResetVelocity();
         player.ZeroGravityFor(.1f);
     }

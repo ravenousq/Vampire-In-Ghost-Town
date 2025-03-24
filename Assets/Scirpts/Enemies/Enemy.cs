@@ -4,6 +4,8 @@ public class Enemy : Entity
 {
     public EnemyStateMachine stateMachine { get; private set; }
 
+    [SerializeField] public GameObject mark;
+
     [Header("Movement")]
     public float movementSpeed;
     public float idleTime;

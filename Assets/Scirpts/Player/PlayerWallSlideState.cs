@@ -16,7 +16,7 @@ public class PlayerWallSlideState : PlayerState
 
         stateTimer = player.wallSlideTime;
         flipTrigger = false;
-        player.ReenableDash();
+        player.skills.dash.RenableSkill();
     }
 
     public override void Update()
@@ -33,6 +33,8 @@ public class PlayerWallSlideState : PlayerState
         if(Input.GetKeyDown(KeyCode.Space))
             stateMachine.ChangeState(player.wallJump);
         
+        if(Input.GetKeyDown(KeyCode.F) && player.skills.wanted.CanUseSkill())
+            stateMachine.ChangeState(player.aimGun);
 
         if(xInput == player.facingDir *- 1 && stateTimer < player.wallSlideTime - .5f)
             stateMachine.ChangeState(player.airborne);

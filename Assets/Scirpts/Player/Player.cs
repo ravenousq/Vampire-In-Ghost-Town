@@ -20,7 +20,8 @@ public class Player : Entity
     public PlayerReloadState reload { get; private set; }
     public PlayerQuickstepState quickstep { get; private set; }
     public PlayerCrouchState crouch { get; private set; }
-    public PlayerDiveState dive{ get; private set; }
+    public PlayerDiveState dive { get; private set; }
+    public PlayerAimGunState aimGun { get; private set; }
     #endregion
 
 
@@ -34,8 +35,6 @@ public class Player : Entity
     public float climbSpeed;
     public float dashSpeed;
     public float dashDuration;
-    public float dashCooldown;
-    private float lastDash;
     public float quickstepSpeed;
     public float diveSpeed;
 
@@ -47,7 +46,8 @@ public class Player : Entity
     public int[] attackMovement;
 
     [Header("Abilities")]
-    public bool voculFenMah;
+    public SkillManager skills;
+    public GameObject crosshair { get; private set; }
 
 
     [Header("Prefabs")]
@@ -58,7 +58,6 @@ public class Player : Entity
     [HideInInspector] public bool allowCoyote;
     [HideInInspector] public bool executeBuffer;
     [HideInInspector] public bool canWallSlide = true;
-    [HideInInspector] public bool canDash = true;
     [HideInInspector] public bool creatingAfterImage;
     [HideInInspector] public bool attackTrigger;
     [HideInInspector] public bool floorParry;
@@ -85,13 +84,17 @@ public class Player : Entity
         quickstep = new PlayerQuickstepState(this, stateMachine, "placeholder");
         crouch = new PlayerCrouchState(this, stateMachine, "placeholder");
         dive = new PlayerDiveState(this, stateMachine, "placeholder");
+        aimGun = new PlayerAimGunState(this, stateMachine, "placeholder");
     }
 
     protected override void Start()
     {
         base.Start();
 
+        skills = SkillManager.instance;
         stateMachine.Initialize(idle);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
 
         Reload();
     }
@@ -116,23 +119,15 @@ public class Player : Entity
 
     private void CheckForDashInput()
     {
-        if(!canDash || lastDash > Time.time - dashCooldown)
-            return;
-
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        if(Input.GetKeyDown(KeyCode.LeftShift) && SkillManager.instance.dash.CanUseSkill())
         {
-            lastDash = Time.time;
             stateMachine.ChangeState(dash);
             creatingAfterImage = true;
             InvokeRepeating(nameof(CreateAfterImage), 0, .02f);
         }
     }
 
-    public void ReenableDash()
-    {
-        canDash = true;
-        lastDash = 0;
-    }
+    public void SetCrosshair(GameObject crosshair) => this.crosshair = crosshair;
 
     private void CreateAfterImage()
     {

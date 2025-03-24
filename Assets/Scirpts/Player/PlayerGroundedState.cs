@@ -12,7 +12,7 @@ public class PlayerGroundedState : PlayerState
         base.Enter();
 
         player.canWallSlide = true;
-        player.canDash = true;
+        player.skills.dash.SwitchBlockade(false);
     }
 
     public override void Update()
@@ -30,6 +30,8 @@ public class PlayerGroundedState : PlayerState
                 stateMachine.ChangeState(player.reload);
         }
         
+        if(Input.GetKeyDown(KeyCode.F) && player.skills.wanted.CanUseSkill())
+            stateMachine.ChangeState(player.aimGun);
 
         if(Input.GetKeyDown(KeyCode.Mouse1))
             stateMachine.ChangeState(player.quickstep);

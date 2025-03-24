@@ -46,7 +46,7 @@ public class PlayerAirborneState : PlayerState
         if(player.ladderToClimb && yInput != 0 && !player.isBusy)
             stateMachine.ChangeState(player.climb);
 
-        if(Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Mouse0))
+        if(Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Mouse0) && SkillManager.instance.isSkillUnlocked("Into The Abyss"))
             stateMachine.ChangeState(player.dive);
     }
 

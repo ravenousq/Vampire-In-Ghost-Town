@@ -28,9 +28,10 @@ public class PlayerDiveState : PlayerState
 
         if(stateTimer < 0 && Physics2D.Raycast(player.transform.position - new Vector3(player.cd.size.x /2, 0), Vector2.down, 4.5f, player.whatIsGround))
         {
-            if(Input.GetKeyDown(KeyCode.Q))
+            if(Input.GetKeyDown(KeyCode.Q) && SkillManager.instance.isSkillUnlocked("Closer To The Sun"))
             {
                 player.floorParry = true;
+                player.skills.dash.SwitchBlockade(false);
                 stateMachine.ChangeState(player.jump);
             }
         }
