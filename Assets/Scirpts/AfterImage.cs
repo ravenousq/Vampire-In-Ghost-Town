@@ -7,11 +7,20 @@ public class AfterImage : MonoBehaviour
     [SerializeField] private float fadeSpeed;
     private SpriteRenderer sr => GetComponent<SpriteRenderer>();
 
-    public void SetUpSprite(Sprite sprite, bool facingRight)
+    public void SetUpSprite(Sprite sprite, bool facingRight, Transform container = null)
     {
         if(!facingRight)
             transform.Rotate(0, 180, 0);
         sr.sprite = sprite;
+
+        if(container)
+            transform.parent = container.transform;
+
+        if(GetComponentInParent<ReapersHalo>())
+        {
+            sr.color = new Color(118, 118, 118, 255);
+            transform.parent = null;
+        }
     }
     
     

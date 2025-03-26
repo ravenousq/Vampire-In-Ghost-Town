@@ -24,13 +24,6 @@ public class PlayerGroundedState : PlayerState
         if(Input.GetKey(KeyCode.S) && !player.isBusy)
             stateMachine.ChangeState(player.crouch);
 
-
-        if(Input.GetKey(KeyCode.Mouse1) && player.skills.halo.CanUseSkill())
-        {
-            player.skills.halo.DotsActive(true);
-            player.isAimingHalo = true;
-        }
-
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
             if(!SkillManager.instance.isSkillUnlocked("Faster Than The Flame"))

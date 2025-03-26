@@ -11,6 +11,10 @@ public class HaloController : SkillController
     [SerializeField] private float spinDuration;
     [SerializeField] private float spinSpeed;
     [SerializeField] private float spinDamageWindow;
+    [Header("Bless 'em With The Blade")]
+    [SerializeField] private float orbitingSpeed;
+    [SerializeField] private int numberOfTurns;
+    [SerializeField] private float orbitDistance;
 
     [Header("Aim")]
     [SerializeField] private int numberOfDots;
@@ -19,6 +23,8 @@ public class HaloController : SkillController
     [SerializeField] private Transform dotParent;
     private GameObject[] dots;
     private Vector2 finalVelocity;
+    private bool skipAiming;
+    private bool isOrbiting;
 
     public override bool CanUseSkill()
     {
@@ -39,27 +45,31 @@ public class HaloController : SkillController
     {
         base.Update();
 
+        if(skipAiming)
+            return;
+        
         if(Input.GetKeyUp(KeyCode.Mouse1))
             finalVelocity = new Vector2(AimDirection().normalized.x * launchForce.x, AimDirection().normalized.y * launchForce.y);
 
         if(Input.GetKey(KeyCode.Mouse1))
         {
             for (int i = 0; i < dots.Length; i++)
-            {
                 dots[i].transform.position = DotsPosition(i * spaceBetweenDots);
-            }
         }
     }
 
     public void CreateHalo()
     {
-        GameObject newHalo = Instantiate(haloPrefab, player.transform.position, transform.rotation);
+        GameObject newHalo = Instantiate(haloPrefab, player.transform.position, Quaternion.identity);
         ReapersHalo remote = newHalo.GetComponent<ReapersHalo>();
 
-        remote.SetUpHalo(finalVelocity, player, returnSpeed, numberOfBounces, spinDuration, spinSpeed, spinDamageWindow);
+        remote.SetUpHalo(finalVelocity, player, returnSpeed, numberOfBounces, spinDuration, spinSpeed, spinDamageWindow, isOrbiting, orbitingSpeed, numberOfTurns, orbitDistance);
         DotsActive(false);
 
         player.AssignNewHalo(newHalo);
+
+        skipAiming = false;
+        isOrbiting = false;
     }
 
     public Vector2 AimDirection()
@@ -96,11 +106,11 @@ public class HaloController : SkillController
         int bounces = 0;
         int groundLayerMask = player.whatIsGround;
 
-        while (t > 0 && bounces <= numberOfBounces)
+        while (t > 0 && bounces <= 1)
         {
             RaycastHit2D hit = Physics2D.Raycast(position, direction, spaceBetweenDots, groundLayerMask);
 
-            if (hit.collider != null)
+            if (hit.collider)
             {
                 direction = Vector2.Reflect(direction, hit.normal);
                 position = hit.point + direction * 0.1f; 
@@ -114,6 +124,24 @@ public class HaloController : SkillController
 
         return position;
     }
+    
+    public void SkipAiming()
+    {
+        skipAiming = true;
 
+        Transform closestEnemy = FindClosestEnemy(player.transform);
 
+        if (closestEnemy)
+            finalVelocity = (closestEnemy.position - player.transform.position).normalized * launchForce;
+        else
+            finalVelocity = AimDirection().normalized * launchForce;
+
+        CreateHalo();
+    }
+
+    public void EnableOrbiting()
+    {
+        isOrbiting = true;
+        CreateHalo();
+    }
 }

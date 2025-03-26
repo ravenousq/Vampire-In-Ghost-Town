@@ -26,12 +26,6 @@ public class PlayerAirborneState : PlayerState
     {
         base.Update();
 
-        if(Input.GetKey(KeyCode.Mouse1) && player.skills.halo.CanUseSkill())
-        {
-            player.skills.halo.DotsActive(true);
-            player.isAimingHalo = true;
-        }
-
         if(stateTimer >= 0 && Input.GetKeyDown(KeyCode.Space))
             stateMachine.ChangeState(player.jump);
 

@@ -1,5 +1,4 @@
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Collections;
 using UnityEngine;
 
 public class ReapersHalo : MonoBehaviour
@@ -7,12 +6,14 @@ public class ReapersHalo : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
     private CircleCollider2D cd;
+    private SpriteRenderer sr;
 
     void Awake()
     {
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         cd = GetComponent<CircleCollider2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private Vector2 velocity;
@@ -27,10 +28,14 @@ public class ReapersHalo : MonoBehaviour
     private bool isSpinning;
     private float spinDamageWindow;
     private float damageTimer;
-    
+    private bool waitForEnemy;
+    private bool isOrbiting;
+    private float orbitingSpeed;
+    private int numberOfTurns;
+    private float orbitDistance;
 
 
-    public void SetUpHalo(Vector2 velocity, Player player, float returnSpeed, int numberOfBounces, float spinDuration, float spinSpeed, float spinDamageWindow)
+    public void SetUpHalo(Vector2 velocity, Player player, float returnSpeed, int numberOfBounces, float spinDuration, float spinSpeed, float spinDamageWindow, bool isOrbiting, float orbitingSpeed, int numberOfTurns, float orbitDistance)
     {
         this.velocity = velocity;
         this.player = player;
@@ -39,6 +44,14 @@ public class ReapersHalo : MonoBehaviour
         this.spinDuration = spinDuration;
         this.spinSpeed = spinSpeed;
         this.spinDamageWindow = spinDamageWindow;
+        this.isOrbiting = isOrbiting;
+        this.orbitingSpeed = orbitingSpeed;
+        this.numberOfTurns = numberOfTurns;
+        this.orbitDistance = orbitDistance;
+
+        if(isOrbiting)
+            velocity = new Vector2(player.facingDir * orbitingSpeed, .1f);
+        
 
         rb.linearVelocity = velocity;
         rb.gravityScale = 0;
@@ -49,49 +62,79 @@ public class ReapersHalo : MonoBehaviour
     private void Update()
     {
         transform.right = rb.linearVelocity;
+        CountDownTimers();
 
-        collisionTimer -= Time.deltaTime;
-        spinTimer -= Time.deltaTime;
-        damageTimer -= Time.deltaTime;
+        if (!isOrbiting || isSpinning)
+            MovementLogic();
 
-        MovementLogic();
+        if (isOrbiting && !isSpinning)
+            OrbitLogic();
 
         if (numberOfBounces < 0)
             isReturning = true;
 
-        SpinLogic();
+        if (isSpinning)
+            SpinLogic();
 
-        if(Vector2.Distance(transform.position, player.transform.position) < .3f && collisionTimer < 0)
+        if (Vector2.Distance(transform.position, player.transform.position) < .3f && collisionTimer < 0)
             DestroyMe();
+    }
+
+    private void CountDownTimers()
+    {
+        collisionTimer -= Time.deltaTime;
+        spinTimer -= Time.deltaTime;
+        damageTimer -= Time.deltaTime;
+    }
+
+    private void OrbitLogic()
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) > orbitDistance)
+        {
+            rb.linearVelocity = (player.transform.position - transform.position).normalized * orbitingSpeed;
+            sr.sortingOrder *= -1;
+        }
+
+        if (numberOfTurns <= 0)
+            isReturning = true;
     }
 
     private void SpinLogic()
     {
-        if (isSpinning)
+        CancelInvoke(nameof(DestroyMe));
+
+        if (spinTimer < 0)
+            isReturning = true;
+        else
         {
-            CancelInvoke(nameof(DestroyMe));
-
-            if (spinTimer < 0)
-                isReturning = true;
+            if(!isOrbiting)
+                velocity = rb.linearVelocity.normalized * spinSpeed;
             else
+                velocity = (transform.position - player.transform.position).normalized * spinSpeed;
+
+            if (damageTimer < 0)
             {
-                velocity = velocity.normalized * spinSpeed;
+                Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, cd.radius, player.whatIsEnemy);
 
-                if (damageTimer < 0)
+                foreach (var enemy in enemies)
                 {
-                    Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, cd.radius, player.whatIsEnemy);
-
-                    foreach (var enemy in enemies)
-                        enemy.GetComponent<Enemy>().Damage();
-
-                    damageTimer = spinDamageWindow;
+                    enemy.GetComponent<Enemy>().Damage();
+                    enemy.GetComponent<Enemy>()?.Knockback(new Vector2(1, 1), transform.position.x, .2f);
                 }
+
+                damageTimer = spinDamageWindow;
             }
         }
+        
     }
 
     private void DestroyMe()
     {
+        if(isOrbiting && !isReturning)
+            return;
+
+        Debug.Log(isOrbiting);
+        Debug.Log(isReturning);
         SkillManager.instance.halo.AddCooldown(3);
         Destroy(gameObject);
     } 
@@ -126,11 +169,25 @@ public class ReapersHalo : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) 
     {
         other.GetComponent<Enemy>()?.Damage();    
+        other.GetComponent<Enemy>()?.Knockback(new Vector2(1, 1), transform.position.x, .2f);
+
+        if(waitForEnemy && other.GetComponent<Enemy>())
+            isSpinning = true;
+
+        if(collisionTimer < 0 && other.GetComponent<Player>())
+            numberOfTurns--;
+    }
+
+    private void OnTriggerStay2D(Collider2D other) 
+    {
+        if(waitForEnemy && other.GetComponent<Enemy>())
+            isSpinning = true;
+
     }
 
     public void StopHalo()
     {
-        isSpinning = true;
+        StartCoroutine(SpinRoutine());
 
         if(spinTimer > 0 && spinTimer < spinDuration - .3f)
         {
@@ -140,5 +197,15 @@ public class ReapersHalo : MonoBehaviour
 
         if(SkillManager.instance.isSkillUnlocked("Legend Of Steel"))
             spinTimer = spinDuration;
+    }
+
+    private IEnumerator SpinRoutine()
+    {
+        waitForEnemy = true;
+
+        yield return new WaitForSeconds(.3f);
+
+        isSpinning = true;
+        waitForEnemy = false;
     }
 }

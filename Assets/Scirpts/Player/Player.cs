@@ -65,6 +65,7 @@ public class Player : Entity
     [HideInInspector] public bool attackTrigger;
     [HideInInspector] public bool floorParry;
     [HideInInspector] public bool isAimingHalo;
+    private float haloTimer;
     private bool thirdAttack;
     #endregion
 
@@ -116,7 +117,7 @@ public class Player : Entity
         CheckForHaloInput();
     }
 
-    private void ResetMoveStart() => playStartAnim = true;
+    //private void ResetMoveStart() => playStartAnim = true;
 
     public void TriggerLadder(BoxCollider2D ladder) => ladderToClimb = ladder;
 
@@ -133,18 +134,40 @@ public class Player : Entity
         }
     }
 
-     private void CheckForHaloInput()
+    private void CheckForHaloInput()
     {
-        if (halo && Input.GetKeyDown(KeyCode.Mouse1))
+        haloTimer -= Time.deltaTime;
+
+        if(Input.GetKeyDown(KeyCode.Mouse1) && !halo)
+            haloTimer = 0.2f;
+
+        if(Input.GetKeyUp(KeyCode.Mouse1) && haloTimer > 0 && skills.halo.CanUseSkill() && !halo)
         {
-            halo.GetComponent<ReapersHalo>().StopHalo();
+            skills.halo.SkipAiming();
+            return;
         }
 
-        if (isAimingHalo && Input.GetKeyUp(KeyCode.Mouse1) && !halo)
+        if(haloTimer < 0 && Input.GetKey(KeyCode.Mouse1) && skills.halo.CanUseSkill() && !halo)
+        {
+            skills.halo.DotsActive(true);
+            isAimingHalo = true;
+        }
+
+        if(!halo && Input.GetKey(KeyCode.Mouse1) && Input.GetKeyDown(KeyCode.Mouse0) && skills.isSkillUnlocked("Bless 'em With The Blade"))
+        {
+            skills.halo.EnableOrbiting();
+            skills.halo.DotsActive(false);
+            isAimingHalo = false;
+        }
+
+        if(isAimingHalo && Input.GetKeyUp(KeyCode.Mouse1) && !halo)
         {
             isAimingHalo = false;
             SkillManager.instance.halo.CreateHalo();
         }
+
+        if(halo && Input.GetKeyDown(KeyCode.Mouse1))
+            halo.GetComponent<ReapersHalo>().StopHalo();
     }
 
     public void SetCrosshair(GameObject crosshair) => this.crosshair = crosshair;

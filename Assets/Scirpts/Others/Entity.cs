@@ -138,7 +138,7 @@ public class Entity : MonoBehaviour
     public virtual void Damage()
     {
         fx.Flashing();
-        Debug.Log(gameObject.name + " recieved damage.");
+        //Debug.Log(gameObject.name + " recieved damage.");
     }
 
     protected virtual void OnDrawGizmos()
