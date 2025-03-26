@@ -64,7 +64,13 @@ public class Entity : MonoBehaviour
     public void ResetVelocity() => rb.linearVelocity = Vector2.zero;
     #endregion
 
-    public void ZeroGravityFor(float seconds) => StartCoroutine(ZeroGravityRoutine(seconds));
+    public void ZeroGravityFor(float seconds)
+    {
+        if(rb.gravityScale == 0)
+            return;
+
+        StartCoroutine(ZeroGravityRoutine(seconds));
+    } 
 
     protected IEnumerator ZeroGravityRoutine(float seconds)
     {

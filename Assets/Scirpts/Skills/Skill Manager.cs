@@ -6,6 +6,9 @@ using Libs;
 public class SkillManager : MonoBehaviour
 {
     public static SkillManager instance;
+    public DashController dash { get; private set; }
+    public WantedController wanted { get; private set; }
+    public HaloController halo { get; private set; }
 
     private void Awake() 
     {
@@ -16,11 +19,13 @@ public class SkillManager : MonoBehaviour
         }
         else 
             Destroy(gameObject);
+
+        dash = GetComponent<DashController>();
+        wanted = GetComponent<WantedController>();
+        halo = GetComponent<HaloController>();
     }
 
-    [SerializeField] private String skillToUnlock = "";
-    public DashController dash { get; private set; }
-    public WantedController wanted { get; private set; }
+    [SerializeField] private string skillToUnlock = "";
 
     [SerializeField] private SerializableDictionary<string, bool> unlockableSkills;
     public Dictionary<string, bool> skills;
@@ -28,12 +33,9 @@ public class SkillManager : MonoBehaviour
     private void Start()
     {
         skills = unlockableSkills.ToDictionary();
-
-        dash = GetComponent<DashController>();
-        wanted = GetComponent<WantedController>();
     }
 
-    public bool isSkillUnlocked(String skill)
+    public bool isSkillUnlocked(string skill)
     {
         if (skills.TryGetValue(skill, out bool value))
             return value;

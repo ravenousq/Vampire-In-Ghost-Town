@@ -10,11 +10,16 @@ public class PlayerReloadState : PlayerState
     public override void Enter()
     {
         base.Enter();
+
+        player.anim.SetInteger("facingDir", player.facingDir);
+        //player.reloadTorso.SetActive(true);
     }
 
     public override void Update()
     {
         base.Update();
+
+        player.anim.SetInteger("facingDir", player.facingDir);
 
         rb.linearVelocity = new Vector2(xInput * player.reloadMovementSpeed, 0);
 
@@ -26,6 +31,9 @@ public class PlayerReloadState : PlayerState
     {
         base.Exit();
 
+        player.anim.SetInteger("facingDir", player.facingDir);
+
         player.Reload();
+        //player.reloadTorso.SetActive(false);
     }
 }

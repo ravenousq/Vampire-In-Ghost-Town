@@ -13,7 +13,7 @@ public class SkillController : MonoBehaviour
         player = PlayerManager.instance.player;
     }
 
-    protected void Update() 
+    protected virtual void Update() 
     {
         cooldownTimer -= Time.deltaTime;
     }
@@ -75,6 +75,8 @@ public class SkillController : MonoBehaviour
         if(isBlocked)
             SwitchBlockade(false);
     }
+
+    public virtual void AddCooldown(float cooldown) => cooldownTimer = cooldown;
 
     public  virtual void SwitchBlockade(bool blockade) => isBlocked = blockade;
 }

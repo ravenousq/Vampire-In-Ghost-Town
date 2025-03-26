@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework;
 using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Crosshair : MonoBehaviour
 {
@@ -17,17 +14,19 @@ public class Crosshair : MonoBehaviour
 
     private float aimTimer;
     private CinemachineCamera cinemachine;
+    private int ammo;
 
     private List<Transform> enemiesToAdd = new List<Transform>();
     private List<Transform> targets = new List<Transform>();
 
 
-    public void SetUp(float maxAimDuration, float ashenRainDuration, float crosshairSpeed, float crosshairResistance, CinemachineCamera cinemachine)
+    public void SetUp(float maxAimDuration, float crosshairSpeed, float crosshairResistance, CinemachineCamera cinemachine, int ammo)
     {
         aimTimer = maxAimDuration;
         this.crosshairSpeed = crosshairSpeed;
         this.crosshairResistance = crosshairResistance;
         this.cinemachine = cinemachine;
+        this.ammo = ammo;
 
         initialPosition = transform.position;
         
@@ -75,6 +74,9 @@ public class Crosshair : MonoBehaviour
             enemy.Knockback(new Vector2(2, 2), enemy.gameObject.transform.position.x + (Random.Range(1, 10) > 5 ? -1 : 1), 2);
             enemy.mark.SetActive(false);
             targets.Remove(enemy.gameObject.transform);
+
+            if(!SkillManager.instance.isSkillUnlocked("Amen & Attack"))
+                PlayerManager.instance.player.ModifyBullets(-1);
         }
 
         yield return new WaitForSeconds(.2f);
@@ -90,6 +92,9 @@ public class Crosshair : MonoBehaviour
 
         if (enemiesToAdd.Count > 0 && Input.GetKeyDown(KeyCode.Mouse0))
         {
+            if(ammo == targets.Count && !SkillManager.instance.isSkillUnlocked("Amen & Attack"))
+                return;
+            
             targets.Add(enemiesToAdd[^1]);
 
             if(!SkillManager.instance.isSkillUnlocked("Ashen Rain"))

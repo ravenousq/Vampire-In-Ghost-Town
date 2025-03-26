@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WantedController : SkillController
 {
+    [Header("Wanted Dead")]
     [SerializeField] private float maxAimDuration;
     [SerializeField] private float ashenRainDuration;
     [SerializeField] private float crosshairSpeed;
@@ -11,6 +12,7 @@ public class WantedController : SkillController
 
     [SerializeField] private GameObject crosshairPrefab;
     [SerializeField] private CinemachineCamera cinemachine;
+    private int currentAmmo;
 
     private GameObject currentCrosshair = null;
 
@@ -27,6 +29,9 @@ public class WantedController : SkillController
         if(player.stateMachine.current == player.wallSlide && !SkillManager.instance.isSkillUnlocked("Heretic Hunter"))
             return false;
 
+        if(player.currentAmmo == 0 && !SkillManager.instance.isSkillUnlocked("Amen & Attack"))
+            return false;
+
         return base.CanUseSkill();
     }
 
@@ -34,6 +39,8 @@ public class WantedController : SkillController
     {
         base.UseSkill();
 
+        currentAmmo = player.currentAmmo;
+        
         if(currentCrosshair)
             Destroy(currentCrosshair);
 
@@ -47,8 +54,8 @@ public class WantedController : SkillController
         Crosshair remote = newCrosshair.GetComponent<Crosshair>();
 
         if(!SkillManager.instance.isSkillUnlocked("Ashen Rain"))
-            remote.SetUp(maxAimDuration, ashenRainDuration, crosshairSpeed, crosshairResistance, cinemachine);
+            remote.SetUp(maxAimDuration, crosshairSpeed, crosshairResistance, cinemachine, currentAmmo);
         else
-            remote.SetUp(ashenRainDuration, ashenRainDuration, crosshairSpeed, crosshairResistance, cinemachine);
+            remote.SetUp(ashenRainDuration, crosshairSpeed, crosshairResistance, cinemachine, currentAmmo);
     }
 }

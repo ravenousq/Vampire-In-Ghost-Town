@@ -14,6 +14,8 @@ public class PlayerClimbState : PlayerState
         base.Enter();
 
         player.skills.dash.SwitchBlockade(true);
+        player.skills.halo.SwitchBlockade(true);
+        
         stateTimer = 1f;
         rb.bodyType = RigidbodyType2D.Kinematic;
         sideToExit = player.ladderToClimb.GetComponent<Ladder>().sideToExit;
@@ -57,6 +59,7 @@ public class PlayerClimbState : PlayerState
         base.Exit();
 
         player.skills.dash.SwitchBlockade(false);
+        player.skills.halo.SwitchBlockade(false);
         rb.bodyType = RigidbodyType2D.Dynamic;
         sideToExit = sideToExit == 0 ? player.facingDir : sideToExit;
         player.SetVelocity(3 * sideToExit, 3);

@@ -1,4 +1,3 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerQuickstepState : PlayerState
@@ -17,6 +16,8 @@ public class PlayerQuickstepState : PlayerState
         player.ResetVelocity();
 
         direction = xInput == 0 ? -player.facingDir : xInput;
+
+        player.anim.SetInteger("facingDir", player.facingDir);
     }
 
     public override void Update()

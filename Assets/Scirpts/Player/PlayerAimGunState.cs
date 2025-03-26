@@ -24,7 +24,9 @@ public class PlayerAimGunState : PlayerState
         player.ResetVelocity();
 
         if(stateTimer < 0 || !player.crosshair)
+        {
             stateMachine.ChangeState(player.idle);
+        }
     }
 
     public override void Exit()

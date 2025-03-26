@@ -13,6 +13,9 @@ public class PlayerDiveState : PlayerState
     {
         base.Enter();
 
+        player.skills.dash.SwitchBlockade(true);
+        player.skills.halo.SwitchBlockade(true);
+        
         player.ZeroGravityFor(.5f);
         stateTimer = .6f;
     }
@@ -47,6 +50,9 @@ public class PlayerDiveState : PlayerState
     public override void Exit()
     {
         base.Exit();
+
+        player.skills.dash.SwitchBlockade(false);
+        player.skills.halo.SwitchBlockade(false);
     }
 
     private void DamageImpact()

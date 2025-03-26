@@ -36,14 +36,17 @@ public class Player : Entity
     public float dashSpeed;
     public float dashDuration;
     public float quickstepSpeed;
+    public float quickstepCooldown;
     public float diveSpeed;
 
     [Header("Combat")]
+    public LayerMask whatIsEnemy;
     public int maxAmmo;
     public  int currentAmmo;
     public float reloadMovementSpeed;
     public float attackWindow;
     public int[] attackMovement;
+    public GameObject reloadTorso;
 
     [Header("Abilities")]
     public SkillManager skills;
@@ -61,10 +64,12 @@ public class Player : Entity
     [HideInInspector] public bool creatingAfterImage;
     [HideInInspector] public bool attackTrigger;
     [HideInInspector] public bool floorParry;
+    [HideInInspector] public bool isAimingHalo;
     private bool thirdAttack;
     #endregion
 
     public BoxCollider2D ladderToClimb { get; private set; }
+    public GameObject halo { get; private set; }
 
     protected override void Awake()
     {
@@ -81,8 +86,8 @@ public class Player : Entity
         dash = new PlayerDashState(this, stateMachine, "dash");
         attack = new PlayerPrimaryAttackState(this, stateMachine, "attack");
         reload = new PlayerReloadState(this, stateMachine, "placeholder");
-        quickstep = new PlayerQuickstepState(this, stateMachine, "placeholder");
-        crouch = new PlayerCrouchState(this, stateMachine, "placeholder");
+        quickstep = new PlayerQuickstepState(this, stateMachine, "quickstep");
+        crouch = new PlayerCrouchState(this, stateMachine, "crouch");
         dive = new PlayerDiveState(this, stateMachine, "placeholder");
         aimGun = new PlayerAimGunState(this, stateMachine, "placeholder");
     }
@@ -93,6 +98,7 @@ public class Player : Entity
 
         skills = SkillManager.instance;
         stateMachine.Initialize(idle);
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
 
@@ -101,16 +107,13 @@ public class Player : Entity
 
     protected override void Update()
     {
-
         stateMachine.current.Update();
-
-        if(!playStartAnim)
-            Invoke(nameof(ResetMoveStart), .5f);
     }
 
     private void LateUpdate() 
     {
         CheckForDashInput();
+        CheckForHaloInput();
     }
 
     private void ResetMoveStart() => playStartAnim = true;
@@ -119,11 +122,28 @@ public class Player : Entity
 
     private void CheckForDashInput()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift) && SkillManager.instance.dash.CanUseSkill())
+        if(Input.GetKeyDown(KeyCode.LeftShift))
         {
-            stateMachine.ChangeState(dash);
-            creatingAfterImage = true;
-            InvokeRepeating(nameof(CreateAfterImage), 0, .02f);
+            if(SkillManager.instance.dash.CanUseSkill())
+            {
+                stateMachine.ChangeState(dash);
+                creatingAfterImage = true;
+                InvokeRepeating(nameof(CreateAfterImage), 0, .02f);
+            }
+        }
+    }
+
+     private void CheckForHaloInput()
+    {
+        if (halo && Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            halo.GetComponent<ReapersHalo>().StopHalo();
+        }
+
+        if (isAimingHalo && Input.GetKeyUp(KeyCode.Mouse1) && !halo)
+        {
+            isAimingHalo = false;
+            SkillManager.instance.halo.CreateHalo();
         }
     }
 
@@ -196,5 +216,10 @@ public class Player : Entity
             return false;
 
         return true;
+    }
+
+    public void AssignNewHalo(GameObject newHalo)
+    {   
+        halo = newHalo;
     }
 }

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerGroundedState : PlayerState
 {
+    private float lastQuickstep;
+
     public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
         
@@ -22,6 +24,19 @@ public class PlayerGroundedState : PlayerState
         if(Input.GetKey(KeyCode.S) && !player.isBusy)
             stateMachine.ChangeState(player.crouch);
 
+
+        if(Input.GetKey(KeyCode.Mouse1) && player.skills.halo.CanUseSkill())
+        {
+            player.skills.halo.DotsActive(true);
+            player.isAimingHalo = true;
+        }
+
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if(!SkillManager.instance.isSkillUnlocked("Faster Than The Flame"))
+                stateMachine.ChangeState(player.quickstep);
+        }
+
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             if(player.CanShoot())
@@ -32,9 +47,7 @@ public class PlayerGroundedState : PlayerState
         
         if(Input.GetKeyDown(KeyCode.F) && player.skills.wanted.CanUseSkill())
             stateMachine.ChangeState(player.aimGun);
-
-        if(Input.GetKeyDown(KeyCode.Mouse1))
-            stateMachine.ChangeState(player.quickstep);
+        
 
         if(Input.GetKeyDown(KeyCode.R) && player.CanReload())
             stateMachine.ChangeState(player.reload);
