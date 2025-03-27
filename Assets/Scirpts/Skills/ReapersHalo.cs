@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ReapersHalo : MonoBehaviour
@@ -33,10 +34,14 @@ public class ReapersHalo : MonoBehaviour
     private float orbitingSpeed;
     private int numberOfTurns;
     private float orbitDistance;
-
+    private Pointer pointer;
+    [SerializeField] private Pointer pointerPrefab;
 
     public void SetUpHalo(Vector2 velocity, Player player, float returnSpeed, int numberOfBounces, float spinDuration, float spinSpeed, float spinDamageWindow, bool isOrbiting, float orbitingSpeed, int numberOfTurns, float orbitDistance)
     {
+        pointer = Instantiate(pointerPrefab, transform.position, Quaternion.identity);
+        pointer.SetUp(this);
+
         this.velocity = velocity;
         this.player = player;
         this.returnSpeed = returnSpeed;
@@ -130,12 +135,12 @@ public class ReapersHalo : MonoBehaviour
 
     private void DestroyMe()
     {
+        if(pointer)
+            Destroy(pointer.gameObject);
         if(isOrbiting && !isReturning)
             return;
-
-        Debug.Log(isOrbiting);
-        Debug.Log(isReturning);
-        SkillManager.instance.halo.AddCooldown(3);
+            
+        SkillManager.instance.halo.AddCooldown(1);
         Destroy(gameObject);
     } 
 
@@ -207,5 +212,15 @@ public class ReapersHalo : MonoBehaviour
 
         isSpinning = true;
         waitForEnemy = false;
+    }
+
+    private void OnBecameInvisible() 
+    {
+        pointer?.SwitchSpriteVisibility();
+    }
+
+    private void OnBecameVisible() 
+    {
+        pointer?.SwitchSpriteVisibility();    
     }
 }

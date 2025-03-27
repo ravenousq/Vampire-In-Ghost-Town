@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[SelectionBase]
 public class Dummy : Enemy
 {
     #region States

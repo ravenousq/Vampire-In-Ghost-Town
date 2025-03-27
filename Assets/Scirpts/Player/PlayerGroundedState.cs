@@ -30,7 +30,7 @@ public class PlayerGroundedState : PlayerState
                 stateMachine.ChangeState(player.quickstep);
         }
 
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if(Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Mouse1))
         {
             if(player.CanShoot())
                 stateMachine.ChangeState(player.attack);

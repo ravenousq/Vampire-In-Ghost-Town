@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[SelectionBase]
 public class Ladder : MonoBehaviour
 {
     BoxCollider2D hitbox;

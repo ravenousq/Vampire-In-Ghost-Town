@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c2f99d3b960bf42a9f632453121fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterImage: {fileID: 3278896037813613646, guid: 906d0012e9b713849b3b14e8e0b01375, type: 3}
+  pointerPrefab: {fileID: 429521206609628256, guid: 6a1a4e1828a2307449fffa0e57d27fac, type: 3}
 --- !u!212 &1722594574720162384
 SpriteRenderer:
   m_ObjectHideFlags: 0

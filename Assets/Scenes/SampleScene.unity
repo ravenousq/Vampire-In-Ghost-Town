@@ -3379,7 +3379,7 @@ MonoBehaviour:
   attackMovement: 00000000f6fffffff1ffffff
   reloadTorso: {fileID: 1644853213}
   skills: {fileID: 0}
-  afterImage: {fileID: 3278896037813613646, guid: 906d0012e9b713849b3b14e8e0b01375, type: 3}
+  afterImage: {fileID: 3484935133656287947, guid: 906d0012e9b713849b3b14e8e0b01375, type: 3}
   playStartAnim: 1
   allowCoyote: 0
   executeBuffer: 0
@@ -5370,7 +5370,7 @@ Transform:
   m_GameObject: {fileID: 1644853213}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.152, y: 0.177, z: 0}
+  m_LocalPosition: {x: 0.017, y: 0.166, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5425,7 +5425,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.2007816, y: 3.2}
+  m_Size: {x: 1.2202979, y: 1.37}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6103,7 +6103,7 @@ MonoBehaviour:
   ashenRainDuration: 6
   crosshairSpeed: 50
   crosshairResistance: 6
-  crosshairPrefab: {fileID: 1713112613774700206, guid: a4305e49737f95e4597490f03261bcf7, type: 3}
+  crosshairPrefab: {fileID: 1704740849798088128, guid: a4305e49737f95e4597490f03261bcf7, type: 3}
   cinemachine: {fileID: 157521431}
 --- !u!114 &2061663804
 MonoBehaviour:
@@ -6117,9 +6117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f385b72d59a1e8c47b5e4761026002ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 3
+  cooldown: 1
   primarySkillName: Die By The Blade
-  haloPrefab: {fileID: 4026210620529989990, guid: a04c030dff587e04384704022d854b2f, type: 3}
+  haloPrefab: {fileID: -5722508893618971935, guid: a04c030dff587e04384704022d854b2f, type: 3}
   launchForce: {x: 25, y: 25}
   returnSpeed: 25
   numberOfBounces: 3

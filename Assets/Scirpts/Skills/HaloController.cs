@@ -3,7 +3,7 @@ using UnityEngine;
 public class HaloController : SkillController
 {
     [Header("Die By The Blade")]
-    [SerializeField] private GameObject haloPrefab;
+    [SerializeField] private ReapersHalo haloPrefab;
     [SerializeField] private Vector2 launchForce;
     [SerializeField] private float returnSpeed;
     [SerializeField] private int numberOfBounces;
@@ -60,10 +60,9 @@ public class HaloController : SkillController
 
     public void CreateHalo()
     {
-        GameObject newHalo = Instantiate(haloPrefab, player.transform.position, Quaternion.identity);
-        ReapersHalo remote = newHalo.GetComponent<ReapersHalo>();
+        ReapersHalo newHalo = Instantiate(haloPrefab, player.transform.position, Quaternion.identity);
 
-        remote.SetUpHalo(finalVelocity, player, returnSpeed, numberOfBounces, spinDuration, spinSpeed, spinDamageWindow, isOrbiting, orbitingSpeed, numberOfTurns, orbitDistance);
+        newHalo.SetUpHalo(finalVelocity, player, returnSpeed, numberOfBounces, spinDuration, spinSpeed, spinDamageWindow, isOrbiting, orbitingSpeed, numberOfTurns, orbitDistance);
         DotsActive(false);
 
         player.AssignNewHalo(newHalo);

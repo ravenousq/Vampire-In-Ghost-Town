@@ -10,11 +10,11 @@ public class WantedController : SkillController
     [SerializeField] private float crosshairSpeed;
     [SerializeField] private float crosshairResistance;
 
-    [SerializeField] private GameObject crosshairPrefab;
+    [SerializeField] private Crosshair crosshairPrefab;
     [SerializeField] private CinemachineCamera cinemachine;
     private int currentAmmo;
 
-    private GameObject currentCrosshair = null;
+    private Crosshair currentCrosshair = null;
 
     public float GetMaxDuration() 
     {
@@ -47,15 +47,15 @@ public class WantedController : SkillController
         Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 10f); 
         Vector3 center = Camera.main.ScreenToWorldPoint(screenCenter);
 
-        GameObject newCrosshair = Instantiate(crosshairPrefab, center, Quaternion.identity);
+        Crosshair newCrosshair = Instantiate(crosshairPrefab, center, Quaternion.identity);
 
         currentCrosshair = newCrosshair;
 
-        Crosshair remote = newCrosshair.GetComponent<Crosshair>();
-
         if(!SkillManager.instance.isSkillUnlocked("Ashen Rain"))
-            remote.SetUp(maxAimDuration, crosshairSpeed, crosshairResistance, cinemachine, currentAmmo);
+            newCrosshair.SetUp(maxAimDuration, crosshairSpeed, crosshairResistance, cinemachine, currentAmmo);
         else
-            remote.SetUp(ashenRainDuration, crosshairSpeed, crosshairResistance, cinemachine, currentAmmo);
+            newCrosshair.SetUp(ashenRainDuration, crosshairSpeed, crosshairResistance, cinemachine, currentAmmo);
+
+        PlayerManager.instance.player.SetCrosshair(newCrosshair);
     }
 }

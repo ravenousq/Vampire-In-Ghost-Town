@@ -3,6 +3,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[SelectionBase]
 public class Player : Entity
 {
     #region States
@@ -50,11 +51,12 @@ public class Player : Entity
 
     [Header("Abilities")]
     public SkillManager skills;
-    public GameObject crosshair { get; private set; }
+    public Crosshair crosshair { get; private set; }
+    public ReapersHalo halo { get; private set; }
 
 
     [Header("Prefabs")]
-    [SerializeField] private GameObject afterImage;
+    [SerializeField] private AfterImage afterImage;
 
     #region Flags
     [HideInInspector] public bool playStartAnim = true;
@@ -70,7 +72,6 @@ public class Player : Entity
     #endregion
 
     public BoxCollider2D ladderToClimb { get; private set; }
-    public GameObject halo { get; private set; }
 
     protected override void Awake()
     {
@@ -86,11 +87,11 @@ public class Player : Entity
         climb = new PlayerClimbState(this, stateMachine, "climb");
         dash = new PlayerDashState(this, stateMachine, "dash");
         attack = new PlayerPrimaryAttackState(this, stateMachine, "attack");
-        reload = new PlayerReloadState(this, stateMachine, "placeholder");
+        reload = new PlayerReloadState(this, stateMachine, "reload");
         quickstep = new PlayerQuickstepState(this, stateMachine, "quickstep");
         crouch = new PlayerCrouchState(this, stateMachine, "crouch");
-        dive = new PlayerDiveState(this, stateMachine, "placeholder");
-        aimGun = new PlayerAimGunState(this, stateMachine, "placeholder");
+        dive = new PlayerDiveState(this, stateMachine, "jump");
+        aimGun = new PlayerAimGunState(this, stateMachine, "idle");
     }
 
     protected override void Start()
@@ -109,6 +110,9 @@ public class Player : Entity
     protected override void Update()
     {
         stateMachine.current.Update();
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
     }
 
     private void LateUpdate() 
@@ -170,7 +174,7 @@ public class Player : Entity
             halo.GetComponent<ReapersHalo>().StopHalo();
     }
 
-    public void SetCrosshair(GameObject crosshair) => this.crosshair = crosshair;
+    public void SetCrosshair(Crosshair crosshair) => this.crosshair = crosshair;
 
     private void CreateAfterImage()
     {
@@ -180,8 +184,8 @@ public class Player : Entity
             return;
         }
 
-        GameObject newAfterImage = Instantiate(afterImage, transform.position, Quaternion.identity);
-        newAfterImage.GetComponent<AfterImage>().SetUpSprite(sr.sprite, facingRight);
+        AfterImage newAfterImage = Instantiate(afterImage, transform.position, Quaternion.identity);
+        newAfterImage.SetUpSprite(sr.sprite, facingRight);
     }
 
     public void Reload()
@@ -241,7 +245,7 @@ public class Player : Entity
         return true;
     }
 
-    public void AssignNewHalo(GameObject newHalo)
+    public void AssignNewHalo(ReapersHalo newHalo)
     {   
         halo = newHalo;
     }

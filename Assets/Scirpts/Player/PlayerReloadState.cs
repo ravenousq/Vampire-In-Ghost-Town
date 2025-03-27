@@ -12,7 +12,7 @@ public class PlayerReloadState : PlayerState
         base.Enter();
 
         player.anim.SetInteger("facingDir", player.facingDir);
-        //player.reloadTorso.SetActive(true);
+        player.reloadTorso.SetActive(true);
     }
 
     public override void Update()
@@ -34,6 +34,6 @@ public class PlayerReloadState : PlayerState
         player.anim.SetInteger("facingDir", player.facingDir);
 
         player.Reload();
-        //player.reloadTorso.SetActive(false);
+        player.reloadTorso.SetActive(false);
     }
 }

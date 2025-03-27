@@ -39,8 +39,6 @@ public class Crosshair : MonoBehaviour
 
         bounds = new Vector2(screenTopRight.x - screenCenter.x,screenTopRight.y - screenCenter.y);
         this.cinemachine.Follow = gameObject.transform;
-
-        PlayerManager.instance.player.SetCrosshair(gameObject);
     }
 
     private void Update()
