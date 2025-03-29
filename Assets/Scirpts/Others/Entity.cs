@@ -17,15 +17,17 @@ public class Entity : MonoBehaviour
     [SerializeField] protected float groundCheckDistance;
     [SerializeField] protected Transform wallCheck;
     [SerializeField] protected float wallCheckDistance;
+    [SerializeField] protected float knockbackMultiplayer = 1;
 
     #region Flags
-    [HideInInspector] public bool isBusy;
-    [HideInInspector] public bool isKnocked;
+    public bool isBusy{ get; private set; }
+    public bool isKnocked { get; private set; }
+    public bool canBeKnocked { get; private set; } = true;
     #endregion
 
 
-    public int facingDir { get; private set; } = 1;
-    public bool facingRight { get; private set; } = true;
+    public int facingDir = 1;
+    public bool facingRight= true;
 
     protected virtual void Awake()
     {
@@ -43,7 +45,8 @@ public class Entity : MonoBehaviour
 
     protected virtual void Update()
     {
-
+        if(isKnocked)
+            Debug.Log("Is Knocked");
     }
 
     #region Velocity
@@ -95,19 +98,22 @@ public class Entity : MonoBehaviour
 
     public virtual void Knockback(Vector2 direction, float xPosition, float seconds)
     {
-        if(isKnocked)
+        if(isKnocked || !canBeKnocked)
             return;
 
-        StartCoroutine(KnockbackRoutine(seconds));
-
-        int knockbackDirection = xPosition > transform.position.x ? -1 : 1;
-        Vector2 forceToAdd = new Vector2(direction.x * knockbackDirection, direction.y);
-        rb.AddForce(forceToAdd, ForceMode2D.Impulse);
+        StartCoroutine(KnockbackRoutine(direction, xPosition, seconds));
     }
 
-    private IEnumerator KnockbackRoutine(float seconds)
+    private IEnumerator KnockbackRoutine(Vector2 direction, float xPosition, float seconds)
     {
         isKnocked = true;
+
+        rb.linearVelocity = Vector2.zero;
+
+        int knockbackDirection = xPosition > transform.position.x ? -1 : 1;
+        Vector2 forceToAdd = new Vector2(direction.x * knockbackDirection, direction.y) * knockbackMultiplayer;
+
+        rb.linearVelocity += forceToAdd;
 
         yield return new WaitForSeconds(seconds);
 
@@ -117,10 +123,14 @@ public class Entity : MonoBehaviour
     #region Flip
     public virtual void FlipController(float x)
     {
+        if(isKnocked)
+            return;
+
         if ((facingRight && x < 0) || (!facingRight && x > 0))
             Flip();
     }
 
+    [ContextMenu("Flip")]
     public virtual void Flip()
     {
         facingDir *= -1;
@@ -133,7 +143,12 @@ public class Entity : MonoBehaviour
     public bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
 
     public bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+
+    public bool IsWallOnTheBackDetected() => Physics2D.Raycast(transform.position + (wallCheck.position - transform.position) * -1, Vector2.left * facingDir, wallCheckDistance, whatIsGround);
+    
     #endregion
+
+    public void SwitchKnockability() => canBeKnocked = !canBeKnocked;
 
     public virtual void Damage()
     {

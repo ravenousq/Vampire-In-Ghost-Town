@@ -77,6 +77,7 @@ public class Player : Entity
     {
         base.Awake();
 
+        #region States Initialization
         stateMachine = new PlayerStateMachine();
         idle = new PlayerIdleState(this, stateMachine, "idle");
         move  = new PlayerMoveState(this, stateMachine, "move");    
@@ -92,6 +93,7 @@ public class Player : Entity
         crouch = new PlayerCrouchState(this, stateMachine, "crouch");
         dive = new PlayerDiveState(this, stateMachine, "jump");
         aimGun = new PlayerAimGunState(this, stateMachine, "idle");
+        #endregion
     }
 
     protected override void Start()
@@ -113,6 +115,12 @@ public class Player : Entity
 
         if(Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
+
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            Cursor.visible = !Cursor.visible;
+            Cursor.lockState = Cursor.lockState == CursorLockMode.None ? CursorLockMode.Confined : CursorLockMode.None;
+        }
     }
 
     private void LateUpdate() 
@@ -127,6 +135,9 @@ public class Player : Entity
 
     private void CheckForDashInput()
     {
+        if(isKnocked)
+            return;
+
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
             if(SkillManager.instance.dash.CanUseSkill())
@@ -248,5 +259,16 @@ public class Player : Entity
     public void AssignNewHalo(ReapersHalo newHalo)
     {   
         halo = newHalo;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.gameObject.GetComponent<Enemy>())
+        {
+            if(!isKnocked)
+                Damage();
+
+            Knockback(new Vector2(10, 5), other.gameObject.transform.position.x, .35f);
+        }
     }
 }

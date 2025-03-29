@@ -29,7 +29,8 @@ public class PlayerDashState : PlayerState
     {
         base.Update();
 
-        player.SetVelocity(finalDirections);
+        if(!player.isKnocked)
+            player.SetVelocity(finalDirections);
 
         if(stateTimer < 0)
             stateMachine.ChangeState(player.airborne);
@@ -41,8 +42,12 @@ public class PlayerDashState : PlayerState
 
         player.creatingAfterImage = false;
         player.skills.dash.SwitchBlockade(true);
-        player.ResetVelocity();
-        player.ZeroGravityFor(.1f);
+
+        if(!player.isKnocked)
+        {
+            player.ResetVelocity();
+            player.ZeroGravityFor(.1f);
+        }
     }
 
     

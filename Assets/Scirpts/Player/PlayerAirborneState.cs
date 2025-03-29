@@ -34,7 +34,7 @@ public class PlayerAirborneState : PlayerState
         if(Input.GetKeyDown(KeyCode.Space) && bufferTimer < 0)
             bufferTimer = player.bufferJumpWindow;
 
-        if(xInput != 0 && rb.gravityScale > 0)
+        if(xInput != 0 && rb.gravityScale > 0 && !player.isKnocked)
             player.SetVelocity(player.movementSpeed * .8f * xInput, rb.linearVelocityY);
 
         if(player.IsGroundDetected() && !player.isBusy)

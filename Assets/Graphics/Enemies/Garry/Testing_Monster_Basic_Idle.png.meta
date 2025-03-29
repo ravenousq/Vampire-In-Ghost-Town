@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 61782953b22ae514cb5670a1012123df
+guid: 39f38bcd49074b14f8bae755b9c8a6b2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 823271957767600041
-    second: Testing_Climb_Ladder_0
+      213: -7002204875378967510
+    second: Testing_Monster_Basic_Idle_0
   - first:
-      213: 410325238977098198
-    second: Testing_Climb_Ladder_1
+      213: 3634870006292894876
+    second: Testing_Monster_Basic_Idle_1
   - first:
-      213: 6644738525215053657
-    second: Testing_Climb_Ladder_2
+      213: -5519502756716838039
+    second: Testing_Monster_Basic_Idle_2
   - first:
-      213: -237349294201048980
-    second: Testing_Climb_Ladder_3
+      213: -7569926696010729452
+    second: Testing_Monster_Basic_Idle_3
+  - first:
+      213: 222237592852325674
+    second: Testing_Monster_Basic_Idle_4
+  - first:
+      213: 390178169130095360
+    second: Testing_Monster_Basic_Idle_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -81,7 +87,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -122,89 +128,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Testing_Climb_Ladder_0
+      name: Testing_Monster_Basic_Idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 320
-        height: 320
+        width: 480
+        height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 86ae9b1cc87aa6845b16975abc4e88fb
-      internalID: -1169507834
+      spriteID: a2c378ed3cb23de90800000000000000
+      internalID: -7002204875378967510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Testing_Climb_Ladder_1
+      name: Testing_Monster_Basic_Idle_1
       rect:
         serializedVersion: 2
-        x: 320
+        x: 480
         y: 0
-        width: 320
-        height: 320
+        width: 480
+        height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1f91659a9e05b544ba8ca589251c34dd
-      internalID: 291729393
+      spriteID: c945fc92307a17230800000000000000
+      internalID: 3634870006292894876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Testing_Climb_Ladder_2
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aed6db505c836274bb1d3f8b1b41ca71
-      internalID: 823570289
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Testing_Climb_Ladder_3
+      name: Testing_Monster_Basic_Idle_2
       rect:
         serializedVersion: 2
         x: 960
         y: 0
-        width: 320
-        height: 320
+        width: 480
+        height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d000a622d2b88684297d2a63d3d4673e
-      internalID: 1778235987
+      spriteID: 9638a118c79c663b0800000000000000
+      internalID: -5519502756716838039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Testing_Monster_Basic_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 418b884f6c732f690800000000000000
+      internalID: -7569926696010729452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Testing_Monster_Basic_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2563b9c9eb851300800000000000000
+      internalID: 222237592852325674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Testing_Monster_Basic_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0039c124af03a6500800000000000000
+      internalID: 390178169130095360
       vertices: []
       indices: 
       edges: []
@@ -213,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 79fa22427f147e64985ff7cdc526dfb4
+    spriteID: d2e6a82e8c6024540a2d055fc4eac0ff
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Testing_Climb_Ladder_0: -1169507834
-      Testing_Climb_Ladder_1: 291729393
-      Testing_Climb_Ladder_2: 823570289
-      Testing_Climb_Ladder_3: 1778235987
+      Testing_Monster_Basic_Idle_0: -7002204875378967510
+      Testing_Monster_Basic_Idle_1: 3634870006292894876
+      Testing_Monster_Basic_Idle_2: -5519502756716838039
+      Testing_Monster_Basic_Idle_3: -7569926696010729452
+      Testing_Monster_Basic_Idle_4: 222237592852325674
+      Testing_Monster_Basic_Idle_5: 390178169130095360
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

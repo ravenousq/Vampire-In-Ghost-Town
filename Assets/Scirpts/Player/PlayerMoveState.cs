@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.XInput;
 
@@ -24,7 +25,11 @@ public class PlayerMoveState : PlayerGroundedState
 
         player.anim.SetBool("move_start", false);
 
-        player.SetVelocity(xInput * player.movementSpeed, rb.linearVelocityY);
+        if(!player.isKnocked)
+            player.SetVelocity(xInput * player.movementSpeed, rb.linearVelocityY);
+        else
+            player.SetVelocity(-xInput * player.movementSpeed, rb.linearVelocityY);
+
 
         if(xInput == 0)
             stateMachine.ChangeState(player.idle);

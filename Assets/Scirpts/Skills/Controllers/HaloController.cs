@@ -104,15 +104,16 @@ public class HaloController : SkillController
 
         int bounces = 0;
         int groundLayerMask = player.whatIsGround;
+        int enemyLayerMask = player.whatIsEnemy;
 
-        while (t > 0 && bounces <= 1)
+        while (t > 0 && bounces <= 1 && !Physics2D.Raycast(position, direction, spaceBetweenDots, enemyLayerMask))
         {
-            RaycastHit2D hit = Physics2D.Raycast(position, direction, spaceBetweenDots, groundLayerMask);
+            RaycastHit2D hitWall = Physics2D.Raycast(position, direction, spaceBetweenDots, groundLayerMask);
 
-            if (hit.collider)
+            if (hitWall.collider)
             {
-                direction = Vector2.Reflect(direction, hit.normal);
-                position = hit.point + direction * 0.1f; 
+                direction = Vector2.Reflect(direction, hitWall.normal);
+                position = hitWall.point + direction * 0.1f; 
                 bounces++;
             }
             else

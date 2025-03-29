@@ -124,7 +124,7 @@ public class ReapersHalo : MonoBehaviour
                 foreach (var enemy in enemies)
                 {
                     enemy.GetComponent<Enemy>().Damage();
-                    enemy.GetComponent<Enemy>()?.Knockback(new Vector2(1, 1), transform.position.x, .2f);
+                    //enemy.GetComponent<Enemy>()?.Knockback(new Vector2(5, 0), player.transform.position.x, spinDamageWindow);
                 }
 
                 damageTimer = spinDamageWindow;
@@ -174,7 +174,7 @@ public class ReapersHalo : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) 
     {
         other.GetComponent<Enemy>()?.Damage();    
-        other.GetComponent<Enemy>()?.Knockback(new Vector2(1, 1), transform.position.x, .2f);
+        //other.GetComponent<Enemy>()?.Knockback(new Vector2(1, 1), transform.position.x, .2f);
 
         if(waitForEnemy && other.GetComponent<Enemy>())
             isSpinning = true;
