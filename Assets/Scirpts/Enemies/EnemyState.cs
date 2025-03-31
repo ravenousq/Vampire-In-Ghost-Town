@@ -22,15 +22,23 @@ public class EnemyState
         enemyBase.anim.SetBool(animBoolName, true);
         rb = enemyBase.rb;
         trigger = false;
+
+        //Debug.Log(enemyBase.gameObject.name + " is entering " + animBoolName);
     }
 
     public virtual void Update()
     {
         stateTimer -= Time.deltaTime;
+
+        //Debug.Log(enemyBase.gameObject.name + " is updating " + animBoolName);
     }
 
     public virtual void Exit()
     {
         enemyBase.anim.SetBool(animBoolName, false);
+
+        //Debug.Log(enemyBase.gameObject.name + " is exiting " + animBoolName);
     }
+
+    public virtual void CallTrigger() => trigger = true;
 }

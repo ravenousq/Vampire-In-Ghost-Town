@@ -1,5 +1,3 @@
-using System.Diagnostics;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : Entity
@@ -20,8 +18,9 @@ public class Enemy : Entity
     [Header("Combat")]
     public float attackDistance;
     public float attackCooldown;
-    public float lastTimeAttacked { get; private set; }
+    public Vector2 attackKnockback;
     public Transform attackPoint;
+    public bool canBeStunned { get; private set; }
 
     public System.Action onDamaged;
 
@@ -80,7 +79,39 @@ public class Enemy : Entity
         return false;
     } 
 
-    public virtual void Dodamage() => Physics2D.OverlapCircle(attackPoint.position, attackDistance, whatIsPlayer).gameObject.GetComponent<Player>().Damage();
+    public virtual void DoDamage()
+    {
+        Collider2D[] targets = Physics2D.OverlapCircleAll(attackPoint.position, attackDistance);
+
+        foreach(var hit in targets)
+        {
+            if(hit.GetComponent<Player>())
+            {
+                Player playerTarget = hit.GetComponent<Player>();   
+                playerTarget.Damage();
+                playerTarget.Knockback(attackKnockback, transform.position.x, .5f);
+            }
+
+            if(hit.GetComponent<PerfectDashChecker>())
+            {
+                Destroy(hit.gameObject);
+
+                int currentBullets = PlayerManager.instance.player.currentAmmo;
+
+                int bulletsToRefill = Mathf.RoundToInt((12 - currentBullets)/ 2);
+                PlayerManager.instance.player.ModifyBullets(bulletsToRefill);
+            }
+        }
+    }
+
+    public void OpenParryWindow() => canBeStunned = true;
+
+    public void CloseParryWindow() => canBeStunned = false;
+
+    public virtual void Stun()
+    {
+        
+    }
 
     protected override void OnDrawGizmos()
     {
@@ -90,10 +121,6 @@ public class Enemy : Entity
 
         Gizmos.DrawLine(transform.position - new Vector3(0, .1f), new Vector3(transform.position.x + (aggroRange * facingDir), transform.position.y - .1f));
         Gizmos.DrawLine(transform.position - new Vector3(0, .1f), new Vector3(transform.position.x - (aggroRange/2 * facingDir), transform.position.y - .1f));
-
-        //Gizmos.color = Color.green;
-
-        //Gizmos.DrawLine(transform.position + new Vector3(0, .1f), new Vector3(transform.position.x + (attackDistance * facingDir), transform.position.y + .1f));
 
         Gizmos.color = Color.red;
 

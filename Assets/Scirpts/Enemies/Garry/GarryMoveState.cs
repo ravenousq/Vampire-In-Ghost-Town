@@ -33,6 +33,8 @@ public class GarryMoveState : GarryGroundedState
         if(!enemy.IsGroundDetected() || enemy.IsWallDetected())
             stateMachine.ChangeState(enemy.idle);
     
+        if(enemy.IsPlayerDetected())
+            stateMachine.ChangeState(enemy.aggro);
     }
 
     public override void Exit()

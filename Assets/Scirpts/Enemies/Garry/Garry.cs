@@ -22,12 +22,14 @@ public class Garry : Enemy
         idle = new GarryIdleState(this, stateMachine, "idle", this);
         move = new GarryMoveState(this, stateMachine, "move", this);
         aggro = new GarryAggroState(this, stateMachine, "move", this);
-        attack = new GarryAttackState(this, stateMachine, "idle", this);
+        attack = new GarryAttackState(this, stateMachine, "attack", this);
     }
 
     protected override void Start()
     {
         base.Start();
+
+        onDamaged += BecomeAggresive;
 
         stateMachine.Initialize(idle);
     }
@@ -36,16 +38,27 @@ public class Garry : Enemy
     {
         base.Update();
 
+        //Debug.Log(stateMachine.current.animBoolName);
+
         stateMachine.current.Update();
 
-        if(possibleRoute && Vector2.Distance(transform.position, possibleRoute.gameObject.transform.position) < 2f)
+        AssignPatrolPath();
+    }
+
+    private void AssignPatrolPath()
+    {
+        if (possibleRoute && Vector2.Distance(transform.position, possibleRoute.gameObject.transform.position) < 2f)
         {
             patrolRoute = possibleRoute;
             possibleRoute = null;
         }
     }
 
-    public void BecomeAggresive() => stateMachine.ChangeState(aggro);
+    public void BecomeAggresive()
+    {
+        if(!isAlreadyAggresive())
+            stateMachine.ChangeState(aggro);
+    }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
@@ -61,4 +74,20 @@ public class Garry : Enemy
         if(((1<<other.gameObject.layer) & whatIsPlayer) != 0) 
             BecomeAggresive();
     }
+
+    public bool isAlreadyAggresive()
+    {
+        if(stateMachine.current == aggro || stateMachine.current == attack)
+            return true;
+
+        return false;
+    }
+
+    public override void Stun()
+    {
+        base.Stun();
+
+        stateMachine.ChangeState(aggro);
+    }
+
 }

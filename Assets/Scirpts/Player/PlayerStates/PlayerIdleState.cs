@@ -10,14 +10,14 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-           
+
         player.ResetVelocity();
     }
 
     public override void Update()
     {
         base.Update();
-
+           
         if(!player.isBusy && xInput != 0 && !player.executeBuffer)
             player.stateMachine.ChangeState(player.move);
     }

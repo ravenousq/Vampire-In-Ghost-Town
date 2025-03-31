@@ -6,6 +6,7 @@ using Libs;
 public class SkillManager : MonoBehaviour
 {
     public static SkillManager instance;
+    public ParryController parry { get; private set; }
     public DashController dash { get; private set; }
     public WantedController wanted { get; private set; }
     public HaloController halo { get; private set; }
@@ -20,6 +21,7 @@ public class SkillManager : MonoBehaviour
         else 
             Destroy(gameObject);
 
+        parry = GetComponent<ParryController>();
         dash = GetComponent<DashController>();
         wanted = GetComponent<WantedController>();
         halo = GetComponent<HaloController>();

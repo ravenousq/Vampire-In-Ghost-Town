@@ -15,11 +15,16 @@ public class PlayerGroundedState : PlayerState
 
         player.canWallSlide = true;
         player.skills.dash.SwitchBlockade(false);
+
+        player.EndKnockback();
     }
 
     public override void Update()
     {
         base.Update();
+
+        if(Input.GetKeyDown(KeyCode.Q) && SkillManager.instance.parry.CanUseSkill())
+            stateMachine.ChangeState(player.parry);
 
         if(Input.GetKey(KeyCode.S) && !player.isBusy)
             stateMachine.ChangeState(player.crouch);

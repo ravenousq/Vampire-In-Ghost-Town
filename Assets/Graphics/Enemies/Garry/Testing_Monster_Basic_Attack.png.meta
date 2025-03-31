@@ -1,25 +1,28 @@
 fileFormatVersion: 2
-guid: 39f38bcd49074b14f8bae755b9c8a6b2
+guid: 58707eb6a0d5d1d46bbae5f0b1bd16ba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7002204875378967510
-    second: Testing_Monster_Basic_Idle_0
+      213: -4213313507244229716
+    second: Testing_Monster_Basic_Attack_0
   - first:
-      213: 3634870006292894876
-    second: Testing_Monster_Basic_Idle_1
+      213: 7034492367458522638
+    second: Testing_Monster_Basic_Attack_1
   - first:
-      213: -5519502756716838039
-    second: Testing_Monster_Basic_Idle_2
+      213: 5880109729141281783
+    second: Testing_Monster_Basic_Attack_2
   - first:
-      213: -7569926696010729452
-    second: Testing_Monster_Basic_Idle_3
+      213: 3265072075838132775
+    second: Testing_Monster_Basic_Attack_3
   - first:
-      213: 222237592852325674
-    second: Testing_Monster_Basic_Idle_4
+      213: -6117782692820810155
+    second: Testing_Monster_Basic_Attack_4
   - first:
-      213: 390178169130095360
-    second: Testing_Monster_Basic_Idle_5
+      213: -1742882090762670504
+    second: Testing_Monster_Basic_Attack_5
+  - first:
+      213: -208130614188860236
+    second: Testing_Monster_Basic_Attack_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,7 +131,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Testing_Monster_Basic_Idle_0
+      name: Testing_Monster_Basic_Attack_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2c378ed3cb23de90800000000000000
-      internalID: -7002204875378967510
+      spriteID: cab3a5130bd4785c0800000000000000
+      internalID: -4213313507244229716
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Testing_Monster_Basic_Idle_1
+      name: Testing_Monster_Basic_Attack_1
       rect:
         serializedVersion: 2
         x: 640
@@ -165,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c945fc92307a17230800000000000000
-      internalID: 3634870006292894876
+      spriteID: e06df81b9898f9160800000000000000
+      internalID: 7034492367458522638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Testing_Monster_Basic_Idle_2
+      name: Testing_Monster_Basic_Attack_2
       rect:
         serializedVersion: 2
         x: 1280
@@ -187,14 +190,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9638a118c79c663b0800000000000000
-      internalID: -5519502756716838039
+      spriteID: 7f3d8cdf4a85a9150800000000000000
+      internalID: 5880109729141281783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Testing_Monster_Basic_Idle_3
+      name: Testing_Monster_Basic_Attack_3
       rect:
         serializedVersion: 2
         x: 1920
@@ -209,14 +212,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 418b884f6c732f690800000000000000
-      internalID: -7569926696010729452
+      spriteID: 722116ef0cddf4d20800000000000000
+      internalID: 3265072075838132775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Testing_Monster_Basic_Idle_4
+      name: Testing_Monster_Basic_Attack_4
       rect:
         serializedVersion: 2
         x: 2560
@@ -231,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2563b9c9eb851300800000000000000
-      internalID: 222237592852325674
+      spriteID: 5560265ed05491ba0800000000000000
+      internalID: -6117782692820810155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Testing_Monster_Basic_Idle_5
+      name: Testing_Monster_Basic_Attack_5
       rect:
         serializedVersion: 2
         x: 3200
@@ -253,8 +256,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0039c124af03a6500800000000000000
-      internalID: 390178169130095360
+      spriteID: 85e63bef8f900d7e0800000000000000
+      internalID: -1742882090762670504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Testing_Monster_Basic_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc93622f429c1df0800000000000000
+      internalID: -208130614188860236
       vertices: []
       indices: 
       edges: []
@@ -263,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 23d3bf33aa95a4f4f9a88456adfd533a
+    spriteID: 7b9879e381e165f45a2fe303f737a60f
     internalID: 0
     vertices: []
     indices: 
@@ -273,12 +298,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Testing_Monster_Basic_Idle_0: -7002204875378967510
-      Testing_Monster_Basic_Idle_1: 3634870006292894876
-      Testing_Monster_Basic_Idle_2: -5519502756716838039
-      Testing_Monster_Basic_Idle_3: -7569926696010729452
-      Testing_Monster_Basic_Idle_4: 222237592852325674
-      Testing_Monster_Basic_Idle_5: 390178169130095360
+      Testing_Monster_Basic_Attack_0: -4213313507244229716
+      Testing_Monster_Basic_Attack_1: 7034492367458522638
+      Testing_Monster_Basic_Attack_2: 5880109729141281783
+      Testing_Monster_Basic_Attack_3: 3265072075838132775
+      Testing_Monster_Basic_Attack_4: -6117782692820810155
+      Testing_Monster_Basic_Attack_5: -1742882090762670504
+      Testing_Monster_Basic_Attack_6: -208130614188860236
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

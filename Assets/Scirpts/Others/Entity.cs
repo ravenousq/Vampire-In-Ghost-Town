@@ -64,7 +64,7 @@ public class Entity : MonoBehaviour
         FlipController(x);
     }
 
-    public void ResetVelocity() => rb.linearVelocity = Vector2.zero;
+    public void ResetVelocity() => rb.linearVelocity = isKnocked ? rb.linearVelocity : Vector2.zero;
     #endregion
 
     public void ZeroGravityFor(float seconds)
@@ -117,6 +117,11 @@ public class Entity : MonoBehaviour
 
         yield return new WaitForSeconds(seconds);
 
+        isKnocked = false;
+    }
+
+    public void EndKnockback()
+    {
         isKnocked = false;
     }
 

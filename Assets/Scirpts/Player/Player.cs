@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [SelectionBase]
@@ -23,12 +21,13 @@ public class Player : Entity
     public PlayerCrouchState crouch { get; private set; }
     public PlayerDiveState dive { get; private set; }
     public PlayerAimGunState aimGun { get; private set; }
+    public PlayerParryState parry { get; private set; }
     #endregion
-
 
     [Header("Movement")]
     public float movementSpeed;
     public float jumpForce;
+    public float gravityScale;
     public float coyoteJumpWindow;
     public float bufferJumpWindow;
     public float wallSlideTime;
@@ -47,6 +46,7 @@ public class Player : Entity
     public float reloadMovementSpeed;
     public float attackWindow;
     public int[] attackMovement;
+    public float parryWindow;
     public GameObject reloadTorso;
 
     [Header("Abilities")]
@@ -57,6 +57,7 @@ public class Player : Entity
 
     [Header("Prefabs")]
     [SerializeField] private AfterImage afterImage;
+    [SerializeField] private PerfectDashChecker dashCheckerPrefab; 
 
     #region Flags
     [HideInInspector] public bool playStartAnim = true;
@@ -93,12 +94,15 @@ public class Player : Entity
         crouch = new PlayerCrouchState(this, stateMachine, "crouch");
         dive = new PlayerDiveState(this, stateMachine, "jump");
         aimGun = new PlayerAimGunState(this, stateMachine, "idle");
+        parry = new PlayerParryState(this, stateMachine, "idle");
         #endregion
     }
 
     protected override void Start()
     {
         base.Start();
+
+        rb.gravityScale = gravityScale;
 
         skills = SkillManager.instance;
         stateMachine.Initialize(idle);
@@ -112,6 +116,8 @@ public class Player : Entity
     protected override void Update()
     {
         stateMachine.current.Update();
+
+        rb.gravityScale = gravityScale;
 
         if(Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
@@ -145,6 +151,8 @@ public class Player : Entity
                 stateMachine.ChangeState(dash);
                 creatingAfterImage = true;
                 InvokeRepeating(nameof(CreateAfterImage), 0, .02f);
+                if(SkillManager.instance.isSkillUnlocked("Incense & Iron"))
+                    Instantiate(dashCheckerPrefab, transform.position, Quaternion.identity);
             }
         }
     }
@@ -270,5 +278,14 @@ public class Player : Entity
 
             Knockback(new Vector2(10, 5), other.gameObject.transform.position.x, .35f);
         }
+    }
+
+    protected override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+
+        Gizmos.color = Color.blue;
+
+        Gizmos.DrawWireSphere(transform.position, 3);
     }
 }

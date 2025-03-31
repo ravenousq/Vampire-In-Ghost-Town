@@ -21,7 +21,8 @@ public class PlayerReloadState : PlayerState
 
         player.anim.SetInteger("facingDir", player.facingDir);
 
-        rb.linearVelocity = new Vector2(xInput * player.reloadMovementSpeed, 0);
+        if(!player.isKnocked)
+            rb.linearVelocity = new Vector2(xInput * player.reloadMovementSpeed, 0);
 
         if(trigger)
             stateMachine.ChangeState(player.idle);

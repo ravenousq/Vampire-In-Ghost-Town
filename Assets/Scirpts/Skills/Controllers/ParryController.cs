@@ -1,6 +1,6 @@
+using UnityEngine;
 
-
-public class DashController : SkillController
+public class ParryController : SkillController
 {
     public override void UseSkill()
     {

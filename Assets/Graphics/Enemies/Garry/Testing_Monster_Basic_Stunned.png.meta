@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 39f38bcd49074b14f8bae755b9c8a6b2
+guid: 45f263c963b882e45a1afe501b0abcaf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7002204875378967510
-    second: Testing_Monster_Basic_Idle_0
+      213: 4712878404184500819
+    second: Testing_Monster_Basic_Stunned_0
   - first:
-      213: 3634870006292894876
-    second: Testing_Monster_Basic_Idle_1
+      213: 6626968056249081660
+    second: Testing_Monster_Basic_Stunned_1
   - first:
-      213: -5519502756716838039
-    second: Testing_Monster_Basic_Idle_2
+      213: -5464587285056406088
+    second: Testing_Monster_Basic_Stunned_2
   - first:
-      213: -7569926696010729452
-    second: Testing_Monster_Basic_Idle_3
-  - first:
-      213: 222237592852325674
-    second: Testing_Monster_Basic_Idle_4
-  - first:
-      213: 390178169130095360
-    second: Testing_Monster_Basic_Idle_5
+      213: -3549633898609757604
+    second: Testing_Monster_Basic_Stunned_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Testing_Monster_Basic_Idle_0
+      name: Testing_Monster_Basic_Stunned_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2c378ed3cb23de90800000000000000
-      internalID: -7002204875378967510
+      spriteID: 35ae60f40f1876140800000000000000
+      internalID: 4712878404184500819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Testing_Monster_Basic_Idle_1
+      name: Testing_Monster_Basic_Stunned_1
       rect:
         serializedVersion: 2
         x: 640
@@ -165,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c945fc92307a17230800000000000000
-      internalID: 3634870006292894876
+      spriteID: c3f56920658b7fb50800000000000000
+      internalID: 6626968056249081660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Testing_Monster_Basic_Idle_2
+      name: Testing_Monster_Basic_Stunned_2
       rect:
         serializedVersion: 2
         x: 1280
@@ -187,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9638a118c79c663b0800000000000000
-      internalID: -5519502756716838039
+      spriteID: 8bdb81e11d2e924b0800000000000000
+      internalID: -5464587285056406088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Testing_Monster_Basic_Idle_3
+      name: Testing_Monster_Basic_Stunned_3
       rect:
         serializedVersion: 2
         x: 1920
@@ -209,52 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 418b884f6c732f690800000000000000
-      internalID: -7569926696010729452
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Testing_Monster_Basic_Idle_4
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a2563b9c9eb851300800000000000000
-      internalID: 222237592852325674
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Testing_Monster_Basic_Idle_5
-      rect:
-        serializedVersion: 2
-        x: 3200
-        y: 0
-        width: 640
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0039c124af03a6500800000000000000
-      internalID: 390178169130095360
+      spriteID: c523ea6a6ca2dbec0800000000000000
+      internalID: -3549633898609757604
       vertices: []
       indices: 
       edges: []
@@ -263,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 23d3bf33aa95a4f4f9a88456adfd533a
+    spriteID: 89d49ef5f1f486a4b9a938aeb54500f2
     internalID: 0
     vertices: []
     indices: 
@@ -273,12 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Testing_Monster_Basic_Idle_0: -7002204875378967510
-      Testing_Monster_Basic_Idle_1: 3634870006292894876
-      Testing_Monster_Basic_Idle_2: -5519502756716838039
-      Testing_Monster_Basic_Idle_3: -7569926696010729452
-      Testing_Monster_Basic_Idle_4: 222237592852325674
-      Testing_Monster_Basic_Idle_5: 390178169130095360
+      Testing_Monster_Basic_Stunned_0: 4712878404184500819
+      Testing_Monster_Basic_Stunned_1: 6626968056249081660
+      Testing_Monster_Basic_Stunned_2: -5464587285056406088
+      Testing_Monster_Basic_Stunned_3: -3549633898609757604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

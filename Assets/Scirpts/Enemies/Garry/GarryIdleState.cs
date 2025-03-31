@@ -22,6 +22,9 @@ public class GarryIdleState : GarryGroundedState
 
         if(stateTimer < 0)
             stateMachine.ChangeState(enemy.move);
+
+        if(enemy.IsPlayerDetected())
+            stateMachine.ChangeState(enemy.aggro);
     }
 
     public override void Exit()

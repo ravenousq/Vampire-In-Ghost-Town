@@ -7,6 +7,7 @@ public class PlayerPrimaryAttackState : PlayerState
 {
     private int comboCounter;
     private float lastTimeAttacked;
+    private float attackDir;
 
     public PlayerPrimaryAttackState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
@@ -17,7 +18,7 @@ public class PlayerPrimaryAttackState : PlayerState
     {
         base.Enter();
 
-        float attackDir = player.facingDir;
+        attackDir = player.facingDir;
 
         if(xInput != 0)
             attackDir = xInput;
@@ -26,8 +27,7 @@ public class PlayerPrimaryAttackState : PlayerState
 
         if(lastTimeAttacked < Time.time - player.attackWindow || comboCounter > 2)
             comboCounter = 0;
-        
-        rb.linearVelocityX = player.attackMovement[comboCounter] * attackDir;
+
         stateTimer = .1f;
 
         player.anim.SetInteger("combo", comboCounter);
@@ -41,8 +41,11 @@ public class PlayerPrimaryAttackState : PlayerState
     {
         base.Update();
 
-        if (stateTimer < 0 || player.CloseToEdge())
+
+        if(stateTimer < 0 || player.CloseToEdge())
             player.ResetVelocity();
+        else
+            rb.linearVelocityX = player.attackMovement[comboCounter] * attackDir;
 
         if(player.attackTrigger)
         {
@@ -50,7 +53,7 @@ public class PlayerPrimaryAttackState : PlayerState
             player.attackTrigger = false;
         }
 
-        if (trigger)
+        if(trigger)
             stateMachine.ChangeState(player.idle);
         
     }

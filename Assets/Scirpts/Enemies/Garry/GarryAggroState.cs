@@ -5,6 +5,7 @@ public class GarryAggroState : GarryGroundedState
     private Player player;
     private bool playerGone;
     private float attackTimer;
+    private float aggroMultiplayer = 2;
 
     public GarryAggroState(Enemy enemyBase, EnemyStateMachine stateMachine, string animBoolName, Garry enemy) : base(enemyBase, stateMachine, animBoolName, enemy)
     {
@@ -17,11 +18,10 @@ public class GarryAggroState : GarryGroundedState
 
         player = PlayerManager.instance.player;
         
-        enemy.anim.speed = 1.5f;
+        enemy.anim.speed = aggroMultiplayer;
+        playerGone = false;
 
-        enemy.onDamaged -= enemy.BecomeAggresive;
-
-        attackTimer = Physics2D.OverlapCircle(enemy.attackPoint.position, enemy.attackDistance/ 2, enemy.whatIsPlayer) ? enemy.attackCooldown : 0;
+        attackTimer = Physics2D.OverlapCircle(enemy.attackPoint.position, enemy.attackDistance/ 2, enemy.whatIsPlayer) ? enemy.attackCooldown : 1;
     }
 
     public override void Update()
@@ -32,7 +32,7 @@ public class GarryAggroState : GarryGroundedState
 
         if(enemy.IsPlayerDetected())
         {
-            stateTimer = 1f;
+            stateTimer = 10f;
             playerGone = false;
         }
 
@@ -41,16 +41,20 @@ public class GarryAggroState : GarryGroundedState
             playerGone = true;
             stateTimer = enemy.aggroTime;
         }
-        
-        if(!Physics2D.OverlapCircle(enemy.attackPoint.position, enemy.attackDistance/ 2, enemy.whatIsPlayer))
-            enemy.SetVelocity(enemy.movementSpeed * playerOnRight() * 1.5f, rb.linearVelocityY);
-        else if(Physics2D.OverlapCircle(enemy.attackPoint.position, enemy.attackDistance/ 2, enemy.whatIsPlayer) && attackTimer > 0)
-            enemy.ResetVelocity();
+
+        if(!Physics2D.OverlapCircle(enemy.attackPoint.position, enemy.attackDistance /2, enemy.whatIsPlayer))
+            enemy.SetVelocity(enemy.movementSpeed * playerOnRight() * aggroMultiplayer, rb.linearVelocityY);
         else
-            stateMachine.ChangeState(enemy.attack);
+        {
+            if(attackTimer > 0)
+                enemy.ResetVelocity();
+            else
+                stateMachine.ChangeState(enemy.attack);
+        }
 
         if(stateTimer < 0 && !enemy.IsPlayerDetected())
             stateMachine.ChangeState(enemy.idle);
+
     }
 
     public override void Exit()
