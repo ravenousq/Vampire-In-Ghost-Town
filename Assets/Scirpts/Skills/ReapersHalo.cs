@@ -123,8 +123,10 @@ public class ReapersHalo : MonoBehaviour
 
                 foreach (var enemy in enemies)
                 {
-                    enemy.GetComponent<Enemy>().stats.TakeDamage(3);
-                    enemy.GetComponent<Enemy>().stats.LosePoise(3);
+                    if(SkillManager.instance.isSkillUnlocked("Spill Blood On Fire"))
+                        SpinRecovery(enemy);
+                    else
+                        SpinDamage(enemy);
                 }
 
                 damageTimer = spinDamageWindow;
@@ -132,6 +134,21 @@ public class ReapersHalo : MonoBehaviour
         }
         
     }
+
+    private void SpinRecovery(Collider2D enemy)
+    {
+        enemy.GetComponent<EnemyStats>().OnDie += RecoverBullets;
+        SpinDamage(enemy);
+        enemy.GetComponent<EnemyStats>().OnDie -= RecoverBullets;
+    }
+
+    private static void SpinDamage(Collider2D enemy)
+    {
+        enemy.GetComponent<Enemy>().stats.LosePoise(3);
+        enemy.GetComponent<Enemy>().stats.TakeDamage(3);
+    }
+
+    private void RecoverBullets() => player.ModifyBullets(3);
 
     private void DestroyMe()
     {
@@ -173,19 +190,31 @@ public class ReapersHalo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.GetComponent<Enemy>())
+        if(other.GetComponent<Enemy>() && !isSpinning)
         {
-            if(!isOrbiting)
-                player.stats.DoDamage(other.GetComponent<EnemyStats>(), Vector2.zero, 0, 10);
-            else
-                player.stats.DoDamage(other.GetComponent<EnemyStats>(), Vector2.zero, 0, 10, .3f);
+            if(other.GetComponent<EnemyStats>().OnDie != RecoverBullets && SkillManager.instance.isSkillUnlocked("Spill Blood On Fire"))
+                other.GetComponent<EnemyStats>().OnDie += RecoverBullets;
+
+            BasicAndOrbitingDamage(other);
+
+            if(SkillManager.instance.isSkillUnlocked("Spill Blood On Fire"))
+                other.GetComponent<EnemyStats>().OnDie -= RecoverBullets;
+
         }
-        
+
         if(waitForEnemy && other.GetComponent<Enemy>())
             isSpinning = true;
 
         if(collisionTimer < 0 && other.GetComponent<Player>())
             numberOfTurns--;
+    }
+
+    private void BasicAndOrbitingDamage(Collider2D other)
+    {
+        if (!isOrbiting)
+            player.stats.DoDamage(other.GetComponent<EnemyStats>(), Vector2.zero, 0, 10);
+        else
+            player.stats.DoDamage(other.GetComponent<EnemyStats>(), Vector2.zero, 0, 10, .3f);
     }
 
     private void OnTriggerStay2D(Collider2D other) 

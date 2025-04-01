@@ -19,6 +19,8 @@ public class PlayerClimbState : PlayerState
         stateTimer = 1f;
         rb.bodyType = RigidbodyType2D.Kinematic;
         sideToExit = player.ladderToClimb.GetComponent<Ladder>().sideToExit;
+
+        player.stats.OnDamaged += FallOfTheLadder;
     }
 
     public override void Update()
@@ -65,5 +67,8 @@ public class PlayerClimbState : PlayerState
         player.SetVelocity(3 * sideToExit, 3);
         player.BusyFor(.4f);
         player.anim.speed = 1;
+        player.stats.OnDamaged -= FallOfTheLadder;
     }
+
+    private void FallOfTheLadder() => player.TriggerLadder(null);
 }

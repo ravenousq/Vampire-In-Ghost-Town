@@ -2,7 +2,6 @@ using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 
-//FIXME: make sure ammo consumption is legit;
 public class WantedController : SkillController
 {
     [Header("Wanted Dead")]

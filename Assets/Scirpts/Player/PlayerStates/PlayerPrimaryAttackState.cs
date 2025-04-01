@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class PlayerPrimaryAttackState : PlayerState
@@ -69,28 +70,37 @@ public class PlayerPrimaryAttackState : PlayerState
     }
 
     private void DamageTargets()
+{
+    RaycastHit2D[] hits = Physics2D.RaycastAll(
+        new Vector2(player.transform.position.x + player.cd.size.x / 1.2f * player.facingDir, 
+                    player.transform.position.y + player.cd.size.y / 5), 
+        Vector2.right * player.facingDir, 
+        player.effectiveAttackRange
+    );
+
+    float damageDecrease = 1;
+
+    foreach (var hit in hits)
     {
-        RaycastHit2D[] hits = Physics2D.RaycastAll(new Vector2(player.transform.position.x + player.cd.size.x / 1.5f * player.facingDir, player.transform.position.y + player.cd.size.y / 3), Vector2.right * player.facingDir);
+        if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            break;
 
-        float damageDecrease = 1;
-
-        foreach (var hit in hits)
+        if (hit.collider.gameObject.GetComponent<Enemy>())
         {
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
-                break;
+            float distance = Mathf.Clamp(Vector2.Distance(new Vector2(player.transform.position.x + player.cd.size.x / 1.2f * player.facingDir, player.transform.position.y + player.cd.size.y / 5), hit.point) - 1f, .1f, player.effectiveAttackRange);
+            float distanceModifier = Mathf.Lerp(1f, 0.3f, distance / player.effectiveAttackRange); 
 
-            else if(hit.collider.gameObject.GetComponent<Enemy>())
-            {
-                player.stats.DoDamage(hit.collider.gameObject.GetComponent<EnemyStats>(), Vector2.zero, 0, player.poiseDamage, damageDecrease);
+            player.stats.DoDamage(hit.collider.gameObject.GetComponent<EnemyStats>(), Vector2.zero, 0, player.poiseDamage, damageDecrease * distanceModifier);
 
-                if(comboCounter == 2)
-                    player.stats.DoDamage(hit.collider.gameObject.GetComponent<EnemyStats>(), Vector2.zero, 0, player.poiseDamage, damageDecrease);
-                    
-                damageDecrease *= .7f;
-            }
+            if (comboCounter == 2)
+                player.stats.DoDamage(hit.collider.gameObject.GetComponent<EnemyStats>(), Vector2.zero, 0, player.poiseDamage, damageDecrease * distanceModifier);
 
-            if(!player.skills.isSkillUnlocked("Vokul Fen Mah"))
-                return;
+            damageDecrease *= .7f;
         }
+
+        if (!player.skills.isSkillUnlocked("Vokul Fen Mah"))
+            return;
     }
+}
+
 }

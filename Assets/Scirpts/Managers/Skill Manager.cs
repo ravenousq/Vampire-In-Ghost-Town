@@ -11,6 +11,8 @@ public class SkillManager : MonoBehaviour
     public WantedController wanted { get; private set; }
     public HaloController halo { get; private set; }
 
+    public bool debugging;
+
     private void Awake() 
     {
         if(!instance)    

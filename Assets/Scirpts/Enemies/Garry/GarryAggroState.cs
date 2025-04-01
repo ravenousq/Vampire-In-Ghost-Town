@@ -6,6 +6,7 @@ public class GarryAggroState : GarryGroundedState
     private bool playerGone;
     private float attackTimer;
     private float aggroMultiplayer = 2;
+    private float randomizedDistance;
 
     public GarryAggroState(Enemy enemyBase, EnemyStateMachine stateMachine, string animBoolName, Garry enemy) : base(enemyBase, stateMachine, animBoolName, enemy)
     {
@@ -15,9 +16,12 @@ public class GarryAggroState : GarryGroundedState
     public override void Enter()
     {
         base.Enter();
+        
+        enemy.stats.OnDamaged -= enemy.BecomeAggresive;
 
         player = PlayerManager.instance.player;
-        
+        randomizedDistance = Random.Range(enemy.attackDistance /1.5f, enemy.attackDistance /3);
+
         enemy.anim.speed = aggroMultiplayer;
         playerGone = false;
 
@@ -41,8 +45,8 @@ public class GarryAggroState : GarryGroundedState
             playerGone = true;
             stateTimer = enemy.aggroTime;
         }
-        //TODO: randomize Garry's movement while aggro;
-        if(!Physics2D.OverlapCircle(enemy.attackPoint.position, enemy.attackDistance /2, enemy.whatIsPlayer))
+
+        if(!Physics2D.OverlapCircle(enemy.attackPoint.position, randomizedDistance, enemy.whatIsPlayer))
             enemy.SetVelocity(enemy.movementSpeed * playerOnRight() * aggroMultiplayer, rb.linearVelocityY);
         else
         {

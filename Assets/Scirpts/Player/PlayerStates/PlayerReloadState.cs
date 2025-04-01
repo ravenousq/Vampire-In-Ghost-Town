@@ -13,6 +13,10 @@ public class PlayerReloadState : PlayerState
 
         player.anim.SetInteger("facingDir", player.facingDir);
         player.reloadTorso.SetActive(true);
+        player.stats.OnDamaged += BlinkWhileReloading;
+
+        player.skills.dash.SwitchBlockade(true);
+        player.skills.halo.SwitchBlockade(true);
     }
 
     public override void Update()
@@ -35,6 +39,13 @@ public class PlayerReloadState : PlayerState
         player.anim.SetInteger("facingDir", player.facingDir);
 
         player.Reload();
+        player.stats.OnDamaged -= BlinkWhileReloading;
         player.reloadTorso.SetActive(false);
+
+        player.skills.dash.SwitchBlockade(false);
+        player.skills.halo.SwitchBlockade(false);
     }
+
+    private void BlinkWhileReloading() => player.reloadTorso.GetComponent<FX>().IFramesFlashing(player.stats.iFrames);
+    
 }

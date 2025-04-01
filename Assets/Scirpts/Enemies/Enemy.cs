@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : Entity
@@ -52,8 +53,8 @@ public class Enemy : Entity
     {
         base.Damage();
 
-        if(onDamaged != null)
-            onDamaged();
+        if(stats.OnDamaged != null)
+            stats.OnDamaged();
     }
 
     public virtual bool IsPlayerDetected()
@@ -106,6 +107,17 @@ public class Enemy : Entity
         }
     }
 
+    public virtual void BecomeAggresive()
+    {
+        if(isAlreadyAggresive())
+            return;
+    }
+
+    public virtual bool  isAlreadyAggresive()
+    {
+        return false;
+    }
+
     public void OpenParryWindow() => canBeStunned = true;
 
     public void CloseParryWindow() => canBeStunned = false;
@@ -120,6 +132,22 @@ public class Enemy : Entity
         base.Die();
 
         Destroy(gameObject);
+    }
+
+    public override void Flip()
+    {
+        StartCoroutine(StopMovingFor(.6f));
+
+        base.Flip();
+    }
+
+    protected IEnumerator StopMovingFor(float seconds)
+    {
+        canMove = false;
+
+        yield return new WaitForSeconds(seconds);
+
+        canMove = true;
     }
 
     protected override void OnDrawGizmos()

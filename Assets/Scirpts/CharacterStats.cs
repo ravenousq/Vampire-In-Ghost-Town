@@ -2,7 +2,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 //TODO: apply stun mechanic;
-//TODO: add on die events and apply them to skills
 public class CharacterStats : MonoBehaviour
 {
     public Entity entity { get; private set; }
@@ -26,10 +25,11 @@ public class CharacterStats : MonoBehaviour
     [SerializeField] protected int poiseTracker;
     public System.Action OnDamaged;
     public System.Action OnStunned;
-    public bool isStunned { get; private set; }
+    public bool isStunned { get; protected set; }
     private const int BASE_POISE_THRESHOLD = 100;
     private const int POISE_RECOVERY_RATE = 3;
-    public bool canBeDamaged { get; private set; } = true;
+    public bool canBeDamaged { get; protected set; } = true;
+    [SerializeField] private bool debugDamage;
 
     protected virtual void Start() 
     {
@@ -42,6 +42,11 @@ public class CharacterStats : MonoBehaviour
         InvokeRepeating(nameof(RecoverPoise), 0, 1f);
 
         brutality.SetDefaultValue(5);
+    }
+
+    protected virtual void Update()
+    {
+
     }
 
     protected virtual void Die()
@@ -64,7 +69,7 @@ public class CharacterStats : MonoBehaviour
 
         poiseTracker += poiseToLose;
 
-        Debug.Log(name + " lost " + poiseToLose + " poise.");
+        //Debug.Log(name + " lost " + poiseToLose + " poise.");
 
         if(poiseTracker > BASE_POISE_THRESHOLD)
         {
@@ -78,20 +83,25 @@ public class CharacterStats : MonoBehaviour
     {
         if(target.HP <= 0 || !target.canBeDamaged)
         {
-            Debug.Log(target.name + " is already dead... or is he?");
+            Debug.Log(target.name + " is dead or cannot be damaged.");
             return false;
         }
 
+        int baseDamageDebug, armorDamageDebug = 0, brutalityDamageDebug = 0, finalDamageDebug, lostPoiseDebug = 0;
+
          if(!target.isStunned)
+         {
             target.LosePoise(Mathf.RoundToInt(poiseDamage * damageMultiplyer));
+            lostPoiseDebug = Mathf.RoundToInt(poiseDamage * damageMultiplyer);
+         }
 
         int totalDamage = damage.GetValue();
-        Debug.Log("Base Damage is: " + totalDamage);
+       baseDamageDebug = totalDamage;
 
         if(!CanOmitArmor() && !target.isStunned)
         {
             totalDamage = Mathf.RoundToInt(totalDamage * (target.armor.GetValue() / 20f));
-            Debug.Log("Damage after applying armor is: " + totalDamage);
+            armorDamageDebug = totalDamage;
         }
 
         if(!target.isStunned)
@@ -99,12 +109,14 @@ public class CharacterStats : MonoBehaviour
         else
         {
             totalDamage += Mathf.RoundToInt(totalDamage * (brutality.GetValue() * .1f));
-            Debug.Log("Damage after applying brutality: " + totalDamage);
+            brutalityDamageDebug = totalDamage;
         }
 
         target.TakeDamage(Mathf.RoundToInt(totalDamage * damageMultiplyer));
+        finalDamageDebug = Mathf.RoundToInt(totalDamage * damageMultiplyer);
 
-        Debug.Log(target.name + " was dealt " + Mathf.RoundToInt(totalDamage * damageMultiplyer) + " damage.");
+        if(debugDamage)
+            Debug.Log(name + " deals " + finalDamageDebug + " damage to " + target.name + ";\nBase damage was: " + baseDamageDebug + ";\n Damage after applying armor was: " + armorDamageDebug + ";\nDamage after applying brutality was: " + brutalityDamageDebug + ";\nLost poise: " + lostPoiseDebug);
 
         return true;
     }
@@ -136,18 +148,7 @@ public class CharacterStats : MonoBehaviour
             OnDamaged();
     }
 
-    //public virtual bool CanOmitArmor() => Random.Range(0, 101) <= agility.GetValue() * 5;
-
-    public virtual bool CanOmitArmor()
-    {
-        if(Random.Range(0, 101) <= agility.GetValue() * 5)
-        {
-            Debug.Log(name + " negated enemy's armor.");
-            return true;
-        }
-
-        return false;
-    }
+    public virtual bool CanOmitArmor() => Random.Range(0, 101) <= agility.GetValue() * 5;
 
     public void CanBeDamaged(bool value) => canBeDamaged = value;
 }

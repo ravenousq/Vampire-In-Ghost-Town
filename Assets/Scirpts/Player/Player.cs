@@ -48,8 +48,10 @@ public class Player : Entity
     public float reloadMovementSpeed;
     public float attackWindow;
     public int[] attackMovement;
+    public float effectiveAttackRange;
     public float parryWindow;
     public GameObject reloadTorso;
+
 
     [Header("Abilities & Stats")]
     public SkillManager skills;
@@ -121,8 +123,6 @@ public class Player : Entity
     protected override void Update()
     {
         stateMachine.current.Update();
-
-        rb.gravityScale = gravityScale;
 
         if(Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
@@ -299,7 +299,9 @@ public class Player : Entity
         base.OnDrawGizmos();
 
         Gizmos.color = Color.blue;
-
         Gizmos.DrawWireSphere(transform.position, 3);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(new Vector2(transform.position.x + 1.2f / 1.2f * facingDir, transform.position.y + 2.7f / 5), new Vector2(transform.position.x + (1.2f / 1.2f) + (effectiveAttackRange * facingDir), transform.position.y + 2.7f / 5));
     }
 }

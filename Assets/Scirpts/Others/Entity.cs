@@ -23,6 +23,7 @@ public class Entity : MonoBehaviour
     public bool isBusy{ get; private set; }
     public bool isKnocked { get; private set; }
     public bool canBeKnocked { get; private set; } = true;
+    public bool canMove { get; protected set; } = true;
     #endregion
 
 
@@ -52,16 +53,22 @@ public class Entity : MonoBehaviour
     #region Velocity
     public void SetVelocity(Vector2 velocity)
     {
-        rb.linearVelocity = velocity;
-
         FlipController(velocity.x);
+        
+        if(canMove)
+            rb.linearVelocity = velocity;
+        else
+            ResetVelocity();
     }
 
     public void SetVelocity(float x, float y)
     {
-        rb.linearVelocity = new Vector2(x, y);
-
         FlipController(x);
+
+        if(canMove)
+            rb.linearVelocity = new Vector2(x, y);
+        else
+            ResetVelocity();
     }
 
     public void ResetVelocity() => rb.linearVelocity = isKnocked ? rb.linearVelocity : Vector2.zero;
@@ -98,7 +105,7 @@ public class Entity : MonoBehaviour
 
     public virtual void Knockback(Vector2 direction, float xPosition, float seconds)
     {
-        if(isKnocked || !canBeKnocked)
+        if(isKnocked || !canBeKnocked )//|| !GetComponent<CharacterStats>().canBeDamaged)
             return;
 
         StartCoroutine(KnockbackRoutine(direction, xPosition, seconds));

@@ -1,8 +1,11 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerAnimationTrigger : MonoBehaviour
 {
+    FX fx => GetComponent<FX>();
+
     private Player player;
 
     private void Awake() 

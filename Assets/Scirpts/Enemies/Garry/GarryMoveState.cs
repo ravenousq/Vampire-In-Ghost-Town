@@ -13,7 +13,7 @@ public class GarryMoveState : GarryGroundedState
     {
         base.Enter();
 
-        stateTimer = 1f;
+        stateTimer = 2f;
 
         if(enemy.patrolRoute && !enemy.IsWallOnTheBackDetected())
             enemy.Flip();
@@ -28,7 +28,6 @@ public class GarryMoveState : GarryGroundedState
         if(enemy.patrolRoute)
             if(Vector2.Distance(enemy.transform.position, enemy.patrolRoute.transform.position) > enemy.patrolRoute.bounds.size.x /2 && stateTimer < 0)
                 stateMachine.ChangeState(enemy.idle);  
-        
 
         if(!enemy.IsGroundDetected() || enemy.IsWallDetected())
             stateMachine.ChangeState(enemy.idle);
@@ -41,7 +40,7 @@ public class GarryMoveState : GarryGroundedState
     {
         base.Exit();
 
-        if(enemy.IsWallDetected())
+        if(enemy.IsWallDetected()|| !enemy.IsGroundDetected())
             enemy.Flip();
     }
 }

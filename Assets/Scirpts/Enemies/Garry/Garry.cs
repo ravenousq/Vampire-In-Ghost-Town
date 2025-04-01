@@ -54,12 +54,6 @@ public class Garry : Enemy
         }
     }
 
-    public void BecomeAggresive()
-    {
-        if(!isAlreadyAggresive())
-            stateMachine.ChangeState(aggro);
-    }
-
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if(((1<<other.gameObject.layer) & whatIsRoute) != 0)
@@ -75,7 +69,15 @@ public class Garry : Enemy
             BecomeAggresive();
     }
 
-    public bool isAlreadyAggresive()
+    public override void BecomeAggresive()
+    {
+        if(isAlreadyAggresive())
+            return;
+
+        stateMachine.ChangeState(aggro);
+    }
+
+    public override bool isAlreadyAggresive()
     {
         if(stateMachine.current == aggro || stateMachine.current == attack)
             return true;

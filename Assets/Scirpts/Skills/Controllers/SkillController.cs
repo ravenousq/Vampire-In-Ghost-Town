@@ -27,13 +27,13 @@ public class SkillController : MonoBehaviour
             return true;
         }
 
-        if(cooldownTimer > 0)
+        if(cooldownTimer > 0 && SkillManager.instance.debugging)
             Debug.Log("Skill on cooldown");
 
-        if(!SkillManager.instance.isSkillUnlocked(primarySkillName))
+        if(!SkillManager.instance.isSkillUnlocked(primarySkillName) && SkillManager.instance.debugging)
             Debug.Log("Skill not unlocked");
 
-        if(isBlocked)
+        if(isBlocked && SkillManager.instance.debugging)
             Debug.Log("Skill is blocked from usage");
 
         return false;

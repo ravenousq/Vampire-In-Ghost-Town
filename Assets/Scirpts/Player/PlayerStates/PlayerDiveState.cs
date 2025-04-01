@@ -2,7 +2,6 @@ using System.Linq.Expressions;
 using System.Threading;
 using UnityEngine;
 
-//FIXME: something's up with the gravity;
 public class PlayerDiveState : PlayerState
 {
     public PlayerDiveState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
@@ -17,7 +16,7 @@ public class PlayerDiveState : PlayerState
         player.skills.dash.SwitchBlockade(true);
         player.skills.halo.SwitchBlockade(true);
         
-        player.ZeroGravityFor(.5f);
+        player.ZeroGravityFor(.6f);
         stateTimer = .6f;
     }
 

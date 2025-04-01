@@ -14,7 +14,6 @@ public class PlayerParryState : PlayerState
         stateTimer = player.parryWindow;
     }
 
-    //TODO: Make sure only the attacking enemy is getting parried; 
     public override void Update()
     {
         base.Update();

@@ -1,6 +1,5 @@
 using UnityEngine;
 
-//TODO: make sure player falls of the ladder or gets stunned on getting damaged
 [SelectionBase]
 public class Ladder : MonoBehaviour
 {
