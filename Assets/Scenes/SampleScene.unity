@@ -1183,7 +1183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &485074161
 Transform:
   m_ObjectHideFlags: 0
@@ -1382,6 +1382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 546526514}
+  - component: {fileID: 546526517}
   - component: {fileID: 546526515}
   - component: {fileID: 546526516}
   m_Layer: 6
@@ -1400,7 +1401,7 @@ Transform:
   m_GameObject: {fileID: 546526513}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.584, z: 0}
+  m_LocalPosition: {x: 0, y: 1.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1455,7 +1456,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.9228547, y: 3.51}
+  m_Size: {x: 2.9228547, y: 3.5100002}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1483,6 +1484,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &546526517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546526513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f91354d7b026d48b97c9d9f90f5e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &555467796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,7 +1683,7 @@ Transform:
   m_GameObject: {fileID: 559725760}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.729, y: 0, z: 0}
+  m_LocalPosition: {x: 0.42, y: -0.25, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2531,6 +2544,7 @@ MonoBehaviour:
     m_Bits: 128
   attackDistance: 0
   attackCooldown: 0
+  attackKnockback: {x: 0, y: 0}
   attackPoint: {fileID: 692715617}
 --- !u!4 &692715617
 Transform:
@@ -2733,7 +2747,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 3.5
+  m_GravityScale: 5
   m_Material: {fileID: 6200000, guid: 10c70bcb3642e6342a0f47f825af4902, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2825,7 +2839,8 @@ MonoBehaviour:
   facingDir: 1
   facingRight: 1
   movementSpeed: 10
-  jumpForce: 12
+  jumpForce: 20
+  gravityScale: 5
   coyoteJumpWindow: 0.1
   bufferJumpWindow: 0.15
   wallSlideTime: 3
@@ -2841,12 +2856,14 @@ MonoBehaviour:
     m_Bits: 64
   maxAmmo: 12
   currentAmmo: 0
-  reloadMovementSpeed: 3
+  reloadMovementSpeed: 1
   attackWindow: 2
-  attackMovement: 00000000f6fffffff1ffffff
+  attackMovement: 000000000a000000f1ffffff
+  parryWindow: 0.2
   reloadTorso: {fileID: 1644853213}
   skills: {fileID: 0}
   afterImage: {fileID: 3484935133656287947, guid: 906d0012e9b713849b3b14e8e0b01375, type: 3}
+  dashCheckerPrefab: {fileID: 7383158303482970207, guid: bb2e327c76cc13144a4e632b7a695979, type: 3}
   playStartAnim: 1
   allowCoyote: 0
   executeBuffer: 0
@@ -3477,6 +3494,7 @@ MonoBehaviour:
     m_Bits: 128
   attackDistance: 0
   attackCooldown: 0
+  attackKnockback: {x: 0, y: 0}
   attackPoint: {fileID: 1000981189}
 --- !u!1 &1056210824
 GameObject:
@@ -3813,6 +3831,7 @@ MonoBehaviour:
     m_Bits: 128
   attackDistance: 0
   attackCooldown: 0
+  attackKnockback: {x: 0, y: 0}
   attackPoint: {fileID: 1175426445}
 --- !u!1 &1185945673
 GameObject:
@@ -4297,6 +4316,7 @@ MonoBehaviour:
     m_Bits: 128
   attackDistance: 0
   attackCooldown: 0
+  attackKnockback: {x: 0, y: 0}
   attackPoint: {fileID: 1335102522}
 --- !u!1 &1384412030
 GameObject:
@@ -5164,11 +5184,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9305740}
   - {fileID: 546526514}
   - {fileID: 1134557204}
   - {fileID: 2085289414}
   - {fileID: 559725761}
+  - {fileID: 9305740}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2048509457
@@ -5201,8 +5221,9 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
-  attackDistance: 1.8
-  attackCooldown: 0
+  attackDistance: 3
+  attackCooldown: 3
+  attackKnockback: {x: 15, y: 5}
   attackPoint: {fileID: 559725761}
   patrolRoute: {fileID: 0}
   whatIsRoute:
@@ -5265,6 +5286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2061663801}
   - component: {fileID: 2061663800}
+  - component: {fileID: 2061663805}
   - component: {fileID: 2061663802}
   - component: {fileID: 2061663803}
   - component: {fileID: 2061663804}
@@ -5307,15 +5329,15 @@ MonoBehaviour:
     - key: Closer To The Sun
       value: 1
     - key: Sanctus Dominus
-      value: 0
+      value: 1
     - key: Anima Mundi
-      value: 0
+      value: 1
     - key: Sweet Vendetta
       value: 0
     - key: Faster Than The Flame
       value: 1
     - key: Incense & Iron
-      value: 0
+      value: 1
     - key: Dance Macabre
       value: 0
     - key: Vokul Fen Mah
@@ -5405,6 +5427,20 @@ MonoBehaviour:
   spaceBetweenDots: 1
   dotPrefab: {fileID: 1106962061785280380, guid: adf91f18715f6424fb4016dc8a97c965, type: 3}
   dotParent: {fileID: 1960461373}
+--- !u!114 &2061663805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061663799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5207c9f9b5793d743938014216925e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  primarySkillName: Sanctus Dominus
 --- !u!1 &2085289413
 GameObject:
   m_ObjectHideFlags: 0

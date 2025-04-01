@@ -157,8 +157,12 @@ public class Entity : MonoBehaviour
 
     public virtual void Damage()
     {
-        fx.Flashing();
         //Debug.Log(gameObject.name + " recieved damage.");
+    }
+
+    public virtual void Die()
+    {
+        
     }
 
     protected virtual void OnDrawGizmos()

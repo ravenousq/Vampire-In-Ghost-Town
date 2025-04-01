@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class PlayerPrimaryAttackState : PlayerState
@@ -74,18 +72,25 @@ public class PlayerPrimaryAttackState : PlayerState
     {
         RaycastHit2D[] hits = Physics2D.RaycastAll(new Vector2(player.transform.position.x + player.cd.size.x / 1.5f * player.facingDir, player.transform.position.y + player.cd.size.y / 3), Vector2.right * player.facingDir);
 
+        float damageDecrease = 1;
+
         foreach (var hit in hits)
         {
             if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
                 break;
 
-            
-            hit.collider.gameObject.GetComponent<Enemy>()?.Damage();
+            else if(hit.collider.gameObject.GetComponent<Enemy>())
+            {
+                player.stats.DoDamage(hit.collider.gameObject.GetComponent<EnemyStats>(), Vector2.zero, 0, player.poiseDamage, damageDecrease);
+
+                if(comboCounter == 2)
+                    player.stats.DoDamage(hit.collider.gameObject.GetComponent<EnemyStats>(), Vector2.zero, 0, player.poiseDamage, damageDecrease);
+                    
+                damageDecrease *= .7f;
+            }
 
             if(!player.skills.isSkillUnlocked("Vokul Fen Mah"))
                 return;
-
-            //Decrease damage by some value
         }
     }
 }

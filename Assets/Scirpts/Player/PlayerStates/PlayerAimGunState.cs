@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//TODO: make sure player is being stunned out of aiming while getting hit
 public class PlayerAimGunState : PlayerState
 {
     public PlayerAimGunState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)

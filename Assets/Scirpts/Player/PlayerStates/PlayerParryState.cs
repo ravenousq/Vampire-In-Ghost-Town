@@ -14,6 +14,7 @@ public class PlayerParryState : PlayerState
         stateTimer = player.parryWindow;
     }
 
+    //TODO: Make sure only the attacking enemy is getting parried; 
     public override void Update()
     {
         base.Update();
@@ -26,10 +27,13 @@ public class PlayerParryState : PlayerState
         {
             Enemy enemy = hit.GetComponent<Enemy>();
             if(enemy.canBeStunned && (enemy.facingDir != player.facingDir || SkillManager.instance.isSkillUnlocked("Anima Mundi")))
+            {
                 enemy.Stun();
+                enemy.stats.LosePoise(player.poiseDamage);
+            }
         }
 
-        if( stateTimer < 0)
+        if(stateTimer < 0)
             stateMachine.ChangeState(player.idle);
     }
 

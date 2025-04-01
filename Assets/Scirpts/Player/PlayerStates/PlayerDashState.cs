@@ -23,6 +23,8 @@ public class PlayerDashState : PlayerState
         GetDashInput(out xDirection, out yDirection);
 
         finalDirections = new Vector2(xDirection * player.dashSpeed, yDirection * player.dashSpeed * .8f);
+
+        player.stats.CanBeDamaged(false);
     }
 
     public override void Update()
@@ -48,6 +50,8 @@ public class PlayerDashState : PlayerState
             player.ResetVelocity();
             player.ZeroGravityFor(.1f);
         }
+
+        player.stats.CanBeDamaged(true);
     }
 
     

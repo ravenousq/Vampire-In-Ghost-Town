@@ -41,7 +41,7 @@ public class GarryAggroState : GarryGroundedState
             playerGone = true;
             stateTimer = enemy.aggroTime;
         }
-
+        //TODO: randomize Garry's movement while aggro;
         if(!Physics2D.OverlapCircle(enemy.attackPoint.position, enemy.attackDistance /2, enemy.whatIsPlayer))
             enemy.SetVelocity(enemy.movementSpeed * playerOnRight() * aggroMultiplayer, rb.linearVelocityY);
         else

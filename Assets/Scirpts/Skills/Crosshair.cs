@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
 
+//TODO: apply dealing damage with crosshair logic
 public class Crosshair : MonoBehaviour
 {
     private float crosshairSpeed;

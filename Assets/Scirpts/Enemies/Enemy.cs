@@ -16,10 +16,12 @@ public class Enemy : Entity
     [SerializeField] public LayerMask whatIsPlayer;
 
     [Header("Combat")]
+    public int poiseDamage;
     public float attackDistance;
     public float attackCooldown;
     public Vector2 attackKnockback;
     public Transform attackPoint;
+    public EnemyStats stats { get; private set; }
     public bool canBeStunned { get; private set; }
 
     public System.Action onDamaged;
@@ -35,6 +37,7 @@ public class Enemy : Entity
     {
         base.Start();
 
+        stats = GetComponent<EnemyStats>();
         SwitchKnockability();
     }
 
@@ -87,9 +90,8 @@ public class Enemy : Entity
         {
             if(hit.GetComponent<Player>())
             {
-                Player playerTarget = hit.GetComponent<Player>();   
-                playerTarget.Damage();
-                playerTarget.Knockback(attackKnockback, transform.position.x, .5f);
+                PlayerStats playerTarget = hit.GetComponent<PlayerStats>();
+                stats.DoDamage(playerTarget, attackKnockback, .5f, poiseDamage);
             }
 
             if(hit.GetComponent<PerfectDashChecker>())
@@ -111,6 +113,13 @@ public class Enemy : Entity
     public virtual void Stun()
     {
         
+    }
+
+    public override void Die()
+    {
+        base.Die();
+
+        Destroy(gameObject);
     }
 
     protected override void OnDrawGizmos()

@@ -41,6 +41,8 @@ public class Player : Entity
 
     [Header("Combat")]
     public LayerMask whatIsEnemy;
+    public int poiseDamage;
+    public int parryPoiseDamage;
     public int maxAmmo;
     public  int currentAmmo;
     public float reloadMovementSpeed;
@@ -49,8 +51,9 @@ public class Player : Entity
     public float parryWindow;
     public GameObject reloadTorso;
 
-    [Header("Abilities")]
+    [Header("Abilities & Stats")]
     public SkillManager skills;
+    public PlayerStats stats;
     public Crosshair crosshair { get; private set; }
     public ReapersHalo halo { get; private set; }
 
@@ -105,6 +108,8 @@ public class Player : Entity
         rb.gravityScale = gravityScale;
 
         skills = SkillManager.instance;
+        stats = GetComponent<PlayerStats>();
+
         stateMachine.Initialize(idle);
 
         Cursor.visible = false;
@@ -269,14 +274,23 @@ public class Player : Entity
         halo = newHalo;
     }
 
+    public override void Die()
+    {
+        base.Die();
+    }
+
     private void OnCollisionEnter2D(Collision2D other) 
     {
         if(other.gameObject.GetComponent<Enemy>())
         {
             if(!isKnocked)
-                Damage();
-
-            Knockback(new Vector2(10, 5), other.gameObject.transform.position.x, .35f);
+            {
+                stats.CanBeDamaged(true);
+                stats.TakeDamage(5);
+                stats.LosePoise(10);
+                Knockback(new Vector2(10, 5), other.gameObject.transform.position.x, .35f);
+                stats.CanBeDamaged(false);
+            }
         }
     }
 
