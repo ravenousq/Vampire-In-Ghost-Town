@@ -29,6 +29,7 @@ public class Entity : MonoBehaviour
 
     public int facingDir = 1;
     public bool facingRight= true;
+    public System.Action OnFlipped;
 
     protected virtual void Awake()
     {
@@ -53,6 +54,9 @@ public class Entity : MonoBehaviour
     #region Velocity
     public void SetVelocity(Vector2 velocity)
     {
+        if(rb.bodyType == RigidbodyType2D.Static)
+            return;
+
         FlipController(velocity.x);
         
         if(canMove)
@@ -63,6 +67,9 @@ public class Entity : MonoBehaviour
 
     public void SetVelocity(float x, float y)
     {
+        if(rb.bodyType == RigidbodyType2D.Static)
+            return;
+
         FlipController(x);
 
         if(canMove)
@@ -71,7 +78,11 @@ public class Entity : MonoBehaviour
             ResetVelocity();
     }
 
-    public void ResetVelocity() => rb.linearVelocity = isKnocked ? rb.linearVelocity : Vector2.zero;
+    public void ResetVelocity()
+    {
+        if(rb.bodyType != RigidbodyType2D.Static)
+            rb.linearVelocity = isKnocked ? rb.linearVelocity : Vector2.zero;
+    }
     #endregion
 
     public void ZeroGravityFor(float seconds)
@@ -148,6 +159,9 @@ public class Entity : MonoBehaviour
         facingDir *= -1;
         facingRight = !facingRight;
         transform.Rotate(0, 180, 0);
+
+        if(OnFlipped != null)
+            OnFlipped();
     }
     #endregion 
 
@@ -162,14 +176,14 @@ public class Entity : MonoBehaviour
 
     public void SwitchKnockability() => canBeKnocked = !canBeKnocked;
 
-    public virtual void Damage()
-    {
-        //Debug.Log(gameObject.name + " recieved damage.");
-    }
-
     public virtual void Die()
     {
         
+    }
+
+    public virtual void Stun()
+    {
+
     }
 
     protected virtual void OnDrawGizmos()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerDiveState : PlayerState
 {
+
     public PlayerDiveState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
 
@@ -12,12 +13,19 @@ public class PlayerDiveState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        
+        int playerLayer = LayerMask.NameToLayer("Player");
+        int enemyLayer = LayerMask.NameToLayer("Enemy");
 
         player.skills.dash.SwitchBlockade(true);
         player.skills.halo.SwitchBlockade(true);
         
         player.ZeroGravityFor(.6f);
         stateTimer = .6f;
+
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
+
+        player.stats.SwitchInvincibility(false);
     }
 
     public override void Update()
@@ -51,6 +59,9 @@ public class PlayerDiveState : PlayerState
     {
         base.Exit();
 
+        player.NoCollisionsFor(2f);
+        player.stats.InvincibleFor(2f);
+
         player.skills.dash.SwitchBlockade(false);
         player.skills.halo.SwitchBlockade(false);
     }
@@ -60,6 +71,6 @@ public class PlayerDiveState : PlayerState
         Collider2D[] targets = Physics2D.OverlapCircleAll(player.transform.position, 5,player.whatIsEnemy);
 
         foreach(var target in targets)
-            player.stats.DoDamage(target.GetComponent<EnemyStats>(), new Vector2(2, 2), .5f, 20, .3f);
+            player.stats.DoDamage(target.GetComponent<EnemyStats>(), new Vector2(2, 2), .5f, 60, .3f);
     }
 }

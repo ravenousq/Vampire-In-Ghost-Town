@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-//TODO: apply player specifix stats;
+//TODO: apply player specific stats;
 public class PlayerStats : CharacterStats
 {
     private Player player;
@@ -49,10 +49,17 @@ public class PlayerStats : CharacterStats
         fx.IFramesFlashing(iFrames);
     }
 
-    protected override void Die()
+    public override void Die()
     {
         base.Die();
 
         player.Die();
+    }
+
+    protected override void Stun()
+    {
+        base.Stun();
+
+        Recover();
     }
 }

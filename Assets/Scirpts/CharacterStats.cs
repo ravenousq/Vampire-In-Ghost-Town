@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -22,12 +23,14 @@ public class CharacterStats : MonoBehaviour
     [Tooltip("Percentage increase of damage while attacking a stunned enemy.\nRange: [0 - 20];")]
     public Stat brutality;
     public int HP;
-    [SerializeField] protected int poiseTracker;
+    public int stunTime = 5;
+    public int poiseTracker;
     public System.Action OnDamaged;
     public System.Action OnStunned;
+    public System.Action OnPoiseChanged;
     public bool isStunned { get; protected set; }
     private const int BASE_POISE_THRESHOLD = 100;
-    private const int POISE_RECOVERY_RATE = 3;
+    private const int POISE_RECOVERY_RATE = 2;
     public bool canBeDamaged { get; protected set; } = true;
     [SerializeField] private bool debugDamage;
 
@@ -49,17 +52,23 @@ public class CharacterStats : MonoBehaviour
 
     }
 
-    protected virtual void Die()
+    public virtual void Die()
     {
         Debug.Log(gameObject.name + " is dead fr.");
     }
 
     protected void RecoverPoise()
     {
+        if(poiseTracker == BASE_POISE_THRESHOLD)
+            return;
+
         if(poiseTracker > BASE_POISE_THRESHOLD - poise.GetValue() * 5)
             poiseTracker -= POISE_RECOVERY_RATE;
         else
             poiseTracker = BASE_POISE_THRESHOLD - poise.GetValue() * 5;
+
+        if(OnPoiseChanged != null)
+            OnPoiseChanged();
     }
 
     public void LosePoise(int poiseToLose)
@@ -69,14 +78,33 @@ public class CharacterStats : MonoBehaviour
 
         poiseTracker += poiseToLose;
 
-        //Debug.Log(name + " lost " + poiseToLose + " poise.");
+        if(debugDamage)
+            Debug.Log(name + " lost " + poiseToLose + " poise.");
 
-        if(poiseTracker > BASE_POISE_THRESHOLD)
+        if(poiseTracker >= BASE_POISE_THRESHOLD)
         {
-            isStunned = true;
-            if(OnStunned != null)
-                OnStunned();
+            poiseTracker = BASE_POISE_THRESHOLD;
+            Stun();
         }
+
+        if(OnPoiseChanged != null)
+            OnPoiseChanged();
+    }
+
+    public virtual void Recover()
+    {
+        isStunned = false;
+        poiseTracker = poiseTracker = BASE_POISE_THRESHOLD - poise.GetValue() * 5;
+
+        if(OnPoiseChanged != null)
+            OnPoiseChanged();
+    }
+
+    protected virtual void Stun()
+    {
+        isStunned = true;
+        if(OnStunned != null)
+            OnStunned();
     }
 
     public virtual bool DoDamage(CharacterStats target, Vector2 knockback, float seconds, int poiseDamage = 5, float damageMultiplyer = 1)
@@ -126,6 +154,9 @@ public class CharacterStats : MonoBehaviour
         if(!canBeDamaged)
             return;
 
+        if(debugDamage)
+            Debug.Log(name + " lost " + damage + " HP.");
+
         DecreaseHealthBy(damage);
 
         fx.Flashing();
@@ -150,5 +181,16 @@ public class CharacterStats : MonoBehaviour
 
     public virtual bool CanOmitArmor() => Random.Range(0, 101) <= agility.GetValue() * 5;
 
-    public void CanBeDamaged(bool value) => canBeDamaged = value;
+    public void SwitchInvincibility(bool value) => canBeDamaged = value;
+
+    public virtual void InvincibleFor(float seconds) => StartCoroutine(InvincibleRoutine(seconds));
+
+    protected virtual IEnumerator InvincibleRoutine(float seconds)
+    {
+        canBeDamaged = false;
+        
+        yield return new WaitForSeconds(seconds);
+
+        canBeDamaged = true;
+    }
 }

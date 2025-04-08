@@ -8,14 +8,21 @@ public class FX : MonoBehaviour
     [Header("Flashing")]
     [SerializeField] private float flashDuration;
     [SerializeField] private Material hitMaterial;
+    [Tooltip("For Player FX only.")]
+    [SerializeField] private GameObject reloadTorso;
+    private SpriteRenderer reloadSR;
     private Material originalMaterial;
+    private Color originalColor;
     private float iFramesTimer;
 
     private void Start() 
     {
         sr = GetComponentInChildren<SpriteRenderer>();
+        if(reloadTorso)
+            reloadSR = reloadTorso.GetComponent<SpriteRenderer>();
 
-        originalMaterial = sr.material;    
+        originalMaterial = sr.material;
+        originalColor = sr.color;
     }
 
     private void Update() 
@@ -31,10 +38,22 @@ public class FX : MonoBehaviour
         Color currentColor = sr.color;
 
         sr.color = Color.white;
+
+        if(reloadSR && reloadTorso.activeSelf)
+        {
+            reloadSR.material = hitMaterial;
+            reloadSR.color = Color.white;
+        }
         yield return new WaitForSeconds(flashingDuration);
 
         sr.color = currentColor;
         sr.material = originalMaterial;
+
+        if(reloadSR && reloadTorso.activeSelf)
+        {
+            reloadSR.material = originalMaterial;
+            reloadSR.color = currentColor;
+        }
     }
 
     public void IFramesFlashing(float seconds)
@@ -44,7 +63,7 @@ public class FX : MonoBehaviour
         StartCoroutine(IFramesFlashingRoutine(.15f));
     }
 
-    private IEnumerator IFramesFlashingRoutine(float seconds)
+    public IEnumerator IFramesFlashingRoutine(float seconds)
     {
         StartCoroutine(FlashingRoutine(seconds));
 
@@ -52,5 +71,11 @@ public class FX : MonoBehaviour
 
         if(iFramesTimer > 0)
             StartCoroutine(IFramesFlashingRoutine(seconds));
+    }
+
+    public void ResetSprite()
+    {
+        sr.material = originalMaterial;
+        sr.color = originalColor;
     }
 }

@@ -14,7 +14,7 @@ public class EnemyStats : CharacterStats
         enemy = GetComponent<Enemy>();
     }
 
-    protected override void Die()
+    public override void Die()
     {
         base.Die();
 
@@ -27,4 +27,17 @@ public class EnemyStats : CharacterStats
             OnDie();
     }
 
+    protected override void Stun()
+    {
+        base.Stun();
+
+        enemy.Stun();
+    }
+
+    public override void Recover()
+    {
+        base.Recover();
+
+        enemy.Recover();
+    }
 }

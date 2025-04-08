@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
-//TODO: apply dealing damage with crosshair logic
 public class Crosshair : MonoBehaviour
 {
+    Player player;
     private float crosshairSpeed;
     private float crosshairResistance;
 
@@ -16,18 +17,30 @@ public class Crosshair : MonoBehaviour
     private float aimTimer;
     private CinemachineCamera cinemachine;
     private int ammo;
+    private int physicalDamage;
+    private int poiseDamage;
+    private int defaultReward;
+    private int reward;
+    private int finalTargets;
+    private float rewardMultiplier = 1.5f;
+    private bool canIncreaseRewards;
 
     private List<Transform> enemiesToAdd = new List<Transform>();
     private List<Transform> targets = new List<Transform>();
 
 
-    public void SetUp(float maxAimDuration, float crosshairSpeed, float crosshairResistance, CinemachineCamera cinemachine, int ammo)
+    public void SetUp(float maxAimDuration, float crosshairSpeed, float crosshairResistance, CinemachineCamera cinemachine, int ammo, int physicalDamage, int poiseDamage, int defaultReward)
     {
         aimTimer = maxAimDuration;
         this.crosshairSpeed = crosshairSpeed;
         this.crosshairResistance = crosshairResistance;
         this.cinemachine = cinemachine;
         this.ammo = ammo;
+        this.physicalDamage = physicalDamage;
+        this.poiseDamage = poiseDamage;
+        this.defaultReward = defaultReward;
+
+        player = PlayerManager.instance.player;
 
         initialPosition = transform.position;
         
@@ -61,6 +74,9 @@ public class Crosshair : MonoBehaviour
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.enabled = false;
 
+        finalTargets = targets.Count;
+        Debug.Log(finalTargets); 
+
         StartCoroutine(DamageTargets());
     }
 
@@ -69,9 +85,13 @@ public class Crosshair : MonoBehaviour
         if(targets.Count > 0)
         {
             Enemy enemy = targets[Random.Range(0, targets.Count)].GetComponent<Enemy>();
-            enemy.Damage();
+            enemy.stats.OnDie += IncreaseRewards;
+
+            enemy.stats.TakeDamage(Mathf.RoundToInt(physicalDamage/finalTargets));
+            enemy.stats.LosePoise(poiseDamage);
             enemy.Knockback(new Vector2(2, 2), enemy.gameObject.transform.position.x + (Random.Range(1, 10) > 5 ? -1 : 1), 2);
             enemy.mark.SetActive(false);
+            enemy.stats.OnDie -= IncreaseRewards;
             targets.Remove(enemy.gameObject.transform);
 
             if(!SkillManager.instance.isSkillUnlocked("Amen & Attack"))
@@ -83,7 +103,27 @@ public class Crosshair : MonoBehaviour
         if(targets.Count > 0)
             StartCoroutine(DamageTargets());
         else
+        {
+            AddCurrency();
             Destroy(gameObject);
+        }
+    }
+
+    private void IncreaseRewards() 
+    {
+        if(!canIncreaseRewards)
+        {
+            canIncreaseRewards = true;
+            reward = defaultReward;
+            return;
+        }
+        reward += Mathf.RoundToInt(reward * rewardMultiplier);
+        rewardMultiplier += .5f;
+    }
+
+    public void AddCurrency()
+    {
+        Debug.Log("Player recieves " + reward + " currency.");
     }
 
     private void GatherTargets()
@@ -129,7 +169,7 @@ public class Crosshair : MonoBehaviour
         if(!other.GetComponent<Enemy>())
             return;   
         
-        if(!targets.Contains(other.gameObject.transform))
+        if(!targets.Contains(other.gameObject.transform) && !enemiesToAdd.Contains(other.gameObject.transform))
             enemiesToAdd.Add(other.gameObject.transform);
     }
     
@@ -142,4 +182,8 @@ public class Crosshair : MonoBehaviour
             enemiesToAdd.Remove(other.gameObject.transform);
     }
 
+    private void OnDrawGizmos() 
+    {
+        Gizmos.DrawWireSphere(transform.position, GetComponent<CircleCollider2D>().radius);    
+    }
 }

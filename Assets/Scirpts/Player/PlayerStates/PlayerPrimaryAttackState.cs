@@ -40,11 +40,14 @@ public class PlayerPrimaryAttackState : PlayerState
     {
         base.Update();
 
+        if(!player.isKnocked)
+        {    
+            if(stateTimer < 0 || player.CloseToEdge())
+                player.ResetVelocity();
+            else
+                rb.linearVelocityX = player.attackMovement[comboCounter] * attackDir;
+        }
 
-        if(stateTimer < 0 || player.CloseToEdge())
-            player.ResetVelocity();
-        else
-            rb.linearVelocityX = player.attackMovement[comboCounter] * attackDir;
 
         if(player.attackTrigger)
         {
@@ -70,37 +73,37 @@ public class PlayerPrimaryAttackState : PlayerState
     }
 
     private void DamageTargets()
-{
-    RaycastHit2D[] hits = Physics2D.RaycastAll(
-        new Vector2(player.transform.position.x + player.cd.size.x / 1.2f * player.facingDir, 
-                    player.transform.position.y + player.cd.size.y / 5), 
-        Vector2.right * player.facingDir, 
-        player.effectiveAttackRange
-    );
-
-    float damageDecrease = 1;
-
-    foreach (var hit in hits)
     {
-        if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
-            break;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(
+            new Vector2(player.transform.position.x + player.cd.size.x / 1.2f * player.facingDir, 
+                        player.transform.position.y + player.cd.size.y / 5), 
+            Vector2.right * player.facingDir, 
+            player.effectiveAttackRange
+        );
 
-        if (hit.collider.gameObject.GetComponent<Enemy>())
+        float damageDecrease = 1;
+
+        foreach (var hit in hits)
         {
-            float distance = Mathf.Clamp(Vector2.Distance(new Vector2(player.transform.position.x + player.cd.size.x / 1.2f * player.facingDir, player.transform.position.y + player.cd.size.y / 5), hit.point) - 1f, .1f, player.effectiveAttackRange);
-            float distanceModifier = Mathf.Lerp(1f, 0.3f, distance / player.effectiveAttackRange); 
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+                break;
 
-            player.stats.DoDamage(hit.collider.gameObject.GetComponent<EnemyStats>(), Vector2.zero, 0, player.poiseDamage, damageDecrease * distanceModifier);
+            if (hit.collider.gameObject.GetComponent<Enemy>())
+            {
+                float distance = Mathf.Clamp(Vector2.Distance(new Vector2(player.transform.position.x + player.cd.size.x / 1.2f * player.facingDir, player.transform.position.y + player.cd.size.y / 5), hit.point) - 1f, .1f, player.effectiveAttackRange);
+                float distanceModifier = Mathf.Lerp(1f, 0.3f, distance / player.effectiveAttackRange); 
 
-            if (comboCounter == 2)
                 player.stats.DoDamage(hit.collider.gameObject.GetComponent<EnemyStats>(), Vector2.zero, 0, player.poiseDamage, damageDecrease * distanceModifier);
 
-            damageDecrease *= .7f;
-        }
+                if (comboCounter == 2)
+                    player.stats.DoDamage(hit.collider.gameObject.GetComponent<EnemyStats>(), Vector2.zero, 0, player.poiseDamage, damageDecrease * distanceModifier);
 
-        if (!player.skills.isSkillUnlocked("Vokul Fen Mah"))
-            return;
+                damageDecrease *= .7f;
+            }
+
+            if (!player.skills.isSkillUnlocked("Vokul Fen Mah"))
+                return;
+        }
     }
-}
 
 }

@@ -1,0 +1,66 @@
+using UnityEngine;
+
+public class PlayerExecutionState : PlayerState
+{
+    private Enemy target;
+    int playerLayer = LayerMask.NameToLayer("Player");
+    int enemyLayer = LayerMask.NameToLayer("Enemy");
+    Vector2 targetPosition;
+
+    public PlayerExecutionState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
+    {
+
+    }
+
+    public override void Enter()
+    {
+        base.Enter();
+
+        player.skills.dash.SwitchBlockade(true);
+        player.skills.halo.SwitchBlockade(true);
+
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
+        player.stats.SwitchInvincibility(false);
+
+        target = player.enemyToExecute;
+        target.GetExecuted();
+        targetPosition = new Vector2(target.transform.position.x + target.attackDistance * (player.transform.position.x < target.transform.position.x ? -1 : 1), player.transform.position.y);
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
+        player.ResetVelocity();
+
+        if (Vector2.Distance(player.transform.position, targetPosition) > 0.1f)
+        {
+            player.transform.position = Vector2.MoveTowards(player.transform.position, targetPosition, 15 * Time.deltaTime);
+            return;
+        }
+
+        if(player.attackTrigger)
+        {
+            player.attackTrigger = false;
+            target.stats.Invoke(nameof(target.stats.Recover), .5f);
+            target.stats.TakeDamage(player.executionDamage);
+        }
+
+        if(trigger)
+        {
+            player.enemyToExecute = null;
+            stateMachine.ChangeState(player.idle);
+        }
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        player.stats.SwitchInvincibility(true);
+
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
+        player.skills.dash.SwitchBlockade(false);
+        player.skills.halo.SwitchBlockade(false);
+    }
+}

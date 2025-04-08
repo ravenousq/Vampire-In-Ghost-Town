@@ -15,6 +15,7 @@ public class Enemy : Entity
     [Header("Detection")]
     [SerializeField] protected float aggroRange;
     [SerializeField] public LayerMask whatIsPlayer;
+    [SerializeField] public float executionRange;
 
     [Header("Combat")]
     public int poiseDamage;
@@ -24,6 +25,7 @@ public class Enemy : Entity
     public Transform attackPoint;
     public EnemyStats stats { get; private set; }
     public bool canBeStunned { get; private set; }
+    public bool canBeExecuted;
 
     public System.Action onDamaged;
 
@@ -47,14 +49,33 @@ public class Enemy : Entity
         base.Update();
 
         stateMachine.current.Update();
+
+        if(canBeExecuted)
+        {
+            Player player = PlayerManager.instance.player;
+
+            if(Physics2D.OverlapCircle(transform.position, executionRange, whatIsPlayer) && player.stateMachine.current == player.dash && SkillManager.instance.isSkillUnlocked("Dance Macabre"))
+            {
+                Invoke(nameof(stats.Recover), .5f);
+                player.enemyToExecute = null;
+                player.NoCollisionsFor(.5f);
+                canBeExecuted = false;
+
+                if(stats.HP <= stats.maxHP.GetValue() * .3f)
+                {
+                    stats.Die();
+                    return;
+                }
+                stats.TakeDamage(player.executionDamage);
+            }
+            else
+                PlayerManager.instance.player.SetExecutionTarget(this);
+        }
     }
 
-    public override void Damage()
+    public virtual void Parried()
     {
-        base.Damage();
-
-        if(stats.OnDamaged != null)
-            stats.OnDamaged();
+        CloseParryWindow();
     }
 
     public virtual bool IsPlayerDetected()
@@ -109,7 +130,7 @@ public class Enemy : Entity
 
     public virtual void BecomeAggresive()
     {
-        if(isAlreadyAggresive())
+        if(isAlreadyAggresive() || canBeExecuted)
             return;
     }
 
@@ -121,11 +142,6 @@ public class Enemy : Entity
     public void OpenParryWindow() => canBeStunned = true;
 
     public void CloseParryWindow() => canBeStunned = false;
-
-    public virtual void Stun()
-    {
-        
-    }
 
     public override void Die()
     {
@@ -141,6 +157,30 @@ public class Enemy : Entity
         base.Flip();
     }
 
+    protected virtual void AllowExecution() => canBeExecuted = true;
+
+    public override void Stun()
+    {
+        base.Stun();
+
+        cd.isTrigger = true;
+        rb.bodyType = RigidbodyType2D.Static;
+
+        AllowExecution();
+    }
+
+    public virtual void Recover() 
+    {
+        cd.isTrigger = false;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+    }
+
+    public virtual void GetExecuted()
+    {
+        canBeExecuted = false;
+        FlipController(PlayerManager.instance.player.transform.position.x - transform.position.x);
+    }
+
     protected IEnumerator StopMovingFor(float seconds)
     {
         canMove = false;
@@ -154,13 +194,11 @@ public class Enemy : Entity
     {
         base.OnDrawGizmos();
 
-        Gizmos.color = Color.black;
+        //Gizmos.color = Color.black;
+        //Gizmos.DrawLine(transform.position - new Vector3(0, .1f), new Vector3(transform.position.x + (aggroRange * facingDir), transform.position.y - .1f));
+        //Gizmos.DrawLine(transform.position - new Vector3(0, .1f), new Vector3(transform.position.x - (aggroRange/2 * facingDir), transform.position.y - .1f));
 
-        Gizmos.DrawLine(transform.position - new Vector3(0, .1f), new Vector3(transform.position.x + (aggroRange * facingDir), transform.position.y - .1f));
-        Gizmos.DrawLine(transform.position - new Vector3(0, .1f), new Vector3(transform.position.x - (aggroRange/2 * facingDir), transform.position.y - .1f));
-
-        Gizmos.color = Color.red;
-
-        Gizmos.DrawWireSphere(attackPoint.position, attackDistance);
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawWireSphere(attackPoint.position, attackDistance);
     }
 }

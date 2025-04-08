@@ -34,14 +34,6 @@ public class PlayerGroundedState : PlayerState
             if(!SkillManager.instance.isSkillUnlocked("Faster Than The Flame") && stateMachine.current != player.reload)
                 stateMachine.ChangeState(player.quickstep);
         }
-
-        if(Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Mouse1))
-        {
-            if(player.CanShoot())
-                stateMachine.ChangeState(player.attack);
-            else
-                stateMachine.ChangeState(player.reload);
-        }
         
         if(Input.GetKeyDown(KeyCode.F) && player.skills.wanted.CanUseSkill())
             stateMachine.ChangeState(player.aimGun);
@@ -65,10 +57,36 @@ public class PlayerGroundedState : PlayerState
         if(yInput == 1 && player.ladderToClimb && !player.isBusy)
             stateMachine.ChangeState(player.climb);
 
+        if(CanExecuteEnemy() && SkillManager.instance.isSkillUnlocked("Sweet Vendetta") && Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            stateMachine.ChangeState(player.execute);
+            
+            return;
+        }
+        
+        if(Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Mouse1))
+        {
+            if(player.CanShoot())
+                stateMachine.ChangeState(player.attack);
+            else
+                stateMachine.ChangeState(player.reload);
+        }
     }
 
     public override void Exit()
     {
         base.Exit();
+    }
+
+    private bool CanExecuteEnemy()
+    {
+        if(!player.enemyToExecute)
+            return false;
+
+        RaycastHit2D executionCheck = Physics2D.Raycast(player.transform.position, Vector2.right * player.facingDir, player.enemyToExecute.executionRange, player.whatIsEnemy);
+        if(!executionCheck)
+            return false;
+
+        return executionCheck.collider.gameObject == player.enemyToExecute.gameObject;
     }
 }

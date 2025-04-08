@@ -10,6 +10,10 @@ public class WantedController : SkillController
     [SerializeField] private float crosshairSpeed;
     [SerializeField] private float crosshairResistance;
 
+    [SerializeField] private int physicalDamage;
+    [SerializeField] private int poiseDamage;
+    [SerializeField] private int defaultReward;
+
     [SerializeField] private Crosshair crosshairPrefab;
     [SerializeField] private CinemachineCamera cinemachine;
     private int currentAmmo;
@@ -51,10 +55,8 @@ public class WantedController : SkillController
 
         currentCrosshair = newCrosshair;
 
-        if(!SkillManager.instance.isSkillUnlocked("Ashen Rain"))
-            newCrosshair.SetUp(maxAimDuration, crosshairSpeed, crosshairResistance, cinemachine, currentAmmo);
-        else
-            newCrosshair.SetUp(ashenRainDuration, crosshairSpeed, crosshairResistance, cinemachine, currentAmmo);
+
+        newCrosshair.SetUp(SkillManager.instance.isSkillUnlocked("Ashen Rain") ? ashenRainDuration : maxAimDuration, crosshairSpeed, crosshairResistance, cinemachine, currentAmmo, physicalDamage, poiseDamage, defaultReward);
 
         PlayerManager.instance.player.SetCrosshair(newCrosshair);
     }

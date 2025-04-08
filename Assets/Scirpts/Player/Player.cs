@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 [SelectionBase]
 public class Player : Entity
@@ -22,6 +23,7 @@ public class Player : Entity
     public PlayerDiveState dive { get; private set; }
     public PlayerAimGunState aimGun { get; private set; }
     public PlayerParryState parry { get; private set; }
+    public PlayerExecutionState execute { get; private set; }
     #endregion
 
     [Header("Movement")]
@@ -41,6 +43,7 @@ public class Player : Entity
 
     [Header("Combat")]
     public LayerMask whatIsEnemy;
+    public int executionDamage;
     public int poiseDamage;
     public int parryPoiseDamage;
     public int maxAmmo;
@@ -58,6 +61,7 @@ public class Player : Entity
     public PlayerStats stats;
     public Crosshair crosshair { get; private set; }
     public ReapersHalo halo { get; private set; }
+    public Enemy enemyToExecute;
 
 
     [Header("Prefabs")]
@@ -73,6 +77,9 @@ public class Player : Entity
     [HideInInspector] public bool attackTrigger;
     [HideInInspector] public bool floorParry;
     [HideInInspector] public bool isAimingHalo;
+
+    [Header("Debug")]
+    [SerializeField] private Garry garry;
     private float haloTimer;
     private bool thirdAttack;
     #endregion
@@ -100,6 +107,7 @@ public class Player : Entity
         dive = new PlayerDiveState(this, stateMachine, "jump");
         aimGun = new PlayerAimGunState(this, stateMachine, "idle");
         parry = new PlayerParryState(this, stateMachine, "idle");
+        execute = new PlayerExecutionState(this, stateMachine, "execution");
         #endregion
     }
 
@@ -123,6 +131,9 @@ public class Player : Entity
     protected override void Update()
     {
         stateMachine.current.Update();
+
+        if(Input.GetKeyDown(KeyCode.I))
+            Instantiate(garry);
 
         if(Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
@@ -274,6 +285,16 @@ public class Player : Entity
         halo = newHalo;
     }
 
+    public override void Stun()
+    {
+
+    }
+
+    public void SetExecutionTarget(Enemy enemyToExecute)
+    {
+        this.enemyToExecute = enemyToExecute;
+    }
+
     public override void Die()
     {
         base.Die();
@@ -283,15 +304,29 @@ public class Player : Entity
     {
         if(other.gameObject.GetComponent<Enemy>())
         {
-            if(!isKnocked)
+            if(!isKnocked && stateMachine.current != dive)
             {
-                stats.CanBeDamaged(true);
+                stats.SwitchInvincibility(true);
                 stats.TakeDamage(5);
                 stats.LosePoise(10);
                 Knockback(new Vector2(10, 5), other.gameObject.transform.position.x, .35f);
-                stats.CanBeDamaged(false);
+                stats.SwitchInvincibility(false);
             }
         }
+    }
+
+    public void NoCollisionsFor(float seconds) => StartCoroutine(NoCollisionsRoutine(seconds));
+
+    private IEnumerator NoCollisionsRoutine(float seconds)
+    {
+        int playerLayer = LayerMask.NameToLayer("Player");
+        int enemyLayer = LayerMask.NameToLayer("Enemy");
+
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
+
+        yield return new WaitForSeconds(seconds);
+
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
     }
 
     protected override void OnDrawGizmos()

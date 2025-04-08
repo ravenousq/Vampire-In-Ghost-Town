@@ -24,7 +24,7 @@ public class PlayerDashState : PlayerState
 
         finalDirections = new Vector2(xDirection * player.dashSpeed, yDirection * player.dashSpeed * .8f);
 
-        player.stats.CanBeDamaged(false);
+        player.stats.SwitchInvincibility(false);
     }
 
     public override void Update()
@@ -51,7 +51,7 @@ public class PlayerDashState : PlayerState
             player.ZeroGravityFor(.1f);
         }
 
-        player.stats.CanBeDamaged(true);
+        player.stats.SwitchInvincibility(true);
     }
 
     

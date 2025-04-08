@@ -18,7 +18,7 @@ public class PlayerQuickstepState : PlayerState
         direction = xInput == 0 ? -player.facingDir : xInput;
 
         player.anim.SetInteger("facingDir", player.facingDir);
-        player.stats.CanBeDamaged(false);
+        player.stats.SwitchInvincibility(false);
     }
 
     public override void Update()
@@ -40,6 +40,6 @@ public class PlayerQuickstepState : PlayerState
         base.Exit();
 
         player.ResetVelocity();
-        player.stats.CanBeDamaged(true);
+        player.stats.SwitchInvincibility(true);
     }
 }

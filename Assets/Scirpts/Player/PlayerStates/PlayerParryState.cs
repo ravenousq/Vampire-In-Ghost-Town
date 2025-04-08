@@ -27,9 +27,10 @@ public class PlayerParryState : PlayerState
             Enemy enemy = hit.GetComponent<Enemy>();
             if(enemy.canBeStunned && (enemy.facingDir != player.facingDir || SkillManager.instance.isSkillUnlocked("Anima Mundi")))
             {
-                enemy.Stun();
-                enemy.stats.LosePoise(player.poiseDamage);
+                enemy.stats.LosePoise(player.parryPoiseDamage);
+                enemy.Parried();
             }
+            
         }
 
         if(stateTimer < 0)
