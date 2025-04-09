@@ -12,10 +12,10 @@ public class Garry : Enemy
     public GarryStunnedState stun { get; private set; }
     #endregion
 
-    [Header("Patrol")]
+    [Header("Pathing")]
+    [SerializeField] private LayerMask whatIsRoute;
     public EdgeCollider2D patrolRoute = null;
     private EdgeCollider2D possibleRoute;
-    [SerializeField] private LayerMask whatIsRoute;
 
     protected override void Awake()
     {
@@ -39,8 +39,6 @@ public class Garry : Enemy
     {
         base.Update();
 
-        //Debug.Log(stateMachine.current.animBoolName);
-
         stateMachine.current.Update();
 
         AssignPatrolPath();
@@ -55,30 +53,15 @@ public class Garry : Enemy
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) 
-    {
-        if(((1<<other.gameObject.layer) & whatIsRoute) != 0)
-            possibleRoute = other.GetComponent<EdgeCollider2D>();    
-
-        if(((1<<other.gameObject.layer) & whatIsPlayer) != 0) 
-            BecomeAggresive();
-    }
-
-    private void OnCollisionEnter2D(Collision2D other) 
-    {
-        if(((1<<other.gameObject.layer) & whatIsPlayer) != 0) 
-            BecomeAggresive();
-    }
-
     public override void BecomeAggresive()
     {
-        if(isAlreadyAggresive() || stateMachine.current == stun)
+        if(IsAlreadyAggresive() || stateMachine.current == stun)
             return;
 
         stateMachine.ChangeState(aggro);
     }
 
-    public override bool isAlreadyAggresive()
+    public override bool IsAlreadyAggresive()
     {
         if(stateMachine.current == aggro || stateMachine.current == attack)
             return true;
@@ -115,6 +98,20 @@ public class Garry : Enemy
         if(!stats.isStunned)
             stateMachine.ChangeState(idle);
     }
+
+    #region Detection
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(((1<<other.gameObject.layer) & whatIsRoute) != 0)
+            possibleRoute = other.GetComponent<EdgeCollider2D>();    
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(((1<<other.gameObject.layer) & whatIsPlayer) != 0) 
+            BecomeAggresive();
+    }
+    #endregion
 
     protected override void OnDrawGizmos()
     {

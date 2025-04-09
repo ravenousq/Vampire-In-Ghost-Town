@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AfterImage : MonoBehaviour
 {
-    private float lifeTime = .5f;
+    private float lifeTime = .99f;
     [SerializeField] private float fadeSpeed;
     private SpriteRenderer sr => GetComponent<SpriteRenderer>();
 
@@ -15,12 +15,6 @@ public class AfterImage : MonoBehaviour
 
         if(container)
             transform.parent = container.transform;
-
-        if(GetComponentInParent<ReapersHalo>())
-        {
-            sr.color = new Color(118, 118, 118, 255);
-            transform.parent = null;
-        }
     }
     
     

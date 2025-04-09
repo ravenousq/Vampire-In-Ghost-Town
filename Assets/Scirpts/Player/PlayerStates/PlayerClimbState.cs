@@ -70,5 +70,5 @@ public class PlayerClimbState : PlayerState
         player.stats.OnDamaged -= FallOfTheLadder;
     }
 
-    private void FallOfTheLadder() => player.TriggerLadder(null);
+    private void FallOfTheLadder() => player.AssignLadder(null);
 }

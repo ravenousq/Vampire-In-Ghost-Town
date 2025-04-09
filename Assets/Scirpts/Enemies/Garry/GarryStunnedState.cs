@@ -29,6 +29,6 @@ public class GarryStunnedState : GarryGroundedState
     {
         base.Exit();
 
-        enemy.canBeExecuted = false;
+        enemy.AllowExecution(false);
     }
 }

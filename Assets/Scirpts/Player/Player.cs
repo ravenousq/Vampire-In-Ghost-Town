@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
@@ -54,6 +55,7 @@ public class Player : Entity
     public float effectiveAttackRange;
     public float parryWindow;
     public GameObject reloadTorso;
+    public System.Action OnAmmoChange;
 
 
     [Header("Abilities & Stats")]
@@ -73,15 +75,15 @@ public class Player : Entity
     [HideInInspector] public bool allowCoyote;
     [HideInInspector] public bool executeBuffer;
     [HideInInspector] public bool canWallSlide = true;
-    [HideInInspector] public bool creatingAfterImage;
     [HideInInspector] public bool attackTrigger;
     [HideInInspector] public bool floorParry;
     [HideInInspector] public bool isAimingHalo;
+    private bool creatingAfterImage;
+    private bool thirdAttack;
 
     [Header("Debug")]
     [SerializeField] private Garry garry;
     private float haloTimer;
-    private bool thirdAttack;
     #endregion
 
     public BoxCollider2D ladderToClimb { get; private set; }
@@ -153,8 +155,6 @@ public class Player : Entity
 
     //private void ResetMoveStart() => playStartAnim = true;
 
-    public void TriggerLadder(BoxCollider2D ladder) => ladderToClimb = ladder;
-
     private void CheckForDashInput()
     {
         if(isKnocked)
@@ -166,7 +166,7 @@ public class Player : Entity
             {
                 stateMachine.ChangeState(dash);
                 creatingAfterImage = true;
-                InvokeRepeating(nameof(CreateAfterImage), 0, .02f);
+                InvokeRepeating(nameof(CreateAfterImage), 0, .015f);
                 if(SkillManager.instance.isSkillUnlocked("Incense & Iron"))
                     Instantiate(dashCheckerPrefab, transform.position, Quaternion.identity);
             }
@@ -209,8 +209,6 @@ public class Player : Entity
             halo.GetComponent<ReapersHalo>().StopHalo();
     }
 
-    public void SetCrosshair(Crosshair crosshair) => this.crosshair = crosshair;
-
     private void CreateAfterImage()
     {
         if(!creatingAfterImage)
@@ -223,28 +221,7 @@ public class Player : Entity
         newAfterImage.SetUpSprite(sr.sprite, facingRight);
     }
 
-    public void Reload()
-    {
-        currentAmmo = maxAmmo;
-    }
-
-    public bool CanReload()
-    {
-        if(currentAmmo < maxAmmo)
-            return true;
-        
-        return false;
-    }
-
-    public void ModifyBullets(int bullets)
-    {
-        currentAmmo += bullets;
-
-        if(currentAmmo < 0)
-            currentAmmo = 0;
-        else if(currentAmmo > maxAmmo)
-            currentAmmo = maxAmmo;
-    }
+    public void CancelAfterImage() => creatingAfterImage = false;
 
     public void ThirdAttack() => StartCoroutine(ThirdAttackRoutine());
 
@@ -257,6 +234,32 @@ public class Player : Entity
         thirdAttack = false;
     }
 
+    public override void Stun()
+    {
+
+    }
+
+    public override void Die()
+    {
+        base.Die();
+    }
+
+    #region Ammo
+    public void Reload() => ModifyBullets(maxAmmo);
+    
+    public void ModifyBullets(int bullets)
+    {
+        currentAmmo += bullets;
+
+        if(currentAmmo < 0)
+            currentAmmo = 0;
+        else if(currentAmmo > maxAmmo)
+            currentAmmo = maxAmmo;
+
+        if(OnAmmoChange != null)
+            OnAmmoChange();
+    }
+
     public bool CanShoot()
     {
         if(currentAmmo > 0 && !thirdAttack)
@@ -267,39 +270,23 @@ public class Player : Entity
         return false;
     }
 
-    public bool CloseToEdge()
+    public bool CanReload()
     {
-        Vector2 edgeCheck = groundCheck.transform.position;
-        int edgeToCheck = rb.linearVelocityX > 0 ? 1 : -1;
-
-        edgeCheck += new Vector2(cd.size.x / 2 * edgeToCheck, 0);
-
-        if(Physics2D.OverlapCircle(edgeCheck, .3f, whatIsGround))
-            return false;
-
-        return true;
+        if(currentAmmo < maxAmmo)
+            return true;
+        
+        return false;
     }
+    #endregion
 
-    public void AssignNewHalo(ReapersHalo newHalo)
-    {   
-        halo = newHalo;
-    }
+    #region Assigners    
+    public void AssignNewHalo(ReapersHalo newHalo) => halo = newHalo;
+    public void AssignCrosshair(Crosshair crosshair) => this.crosshair = crosshair;
+    public void AssignExecutionTarget(Enemy enemyToExecute) => this.enemyToExecute = enemyToExecute;
+    public void AssignLadder(BoxCollider2D ladder) => ladderToClimb = ladder;
+    #endregion
 
-    public override void Stun()
-    {
-
-    }
-
-    public void SetExecutionTarget(Enemy enemyToExecute)
-    {
-        this.enemyToExecute = enemyToExecute;
-    }
-
-    public override void Die()
-    {
-        base.Die();
-    }
-
+    #region Collisions
     private void OnCollisionEnter2D(Collision2D other) 
     {
         if(other.gameObject.GetComponent<Enemy>())
@@ -315,6 +302,19 @@ public class Player : Entity
         }
     }
 
+    public bool CloseToEdge()
+    {
+        Vector2 edgeCheck = groundCheck.transform.position;
+        int edgeToCheck = rb.linearVelocityX > 0 ? 1 : -1;
+
+        edgeCheck += new Vector2(cd.size.x / 2 * edgeToCheck, 0);
+
+        if(Physics2D.OverlapCircle(edgeCheck, .3f, whatIsGround))
+            return false;
+
+        return true;
+    }
+
     public void NoCollisionsFor(float seconds) => StartCoroutine(NoCollisionsRoutine(seconds));
 
     private IEnumerator NoCollisionsRoutine(float seconds)
@@ -328,6 +328,7 @@ public class Player : Entity
 
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
     }
+    #endregion
 
     protected override void OnDrawGizmos()
     {

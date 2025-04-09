@@ -20,15 +20,14 @@ public class Entity : MonoBehaviour
     [SerializeField] protected float knockbackMultiplayer = 1;
 
     #region Flags
-    public bool isBusy{ get; private set; }
-    public bool isKnocked { get; private set; }
-    public bool canBeKnocked { get; private set; } = true;
+    public bool isBusy{ get; protected set; }
+    public bool isKnocked { get; protected set; }
+    public bool canBeKnocked { get; protected set; } = true;
     public bool canMove { get; protected set; } = true;
+    public int facingDir {get; protected set; } = 1;
+    public bool facingRight { get; protected set; } = true;
     #endregion
 
-
-    public int facingDir = 1;
-    public bool facingRight= true;
     public System.Action OnFlipped;
 
     protected virtual void Awake()
@@ -47,8 +46,7 @@ public class Entity : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(isKnocked)
-            Debug.Log("Is Knocked");
+
     }
 
     #region Velocity
@@ -85,6 +83,9 @@ public class Entity : MonoBehaviour
     }
     #endregion
 
+    #region Coroutines
+    public void InvokeName(string name, float time) => Invoke(name, time);
+
     public void ZeroGravityFor(float seconds)
     {
         if(rb.gravityScale == 0)
@@ -113,7 +114,9 @@ public class Entity : MonoBehaviour
 
         isBusy = false;
     }
+    #endregion
 
+    #region Knockback
     public virtual void Knockback(Vector2 direction, float xPosition, float seconds)
     {
         if(isKnocked || !canBeKnocked )//|| !GetComponent<CharacterStats>().canBeDamaged)
@@ -138,10 +141,13 @@ public class Entity : MonoBehaviour
         isKnocked = false;
     }
 
+    public void SwitchKnockability() => canBeKnocked = !canBeKnocked;
+
     public void EndKnockback()
     {
         isKnocked = false;
     }
+    #endregion
 
     #region Flip
     public virtual void FlipController(float x)
@@ -152,6 +158,7 @@ public class Entity : MonoBehaviour
         if ((facingRight && x < 0) || (!facingRight && x > 0))
             Flip();
     }
+
 
     [ContextMenu("Flip")]
     public virtual void Flip()
@@ -173,8 +180,6 @@ public class Entity : MonoBehaviour
     public bool IsWallOnTheBackDetected() => Physics2D.Raycast(transform.position + (wallCheck.position - transform.position) * -1, Vector2.left * facingDir, wallCheckDistance, whatIsGround);
     
     #endregion
-
-    public void SwitchKnockability() => canBeKnocked = !canBeKnocked;
 
     public virtual void Die()
     {

@@ -2,7 +2,6 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-//TODO: apply stun mechanic;
 public class CharacterStats : MonoBehaviour
 {
     public Entity entity { get; private set; }
@@ -57,6 +56,7 @@ public class CharacterStats : MonoBehaviour
         Debug.Log(gameObject.name + " is dead fr.");
     }
 
+    #region Poise & Stun
     protected void RecoverPoise()
     {
         if(poiseTracker == BASE_POISE_THRESHOLD)
@@ -106,7 +106,9 @@ public class CharacterStats : MonoBehaviour
         if(OnStunned != null)
             OnStunned();
     }
-
+    #endregion
+    
+    #region Damage
     public virtual bool DoDamage(CharacterStats target, Vector2 knockback, float seconds, int poiseDamage = 5, float damageMultiplyer = 1)
     {
         if(target.HP <= 0 || !target.canBeDamaged)
@@ -124,7 +126,7 @@ public class CharacterStats : MonoBehaviour
          }
 
         int totalDamage = damage.GetValue();
-       baseDamageDebug = totalDamage;
+        baseDamageDebug = totalDamage;
 
         if(!CanOmitArmor() && !target.isStunned)
         {
@@ -178,6 +180,7 @@ public class CharacterStats : MonoBehaviour
         if(OnDamaged != null)
             OnDamaged();
     }
+    #endregion
 
     public virtual bool CanOmitArmor() => Random.Range(0, 101) <= agility.GetValue() * 5;
 

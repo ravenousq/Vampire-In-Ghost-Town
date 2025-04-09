@@ -42,7 +42,7 @@ public class PlayerDashState : PlayerState
     {
         base.Exit();
 
-        player.creatingAfterImage = false;
+        player.InvokeName(nameof(player.CancelAfterImage), .05f);
         player.skills.dash.SwitchBlockade(true);
 
         if(!player.isKnocked)

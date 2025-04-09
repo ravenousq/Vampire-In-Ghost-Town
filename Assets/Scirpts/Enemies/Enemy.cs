@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
+    #region Components
     public EnemyStateMachine stateMachine { get; private set; }
-
-    [SerializeField] public GameObject mark;
+    public EnemyStats stats { get; private set; }
+    public GameObject mark;
+    #endregion
 
     [Header("Movement")]
     public float movementSpeed;
@@ -14,8 +16,8 @@ public class Enemy : Entity
 
     [Header("Detection")]
     [SerializeField] protected float aggroRange;
-    [SerializeField] public LayerMask whatIsPlayer;
-    [SerializeField] public float executionRange;
+    public LayerMask whatIsPlayer;
+    public float executionRange;
 
     [Header("Combat")]
     public int poiseDamage;
@@ -23,9 +25,10 @@ public class Enemy : Entity
     public float attackCooldown;
     public Vector2 attackKnockback;
     public Transform attackPoint;
-    public EnemyStats stats { get; private set; }
     public bool canBeStunned { get; private set; }
-    public bool canBeExecuted;
+    public bool canBeExecuted { get; private set; }
+
+    Player player;
 
     public System.Action onDamaged;
 
@@ -40,6 +43,8 @@ public class Enemy : Entity
     {
         base.Start();
 
+        player = PlayerManager.instance.player;
+
         stats = GetComponent<EnemyStats>();
         SwitchKnockability();
     }
@@ -51,33 +56,112 @@ public class Enemy : Entity
         stateMachine.current.Update();
 
         if(canBeExecuted)
+            ControlExecution();
+    }
+
+    public virtual void DoDamage()
+    {
+        Collider2D[] targets = Physics2D.OverlapCircleAll(attackPoint.position, attackDistance);
+
+        foreach(var hit in targets)
         {
-            Player player = PlayerManager.instance.player;
-
-            if(Physics2D.OverlapCircle(transform.position, executionRange, whatIsPlayer) && player.stateMachine.current == player.dash && SkillManager.instance.isSkillUnlocked("Dance Macabre"))
+            if(hit.GetComponent<Player>())
             {
-                Invoke(nameof(stats.Recover), .5f);
-                player.enemyToExecute = null;
-                player.NoCollisionsFor(.5f);
-                canBeExecuted = false;
-
-                if(stats.HP <= stats.maxHP.GetValue() * .3f)
-                {
-                    stats.Die();
-                    return;
-                }
-                stats.TakeDamage(player.executionDamage);
+                PlayerStats playerTarget = hit.GetComponent<PlayerStats>();
+                stats.DoDamage(playerTarget, attackKnockback, .5f, poiseDamage);
             }
-            else
-                PlayerManager.instance.player.SetExecutionTarget(this);
+
+            if(hit.GetComponent<PerfectDashChecker>())
+            {
+                Destroy(hit.gameObject);
+
+                int currentBullets = player.currentAmmo;
+
+                int bulletsToRefill = Mathf.RoundToInt((12 - currentBullets)/ 2);
+                player.ModifyBullets(bulletsToRefill);
+            }
         }
     }
 
-    public virtual void Parried()
+    public override void Die()
     {
-        CloseParryWindow();
+        base.Die();
+
+        Destroy(gameObject);
     }
 
+    public override void Flip()
+    {
+        StartCoroutine(StopMovingFor(.6f));
+
+        base.Flip();
+    }
+
+    public override void Stun()
+    {
+        base.Stun();
+
+        cd.isTrigger = true;
+        rb.bodyType = RigidbodyType2D.Static;
+
+        AllowExecution(true);
+    }
+
+    public virtual void Recover() 
+    {
+        cd.isTrigger = false;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+    }
+
+    protected IEnumerator StopMovingFor(float seconds)
+    {
+        canMove = false;
+
+        yield return new WaitForSeconds(seconds);
+
+        canMove = true;
+    }
+
+    #region Parry
+    public void OpenParryWindow() => canBeStunned = true;
+
+    public virtual void Parried() => CloseParryWindow();
+
+    public void CloseParryWindow() => canBeStunned = false;
+    #endregion
+
+    #region Execution
+    public virtual void GetExecuted()
+    {
+        canBeExecuted = false;
+        FlipController(PlayerManager.instance.player.transform.position.x - transform.position.x);
+    }
+
+    public virtual void AllowExecution(bool allow) => canBeExecuted = allow;
+
+    protected virtual void ControlExecution()
+    {
+        if(Physics2D.OverlapCircle(transform.position, executionRange, whatIsPlayer) && player.stateMachine.current == player.dash && SkillManager.instance.isSkillUnlocked("Dance Macabre"))
+        {
+            Invoke(nameof(stats.Recover), .5f);
+            player.enemyToExecute = null;
+            player.NoCollisionsFor(.5f);
+            canBeExecuted = false;
+
+            if(stats.HP <= stats.maxHP.GetValue() * .3f)
+            {
+                stats.Die();
+                return;
+            }
+            stats.TakeDamage(player.executionDamage);
+        }
+        else
+            player.AssignExecutionTarget(this);
+    }
+
+    #endregion
+
+    #region Detection 
     public virtual bool IsPlayerDetected()
     {
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Vector2.right * facingDir, aggroRange);
@@ -104,91 +188,18 @@ public class Enemy : Entity
         return false;
     } 
 
-    public virtual void DoDamage()
-    {
-        Collider2D[] targets = Physics2D.OverlapCircleAll(attackPoint.position, attackDistance);
-
-        foreach(var hit in targets)
-        {
-            if(hit.GetComponent<Player>())
-            {
-                PlayerStats playerTarget = hit.GetComponent<PlayerStats>();
-                stats.DoDamage(playerTarget, attackKnockback, .5f, poiseDamage);
-            }
-
-            if(hit.GetComponent<PerfectDashChecker>())
-            {
-                Destroy(hit.gameObject);
-
-                int currentBullets = PlayerManager.instance.player.currentAmmo;
-
-                int bulletsToRefill = Mathf.RoundToInt((12 - currentBullets)/ 2);
-                PlayerManager.instance.player.ModifyBullets(bulletsToRefill);
-            }
-        }
-    }
-
     public virtual void BecomeAggresive()
     {
-        if(isAlreadyAggresive() || canBeExecuted)
+        if(IsAlreadyAggresive() || canBeExecuted)
             return;
     }
 
-    public virtual bool  isAlreadyAggresive()
+    public virtual bool  IsAlreadyAggresive()
     {
         return false;
     }
 
-    public void OpenParryWindow() => canBeStunned = true;
-
-    public void CloseParryWindow() => canBeStunned = false;
-
-    public override void Die()
-    {
-        base.Die();
-
-        Destroy(gameObject);
-    }
-
-    public override void Flip()
-    {
-        StartCoroutine(StopMovingFor(.6f));
-
-        base.Flip();
-    }
-
-    protected virtual void AllowExecution() => canBeExecuted = true;
-
-    public override void Stun()
-    {
-        base.Stun();
-
-        cd.isTrigger = true;
-        rb.bodyType = RigidbodyType2D.Static;
-
-        AllowExecution();
-    }
-
-    public virtual void Recover() 
-    {
-        cd.isTrigger = false;
-        rb.bodyType = RigidbodyType2D.Dynamic;
-    }
-
-    public virtual void GetExecuted()
-    {
-        canBeExecuted = false;
-        FlipController(PlayerManager.instance.player.transform.position.x - transform.position.x);
-    }
-
-    protected IEnumerator StopMovingFor(float seconds)
-    {
-        canMove = false;
-
-        yield return new WaitForSeconds(seconds);
-
-        canMove = true;
-    }
+    #endregion
 
     protected override void OnDrawGizmos()
     {
