@@ -5441,11 +5441,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1858539540130800827, guid: d1df970a606abba4ba2905e1a5fcee86, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.68
+      value: -15.78
       objectReference: {fileID: 0}
     - target: {fileID: 1858539540130800827, guid: d1df970a606abba4ba2905e1a5fcee86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.53
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1858539540130800827, guid: d1df970a606abba4ba2905e1a5fcee86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5600,18 +5600,6 @@ PrefabInstance:
     - target: {fileID: 52615999882142292, guid: f1606742898e95c4b98134a81c0e876c, type: 3}
       propertyPath: m_Name
       value: Garry
-      objectReference: {fileID: 0}
-    - target: {fileID: 402171833227618114, guid: f1606742898e95c4b98134a81c0e876c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 402171833227618114, guid: f1606742898e95c4b98134a81c0e876c, type: 3}
-      propertyPath: <movementSpeed>k__BackingField
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 402171833227618114, guid: f1606742898e95c4b98134a81c0e876c, type: 3}
-      propertyPath: <whatIsPlayer>k__BackingField.m_Bits
-      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 458323045595744585, guid: f1606742898e95c4b98134a81c0e876c, type: 3}
       propertyPath: m_AnchorMax.x

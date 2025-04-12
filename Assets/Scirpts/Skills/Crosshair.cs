@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Crosshair : MonoBehaviour
@@ -44,6 +43,7 @@ public class Crosshair : MonoBehaviour
 
         initialPosition = transform.position;
         
+        player.stats.OnDamaged += StopAiming;
 
         Camera cam = Camera.main;
 
@@ -105,6 +105,7 @@ public class Crosshair : MonoBehaviour
         else
         {
             AddCurrency();
+            player.stats.OnDamaged -= StopAiming;
             Destroy(gameObject);
         }
     }
@@ -185,5 +186,13 @@ public class Crosshair : MonoBehaviour
     private void OnDrawGizmos() 
     {
         Gizmos.DrawWireSphere(transform.position, GetComponent<CircleCollider2D>().radius);    
+    }
+
+    public void StopAiming()
+    {
+        player.AssignCrosshair(null);
+        StopAllCoroutines();
+        cinemachine.Follow = player.transform;
+        Destroy(gameObject);
     }
 }

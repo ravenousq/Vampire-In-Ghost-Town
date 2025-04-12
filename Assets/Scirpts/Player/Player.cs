@@ -1,7 +1,7 @@
-using System;
+
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
+
 
 [SelectionBase]
 public class Player : Entity
@@ -285,6 +285,8 @@ public class Player : Entity
     public void AssignExecutionTarget(Enemy enemyToExecute) => this.enemyToExecute = enemyToExecute;
     public void AssignLadder(BoxCollider2D ladder) => ladderToClimb = ladder;
     #endregion
+
+    public void TestingEffect() => SetVelocity(0, 100);
 
     #region Collisions
     private void OnCollisionEnter2D(Collision2D other) 

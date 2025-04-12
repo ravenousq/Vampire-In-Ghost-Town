@@ -137,13 +137,18 @@ public class Enemy : Entity
         FlipController(PlayerManager.instance.player.transform.position.x - transform.position.x);
     }
 
-    public virtual void AllowExecution(bool allow) => canBeExecuted = allow;
+    public virtual void AllowExecution(bool allow) 
+    {
+        canBeExecuted = allow;
+        Debug.Log(name + " can be executed: " + allow);
+        if(player.enemyToExecute == this)
+            player.AssignExecutionTarget(null);
+    }
 
     protected virtual void ControlExecution()
     {
         if(Physics2D.OverlapCircle(transform.position, executionRange, whatIsPlayer) && player.stateMachine.current == player.dash && SkillManager.instance.isSkillUnlocked("Dance Macabre"))
         {
-            Invoke(nameof(stats.Recover), .5f);
             player.enemyToExecute = null;
             player.NoCollisionsFor(.5f);
             canBeExecuted = false;
@@ -153,7 +158,9 @@ public class Enemy : Entity
                 stats.Die();
                 return;
             }
+
             stats.TakeDamage(player.executionDamage);
+            stats.Invoke(nameof(Recover), .5f);
         }
         else
             player.AssignExecutionTarget(this);

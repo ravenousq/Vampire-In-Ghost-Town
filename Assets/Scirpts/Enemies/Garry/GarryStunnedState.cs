@@ -1,4 +1,4 @@
-using UnityEngine;
+
 
 public class GarryStunnedState : GarryGroundedState
 {
@@ -30,5 +30,6 @@ public class GarryStunnedState : GarryGroundedState
         base.Exit();
 
         enemy.AllowExecution(false);
+    
     }
 }

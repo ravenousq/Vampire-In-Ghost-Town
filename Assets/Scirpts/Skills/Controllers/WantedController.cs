@@ -1,5 +1,5 @@
 using Unity.Cinemachine;
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 public class WantedController : SkillController

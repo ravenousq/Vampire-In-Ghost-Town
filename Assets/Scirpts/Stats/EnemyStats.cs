@@ -39,5 +39,6 @@ public class EnemyStats : CharacterStats
         base.Recover();
 
         enemy.Recover();
+        Debug.Log("Recovering");
     }
 }

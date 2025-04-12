@@ -20,7 +20,8 @@ public class PlayerAimGunState : PlayerState
     {
         base.Update();
 
-        player.ResetVelocity();
+        if(!player.isKnocked)
+            player.ResetVelocity();
 
         if(stateTimer < 0 || !player.crosshair)
         {
@@ -36,4 +37,6 @@ public class PlayerAimGunState : PlayerState
 
         player.skills.dash.SwitchBlockade(false);
     }
+
+    
 }

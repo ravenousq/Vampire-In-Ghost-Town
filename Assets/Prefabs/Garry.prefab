@@ -63,11 +63,9 @@ MonoBehaviour:
   wallCheck: {fileID: 1273608519000908600}
   wallCheckDistance: 1
   knockbackMultiplayer: 2
-  facingDir: 1
-  facingRight: 1
   mark: {fileID: 1462670565729340223}
   movementSpeed: 2
-  idleTime: 3
+  idleTime: 5
   aggroTime: 15
   aggroRange: 10
   whatIsPlayer:
@@ -79,11 +77,10 @@ MonoBehaviour:
   attackCooldown: 3
   attackKnockback: {x: 15, y: 5}
   attackPoint: {fileID: 1804581516638287214}
-  canBeExecuted: 0
-  patrolRoute: {fileID: 0}
   whatIsRoute:
     serializedVersion: 2
     m_Bits: 256
+  patrolRoute: {fileID: 0}
 --- !u!114 &4585438628731849624
 MonoBehaviour:
   m_ObjectHideFlags: 0

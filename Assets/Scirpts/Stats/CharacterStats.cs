@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
@@ -94,10 +93,10 @@ public class CharacterStats : MonoBehaviour
     public virtual void Recover()
     {
         isStunned = false;
-        poiseTracker = poiseTracker = BASE_POISE_THRESHOLD - poise.GetValue() * 5;
+        poiseTracker = BASE_POISE_THRESHOLD - poise.GetValue() * 5;
 
         if(OnPoiseChanged != null)
-            OnPoiseChanged();
+            OnPoiseChanged();        
     }
 
     protected virtual void Stun()
