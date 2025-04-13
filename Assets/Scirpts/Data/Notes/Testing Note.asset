@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Testing Note
   m_EditorClassIdentifier: 
   itemType: 0
-  itemName: 
-  icon: {fileID: 0}
-  description: 
+  itemName: Testing Note
+  icon: {fileID: -8412689590225003355, guid: 43a0a17551b31544d82a1a2cf84bfd0a, type: 3}
+  description: This item is a test if this system works okay.

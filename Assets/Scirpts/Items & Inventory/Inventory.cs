@@ -33,10 +33,14 @@ public class Inventory : MonoBehaviour
     public Dictionary<CharmData, InventoryItem> equipedCharmsDictionary;
 
     [Header("Inventory UI")]
+    [SerializeField] private Canvas inventoryUI;
     [SerializeField] private Transform notesParent;
     [SerializeField] private Transform keyItemsParent;
     [SerializeField] private Transform charmsParent;
     [SerializeField] private Transform equipedCharmsParent;
+    [Space]
+    [SerializeField] private GameObject itemDisplayPrefab;
+    [SerializeField] private List<RectTransform> itemDisplays;
     private ItemSlotUI[] notesSlots;
     private ItemSlotUI[] keyItemsSlots;
     private ItemSlotUI[] charmsSlots;
@@ -60,9 +64,12 @@ public class Inventory : MonoBehaviour
         keyItemsSlots = keyItemsParent.GetComponentsInChildren<ItemSlotUI>();
         charmsSlots = charmsParent.GetComponentsInChildren<ItemSlotUI>();
         equipedCharmsSlots = equipedCharmsParent.GetComponentsInChildren<ItemSlotUI>();
+        
+        itemDisplays = new List<RectTransform>();
 
         for (int i = 0; i < startingEquipment.Count; i++)
             AddItem(startingEquipment[i]);
+
     }
 
     public void EquipCharm(CharmData item)
@@ -134,27 +141,35 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(ItemData item)
     {
-        Debug.Log("Adding item");
-
-        if(item.itemType == ItemType.Note)
-        {
-            Debug.Log("its a note");
+        if (item.itemType == ItemType.Note)
             AddToNotes(item);
-        }
 
-        if(item.itemType == ItemType.KeyItem)
-        {
-            Debug.Log("its a key item");
+
+        if (item.itemType == ItemType.KeyItem)
             AddToKeyItems(item as KeyItemData);
-        }
 
-        if(item.itemType == ItemType.Charm)
-        {
-            Debug.Log("its a charm");
+
+        if (item.itemType == ItemType.Charm)
             AddToCharms(item as CharmData);
-        }
+
+        DisplayItem(item);
 
         UpdateSlotUI();
+    }
+
+    private void DisplayItem(ItemData item)
+    {
+        GameObject newItemDisplay = Instantiate(itemDisplayPrefab);
+        ItemDisplayUI newUI = newItemDisplay.GetComponentInChildren<ItemDisplayUI>();
+
+        newUI.SetUp(item);
+
+        itemDisplays.RemoveAll(item => item == null);
+
+        foreach (RectTransform display in itemDisplays)
+            display.anchoredPosition += new Vector2(0, 250);
+
+        itemDisplays.Add(newUI.GetComponent<RectTransform>());
     }
 
     public void RemoveItem(ItemData item)
@@ -178,9 +193,7 @@ public class Inventory : MonoBehaviour
                 charmsDictionary.Remove(item as CharmData);
             }
             else
-            {
                 charmValue.RemoveStack();
-            }
         }
 
         UpdateSlotUI();

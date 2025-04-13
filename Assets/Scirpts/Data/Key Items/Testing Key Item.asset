@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1f6e7c5a6e74d49841296e803c1229, type: 3}
   m_Name: Testing Key Item
   m_EditorClassIdentifier: 
-  itemType: 0
-  itemName: 
-  icon: {fileID: 0}
-  description: 
+  itemType: 1
+  itemName: Testing Key Item
+  icon: {fileID: 21300000, guid: 0f40d7eeec40fed49934d6b143637dd6, type: 3}
+  description: This is a testig item that will test if the system works. Let's say
+    you go flying now.
+  pickUpEffects:
+  - {fileID: 11400000, guid: 1e4878d507a1e614cafab1cdbb9760e1, type: 2}

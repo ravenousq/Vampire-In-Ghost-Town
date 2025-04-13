@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5c05333c89d684ebbeea7fc11a4577, type: 3}
   m_Name: Dummy Charm 4
   m_EditorClassIdentifier: 
-  itemType: 0
-  itemName: 
-  icon: {fileID: 0}
-  description: 
+  itemType: 2
+  itemName: Dummy Charm 4
+  icon: {fileID: -2127949735823241914, guid: d667142ca73844045aaada1f1eef0476, type: 3}
+  description: aaaaa
   equipEffects: []
