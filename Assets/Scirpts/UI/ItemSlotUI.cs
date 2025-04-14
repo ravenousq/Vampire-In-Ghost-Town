@@ -33,8 +33,10 @@ public class ItemSlotUI : MonoBehaviour, IPointerDownHandler
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
-        if(item != null)
-            Debug.Log(item.itemData.description);
+        if(item == null || !item.itemData)
+            return;
+            
+        Debug.Log(item.itemData.description);
 
         if(item.itemData.itemType == ItemType.Charm)
             Inventory.instance.EquipCharm(item.itemData as CharmData);

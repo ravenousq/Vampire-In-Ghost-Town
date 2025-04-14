@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1f6e7c5a6e74d49841296e803c1229, type: 3}
   m_Name: Herbal Concoction
   m_EditorClassIdentifier: 
-  itemType: 0
-  itemName: 
-  icon: {fileID: 0}
-  description: 
-  pickUpEffects: []
+  itemType: 1
+  itemName: Herbal Concoction
+  icon: {fileID: 21300000, guid: b5ac32e1ca969fe41acee3ffd17f7e11, type: 3}
+  description: 'Brewed out of various perennials and weeds. Even tough it smell resembles
+    an incense blended with alcohol, there are very few able to prepare such convoluted
+    mixture.  The clergy keeps their secrets sealed.
+
+
+    Fills HP. Brew new concoction
+    at Campfire.'
+  pickUpEffects:
+  - {fileID: 11400000, guid: 5c9e64d3046f17f4494a58462d2f1a64, type: 2}

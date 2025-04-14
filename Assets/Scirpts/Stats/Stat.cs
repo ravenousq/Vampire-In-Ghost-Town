@@ -18,7 +18,12 @@ public class Stat
         return finalValue;
     }
 
-    public void AddModifier(int modifier) => modifiers.Add(modifier);
+    public void AddModifier(int modifier) 
+    {
+        modifiers.Add(modifier);
+        if(PlayerManager.instance.player.stats.health == this && PlayerManager.instance.player.stats.OnHealed != null)
+            PlayerManager.instance.player.stats.OnHealed();
+    } 
 
     public void RemoveModifier(int modifier) => modifiers.Remove(modifier);
 

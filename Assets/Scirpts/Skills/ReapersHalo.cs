@@ -147,7 +147,7 @@ public class ReapersHalo : MonoBehaviour
         enemy.GetComponent<Enemy>().stats.TakeDamage(3);
     }
 
-    private void RecoverBullets() => player.ModifyBullets(3);
+    private void RecoverBullets() => player.skills.shoot.ModifyBullets(3);
 
     private void DestroyMe()
     {

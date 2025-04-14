@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045482bb177a916469b00e84c64d1299, type: 3}
   m_Name: Reaper's Halo Effect
   m_EditorClassIdentifier: 
-  skillToUnlock: 
+  skillToUnlock: Die By The Blade

@@ -7,7 +7,7 @@ public class CharacterStats : MonoBehaviour
     public FX fx { get; private set; }
     [Header("Defensive Stats")]
     [Tooltip("Determines maximum health of the character.\nRange: [1 - N/A];")]
-    public Stat maxHP; 
+    public Stat health; 
     [Tooltip("Determines character's resistance to being stunned.\nRange: [5 - 20];")]
     public Stat poise;
     [Tooltip("Negates physical damage by 5% per point.\nRange: [0 - 20];")]
@@ -38,7 +38,7 @@ public class CharacterStats : MonoBehaviour
         entity = GetComponent<Entity>();
         fx = GetComponent<FX>();
 
-        HP = maxHP.GetValue();
+        HP = health.GetValue();
 
         poiseTracker = BASE_POISE_THRESHOLD - poise.GetValue() * 5;
         InvokeRepeating(nameof(RecoverPoise), 0, 1f);
@@ -184,7 +184,7 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void Heal(int healAmmount)
     {
-        HP = HP + healAmmount >= maxHP.GetValue() ? maxHP.GetValue() : HP + healAmmount;
+        HP = HP + healAmmount >= health.GetValue() ? health.GetValue() : HP + healAmmount;
         
         if(OnHealed != null)
             OnHealed();

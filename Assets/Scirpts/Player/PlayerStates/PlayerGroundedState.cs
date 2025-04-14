@@ -43,7 +43,7 @@ public class PlayerGroundedState : PlayerState
             stateMachine.ChangeState(player.aimGun);
         
 
-        if(Input.GetKeyDown(KeyCode.R) && player.CanReload())
+        if(Input.GetKeyDown(KeyCode.R) && skills.shoot.CanReload())
             stateMachine.ChangeState(player.reload);
 
         if((Input.GetKeyDown(KeyCode.Space) && player.IsGroundDetected()) || player.executeBuffer)
@@ -70,9 +70,9 @@ public class PlayerGroundedState : PlayerState
         
         if(Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Mouse1))
         {
-            if(player.CanShoot())
+            if(skills.shoot.CanUseSkill())
                 stateMachine.ChangeState(player.attack);
-            else
+            else if(skills.shoot.CanReload())
                 stateMachine.ChangeState(player.reload);
         }
     }

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff5c05333c89d684ebbeea7fc11a4577, type: 3}
-  m_Name: Dummy Charm
+  m_Name: Cheap Whiskey Bottle
   m_EditorClassIdentifier: 
-  itemType: 2
-  itemName: Dummy Charm 3
-  icon: {fileID: 1197703181795215433, guid: 5a9f4592924e2aa479b31761fcc60985, type: 3}
-  description: afgaga
+  itemType: 0
+  itemName: 
+  icon: {fileID: 0}
+  description: 
   equipEffects: []

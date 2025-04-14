@@ -95,7 +95,7 @@ public class Crosshair : MonoBehaviour
             targets.Remove(enemy.gameObject.transform);
 
             if(!SkillManager.instance.isSkillUnlocked("Amen & Attack"))
-                PlayerManager.instance.player.ModifyBullets(-1);
+                SkillManager.instance.shoot.ModifyBullets(-1);
         }
 
         yield return new WaitForSeconds(.2f);

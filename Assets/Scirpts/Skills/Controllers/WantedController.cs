@@ -33,7 +33,7 @@ public class WantedController : SkillController
         if(player.stateMachine.current == player.wallSlide && !SkillManager.instance.isSkillUnlocked("Heretic Hunter"))
             return false;
 
-        if(player.currentAmmo == 0 && !SkillManager.instance.isSkillUnlocked("Amen & Attack"))
+        if(player.skills.shoot.currentAmmo == 0 && !SkillManager.instance.isSkillUnlocked("Amen & Attack"))
             return false;
 
         return base.CanUseSkill();
@@ -43,7 +43,7 @@ public class WantedController : SkillController
     {
         base.UseSkill();
 
-        currentAmmo = player.currentAmmo;
+        currentAmmo = player.skills.shoot.currentAmmo;
         
         if(currentCrosshair)
             Destroy(currentCrosshair);

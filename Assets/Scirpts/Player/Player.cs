@@ -40,23 +40,11 @@ public class Player : Entity
     public float dashSpeed;
     public float dashDuration;
     public float quickstepSpeed;
-    public float quickstepCooldown;
     public float diveSpeed;
 
     [Header("Combat")]
     public LayerMask whatIsEnemy;
-    public int executionDamage;
-    public int poiseDamage;
-    public int parryPoiseDamage;
-    public int maxAmmo;
-    public  int currentAmmo;
-    public float reloadMovementSpeed;
-    public float attackWindow;
-    public int[] attackMovement;
-    public float effectiveAttackRange;
-    public float parryWindow;
     public GameObject reloadTorso;
-    public System.Action OnAmmoChange;
 
 
     [Header("Abilities & Stats")]
@@ -65,7 +53,7 @@ public class Player : Entity
     public Crosshair crosshair { get; private set; }
     public ReapersHalo halo { get; private set; }
     public Enemy enemyToExecute;
-
+    public int executionDamage;
 
     [Header("Prefabs")]
     [SerializeField] private AfterImage afterImage;
@@ -79,8 +67,8 @@ public class Player : Entity
     [HideInInspector] public bool attackTrigger;
     [HideInInspector] public bool floorParry;
     [HideInInspector] public bool isAimingHalo;
+    [HideInInspector] public bool thirdAttack;
     private bool creatingAfterImage;
-    private bool thirdAttack;
 
     [Header("Debug")]
     [SerializeField] private Garry garry;
@@ -129,7 +117,7 @@ public class Player : Entity
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
 
-        Reload();
+        skills.shoot.Reload();
     }
 
     protected override void Update()
@@ -231,7 +219,7 @@ public class Player : Entity
     {
         thirdAttack = true;
 
-        yield return new WaitForSeconds(attackWindow);
+        yield return new WaitForSeconds(skills.shoot.attackWindow);
 
         thirdAttack = false;
     }
@@ -245,41 +233,6 @@ public class Player : Entity
     {
         base.Die();
     }
-
-    #region Ammo
-    public void Reload() => ModifyBullets(maxAmmo);
-    
-    public void ModifyBullets(int bullets)
-    {
-        currentAmmo += bullets;
-
-        if(currentAmmo < 0)
-            currentAmmo = 0;
-        else if(currentAmmo > maxAmmo)
-            currentAmmo = maxAmmo;
-
-        if(OnAmmoChange != null)
-            OnAmmoChange();
-    }
-
-    public bool CanShoot()
-    {
-        if(currentAmmo > 0 && !thirdAttack)
-            return true;
-        else if(currentAmmo > 0 && thirdAttack)
-            return true;
-
-        return false;
-    }
-
-    public bool CanReload()
-    {
-        if(currentAmmo < maxAmmo)
-            return true;
-        
-        return false;
-    }
-    #endregion
 
     #region Assigners    
     public void AssignNewHalo(ReapersHalo newHalo) => halo = newHalo;
@@ -341,7 +294,10 @@ public class Player : Entity
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, 3);
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(new Vector2(transform.position.x + 1.2f / 1.2f * facingDir, transform.position.y + 2.7f / 5), new Vector2(transform.position.x + (1.2f / 1.2f) + (effectiveAttackRange * facingDir), transform.position.y + 2.7f / 5));
+        if(SkillManager.instance)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(new Vector2(transform.position.x + 1.2f / 1.2f * facingDir, transform.position.y + 2.7f / 5), new Vector2(transform.position.x + (1.2f / 1.2f) + (skills.shoot.effectiveAttackRange * facingDir), transform.position.y + 2.7f / 5));
+        }
     }
 }

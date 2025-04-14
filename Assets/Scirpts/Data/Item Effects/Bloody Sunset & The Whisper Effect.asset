@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5c05333c89d684ebbeea7fc11a4577, type: 3}
-  m_Name: Dummy Charm 5
+  m_Script: {fileID: 11500000, guid: 045482bb177a916469b00e84c64d1299, type: 3}
+  m_Name: Bloody Sunset & The Whisper Effect
   m_EditorClassIdentifier: 
-  itemType: 2
-  itemName: Dummy Charm 5
-  icon: {fileID: -6117782692820810155, guid: 58707eb6a0d5d1d46bbae5f0b1bd16ba, type: 3}
-  description: afagaghgh
-  equipEffects: []
+  skillToUnlock: Constellation of Tears

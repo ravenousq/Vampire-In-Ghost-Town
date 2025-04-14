@@ -9,19 +9,19 @@ public class ItemEffect : ScriptableObject
 
     protected virtual void Start()
     {
+        
+    }
+
+    public virtual void Effect()
+    {
         player = PlayerManager.instance.player;
         inventory = Inventory.instance;
         stats = player.stats;
         skills = SkillManager.instance;
     }
 
-    public virtual void Effect()
-    {
-        Debug.Log("Effect Executed");
-    }
-
     public virtual void Countereffect()
     {
-       Debug.Log("Countereffect Executed"); 
+
     }
 }

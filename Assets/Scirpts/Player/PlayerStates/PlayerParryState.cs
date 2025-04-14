@@ -11,7 +11,7 @@ public class PlayerParryState : PlayerState
     {
         base.Enter();
 
-        stateTimer = player.parryWindow;
+        stateTimer = player.skills.parry.parryWindow;
     }
 
     public override void Update()
@@ -27,7 +27,7 @@ public class PlayerParryState : PlayerState
             Enemy enemy = hit.GetComponent<Enemy>();
             if(enemy.canBeStunned && (enemy.facingDir != player.facingDir || SkillManager.instance.isSkillUnlocked("Anima Mundi")))
             {
-                enemy.stats.LosePoise(player.parryPoiseDamage);
+                enemy.stats.LosePoise(player.skills.parry.parryPoiseDamage);
                 enemy.Parried();
             }
             

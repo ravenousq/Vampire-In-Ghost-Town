@@ -24,7 +24,7 @@ public class EnemyStats : CharacterStats
 
     private void ApplyLevelModifiers()
     {
-        Modify(maxHP);
+        Modify(health);
         Modify(damage);
     }
 
@@ -43,7 +43,7 @@ public class EnemyStats : CharacterStats
         base.Die();
 
         if(SkillManager.instance.isSkillUnlocked("Welcome To Hell"))
-            PlayerManager.instance.player.ModifyBullets(bulletsToRecover);
+            SkillManager.instance.shoot.ModifyBullets(bulletsToRecover);
 
         enemy.Die();
 

@@ -18,13 +18,13 @@ public class AmmoUI : MonoBehaviour
 
         UpdateAmmo();
 
-        player.OnAmmoChange += UpdateAmmo;
+        player.skills.shoot.OnAmmoChange += UpdateAmmo;
     }
 
     private void UpdateAmmo() 
     {
-        thisText.text = player.currentAmmo.ToString();
+        thisText.text = player.skills.shoot.currentAmmo.ToString();
 
-        thisText.color = player.currentAmmo < 4 ? Color.red : Color.white;
+        thisText.color = player.skills.shoot.currentAmmo < 4 ? Color.red : Color.white;
     }
 }

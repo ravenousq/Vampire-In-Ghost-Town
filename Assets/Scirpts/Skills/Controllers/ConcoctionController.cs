@@ -28,5 +28,6 @@ public class ConcoctionController : SkillController
         return false;
     }
 
-    public int GetHeal() => Mathf.RoundToInt(player.stats.maxHP.GetValue() * percentage);
+    public int GetHeal() => Mathf.RoundToInt(player.stats.health.GetValue() * percentage);
+    public void ModifyPercentage(float percentage) => this.percentage += percentage;
 }

@@ -23,7 +23,8 @@ public class ItemDisplayUI : MonoBehaviour
         if(item)
         {
             icon.sprite = item.icon;
-            myText.text = item.name.ToString();
+            myText.text =  $"Acquired: <color=yellow>{item.itemName}</color>";
+
         }
 
         images = GetComponentsInChildren<Image>();

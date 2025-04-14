@@ -25,7 +25,7 @@ public class PlayerReloadState : PlayerState
         player.anim.SetInteger("facingDir", player.facingDir);
 
         if(!player.isKnocked)
-            rb.linearVelocity = new Vector2(xInput * player.reloadMovementSpeed, 0);
+            rb.linearVelocity = new Vector2(xInput * skills.shoot.reloadMovementSpeed, 0);
 
         if(trigger)
             stateMachine.ChangeState(player.idle);
@@ -37,7 +37,7 @@ public class PlayerReloadState : PlayerState
 
         player.anim.SetInteger("facingDir", player.facingDir);
 
-        player.Reload();
+        skills.shoot.Reload();
         player.reloadTorso.GetComponent<FX>().ResetSprite();
         player.reloadTorso.SetActive(false);
 

@@ -23,7 +23,7 @@ public class PlayerPrimaryAttackState : PlayerState
 
         player.FlipController(attackDir);
 
-        if(lastTimeAttacked < Time.time - player.attackWindow || comboCounter > 2)
+        if(lastTimeAttacked < Time.time - skills.shoot.attackWindow || comboCounter > 2)
             comboCounter = 0;
 
         stateTimer = .1f;
@@ -32,7 +32,7 @@ public class PlayerPrimaryAttackState : PlayerState
 
         int bullets = comboCounter > 1 ? -2 : -1;
 
-        player.ModifyBullets(bullets);
+        skills.shoot.ModifyBullets(bullets);
     }
 
     public override void Update()
@@ -44,7 +44,7 @@ public class PlayerPrimaryAttackState : PlayerState
             if(stateTimer < 0 || player.CloseToEdge())
                 player.ResetVelocity();
             else
-                rb.linearVelocityX = player.attackMovement[comboCounter] * attackDir;
+                rb.linearVelocityX = skills.shoot.attackMovement[comboCounter] * attackDir;
         }
 
 
@@ -77,7 +77,7 @@ public class PlayerPrimaryAttackState : PlayerState
             new Vector2(player.transform.position.x + player.cd.size.x / 1.2f * player.facingDir, 
                         player.transform.position.y + player.cd.size.y / 5), 
             Vector2.right * player.facingDir, 
-            player.effectiveAttackRange
+            skills.shoot.effectiveAttackRange
         );
 
         float damageDecrease = 1;
@@ -89,13 +89,13 @@ public class PlayerPrimaryAttackState : PlayerState
 
             if (hit.collider.gameObject.GetComponent<Enemy>())
             {
-                float distance = Mathf.Clamp(Vector2.Distance(new Vector2(player.transform.position.x + player.cd.size.x / 1.2f * player.facingDir, player.transform.position.y + player.cd.size.y / 5), hit.point) - 1f, .1f, player.effectiveAttackRange);
-                float distanceModifier = Mathf.Lerp(1f, 0.3f, distance / player.effectiveAttackRange); 
+                float distance = Mathf.Clamp(Vector2.Distance(new Vector2(player.transform.position.x + player.cd.size.x / 1.2f * player.facingDir, player.transform.position.y + player.cd.size.y / 5), hit.point) - 1f, .1f, skills.shoot.effectiveAttackRange);
+                float distanceModifier = Mathf.Lerp(1f, 0.3f, distance / skills.shoot.effectiveAttackRange); 
 
-                player.stats.DoDamage(hit.collider.gameObject.GetComponent<EnemyStats>(), Vector2.zero, 0, player.poiseDamage, damageDecrease * distanceModifier);
+                player.stats.DoDamage(hit.collider.gameObject.GetComponent<EnemyStats>(), Vector2.zero, 0, player.skills.shoot.poiseDamage, damageDecrease * distanceModifier);
 
                 if (comboCounter == 2)
-                    player.stats.DoDamage(hit.collider.gameObject.GetComponent<EnemyStats>(), Vector2.zero, 0, player.poiseDamage, damageDecrease * distanceModifier);
+                    player.stats.DoDamage(hit.collider.gameObject.GetComponent<EnemyStats>(), Vector2.zero, 0, player.skills.shoot.poiseDamage, damageDecrease * distanceModifier);
 
                 damageDecrease *= .7f;
             }

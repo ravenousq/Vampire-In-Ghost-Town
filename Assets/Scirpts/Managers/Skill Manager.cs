@@ -10,6 +10,7 @@ public class SkillManager : MonoBehaviour
     public WantedController wanted { get; private set; }
     public HaloController halo { get; private set; }
     public ConcoctionController concoction { get; private set;}
+    public ShootController shoot { get; private set; }
 
     public bool debugging;
 
@@ -28,6 +29,7 @@ public class SkillManager : MonoBehaviour
         wanted = GetComponent<WantedController>();
         halo = GetComponent<HaloController>();
         concoction = GetComponent<ConcoctionController>();
+        shoot = GetComponent<ShootController>();
     }
 
     [SerializeField] private string skillToSwitch = "";

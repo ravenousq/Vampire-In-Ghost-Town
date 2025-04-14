@@ -28,6 +28,10 @@ public class Enemy : Entity
     public bool canBeStunned { get; private set; }
     public bool canBeExecuted { get; private set; }
 
+    [Header("Drop")]
+    [SerializeField] private ItemObject itemPrefab;
+    [SerializeField] private ItemData drop;
+
     Player player;
 
     public System.Action onDamaged;
@@ -75,10 +79,10 @@ public class Enemy : Entity
             {
                 Destroy(hit.gameObject);
 
-                int currentBullets = player.currentAmmo;
+                int currentBullets = player.skills.shoot.currentAmmo;
 
                 int bulletsToRefill = Mathf.RoundToInt((12 - currentBullets)/ 2);
-                player.ModifyBullets(bulletsToRefill);
+                player.skills.shoot.ModifyBullets(bulletsToRefill);
             }
         }
     }
@@ -86,6 +90,9 @@ public class Enemy : Entity
     public override void Die()
     {
         base.Die();
+
+        if(drop)
+            Instantiate(itemPrefab, transform.position - new Vector3(0, cd.size.y/2 - itemPrefab.GetComponent<CircleCollider2D>().radius/2), Quaternion.identity).SetUpItem(drop);
 
         Destroy(gameObject);
     }
@@ -153,7 +160,7 @@ public class Enemy : Entity
             player.NoCollisionsFor(.5f);
             canBeExecuted = false;
 
-            if(stats.HP <= stats.maxHP.GetValue() * .3f)
+            if(stats.HP <= stats.health.GetValue() * .3f)
             {
                 stats.Die();
                 return;
