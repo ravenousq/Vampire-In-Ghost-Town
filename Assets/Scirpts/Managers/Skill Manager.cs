@@ -9,6 +9,7 @@ public class SkillManager : MonoBehaviour
     public DashController dash { get; private set; }
     public WantedController wanted { get; private set; }
     public HaloController halo { get; private set; }
+    public ConcoctionController concoction { get; private set;}
 
     public bool debugging;
 
@@ -26,10 +27,10 @@ public class SkillManager : MonoBehaviour
         dash = GetComponent<DashController>();
         wanted = GetComponent<WantedController>();
         halo = GetComponent<HaloController>();
+        concoction = GetComponent<ConcoctionController>();
     }
 
-    [SerializeField] private string skillToUnlock = "";
-
+    [SerializeField] private string skillToSwitch = "";
     [SerializeField] private SerializableDictionary<string, bool> unlockableSkills;
     public Dictionary<string, bool> skills;
 
@@ -48,13 +49,25 @@ public class SkillManager : MonoBehaviour
     [ContextMenu("Change Skill Lock")]
     public void ChangeSkillLock()
     {
+        if (!skills.ContainsKey(skillToSwitch))
+        {
+            Debug.LogWarning("Check name bro.");
+            return;
+        }
+
+        skills[skillToSwitch] = !skills[skillToSwitch];                     
+        unlockableSkills.UpdateValue(skillToSwitch, skills[skillToSwitch]); 
+    }
+
+    public void UnlockSkill(string skillToUnlock)
+    {
         if (!skills.ContainsKey(skillToUnlock))
         {
             Debug.LogWarning("Check name bro.");
             return;
         }
 
-        skills[skillToUnlock] = !skills[skillToUnlock];                     
+        skills[skillToUnlock] = true;
         unlockableSkills.UpdateValue(skillToUnlock, skills[skillToUnlock]); 
     }
 }

@@ -25,6 +25,7 @@ public class HealthbarUI : MonoBehaviour
         if(barType == BarType.Health)
         {
             stats.OnDamaged += UpdateHealthUI;
+            stats.OnHealed += UpdateHealthUI;
             UpdateHealthUI();
         }
         else
@@ -52,6 +53,7 @@ public class HealthbarUI : MonoBehaviour
     {
         entity.OnFlipped -= FlipUI;
         stats.OnDamaged -= barType == BarType.Health ? UpdateHealthUI : null;
+        stats.OnHealed -= barType == BarType.Health ? UpdateHealthUI : null;
         stats.OnPoiseChanged -= barType == BarType.Poise ? UpdatePoiseUI : null;
     }
 }

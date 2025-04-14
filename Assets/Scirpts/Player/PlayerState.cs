@@ -14,6 +14,7 @@ public class PlayerState
 
     protected float stateTimer;
     protected bool trigger;
+    protected SkillManager skills;
 
     public PlayerState(Player player, PlayerStateMachine stateMachine, String animBoolName)
     {
@@ -27,6 +28,7 @@ public class PlayerState
         player.anim.SetBool(animBoolName, true);
         rb = player.rb;
         trigger = false;
+        skills = SkillManager.instance;
 
         AxisInput();
     }

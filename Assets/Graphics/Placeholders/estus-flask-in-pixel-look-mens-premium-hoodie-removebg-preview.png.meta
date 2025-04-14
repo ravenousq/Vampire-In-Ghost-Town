@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: b5ac32e1ca969fe41acee3ffd17f7e11
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8969455636400563317
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_0
+  - first:
+      213: -9211683250990137776
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_1
+  - first:
+      213: 2941735836100914920
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_2
+  - first:
+      213: 79617933075588920
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_3
+  - first:
+      213: 913749536141003880
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_4
+  - first:
+      213: -1466200925797711584
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_5
+  - first:
+      213: 1133816648576952847
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_6
+  - first:
+      213: 49951190829631730
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_7
+  - first:
+      213: -7938341001189461416
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_8
+  - first:
+      213: 3110389796411215156
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_9
+  - first:
+      213: -2661799340296830289
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_10
+  - first:
+      213: 614820556915407854
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_11
+  - first:
+      213: -3943961116381835769
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_12
+  - first:
+      213: -7567971449990389222
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_13
+  - first:
+      213: 5695005275960218903
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_14
+  - first:
+      213: 4876204089392584073
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_15
+  - first:
+      213: -7747114299947684602
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_16
+  - first:
+      213: -767377969380405098
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_17
+  - first:
+      213: -4788041081627367009
+    second: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 44
+        width: 300
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8b18b3fe97168380800000000000000
+      internalID: -8969455636400563317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 379
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e315983e6892080800000000000000
+      internalID: -9211683250990137776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 383
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eee4dd282523d820800000000000000
+      internalID: 2941735836100914920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 370
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 837a8ba961cda1100800000000000000
+      internalID: 79617933075588920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 347
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86ccc53ac5a4eac00800000000000000
+      internalID: 913749536141003880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 344
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0218a78b60207abe0800000000000000
+      internalID: -1466200925797711584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 343
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a6ad21c302cbf00800000000000000
+      internalID: 1133816648576952847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 316
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f80289e75671b000800000000000000
+      internalID: 49951190829631730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 307
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 852fe262be855d190800000000000000
+      internalID: -7938341001189461416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 307
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43d07105a035a2b20800000000000000
+      internalID: 3110389796411215156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 302
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa20d325a936f0bd0800000000000000
+      internalID: -2661799340296830289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 280
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eebfc8ff908488800800000000000000
+      internalID: 614820556915407854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 257
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70e8b1ab24c3449c0800000000000000
+      internalID: -3943961116381835769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 234
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a126605201a29f690800000000000000
+      internalID: -7567971449990389222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 239
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71595930029b80f40800000000000000
+      internalID: 5695005275960218903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 243
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9855d88b8c1cba340800000000000000
+      internalID: 4876204089392584073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 225
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60de4451798bc7490800000000000000
+      internalID: -7747114299947684602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 189
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 690de967dc9b955f0800000000000000
+      internalID: -767377969380405098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 180
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99af9f11067d8db0800000000000000
+      internalID: -4788041081627367009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_0: -8969455636400563317
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_1: -9211683250990137776
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_10: -2661799340296830289
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_11: 614820556915407854
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_12: -3943961116381835769
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_13: -7567971449990389222
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_14: 5695005275960218903
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_15: 4876204089392584073
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_16: -7747114299947684602
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_17: -767377969380405098
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_18: -4788041081627367009
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_2: 2941735836100914920
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_3: 79617933075588920
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_4: 913749536141003880
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_5: -1466200925797711584
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_6: 1133816648576952847
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_7: 49951190829631730
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_8: -7938341001189461416
+      estus-flask-in-pixel-look-mens-premium-hoodie-removebg-preview_9: 3110389796411215156
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

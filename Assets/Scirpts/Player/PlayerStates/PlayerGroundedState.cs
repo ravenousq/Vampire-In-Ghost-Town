@@ -23,6 +23,10 @@ public class PlayerGroundedState : PlayerState
     {
         base.Update();
 
+        if(Input.GetKeyDown(KeyCode.E) && skills.concoction.CanUseSkill())
+            stateMachine.ChangeState(player.heal);
+
+
         if(Input.GetKeyDown(KeyCode.Q) && SkillManager.instance.parry.CanUseSkill())
             stateMachine.ChangeState(player.parry);
 

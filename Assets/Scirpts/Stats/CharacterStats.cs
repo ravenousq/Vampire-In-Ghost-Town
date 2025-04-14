@@ -24,6 +24,7 @@ public class CharacterStats : MonoBehaviour
     public int stunTime = 5;
     public int poiseTracker;
     public System.Action OnDamaged;
+    public System.Action OnHealed;
     public System.Action OnStunned;
     public System.Action OnPoiseChanged;
     public bool isStunned { get; protected set; }
@@ -129,7 +130,7 @@ public class CharacterStats : MonoBehaviour
 
         if(!CanOmitArmor() && !target.isStunned)
         {
-            totalDamage = Mathf.RoundToInt(totalDamage * (target.armor.GetValue() / 20f));
+            totalDamage -= Mathf.RoundToInt(totalDamage * (target.armor.GetValue() / 20f));
             armorDamageDebug = totalDamage;
         }
 
@@ -145,7 +146,7 @@ public class CharacterStats : MonoBehaviour
         finalDamageDebug = Mathf.RoundToInt(totalDamage * damageMultiplyer);
 
         if(debugDamage)
-            Debug.Log(name + " deals " + finalDamageDebug + " damage to " + target.name + ";\nBase damage was: " + baseDamageDebug + ";\n Damage after applying armor was: " + armorDamageDebug + ";\nDamage after applying brutality was: " + brutalityDamageDebug + ";\nLost poise: " + lostPoiseDebug);
+            Debug.Log(name + " deals " + finalDamageDebug + " damage to " + target.name + ";\nBase damage was: " + baseDamageDebug + ";\nDamage after applying armor was: " + armorDamageDebug + ";\nDamage after applying brutality was: " + brutalityDamageDebug + ";\nLost poise: " + lostPoiseDebug);
 
         return true;
     }
@@ -180,6 +181,14 @@ public class CharacterStats : MonoBehaviour
             OnDamaged();
     }
     #endregion
+
+    public virtual void Heal(int healAmmount)
+    {
+        HP = HP + healAmmount >= maxHP.GetValue() ? maxHP.GetValue() : HP + healAmmount;
+        
+        if(OnHealed != null)
+            OnHealed();
+    }
 
     public virtual bool CanOmitArmor() => Random.Range(0, 101) <= agility.GetValue() * 5;
 

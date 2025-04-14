@@ -201,11 +201,8 @@ public class Inventory : MonoBehaviour
 
     private void AddToNotes(ItemData item)
     {
-        Debug.Log("Adding note");
         if(noteDictionary.TryGetValue(item, out InventoryItem value))
-        {
             value.AddStack();
-        }
         else
         {
             InventoryItem newItem = new InventoryItem(item);
@@ -218,9 +215,7 @@ public class Inventory : MonoBehaviour
     {
         Debug.Log(item.description);
         if(keyItemsDictionary.TryGetValue(item, out InventoryItem value))
-        {
             value.AddStack();
-        }
         else
         {
             InventoryItem newItem = new InventoryItem(item);
@@ -234,9 +229,7 @@ public class Inventory : MonoBehaviour
     private void AddToCharms(CharmData item)
     {
         if(charmsDictionary.TryGetValue(item, out InventoryItem value))
-        {
             value.AddStack();
-        }
         else
         {
             InventoryItem newItem = new InventoryItem(item);

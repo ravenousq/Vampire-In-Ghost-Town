@@ -25,6 +25,7 @@ public class Player : Entity
     public PlayerAimGunState aimGun { get; private set; }
     public PlayerParryState parry { get; private set; }
     public PlayerExecutionState execute { get; private set; }
+    public PlayerHealState heal { get; private set; }
     #endregion
 
     [Header("Movement")]
@@ -110,6 +111,7 @@ public class Player : Entity
         aimGun = new PlayerAimGunState(this, stateMachine, "idle");
         parry = new PlayerParryState(this, stateMachine, "idle");
         execute = new PlayerExecutionState(this, stateMachine, "execution");
+        heal = new PlayerHealState(this, stateMachine, "dash");
         #endregion
     }
 
