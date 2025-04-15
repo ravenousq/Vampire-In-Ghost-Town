@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 897230a50a00e7c4883730996670d7ad, type: 3}
-  m_Name: Astral Ivy Effect
+  m_Script: {fileID: 11500000, guid: e3e202f750bf8c548a48c50e98600fdc, type: 3}
+  m_Name: Cogitating Brain Effect
   m_EditorClassIdentifier: 
-  healingIncrease: 0
+  healthIncrease: 0.5
+  poiseIncrease: 3
+  armorIncrease: 3

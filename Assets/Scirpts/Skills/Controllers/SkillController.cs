@@ -79,4 +79,8 @@ public class SkillController : MonoBehaviour
     public virtual void AddCooldown(float cooldown) => cooldownTimer = cooldown;
 
     public  virtual void SwitchBlockade(bool blockade) => isBlocked = blockade;
+
+    public virtual void ModifyCooldown(float seconds) => cooldown += seconds;
+    public float GetCooldown() => cooldown;
+    
 }

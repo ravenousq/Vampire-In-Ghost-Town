@@ -9,6 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 832c589609c59ca4ca953309015597fe, type: 3}
-  m_Name: Testing Effect
+  m_Script: {fileID: 11500000, guid: 8791a734469bfde4da84e7752eb7719f, type: 3}
+  m_Name: Pummeling  Heart Effect
   m_EditorClassIdentifier: 
+  damageIncrease: 0.5
+  agilityIncrease: 3
+  brutalityIncrease: 3

@@ -1,3 +1,4 @@
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PlayerExecutionState : PlayerState
@@ -6,6 +7,8 @@ public class PlayerExecutionState : PlayerState
     int playerLayer = LayerMask.NameToLayer("Player");
     int enemyLayer = LayerMask.NameToLayer("Enemy");
     Vector2 targetPosition;
+    private bool canHeal;
+    private int healAmmount;
 
     public PlayerExecutionState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
@@ -44,6 +47,11 @@ public class PlayerExecutionState : PlayerState
             player.attackTrigger = false;
             target.stats.Invoke(nameof(target.stats.Recover), .5f);
             target.stats.TakeDamage(player.executionDamage);
+
+            if(canHeal)
+            {
+                player.stats.Heal(healAmmount);
+            }
         }
 
         if(trigger)
@@ -62,5 +70,11 @@ public class PlayerExecutionState : PlayerState
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
         player.skills.dash.SwitchBlockade(false);
         player.skills.halo.SwitchBlockade(false);
+    }
+
+    public void ModifyHealing(bool canHeal, int healAmmount)
+    {
+        this.canHeal = canHeal;
+        this.healAmmount = healAmmount;
     }
 }

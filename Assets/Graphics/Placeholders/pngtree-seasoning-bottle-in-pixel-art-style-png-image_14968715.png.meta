@@ -1,0 +1,4134 @@
+fileFormatVersion: 2
+guid: 13bd6b5cea1a6b64bb1796146217a336
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4666678246891044845
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_0
+  - first:
+      213: -5786767342220681744
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_1
+  - first:
+      213: 5430625932040227333
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_2
+  - first:
+      213: 4545048841841855764
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_3
+  - first:
+      213: -5889816313482016348
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_4
+  - first:
+      213: -3527999743565024279
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_5
+  - first:
+      213: -1116199003210291480
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_6
+  - first:
+      213: -5832838845858129267
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_7
+  - first:
+      213: 379496666680689298
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_8
+  - first:
+      213: 9220424328174306856
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_9
+  - first:
+      213: 4902893347003382664
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_10
+  - first:
+      213: 9129460284174027027
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_11
+  - first:
+      213: 2504988385421436209
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_12
+  - first:
+      213: -4751193960007746376
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_13
+  - first:
+      213: 8697670477457694852
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_14
+  - first:
+      213: -5598789083741564509
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_15
+  - first:
+      213: -7189815777771859683
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_16
+  - first:
+      213: 593744305056906708
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_17
+  - first:
+      213: 3253440574568075397
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_18
+  - first:
+      213: -6912207161522863979
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_19
+  - first:
+      213: 2223547158411032886
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_20
+  - first:
+      213: -6172700762342429518
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_21
+  - first:
+      213: 2790678365136237743
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_22
+  - first:
+      213: -3603233031710763361
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_23
+  - first:
+      213: -3675309609976135579
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_24
+  - first:
+      213: 3402439960142318484
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_25
+  - first:
+      213: -6070670646779371055
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_26
+  - first:
+      213: -2413309559850284936
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_27
+  - first:
+      213: -8496119727219976963
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_28
+  - first:
+      213: 7662246258810062577
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_29
+  - first:
+      213: -5044053843899602667
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_30
+  - first:
+      213: 1481819848099362139
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_31
+  - first:
+      213: 6004024295036535165
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_32
+  - first:
+      213: -1032669071908083127
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_33
+  - first:
+      213: 8159478636650614615
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_34
+  - first:
+      213: 4038217818337203337
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_35
+  - first:
+      213: 6396739938871589716
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_36
+  - first:
+      213: -682820729458239683
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_37
+  - first:
+      213: 7634661521180305166
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_38
+  - first:
+      213: 7250130511310925388
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_39
+  - first:
+      213: 874839532787215022
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_40
+  - first:
+      213: 3206846122146694692
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_41
+  - first:
+      213: 436708566689453916
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_42
+  - first:
+      213: 1217033828986997413
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_43
+  - first:
+      213: 7632338523514576356
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_44
+  - first:
+      213: 2675191483535301162
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_45
+  - first:
+      213: 5272109186378878710
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_46
+  - first:
+      213: -4495352379785634655
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_47
+  - first:
+      213: 3103818706176073057
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_48
+  - first:
+      213: 4316706236853094287
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_49
+  - first:
+      213: 1245883968069591086
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_50
+  - first:
+      213: 3403562346776889363
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_51
+  - first:
+      213: -6238732912539098635
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_52
+  - first:
+      213: 3980579847104961414
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_53
+  - first:
+      213: 3837299895886010632
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_54
+  - first:
+      213: -6501046964088049754
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_55
+  - first:
+      213: -8221517698342034821
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_56
+  - first:
+      213: 2738878218058261976
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_57
+  - first:
+      213: 2265253115003683973
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_58
+  - first:
+      213: 1154252255388730432
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_59
+  - first:
+      213: -8439961958774727027
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_60
+  - first:
+      213: 644429643267351761
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_61
+  - first:
+      213: -5154750605092501204
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_62
+  - first:
+      213: 5072753815589218937
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_63
+  - first:
+      213: -2471454645874800307
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_64
+  - first:
+      213: -8698842124893718619
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_65
+  - first:
+      213: -3519030159632766282
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_66
+  - first:
+      213: -4109421007589709993
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_67
+  - first:
+      213: 776529964760436892
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_68
+  - first:
+      213: 4581483772642692972
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_69
+  - first:
+      213: -8105957720025087922
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_70
+  - first:
+      213: -4202607387992122953
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_71
+  - first:
+      213: 7085544478450134859
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_72
+  - first:
+      213: 6618912270939041777
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_73
+  - first:
+      213: -6380928246382219746
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_74
+  - first:
+      213: 7849974076059926251
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_75
+  - first:
+      213: -5256715418621417437
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_76
+  - first:
+      213: 101065511712384565
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_77
+  - first:
+      213: 4164058474376747129
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_78
+  - first:
+      213: -2695766634902579205
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_79
+  - first:
+      213: -2887323472140095986
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_80
+  - first:
+      213: -1453823979413605678
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_81
+  - first:
+      213: 4539796531166385774
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_82
+  - first:
+      213: 3677000556875973384
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_83
+  - first:
+      213: -2980572810822962229
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_84
+  - first:
+      213: 8651688143717050045
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_85
+  - first:
+      213: -6187473080313242279
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_86
+  - first:
+      213: 1192546738641866667
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_87
+  - first:
+      213: 3803384406753042355
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_88
+  - first:
+      213: -8227207316755105909
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_89
+  - first:
+      213: 2182344702001156645
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_90
+  - first:
+      213: 2115556431414267601
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_91
+  - first:
+      213: -7951782102268135974
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_92
+  - first:
+      213: -9135019593920819576
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_93
+  - first:
+      213: 4846947559196323041
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_94
+  - first:
+      213: -3208040654951330190
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_95
+  - first:
+      213: 588250572359415791
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_96
+  - first:
+      213: -3157322434701736423
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_97
+  - first:
+      213: 5923991814674089836
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_98
+  - first:
+      213: -5939110097537081693
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_99
+  - first:
+      213: -4839562258139663233
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_100
+  - first:
+      213: -3444430766536600697
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_101
+  - first:
+      213: -4451985279601649241
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_102
+  - first:
+      213: 3423819318217010766
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_103
+  - first:
+      213: 1004971130462497387
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_104
+  - first:
+      213: -4769741399068604026
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_105
+  - first:
+      213: -1197170304844718697
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_106
+  - first:
+      213: -1398267762593593578
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_107
+  - first:
+      213: -1757144307384246450
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_108
+  - first:
+      213: 2099171974656663572
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_109
+  - first:
+      213: -3951237261140919481
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_110
+  - first:
+      213: -1750610178281147856
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_111
+  - first:
+      213: -7350706262851545816
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_112
+  - first:
+      213: -3007724701161616789
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_113
+  - first:
+      213: -1621601271739629776
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_114
+  - first:
+      213: -6651670927482722420
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_115
+  - first:
+      213: 8930376987840397785
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_116
+  - first:
+      213: 8484649988762753358
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_117
+  - first:
+      213: -2104490907298977603
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_118
+  - first:
+      213: 5879407585946126868
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_119
+  - first:
+      213: -5060050283866298887
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_120
+  - first:
+      213: -8985939137162230497
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_121
+  - first:
+      213: -5320256329178600004
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_122
+  - first:
+      213: 2132055761227780784
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_123
+  - first:
+      213: 2161273838578732235
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_124
+  - first:
+      213: -658287360011440093
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_125
+  - first:
+      213: 9104472256669650838
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_126
+  - first:
+      213: -3152247751258481063
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_127
+  - first:
+      213: 6862225553192818883
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_128
+  - first:
+      213: -4032167611323196520
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_129
+  - first:
+      213: -1880936612904282706
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_130
+  - first:
+      213: -599745968306770657
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_131
+  - first:
+      213: 8455318540010966283
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_132
+  - first:
+      213: 6001460074326624146
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_133
+  - first:
+      213: 3094412402033449610
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_134
+  - first:
+      213: -4214230689260886138
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_135
+  - first:
+      213: 1658556704893351891
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_136
+  - first:
+      213: 7679031709886464917
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_137
+  - first:
+      213: -6288296974542916590
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_138
+  - first:
+      213: 3468694147479265040
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_139
+  - first:
+      213: 6229941967045159086
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_140
+  - first:
+      213: 8092270330134500132
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_141
+  - first:
+      213: -7531346521247148695
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_142
+  - first:
+      213: -3071115949947321908
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_143
+  - first:
+      213: 5124479959146942235
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_144
+  - first:
+      213: -7394541757153945807
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_145
+  - first:
+      213: -6534823950018023258
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_146
+  - first:
+      213: 7480955172212430950
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_147
+  - first:
+      213: 389958984362304903
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_148
+  - first:
+      213: 2388657825946536054
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_149
+  - first:
+      213: -5297968278776364033
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_150
+  - first:
+      213: -7877649210140856923
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_151
+  - first:
+      213: -3022932804479185722
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_152
+  - first:
+      213: 4222284216617556478
+    second: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_153
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2246
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 310440d0cd0ac3fb0800000000000000
+      internalID: -4666678246891044845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_1
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 2365
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fdda1903c541bfa0800000000000000
+      internalID: -5786767342220681744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_2
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 2390
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50a484333857d5b40800000000000000
+      internalID: 5430625932040227333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_3
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 2246
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41dc8c847d1431f30800000000000000
+      internalID: 4545048841841855764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_4
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 2365
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a98a9ab44b234ea0800000000000000
+      internalID: -5889816313482016348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_5
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 2390
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e33325ece60a0fc0800000000000000
+      internalID: -3527999743565024279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_6
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 2246
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e66103abe67280f0800000000000000
+      internalID: -1116199003210291480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_7
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 2365
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8ad68039f79d0fa0800000000000000
+      internalID: -5832838845858129267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_8
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 2390
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29282fa253e344500800000000000000
+      internalID: 379496666680689298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_9
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 2246
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8260337131785ff70800000000000000
+      internalID: 9220424328174306856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_10
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 2365
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88b33cfb5839a0440800000000000000
+      internalID: 4902893347003382664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_11
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 2390
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 319ca3d22cb52be70800000000000000
+      internalID: 9129460284174027027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_12
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 2397
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 135268f1aa183c220800000000000000
+      internalID: 2504988385421436209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_13
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 2308
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bcb1ca244e501eb0800000000000000
+      internalID: -4751193960007746376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_14
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 2345
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 480a44e873554b870800000000000000
+      internalID: 8697670477457694852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_15
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 2308
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a1df33fdfa1d42b0800000000000000
+      internalID: -5598789083741564509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_16
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 2345
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d11d865b4a4a83c90800000000000000
+      internalID: -7189815777771859683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_17
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 2308
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ddf356bc476d3800800000000000000
+      internalID: 593744305056906708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_18
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 2345
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58019f017fa862d20800000000000000
+      internalID: 3253440574568075397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_19
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 2308
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 590c4838538e210a0800000000000000
+      internalID: -6912207161522863979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_20
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 2345
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6393b661c50abde10800000000000000
+      internalID: 2223547158411032886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_21
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 2247
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bcebcb6c59265aa0800000000000000
+      internalID: -6172700762342429518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_22
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 2278
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa4305cff2b7ab620800000000000000
+      internalID: 2790678365136237743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_23
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 2247
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f961dedf5aebefdc0800000000000000
+      internalID: -3603233031710763361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_24
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 2278
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5600bc1e16daefcc0800000000000000
+      internalID: -3675309609976135579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_25
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 2247
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49b80e9ed15e73f20800000000000000
+      internalID: 3402439960142318484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_26
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 2278
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d12356e535a0cba0800000000000000
+      internalID: -6070670646779371055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_27
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 2247
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 878c118ddb3328ed0800000000000000
+      internalID: -2413309559850284936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_28
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 2278
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df45dd95f18b71a80800000000000000
+      internalID: -8496119727219976963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_29
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 2162
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f680f54064c55a60800000000000000
+      internalID: 7662246258810062577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_30
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1914
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 519ab66e0cbeff9b0800000000000000
+      internalID: -5044053843899602667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_31
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 111
+        width: 1182
+        height: 2096
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b55f5130d4b709410800000000000000
+      internalID: 1481819848099362139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_32
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 2162
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d71c7702944925350800000000000000
+      internalID: 6004024295036535165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_33
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 2162
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94ae26e43f83ba1f0800000000000000
+      internalID: -1032669071908083127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_34
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 2162
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75fc2f9d69a4c3170800000000000000
+      internalID: 8159478636650614615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_35
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 1914
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98454abd5b1aa0830800000000000000
+      internalID: 4038217818337203337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_36
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 2086
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45bbef04519c5c850800000000000000
+      internalID: 6396739938871589716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_37
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 2111
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d375e5f0a222686f0800000000000000
+      internalID: -682820729458239683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_38
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 2086
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e07ab4e0434c3f960800000000000000
+      internalID: 7634661521180305166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_39
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 2111
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4ea8e58943ad9460800000000000000
+      internalID: 7250130511310925388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_40
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 2028
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaa20438bed042c00800000000000000
+      internalID: 874839532787215022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_41
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 2066
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42684e7be81018c20800000000000000
+      internalID: 3206846122146694692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_42
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 2028
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5715eba0208f0600800000000000000
+      internalID: 436708566689453916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_43
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 2066
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa4760c1d5c3e010800000000000000
+      internalID: 1217033828986997413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_44
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1968
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed9d9303738be960800000000000000
+      internalID: 7632338523514576356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_45
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1999
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2a95420b70302520800000000000000
+      internalID: 2675191483535301162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_46
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 1968
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fecf274f5b4a2940800000000000000
+      internalID: 5272109186378878710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_47
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 1999
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac9ba6f3dc4d91c0800000000000000
+      internalID: -4495352379785634655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_48
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 1969
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d56d42baaf21b20800000000000000
+      internalID: 3103818706176073057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_49
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1645
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f878757937508eb30800000000000000
+      internalID: 4316706236853094287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_50
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1764
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2064243ed44a4110800000000000000
+      internalID: 1245883968069591086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_51
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 1789
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 318088aebe1eb3f20800000000000000
+      internalID: 3403562346776889363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_52
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 1645
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f1a19368719b69a0800000000000000
+      internalID: -6238732912539098635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_53
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 1764
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68b15cae74cdd3730800000000000000
+      internalID: 3980579847104961414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_54
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 1789
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 809dde6ace3d04530800000000000000
+      internalID: 3837299895886010632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_55
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1796
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6af666dea34a7c5a0800000000000000
+      internalID: -6501046964088049754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_56
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1707
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b726cbb763d47ed80800000000000000
+      internalID: -8221517698342034821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_57
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 1744
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d5ea666a33720620800000000000000
+      internalID: 2738878218058261976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_58
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 1707
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 584442ec4bbcf6f10800000000000000
+      internalID: 2265253115003683973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_59
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 1744
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04483af8f4ab40010800000000000000
+      internalID: 1154252255388730432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_60
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1646
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8e1c69b05b3fda80800000000000000
+      internalID: -8439961958774727027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_61
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1677
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d4aea1a85971f800800000000000000
+      internalID: 644429643267351761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_62
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 1646
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c294bbdb2a5a678b0800000000000000
+      internalID: -5154750605092501204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_63
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 1677
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97ae33bf7ba066640800000000000000
+      internalID: 5072753815589218937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_64
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1561
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d49c42a0811a3bdd0800000000000000
+      internalID: -2471454645874800307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_65
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1313
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a771840d21874780800000000000000
+      internalID: -8698842124893718619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_66
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 1561
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bae335e6b4e92fc0800000000000000
+      internalID: -3519030159632766282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_67
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 1313
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7576612cd5768f6c0800000000000000
+      internalID: -4109421007589709993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_68
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1485
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c901ef283e9c6ca00800000000000000
+      internalID: 776529964760436892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_69
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1510
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6f859ca733b49f30800000000000000
+      internalID: 4581483772642692972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_70
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 1485
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e40c19d966ad18f80800000000000000
+      internalID: -8105957720025087922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_71
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 1510
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b91c44d8d65da5c0800000000000000
+      internalID: -4202607387992122953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_72
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 1427
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f204e8929e45260800000000000000
+      internalID: 7085544478450134859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_73
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 1465
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ffabc454a91bdb50800000000000000
+      internalID: 6618912270939041777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_74
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 1427
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1ea12941936277a0800000000000000
+      internalID: -6380928246382219746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_75
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 1465
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beeb39bc4d5b0fc60800000000000000
+      internalID: 7849974076059926251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_76
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1367
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32860c39d256c07b0800000000000000
+      internalID: -5256715418621417437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_77
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1398
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 536e8a42c8e076100800000000000000
+      internalID: 101065511712384565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_78
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 1367
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9785e2dce15b9c930800000000000000
+      internalID: 4164058474376747129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_79
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 1398
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf718414786b69ad0800000000000000
+      internalID: -2695766634902579205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_80
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 1368
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0e217b899a2ee7d0800000000000000
+      internalID: -2887323472140095986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_81
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1044
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d27b1d1bcaf2dbe0800000000000000
+      internalID: -1453823979413605678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_82
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1163
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6619b864e8900f30800000000000000
+      internalID: 4539796531166385774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_83
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 1188
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 803818f5684570330800000000000000
+      internalID: 3677000556875973384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_84
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 1044
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc3b5bff1d0e2a6d0800000000000000
+      internalID: -2980572810822962229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_85
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 1163
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db6a6b13788f01870800000000000000
+      internalID: 8651688143717050045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_86
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 1188
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95d13ae140ea12aa0800000000000000
+      internalID: -6187473080313242279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_87
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1195
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baf8cceb0f6cc8010800000000000000
+      internalID: 1192546738641866667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_88
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1106
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bf56cc77f558c430800000000000000
+      internalID: 3803384406753042355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_89
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 1143
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b873157f88613dd80800000000000000
+      internalID: -8227207316755105909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_90
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 1106
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5221c34a1fe394e10800000000000000
+      internalID: 2182344702001156645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_91
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 1143
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1de8dbc9d57fb5d10800000000000000
+      internalID: 2115556431414267601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_92
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1045
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad5bffeee4895a190800000000000000
+      internalID: -7951782102268135974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_93
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1076
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88ecd182414e93180800000000000000
+      internalID: -9135019593920819576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_94
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 1045
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ece7d6ff11d34340800000000000000
+      internalID: 4846947559196323041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_95
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 1076
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27e4d907500ca73d0800000000000000
+      internalID: -3208040654951330190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_96
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 960
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe7376467c2e92800800000000000000
+      internalID: 588250572359415791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_97
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 712
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9164b3e49ffee24d0800000000000000
+      internalID: -3157322434701736423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_98
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 960
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6788f53b2f363250800000000000000
+      internalID: 5923991814674089836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_99
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 712
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aedd5245da049da0800000000000000
+      internalID: -5939110097537081693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_100
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 884
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f74b23f64cb66dcb0800000000000000
+      internalID: -4839562258139663233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_101
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 909
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 783d82b977ce230d0800000000000000
+      internalID: -3444430766536600697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_102
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 884
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a95310d9fe5732c0800000000000000
+      internalID: -4451985279601649241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_103
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 909
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4ee17d9789d38f20800000000000000
+      internalID: 3423819318217010766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_104
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 826
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a6db82bef52fd00800000000000000
+      internalID: 1004971130462497387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_105
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 864
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6898a0ef7797ecdb0800000000000000
+      internalID: -4769741399068604026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_106
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 826
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79d951c53fbc26fe0800000000000000
+      internalID: -1197170304844718697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_107
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 864
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6178ab5d0ea589ce0800000000000000
+      internalID: -1398267762593593578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_108
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 766
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4f134bef8e5d97e0800000000000000
+      internalID: -1757144307384246450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_109
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 797
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 410addff9c1c12d10800000000000000
+      internalID: 2099171974656663572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_110
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 766
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74b786245a26a29c0800000000000000
+      internalID: -3951237261140919481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_111
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 797
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0327e57615594b7e0800000000000000
+      internalID: -1750610178281147856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_112
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 767
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8259e72899b0df990800000000000000
+      internalID: -7350706262851545816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_113
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 443
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a0815e15a6246d0800000000000000
+      internalID: -3007724701161616789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_114
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 562
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03f33a62c3aee79e0800000000000000
+      internalID: -1621601271739629776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_115
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 587
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c876994988480b3a0800000000000000
+      internalID: -6651670927482722420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_116
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 443
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d1cc862e821feb70800000000000000
+      internalID: 8930376987840397785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_117
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 562
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e49d9bf06388fb570800000000000000
+      internalID: 8484649988762753358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_118
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 587
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db8a76d7ba85bc2e0800000000000000
+      internalID: -2104490907298977603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_119
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 594
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a4e0a8c0ad79150800000000000000
+      internalID: 5879407585946126868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_120
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 505
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5e88c731717c9b0800000000000000
+      internalID: -5060050283866298887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_121
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 542
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f154a2cd6f78b4380800000000000000
+      internalID: -8985939137162230497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_122
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 505
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbd29497e07aa26b0800000000000000
+      internalID: -5320256329178600004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_123
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 542
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b29e413b65969d10800000000000000
+      internalID: 2132055761227780784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_124
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 444
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcc84d2fa136efd10800000000000000
+      internalID: 2161273838578732235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_125
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 475
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3207362422b4dd6f0800000000000000
+      internalID: -658287360011440093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_126
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 444
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69f8136a745995e70800000000000000
+      internalID: 9104472256669650838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_127
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 475
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95ed63e1f57f044d0800000000000000
+      internalID: -3152247751258481063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_128
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 359
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c89aa278c58b3f50800000000000000
+      internalID: 6862225553192818883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_129
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 111
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89bde3cbbecda08c0800000000000000
+      internalID: -4032167611323196520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_130
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 359
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea550debd1295e5e0800000000000000
+      internalID: -1880936612904282706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_131
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 111
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1d2a9b28364da7f0800000000000000
+      internalID: -599745968306770657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_132
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 283
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0dc028f963575570800000000000000
+      internalID: 8455318540010966283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_133
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 308
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2978de7f328794350800000000000000
+      internalID: 6001460074326624146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_134
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 283
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8a54cb4faf81fa20800000000000000
+      internalID: 3094412402033449610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_135
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 308
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6872e0d148b0485c0800000000000000
+      internalID: -4214230689260886138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_136
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 225
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d7b2032980640710800000000000000
+      internalID: 1658556704893351891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_137
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 263
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5934eb6a7a6619a60800000000000000
+      internalID: 7679031709886464917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_138
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 225
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 214b43ee73b7bb8a0800000000000000
+      internalID: -6288296974542916590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_139
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 263
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f5afef2f6432030800000000000000
+      internalID: 3468694147479265040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_140
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 165
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea8660d1633357650800000000000000
+      internalID: 6229941967045159086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_141
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 196
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42399169df48d4070800000000000000
+      internalID: 8092270330134500132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_142
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 165
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96590b0ed384b7790800000000000000
+      internalID: -7531346521247148695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_143
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 196
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc18a53a0543165d0800000000000000
+      internalID: -3071115949947321908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_144
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 166
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1fcf874f5fcd1740800000000000000
+      internalID: 5124479959146942235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_145
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 137db08237f416990800000000000000
+      internalID: -7394541757153945807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_146
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 0
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a0f57d8d34af45a0800000000000000
+      internalID: -6534823950018023258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_147
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 668d754e711b1d760800000000000000
+      internalID: 7480955172212430950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_148
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 0
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78523e351a9696500800000000000000
+      internalID: 389958984362304903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_149
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 678008513a7362120800000000000000
+      internalID: 2388657825946536054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_150
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 0
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff34f389be5d976b0800000000000000
+      internalID: -5297968278776364033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_151
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5adea6ce7c7fca290800000000000000
+      internalID: -7877649210140856923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_152
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 0
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc842961a26c06d0800000000000000
+      internalID: -3022932804479185722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_153
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 0
+        width: 90
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef95a38df11989a30800000000000000
+      internalID: 4222284216617556478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_0: -4666678246891044845
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_1: -5786767342220681744
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_10: 4902893347003382664
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_100: -4839562258139663233
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_101: -3444430766536600697
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_102: -4451985279601649241
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_103: 3423819318217010766
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_104: 1004971130462497387
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_105: -4769741399068604026
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_106: -1197170304844718697
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_107: -1398267762593593578
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_108: -1757144307384246450
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_109: 2099171974656663572
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_11: 9129460284174027027
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_110: -3951237261140919481
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_111: -1750610178281147856
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_112: -7350706262851545816
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_113: -3007724701161616789
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_114: -1621601271739629776
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_115: -6651670927482722420
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_116: 8930376987840397785
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_117: 8484649988762753358
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_118: -2104490907298977603
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_119: 5879407585946126868
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_12: 2504988385421436209
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_120: -5060050283866298887
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_121: -8985939137162230497
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_122: -5320256329178600004
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_123: 2132055761227780784
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_124: 2161273838578732235
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_125: -658287360011440093
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_126: 9104472256669650838
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_127: -3152247751258481063
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_128: 6862225553192818883
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_129: -4032167611323196520
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_13: -4751193960007746376
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_130: -1880936612904282706
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_131: -599745968306770657
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_132: 8455318540010966283
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_133: 6001460074326624146
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_134: 3094412402033449610
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_135: -4214230689260886138
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_136: 1658556704893351891
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_137: 7679031709886464917
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_138: -6288296974542916590
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_139: 3468694147479265040
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_14: 8697670477457694852
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_140: 6229941967045159086
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_141: 8092270330134500132
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_142: -7531346521247148695
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_143: -3071115949947321908
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_144: 5124479959146942235
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_145: -7394541757153945807
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_146: -6534823950018023258
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_147: 7480955172212430950
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_148: 389958984362304903
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_149: 2388657825946536054
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_15: -5598789083741564509
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_150: -5297968278776364033
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_151: -7877649210140856923
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_152: -3022932804479185722
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_153: 4222284216617556478
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_16: -7189815777771859683
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_17: 593744305056906708
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_18: 3253440574568075397
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_19: -6912207161522863979
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_2: 5430625932040227333
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_20: 2223547158411032886
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_21: -6172700762342429518
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_22: 2790678365136237743
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_23: -3603233031710763361
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_24: -3675309609976135579
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_25: 3402439960142318484
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_26: -6070670646779371055
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_27: -2413309559850284936
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_28: -8496119727219976963
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_29: 7662246258810062577
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_3: 4545048841841855764
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_30: -5044053843899602667
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_31: 1481819848099362139
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_32: 6004024295036535165
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_33: -1032669071908083127
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_34: 8159478636650614615
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_35: 4038217818337203337
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_36: 6396739938871589716
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_37: -682820729458239683
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_38: 7634661521180305166
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_39: 7250130511310925388
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_4: -5889816313482016348
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_40: 874839532787215022
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_41: 3206846122146694692
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_42: 436708566689453916
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_43: 1217033828986997413
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_44: 7632338523514576356
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_45: 2675191483535301162
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_46: 5272109186378878710
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_47: -4495352379785634655
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_48: 3103818706176073057
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_49: 4316706236853094287
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_5: -3527999743565024279
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_50: 1245883968069591086
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_51: 3403562346776889363
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_52: -6238732912539098635
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_53: 3980579847104961414
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_54: 3837299895886010632
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_55: -6501046964088049754
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_56: -8221517698342034821
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_57: 2738878218058261976
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_58: 2265253115003683973
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_59: 1154252255388730432
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_6: -1116199003210291480
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_60: -8439961958774727027
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_61: 644429643267351761
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_62: -5154750605092501204
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_63: 5072753815589218937
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_64: -2471454645874800307
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_65: -8698842124893718619
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_66: -3519030159632766282
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_67: -4109421007589709993
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_68: 776529964760436892
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_69: 4581483772642692972
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_7: -5832838845858129267
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_70: -8105957720025087922
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_71: -4202607387992122953
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_72: 7085544478450134859
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_73: 6618912270939041777
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_74: -6380928246382219746
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_75: 7849974076059926251
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_76: -5256715418621417437
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_77: 101065511712384565
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_78: 4164058474376747129
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_79: -2695766634902579205
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_8: 379496666680689298
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_80: -2887323472140095986
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_81: -1453823979413605678
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_82: 4539796531166385774
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_83: 3677000556875973384
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_84: -2980572810822962229
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_85: 8651688143717050045
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_86: -6187473080313242279
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_87: 1192546738641866667
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_88: 3803384406753042355
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_89: -8227207316755105909
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_9: 9220424328174306856
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_90: 2182344702001156645
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_91: 2115556431414267601
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_92: -7951782102268135974
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_93: -9135019593920819576
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_94: 4846947559196323041
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_95: -3208040654951330190
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_96: 588250572359415791
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_97: -3157322434701736423
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_98: 5923991814674089836
+      pngtree-seasoning-bottle-in-pixel-art-style-png-image_14968715_99: -5939110097537081693
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

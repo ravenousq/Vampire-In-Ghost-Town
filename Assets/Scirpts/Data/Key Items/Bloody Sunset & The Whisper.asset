@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   itemName: Bloody Sunset & The Whisper
-  icon: {fileID: -7000138129008738809, guid: e21f9b21885f99d438a22c616c7fdf64, type: 3}
+  icon: {fileID: -1853370416, guid: e21f9b21885f99d438a22c616c7fdf64, type: 3}
   description: 'A pair of old, trusted revolvers. One being a memento of the past,
     a sweet whisper of good times. The other appeared to be the key to absolution
     after painting the world in red hue. Together they strike a perfect balance between
