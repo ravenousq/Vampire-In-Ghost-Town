@@ -27,9 +27,10 @@ public class CharacterStats : MonoBehaviour
     public System.Action OnHealed;
     public System.Action OnStunned;
     public System.Action OnPoiseChanged;
+    public System.Action OnDie;
     public bool isStunned { get; protected set; }
     private const int BASE_POISE_THRESHOLD = 100;
-    private const int POISE_RECOVERY_RATE = 2;
+    private int poiseRecoveryRate = 2;
     public bool canBeDamaged { get; protected set; } = true;
     [SerializeField] private bool debugDamage;
 
@@ -53,7 +54,11 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void Die()
     {
-        Debug.Log(gameObject.name + " is dead fr.");
+        if(debugDamage)
+            Debug.Log(gameObject.name + " is dead fr.");
+
+        if(OnDie != null)
+            OnDie();
     }
 
     #region Poise & Stun
@@ -63,7 +68,7 @@ public class CharacterStats : MonoBehaviour
             return;
 
         if(poiseTracker > BASE_POISE_THRESHOLD - poise.GetValue() * 5)
-            poiseTracker -= POISE_RECOVERY_RATE;
+            poiseTracker -= poiseRecoveryRate;
         else
             poiseTracker = BASE_POISE_THRESHOLD - poise.GetValue() * 5;
 
@@ -113,7 +118,8 @@ public class CharacterStats : MonoBehaviour
     {
         if(target.HP <= 0 || !target.canBeDamaged)
         {
-            Debug.Log(target.name + " is dead or cannot be damaged.");
+            if(debugDamage)
+                Debug.Log(target.name + " is dead or cannot be damaged.");
             return false;
         }
 
@@ -204,4 +210,6 @@ public class CharacterStats : MonoBehaviour
 
         canBeDamaged = true;
     }
+
+    public void ModifyPoiseRecovery(int modifier) => poiseRecoveryRate += modifier;
 }

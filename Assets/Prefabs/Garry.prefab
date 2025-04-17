@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 52615999882142292}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.62, y: 14.43, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -41,6 +41,7 @@ Transform:
   - {fileID: 1317062565924388479}
   - {fileID: 6185975228191000463}
   - {fileID: 3573776407977360261}
+  - {fileID: 2080757399622271911}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &402171833227618114
@@ -78,7 +79,8 @@ MonoBehaviour:
   attackKnockback: {x: 15, y: 5}
   attackPoint: {fileID: 1804581516638287214}
   itemPrefab: {fileID: 4235565483072219220, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
-  drop: {fileID: 11400000, guid: 783eddec4fcadb4478849d2d66f63bb7, type: 2}
+  drop: {fileID: 0}
+  itemDropPosition: {fileID: 2080757399622271911}
   whatIsRoute:
     serializedVersion: 2
     m_Bits: 256
@@ -353,6 +355,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &3513291424698775851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2080757399622271911}
+  m_Layer: 0
+  m_Name: Item Drop Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2080757399622271911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3513291424698775851}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.02, y: -0.93, z: 0.031784452}
+  m_LocalScale: {x: 0.90909094, y: 0.90909094, z: 0.90909094}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6518382380872775608}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4142421479817082357
 GameObject:
   m_ObjectHideFlags: 0

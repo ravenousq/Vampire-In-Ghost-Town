@@ -24,7 +24,7 @@ public class PlayerMoveState : PlayerGroundedState
         player.anim.SetBool("move_start", false);
 
         if(!player.isKnocked)
-            player.SetVelocity(xInput * player.movementSpeed, rb.linearVelocityY);
+            player.SetVelocity(xInput * player.movementSpeed, rb.linearVelocityY, player.slowMotion);
 
 
         if(xInput == 0)

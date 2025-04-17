@@ -23,6 +23,9 @@ public class PlayerHealState : PlayerState
     {
         base.Update();
 
+        if(!player.isKnocked)
+            rb.linearVelocity = new Vector2(xInput * skills.shoot.reloadMovementSpeed, 0);
+
         if(stateTimer < 0)
             stateMachine.ChangeState(player.idle);
     }

@@ -32,7 +32,7 @@ public class PlayerDashState : PlayerState
         base.Update();
 
         if(!player.isKnocked)
-            player.SetVelocity(finalDirections);
+            player.SetVelocity(finalDirections, player.slowMotion);
 
         if(stateTimer < 0)
             stateMachine.ChangeState(player.airborne);

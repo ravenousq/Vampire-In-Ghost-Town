@@ -1,13 +1,17 @@
+
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AmmoUI : MonoBehaviour
 {
-    TextMeshProUGUI thisText;
+    [SerializeField] private TextMeshProUGUI ammoText;
+    [SerializeField] private Image ammoImage;
+    private bool checker = true;
 
     private void Awake()
     {
-        thisText = GetComponentInChildren<TextMeshProUGUI>();
+        ammoText = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     Player player;
@@ -16,15 +20,27 @@ public class AmmoUI : MonoBehaviour
     {
         player = PlayerManager.instance.player;
 
-        UpdateAmmo();
-
         player.skills.shoot.OnAmmoChange += UpdateAmmo;
+    }
+
+    private void Update() 
+    {
+        if(checker)
+        {
+            if(SkillManager.instance.isSkillUnlocked("Constellation of Tears"))
+            {
+                checker = false;
+                ammoImage.color = Color.white;
+                ammoText.color = Color.white;
+                UpdateAmmo();
+            }
+        }
     }
 
     private void UpdateAmmo() 
     {
-        thisText.text = player.skills.shoot.currentAmmo.ToString();
+        ammoText.text = player.skills.shoot.currentAmmo.ToString();
 
-        thisText.color = player.skills.shoot.currentAmmo < 4 ? Color.red : Color.white;
+        ammoText.color = player.skills.shoot.currentAmmo < 4 ? Color.red : Color.white;
     }
 }

@@ -49,31 +49,48 @@ public class Entity : MonoBehaviour
     }
 
     #region Velocity
-    public void SetVelocity(Vector2 velocity)
+    public void SetVelocity(Vector2 velocity, bool SlowMotion = false)
     {
         if(rb.bodyType == RigidbodyType2D.Static)
             return;
 
         FlipController(velocity.x);
         
+        velocity = SlowMotion ? velocity * Time.unscaledDeltaTime : velocity;
+        
         if(canMove)
-            rb.linearVelocity = velocity;
+        {
+            if(!SlowMotion)
+                rb.linearVelocity = velocity;
+            else
+                rb.MovePosition(rb.position + velocity);
+        }
         else
             ResetVelocity();
     }
 
-    public void SetVelocity(float x, float y)
+    public void SetVelocity(float x, float y, bool SlowMotion = false)
     {
         if(rb.bodyType == RigidbodyType2D.Static)
             return;
 
         FlipController(x);
 
+        Vector2 velocity = new Vector3(x, y);
+
+        velocity = SlowMotion ? velocity * Time.unscaledDeltaTime : velocity;
+
         if(canMove)
-            rb.linearVelocity = new Vector2(x, y);
+        {
+            if(!SlowMotion)
+                rb.linearVelocity = velocity;
+            else
+                rb.MovePosition(rb.position + velocity);
+        }
         else
             ResetVelocity();
     }
+    
 
     public void ResetVelocity()
     {

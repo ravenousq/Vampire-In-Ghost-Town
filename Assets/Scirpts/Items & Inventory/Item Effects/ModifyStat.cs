@@ -25,9 +25,9 @@ public class ModifyStat : ItemEffect
         statToModify = StatToModify();
 
         if(stat == StatType.health)
-            statToModify.AddModifier(stats.health.GetValue() / modifier);
+            statToModify.AddModifier(stats.health.GetValue() / modifier, stats);
         else
-            statToModify.AddModifier(modifier);
+            statToModify.AddModifier(modifier, stats);
     }
 
     public override void Countereffect() => statToModify.RemoveModifier(modifier);

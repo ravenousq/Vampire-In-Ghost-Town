@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Item Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5b6ea6878e90584a8af56b6ae7293de, type: 2}
-  m_sharedMaterial: {fileID: 3168177846902588913, guid: c5b6ea6878e90584a8af56b6ae7293de, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fbc07166d0d48aa44b1287ef29ced488, type: 2}
+  m_sharedMaterial: {fileID: 255786425675240141, guid: fbc07166d0d48aa44b1287ef29ced488, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -520,7 +520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 300, y: 0}
+  m_AnchoredPosition: {x: 190, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1268266093594976233

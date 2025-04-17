@@ -37,7 +37,7 @@ public class ItemDisplayUI : MonoBehaviour
 
     private void Update() 
     {
-        timer -= Time.deltaTime;
+        timer -= Time.unscaledDeltaTime;
 
         if(isAppearing)
             Appear();
@@ -47,7 +47,7 @@ public class ItemDisplayUI : MonoBehaviour
 
     private void Appear()
     {
-        alpha = alpha > .99f ? 1 : Mathf.Lerp(alpha, 1, Time.deltaTime * appearingSpeed);
+        alpha = alpha > .99f ? 1 : Mathf.Lerp(alpha, 1, Time.unscaledDeltaTime * appearingSpeed);
 
         foreach (Image image in images)
             image.color = new Color(image.color.r, image.color.g, image.color.b, alpha);

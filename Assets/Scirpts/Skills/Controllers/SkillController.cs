@@ -20,7 +20,7 @@ public class SkillController : MonoBehaviour
 
     public virtual bool CanUseSkill()
     {
-        if(cooldownTimer <= 0 && SkillManager.instance.isSkillUnlocked(primarySkillName) && !isBlocked)
+        if(cooldownTimer <= 0 && SkillManager.instance.isSkillUnlocked(primarySkillName) && !isBlocked && Time.timeScale > 0)
         {
             UseSkill();
             cooldownTimer = cooldown;

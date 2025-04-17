@@ -31,6 +31,7 @@ public class Enemy : Entity
     [Header("Drop")]
     [SerializeField] private ItemObject itemPrefab;
     [SerializeField] private ItemData drop;
+    [SerializeField] private Transform itemDropPosition;
 
     Player player;
 
@@ -77,6 +78,10 @@ public class Enemy : Entity
 
             if(hit.GetComponent<PerfectDashChecker>())
             {
+                Debug.Log("Perfect Dash");
+
+                player.SlowDownTime();
+
                 Destroy(hit.gameObject);
 
                 int currentBullets = player.skills.shoot.currentAmmo;
@@ -92,7 +97,7 @@ public class Enemy : Entity
         base.Die();
 
         if(drop)
-            Instantiate(itemPrefab, transform.position - new Vector3(0, cd.size.y/2 - itemPrefab.GetComponent<CircleCollider2D>().radius/2), Quaternion.identity).SetUpItem(drop);
+            Instantiate(itemPrefab, itemDropPosition.position, Quaternion.identity).SetUpItem(drop);
 
         Destroy(gameObject);
     }
@@ -147,7 +152,6 @@ public class Enemy : Entity
     public virtual void AllowExecution(bool allow) 
     {
         canBeExecuted = allow;
-        Debug.Log(name + " can be executed: " + allow);
         if(player.enemyToExecute == this)
             player.AssignExecutionTarget(null);
     }

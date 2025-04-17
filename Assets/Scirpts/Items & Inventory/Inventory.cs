@@ -45,6 +45,8 @@ public class Inventory : MonoBehaviour
     private ItemSlotUI[] keyItemsSlots;
     private ItemSlotUI[] charmsSlots;
     private ItemSlotUI[] equipedCharmsSlots;
+    public ItemDescriptionUI itemDescription;
+    public Canvas canvas;
 
     private void Start() 
     {
@@ -154,7 +156,7 @@ public class Inventory : MonoBehaviour
 
         DisplayItem(item);
 
-        UpdateSlotUI();
+        //UpdateSlotUI();
     }
 
     private void DisplayItem(ItemData item)
@@ -196,7 +198,7 @@ public class Inventory : MonoBehaviour
                 charmValue.RemoveStack();
         }
 
-        UpdateSlotUI();
+        //UpdateSlotUI();
     }
 
     private void AddToNotes(ItemData item)
@@ -213,7 +215,6 @@ public class Inventory : MonoBehaviour
 
     private void AddToKeyItems(KeyItemData item)
     {
-        Debug.Log(item.description);
         if(keyItemsDictionary.TryGetValue(item, out InventoryItem value))
             value.AddStack();
         else
@@ -223,7 +224,7 @@ public class Inventory : MonoBehaviour
             keyItemsDictionary.Add(item, newItem);
         }
 
-        UpdateSlotUI();
+        //UpdateSlotUI();
     }
 
     private void AddToCharms(CharmData item)
@@ -238,4 +239,29 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void EnableUI(bool enable)
+    {
+        if(!enable)
+        {
+            Time.timeScale = 0;
+
+            UpdateSlotUI();
+        }
+        else
+        {
+            Time.timeScale = 1;
+
+            if(itemDescription.gameObject.activeSelf)
+                itemDescription.gameObject.SetActive(false);
+
+            for (int i = 0; i < notesSlots.Length; i++)
+            notesSlots[i].CleanUpSlot();
+
+            for (int i = 0; i < keyItemsSlots.Length; i++)
+                keyItemsSlots[i].CleanUpSlot();
+
+            for (int i = 0; i < charmsSlots.Length; i++)
+                charmsSlots[i].CleanUpSlot();
+        }
+    }
 }

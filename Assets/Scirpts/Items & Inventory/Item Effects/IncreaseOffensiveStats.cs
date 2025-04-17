@@ -14,8 +14,8 @@ public class IncreaseOffensiveStats : ItemEffect
     {
         base.Effect();
 
-        stats.damage.AddModifier(Mathf.RoundToInt(stats.damage.GetValue() * damageIncrease));
-        stats.agility.AddModifier(agilityIncrease);
-        stats.brutality.AddModifier(brutalityIncrease);
+        stats.damage.AddModifier(Mathf.RoundToInt(stats.damage.GetValue() * damageIncrease), stats);
+        stats.agility.AddModifier(agilityIncrease, stats);
+        stats.brutality.AddModifier(brutalityIncrease, stats);
     }
 }

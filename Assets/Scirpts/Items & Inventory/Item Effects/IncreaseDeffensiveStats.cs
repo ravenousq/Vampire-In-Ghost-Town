@@ -15,10 +15,10 @@ public class IncreaseDeffensiveStats : ItemEffect
     {
         base.Effect();
 
-        stats.health.AddModifier(Mathf.RoundToInt(stats.health.GetValue() * healthIncrease));
+        stats.health.AddModifier(Mathf.RoundToInt(stats.health.GetValue() * healthIncrease), stats);
 
         stats.Heal(stats.health.GetValue());
-        stats.poise.AddModifier(poiseIncrease);
-        stats.armor.AddModifier(armorIncrease);
+        stats.poise.AddModifier(poiseIncrease, stats);
+        stats.armor.AddModifier(armorIncrease, stats);
     }
 }

@@ -46,11 +46,11 @@ public class GarryAggroState : GarryGroundedState
             stateTimer = enemy.aggroTime;
         }
 
-        if(!Physics2D.OverlapCircle(enemy.attackPoint.position, randomizedDistance, enemy.whatIsPlayer))
+        if(!Physics2D.OverlapCircle(enemy.attackPoint.position, randomizedDistance, enemy.whatIsPlayer) && enemy.IsGroundDetected())
             enemy.SetVelocity(enemy.movementSpeed * playerOnRight() * aggroMultiplayer, rb.linearVelocityY);
         else
         {
-            if(attackTimer > 0)
+            if(attackTimer > 0 || (!enemy.IsGroundDetected() && !Physics2D.OverlapCircle(enemy.attackPoint.position, randomizedDistance, enemy.whatIsPlayer)))
                 enemy.ResetVelocity();
             else
                 stateMachine.ChangeState(enemy.attack);

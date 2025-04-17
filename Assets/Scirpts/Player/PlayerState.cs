@@ -35,6 +35,9 @@ public class PlayerState
 
     public virtual void Update()
     {
+        if(Time.timeScale == 0)
+            return;
+
         stateTimer -= Time.deltaTime;
 
         AxisInput();

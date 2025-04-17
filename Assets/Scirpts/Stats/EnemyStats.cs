@@ -3,7 +3,6 @@ using UnityEngine;
 public class EnemyStats : CharacterStats
 {
     private Enemy enemy;
-    public System.Action OnDie;
 
     [Header("Level")]
     [SerializeField] private int level = 1;
@@ -30,11 +29,11 @@ public class EnemyStats : CharacterStats
 
     private void Modify(Stat stat)
     {
-        for (int i = 1; i < level; i++)
+        for (int i = 1; i <= level; i++)
         {
             float modifier = stat.GetValue() * percentageModifier;
 
-            stat.AddModifier(Mathf.RoundToInt(modifier));
+            stat.AddModifier(Mathf.RoundToInt(modifier), this);
         }
     }
 

@@ -113,7 +113,7 @@ public class Garry : Enemy
     }
     #endregion
 
-    protected override void OnDrawGizmos()
+    /*protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();
 
@@ -138,5 +138,5 @@ public class Garry : Enemy
             Gizmos.DrawLine(transform.position - new Vector3(0, .1f), new Vector3(transform.position.x + (aggroRange * facingDir), transform.position.y - .1f));
             Gizmos.DrawLine(transform.position - new Vector3(0, .1f), new Vector3(transform.position.x - (aggroRange/2 * facingDir), transform.position.y - .1f));
         }
-    }
+    }*/
 }

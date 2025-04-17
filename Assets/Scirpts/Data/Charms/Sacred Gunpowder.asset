@@ -15,8 +15,8 @@ MonoBehaviour:
   itemType: 2
   itemName: Sacred Gunpowder
   icon: {fileID: -4869021399287211354, guid: eb080e1486977b948b3049fd17e688e4, type: 3}
-  description: "Description:\nSpecial kind of gun powder, crafted solely by The Evangelists.
-    Whispers claim it\u2019s laced with the blood of the devil himself. Only initiate
-    know whether this is only a hearsay.\n\nRevolvers deal more posture damage."
+  description: "Special kind of gun powder, crafted solely by The Evangelists. Whispers
+    claim it\u2019s laced with the blood of the devil himself. Only initiate know
+    whether this is only a hearsay.\n\nRevolvers deal more posture damage."
   equipEffects:
   - {fileID: 11400000, guid: 6639b088ed0669a419892db466d3ad8a, type: 2}

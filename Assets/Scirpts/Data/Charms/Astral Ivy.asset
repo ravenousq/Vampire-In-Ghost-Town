@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 2
   itemName: Astral Ivy
-  icon: {fileID: -7904618992448586390, guid: afe781750a2f0014ba6e5f01b4c123fc, type: 3}
+  icon: {fileID: 6433612475771069219, guid: 546464cb644d2f5408f1610dfe0e2459, type: 3}
   description: "Especially bizarre shrub with blossoms, eerily resembling eyeballs,
     forever gazing skyward \u2014 as if longing for the stars. Its ivy writhes with
     a strange sentience, eager to cling to any living being it finds.\n\nImproves

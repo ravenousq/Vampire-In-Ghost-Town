@@ -144,4 +144,6 @@ public class HaloController : SkillController
         isOrbiting = true;
         CreateHalo();
     }
+
+    public void ModifyBounces(int bounces) => numberOfBounces += bounces;
 }

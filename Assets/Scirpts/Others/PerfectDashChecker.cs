@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PerfectDashChecker : MonoBehaviour
 {
-    [SerializeField] private float lifespan;
+    private float lifespan = .15f;
     private void Start() 
     {
         Destroy(gameObject, lifespan);

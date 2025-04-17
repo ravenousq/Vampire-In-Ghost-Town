@@ -1,6 +1,7 @@
 
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 [SelectionBase]
@@ -54,10 +55,13 @@ public class Player : Entity
     public ReapersHalo halo { get; private set; }
     public Enemy enemyToExecute;
     public int executionDamage;
+    public bool canSlowTime = false;
+    public bool slowMotion { get; private set; }
 
     [Header("Prefabs")]
     [SerializeField] private AfterImage afterImage;
     [SerializeField] private PerfectDashChecker dashCheckerPrefab; 
+    [SerializeField] private DeathScreen deathScreen;
 
     #region Flags
     [HideInInspector] public bool playStartAnim = true;
@@ -80,6 +84,8 @@ public class Player : Entity
     protected override void Awake()
     {
         base.Awake();
+
+        stats = GetComponent<PlayerStats>();
 
         #region States Initialization
         stateMachine = new PlayerStateMachine();
@@ -105,12 +111,13 @@ public class Player : Entity
 
     protected override void Start()
     {
+        Time.timeScale = 1;
+
         base.Start();
 
         rb.gravityScale = gravityScale;
 
         skills = SkillManager.instance;
-        stats = GetComponent<PlayerStats>();
 
         stateMachine.Initialize(idle);
 
@@ -122,10 +129,13 @@ public class Player : Entity
 
     protected override void Update()
     {
+        if(stats.HP == 0)
+            return;
+
         stateMachine.current.Update();
 
         if(Input.GetKeyDown(KeyCode.I))
-            Instantiate(garry);
+            Instantiate(garry, transform.position + new Vector3(10f * facingDir, 0f, 0f), Quaternion.identity);        
 
         if(Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
@@ -134,6 +144,15 @@ public class Player : Entity
         {
             Cursor.visible = !Cursor.visible;
             Cursor.lockState = Cursor.lockState == CursorLockMode.None ? CursorLockMode.Confined : CursorLockMode.None;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Tab))
+            Inventory.instance.EnableUI(Time.timeScale == 0);
+
+        if(!slowMotion && Time.timeScale < 1 && Time.timeScale != 0)
+        {
+            Time.timeScale += Time.unscaledDeltaTime;
+            Time.timeScale = Mathf.Clamp(Time.timeScale, 0, 1);
         }
     }
 
@@ -145,9 +164,26 @@ public class Player : Entity
 
     //private void ResetMoveStart() => playStartAnim = true;
 
+    public void SlowDownTime()
+    {
+        if(canSlowTime)
+            StartCoroutine(SlowDownTimeRoutine());
+    }
+
+    private IEnumerator SlowDownTimeRoutine()
+    {
+        slowMotion = true;
+        Time.timeScale = 0.2f; 
+        Time.fixedDeltaTime = 0.02f * Time.timeScale; 
+
+        yield return new WaitForSecondsRealtime(1f);
+
+        slowMotion = false;
+    }
+
     private void CheckForDashInput()
     {
-        if(isKnocked)
+        if(isKnocked || Time.timeScale == 0)
             return;
 
         if(Input.GetKeyDown(KeyCode.LeftShift))
@@ -165,6 +201,9 @@ public class Player : Entity
 
     private void CheckForHaloInput()
     {
+        if(Time.timeScale == 0)
+            return;
+
         haloTimer -= Time.deltaTime;
 
         if(Input.GetKeyDown(KeyCode.Mouse1) && !halo)
@@ -231,7 +270,16 @@ public class Player : Entity
 
     public override void Die()
     {
+        deathScreen.gameObject.SetActive(true);
+        deathScreen.ActivateDeathScreen();
+
         base.Die();
+
+        canMove = false;
+        canBeKnocked = false;
+        stats.InvincibleFor(5f);
+
+        Time.timeScale = 0;
     }
 
     #region Assigners    

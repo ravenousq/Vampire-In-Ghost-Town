@@ -72,7 +72,7 @@ public class PlayerGroundedState : PlayerState
         {
             if(skills.shoot.CanUseSkill())
                 stateMachine.ChangeState(player.attack);
-            else if(skills.shoot.CanReload())
+            else if(skills.shoot.CanReload() && Time.timeScale != 0)
                 stateMachine.ChangeState(player.reload);
         }
     }
