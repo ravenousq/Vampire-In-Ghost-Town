@@ -27,6 +27,7 @@ public class Player : Entity
     public PlayerParryState parry { get; private set; }
     public PlayerExecutionState execute { get; private set; }
     public PlayerHealState heal { get; private set; }
+    public PlayerDialogueState dialogue { get; private set; }
     #endregion
 
     [Header("Movement")]
@@ -106,6 +107,7 @@ public class Player : Entity
         parry = new PlayerParryState(this, stateMachine, "idle");
         execute = new PlayerExecutionState(this, stateMachine, "execution");
         heal = new PlayerHealState(this, stateMachine, "dash");
+        dialogue = new PlayerDialogueState(this, stateMachine, "idle");
         #endregion
     }
 
@@ -221,7 +223,7 @@ public class Player : Entity
             isAimingHalo = true;
         }
 
-        if(!halo && Input.GetKey(KeyCode.Mouse1) && Input.GetKeyDown(KeyCode.Mouse0) && skills.isSkillUnlocked("Bless 'em With The Blade"))
+        if(!halo && Input.GetKey(KeyCode.Mouse1) && Input.GetKeyDown(KeyCode.Mouse0) && skills.isSkillUnlocked("Bless 'em With The Blade") && skills.isSkillUnlocked("Die By The Blade"))
         {
             skills.halo.EnableOrbiting();
             skills.halo.DotsActive(false);
@@ -280,6 +282,11 @@ public class Player : Entity
         stats.InvincibleFor(5f);
 
         Time.timeScale = 0;
+    }
+
+    public void DialogueStarted()
+    {
+        stateMachine.ChangeState(dialogue);
     }
 
     #region Assigners    

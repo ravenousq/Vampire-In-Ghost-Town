@@ -72,4 +72,14 @@ public class SkillManager : MonoBehaviour
         skills[skillToUnlock] = true;
         unlockableSkills.UpdateValue(skillToUnlock, skills[skillToUnlock]); 
     }
+
+    public void ChangeLockOnAllSkills(bool block)
+    {
+        parry.SwitchBlockade(block);
+        dash.SwitchBlockade(block);
+        wanted.SwitchBlockade(block);
+        halo.SwitchBlockade(block);
+        concoction.SwitchBlockade(block);
+        shoot.SwitchBlockade(block);
+    }
 }
