@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 using Unity.VisualScripting;
+using System.Diagnostics;
 
 public class ItemDisplayUI : MonoBehaviour
 {
@@ -13,18 +14,19 @@ public class ItemDisplayUI : MonoBehaviour
     [SerializeField] private float idleTime;
     [SerializeField] private float disappearingDuration;
     private float timer;
-    private bool isAppearing = true;
+    public bool isAppearing { get; private set; } = true;
     private float alpha;
+    private bool confirmation;
 
 
 
-    public void SetUp(ItemData item)
+    public void SetUp(ItemData item, bool confirmation = false)
     {
         if(item)
         {
             icon.sprite = item.icon;
             myText.text =  $"Acquired: <color=yellow>{item.itemName}</color>";
-
+            this.confirmation = confirmation;
         }
 
         images = GetComponentsInChildren<Image>();
@@ -42,7 +44,23 @@ public class ItemDisplayUI : MonoBehaviour
         if(isAppearing)
             Appear();
         else if(!isAppearing && timer < 0)
-            Disappear();
+        {
+            if(!confirmation)
+                Disappear();
+            else
+            {
+                if(Input.GetKeyDown(KeyCode.C))
+                {
+                    confirmation = !confirmation;
+                    disappearingDuration = .1f;
+                    Destroy(transform.parent.gameObject);
+                    
+                    DialogueManager.instance.Invoke(nameof(DialogueManager.instance.InvokeNextLine), .1f);
+                }
+            }
+        }
+        
+        
     }
 
     private void Appear()

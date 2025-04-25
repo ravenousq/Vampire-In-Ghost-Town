@@ -1294,6 +1294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 1504743607}
   talkUI: {fileID: 710213124}
+  choiceUI: {fileID: 1743656637}
   scrollbar: {fileID: 1770891337}
   dialogueText: {fileID: 1845445439}
   dialogues:
@@ -6705,6 +6706,82 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4555775894742502624, guid: 54d8757170a78464f8f8a9b1e970b989, type: 3}
   m_PrefabInstance: {fileID: 1209930417}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &735855033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 735855034}
+  - component: {fileID: 735855036}
+  - component: {fileID: 735855035}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &735855034
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735855033}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5.68, y: 5.68, z: 5.68}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1048618102}
+  m_Father: {fileID: 1504743608}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 180, y: 32}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &735855035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735855033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &735855036
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735855033}
+  m_CullTransparentMesh: 1
 --- !u!1 &737721680
 GameObject:
   m_ObjectHideFlags: 0
@@ -9108,9 +9185,9 @@ RectTransform:
   m_Father: {fileID: 1504743608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1002074425
 MonoBehaviour:
@@ -9599,6 +9676,81 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6941242762129823890, guid: ac2aa5cd50f344e47b5776c4e48a2073, type: 3}
   m_PrefabInstance: {fileID: 1642593111993405612}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1048618101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1048618102}
+  - component: {fileID: 1048618104}
+  - component: {fileID: 1048618103}
+  m_Layer: 5
+  m_Name: Background Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1048618102
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048618101}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 735855034}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 180, y: 32}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1048618103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048618101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 6566039111625627849, guid: e395ae1f092b85543a0ef14964c2bce5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1048618104
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048618101}
+  m_CullTransparentMesh: 1
 --- !u!224 &1051513223 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4555775894742502624, guid: 54d8757170a78464f8f8a9b1e970b989, type: 3}
@@ -10043,7 +10195,7 @@ GameObject:
   - component: {fileID: 1142484035}
   - component: {fileID: 1142484034}
   m_Layer: 5
-  m_Name: Inventory UI
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10134,6 +10286,7 @@ RectTransform:
   - {fileID: 446370070}
   - {fileID: 469946357}
   - {fileID: 1504743608}
+  - {fileID: 1743656638}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -11635,8 +11788,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1272204127}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.58988047}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 28.125, y: 40.625}
   m_Pivot: {x: 0.5, y: 1}
@@ -11653,7 +11806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11918,7 +12071,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000015258789}
   m_SizeDelta: {x: 0, y: 213.465}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1384106047
@@ -12786,7 +12939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1504743608
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12799,6 +12952,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 735855034}
   - {fileID: 1002074424}
   - {fileID: 1770891336}
   m_Father: {fileID: 1142484037}
@@ -12851,14 +13005,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6566039111625627849, guid: e395ae1f092b85543a0ef14964c2bce5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14406,123 +14560,169 @@ MonoBehaviour:
       Forgive me, but if you're seeking absolution, our pastor has gone missing.
       I-I'm sorry, you will have to remain forbearing\u2026"
     nextIndex: 1
+    newFirstLine: 0
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
   - dialogueText: "Wait\u2026 Could it be that\u2026 You are a Mercenary perhaps\u2026?
       O-Oh acquit my discourtesy, but your posture stands\u2026  Menacing and\u2026
       I would imagine those armaments of yours to be not just mere trinkets, but
       tools of trade\u2026"
     nextIndex: 2
+    newFirstLine: 0
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect:
+    - {fileID: 11400000, guid: 9afeb72b23c12d144a9191090189dee0, type: 2}
+    itemsToGive: []
   - dialogueText: "Oh sacred be the heavens\u2026 Please, find Father Williams\u2026.
       I beg of thee\u2026 He hasn't returned from his pilgrimage yet, I'm so worried\u2026
       What if some horrible things have happened to him\u2026"
     nextIndex: 3
+    newFirstLine: 0
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
   - dialogueText: "I do not own much, nor does our parish, but I'm sure that the
       faithful will aid us and gather an appropriate amount of money to compensate
       for your labor\u2026 Just please\u2026 Find him\u2026"
     nextIndex: -1
+    newFirstLine: 3
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect:
+    - {fileID: 11400000, guid: 5ec2e7a571ee62c47a6b1612259efb58, type: 2}
+    itemsToGive: []
   - dialogueText: "I see\u2026 Oh Lord\u2026 What has this world become?\u2026 I
       fret so much about Father Williams\u2026 He\u2019s always ignorant about his
       own well being\u2026 And now it's been three days since he's gone\u2026"
     nextIndex: 5
+    newFirstLine: 0
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
   - dialogueText: "I-I don't ask much of you, I know it's not your burden to bear,
       but\u2026 Please\u2026 if you see him, tell him to come back to the Chapel\u2026
       It would mean the world to me\u2026"
     nextIndex: -1
+    newFirstLine: 5
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect:
+    - {fileID: 11400000, guid: 5ec2e7a571ee62c47a6b1612259efb58, type: 2}
+    itemsToGive: []
   - dialogueText: Oh... No... This cross... It belonged to Father Williams... Is
       he... Dead...? ...
     nextIndex: 7
+    newFirstLine: 0
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
   - dialogueText: ...
     nextIndex: 8
+    newFirstLine: 0
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
   - dialogueText: He was a good man... Was the one to uncover holy scrolls before
       my eyes and edify me into becoming who I am now. May his soul now rest among
       the saints.
     nextIndex: 9
+    newFirstLine: 0
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
   - dialogueText: "I knew that there's something grotesque happening in the Town,
       even The Evangelists had departed to investigate, but\u2026 I would never expect
       things to become so\u2026 convoluted\u2026 Monstrous beasts\u2026? That sounds
       like a horrible nightmare\u2026"
     nextIndex: -1
+    newFirstLine: 10
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
   - dialogueText: "Great heavens\u2026 Your face\u2026 Could that be?\u2026"
     nextIndex: 11
+    newFirstLine: 0
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
   - dialogueText: "You are not a mercenary, nor a faithful willing to seek purpose\u2026
       You are The Gunman\u2026 The victim of The Black Parade, aren\u2019t you\u2026?
       Came back in the name of retribution?"
     nextIndex: 12
+    newFirstLine: 0
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
   - dialogueText: "I am in great sorrow thinking of what you went through, the pain
       seems unimaginable for me, but you must trust me\u2026 The Evangelists ended
       the reign of those unholy cultists years ago\u2026 There are no souls for you
       to take anymore\u2026"
     nextIndex: 13
+    newFirstLine: 0
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
   - dialogueText: "Besides\u2026 If what you speak of is indeed the truth\u2026 The
       Town now must be overrun with vermin\u2026 It is better for you to stay here
       on the holy ground, where those evil forces hold no power."
     nextIndex: 14
+    newFirstLine: 0
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
   - dialogueText: ...
     nextIndex: 15
+    newFirstLine: 0
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
   - dialogueText: "I see\u2026 It was never my purpose to convince you to stay\u2026
       Was it\u2026?"
     nextIndex: -1
+    newFirstLine: 16
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
   - dialogueText: "Ah, forgive my poor manners\u2026 My name is Amelia and I'm a
       nun, but also a candidate to become a vicar of our parish\u2026 As He wills,
       so I rejoice."
-    nextIndex: 16
+    nextIndex: 17
+    newFirstLine: 0
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
   - dialogueText: The cross...? No, no, keep it, stranger. Those wretched beasts
       must fear what's sacred. If your intention is to face them, it will surely
       aid you on your journey.
-    nextIndex: -1
+    nextIndex: 18
+    newFirstLine: 0
     clip: {fileID: 0}
-    item: {fileID: 0}
-    effect: {fileID: 0}
+    effect: []
+    itemsToGive: []
+  - dialogueText: "I am no fighter, best I can aid you in is prayer, but\u2026 If
+      you find any survivors in Town, tell them to come here. I promise I will take
+      care of them the best I can."
+    nextIndex: 19
+    newFirstLine: 0
+    clip: {fileID: 0}
+    effect: []
+    itemsToGive: []
+  - dialogueText: Also, whenever you need to rest and have your wound sewed, please
+      return to the chapel. I will prepare ointments and herbal concoctions in order
+      to ease your pain. For now take this. It might appear useful.
+    nextIndex: 20
+    newFirstLine: 0
+    clip: {fileID: 0}
+    effect:
+    - {fileID: 11400000, guid: 7836ac919ec312542a48f5a5119f23b5, type: 2}
+    itemsToGive:
+    - {fileID: 11400000, guid: c2c6fadbadcacd448a50a8404a409f01, type: 2}
+  - dialogueText: But please... Remain vigilant... Don't let hubris be the end of
+      you...
+    nextIndex: -1
+    newFirstLine: 20
+    clip: {fileID: 0}
+    effect: []
+    itemsToGive: []
 --- !u!114 &1707835872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14639,6 +14839,80 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
   m_PrefabInstance: {fileID: 906609683}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743656637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1743656638}
+  - component: {fileID: 1743656639}
+  - component: {fileID: 1743656640}
+  m_Layer: 5
+  m_Name: Dialogue Options
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1743656638
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743656637}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1142484037}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -310}
+  m_SizeDelta: {x: 200, y: -890.2697}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1743656639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743656637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be61bc4f2f6af324da32e89c2b7647f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPrefab: {fileID: 5553327085653009358, guid: 5807d18c536862e4990012cf41cf1ac0, type: 3}
+--- !u!114 &1743656640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743656637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 1
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 50}
+  m_Spacing: {x: 1, y: 5}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1001 &1744634022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15020,7 +15294,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1322803365}
   m_HandleRect: {fileID: 1322803364}
   m_Direction: 2
@@ -15043,7 +15317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15213,8 +15487,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.5115967, y: 98}
-  m_SizeDelta: {x: 982.6232, y: 141.2891}
+  m_AnchoredPosition: {x: -22.5364, y: 98}
+  m_SizeDelta: {x: 932.5269, y: 141.2891}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1845445439
 MonoBehaviour:
@@ -15247,8 +15521,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4284640396
+  m_fontColor: {r: 0.5471698, g: 0.4240566, b: 0.38301885, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -15303,7 +15577,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -144.18468}
+  m_margin: {x: 59.871063, y: 0, z: 0, w: -144.18468}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

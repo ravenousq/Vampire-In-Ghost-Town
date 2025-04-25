@@ -13,9 +13,6 @@ public class ItemObject : MonoBehaviour
     {
         Inventory.instance.AddItem(item);
 
-        if(item.itemType == ItemType.KeyItem)
-            (item as KeyItemData).PickUpEffect();
-
         Destroy(gameObject);
     }
 

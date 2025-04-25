@@ -141,30 +141,42 @@ public class Inventory : MonoBehaviour
             equipedCharmsSlots[i].UpdateSlot(equipedCharms[i]);
     }
 
-    public void AddItem(ItemData item)
+    public void AddItem(ItemData item, bool confirmation = false)
     {
         if (item.itemType == ItemType.Note)
             AddToNotes(item);
 
-
         if (item.itemType == ItemType.KeyItem)
             AddToKeyItems(item as KeyItemData);
-
 
         if (item.itemType == ItemType.Charm)
             AddToCharms(item as CharmData);
 
-        DisplayItem(item);
+        DisplayItem(item, confirmation);
 
         //UpdateSlotUI();
     }
 
-    private void DisplayItem(ItemData item)
+    public bool HasItem(ItemData item)
+    {
+        if(item.itemType == ItemType.KeyItem && keyItemsDictionary.ContainsKey(item as KeyItemData))
+            return true;
+        
+        if(item.itemType == ItemType.Charm &&charmsDictionary.ContainsKey(item as CharmData))
+            return true;
+
+        if(item.itemType == ItemType.Note &&noteDictionary.ContainsKey(item))
+            return true;
+
+        return false;
+    }
+
+    private void DisplayItem(ItemData item, bool confirmation)
     {
         GameObject newItemDisplay = Instantiate(itemDisplayPrefab);
         ItemDisplayUI newUI = newItemDisplay.GetComponentInChildren<ItemDisplayUI>();
 
-        newUI.SetUp(item);
+        newUI.SetUp(item, confirmation);
 
         itemDisplays.RemoveAll(item => item == null);
 
@@ -223,6 +235,8 @@ public class Inventory : MonoBehaviour
             keyItems.Add(newItem);
             keyItemsDictionary.Add(item, newItem);
         }
+
+        item.PickUpEffect();
 
         //UpdateSlotUI();
     }

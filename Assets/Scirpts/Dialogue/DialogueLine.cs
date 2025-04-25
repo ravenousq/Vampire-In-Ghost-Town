@@ -7,7 +7,8 @@ public class DialogueLine
     [TextArea(1, 10)] 
     public string dialogueText;
     public int nextIndex;
+    public int newFirstLine;
     public AudioClip clip;
-    public ItemData item;
-    public DialogueEffect effect;
+    public DialogueEffect[] effect;
+    public ItemData[] itemsToGive;
 }

@@ -9,19 +9,27 @@ public class Dialogue : MonoBehaviour
 
     private void Start() 
     {
-
+        firstLine = dialogueTree[0];
     }
 
     public void AssignFirstLine(DialogueLine firstLine) => this.firstLine = firstLine;
 
     public void StartDialogue()
     {
-        firstLine = dialogueTree[0];
         currentLine = firstLine;
     }
 
-    public void NextLine() 
+    public void NextLine(int index) 
     {
+        if(index > -1)
+        {
+            currentLine = dialogueTree[index];
+            return;
+        }
+
+        if(currentLine.newFirstLine != 0)
+            AssignFirstLine(dialogueTree[currentLine.newFirstLine]);
+
         if(currentLine.nextIndex == -1)
         {
             EndDialogue();

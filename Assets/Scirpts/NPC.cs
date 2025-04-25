@@ -31,7 +31,8 @@ public class NPC : MonoBehaviour
         if(canStartDialogue)
         {
             if(Input.GetKeyDown(KeyCode.C))
-            {
+            {   
+                canStartDialogue = false;
                 player.DialogueStarted();
                 dialogueManager.InitializeDialogue(dialogue);
             }
