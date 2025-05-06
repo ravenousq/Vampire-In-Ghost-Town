@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5c05333c89d684ebbeea7fc11a4577, type: 3}
+  m_Name: Dead Man's Specie
+  m_EditorClassIdentifier: 
+  itemType: 2
+  itemName: Dead Man's Specie
+  icon: {fileID: 2568793466295339303, guid: bbccc7b497496ca44a18c18724930e4f, type: 3}
+  description: 'One of the coins that sealed fate of many. The jingle of money crafted
+    a beast unstoppable in its hunt for vengeance.  Whoever dared to flip this coin
+    is already as good as dead. Its glowing aura causes ones cupidity to boil.
+
+
+    Increases
+    received currency from fallen enemies.'
+  equipEffects:
+  - {fileID: 11400000, guid: 552341a0eb44bbf44884b2017f691e98, type: 2}

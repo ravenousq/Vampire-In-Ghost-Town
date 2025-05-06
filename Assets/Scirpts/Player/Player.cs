@@ -1,7 +1,6 @@
 
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 
 [SelectionBase]
@@ -28,6 +27,7 @@ public class Player : Entity
     public PlayerExecutionState execute { get; private set; }
     public PlayerHealState heal { get; private set; }
     public PlayerDialogueState dialogue { get; private set; }
+    public PlayerImpactState impact { get; private set; }
     #endregion
 
     [Header("Movement")]
@@ -64,6 +64,15 @@ public class Player : Entity
     [SerializeField] private PerfectDashChecker dashCheckerPrefab; 
     [SerializeField] private DeathScreen deathScreen;
 
+    [Header("FX")]
+    public GameObject intoTheAbyssFX;
+    public GameObject dashFX;
+    public GameObject wallSlideFX;
+    public GameObject airDashFX;
+    public GameObject shootFX;
+    public GameObject landFX;
+    public GameObject jumpFX;
+ 
     #region Flags
     [HideInInspector] public bool playStartAnim = true;
     [HideInInspector] public bool allowCoyote;
@@ -104,10 +113,11 @@ public class Player : Entity
         crouch = new PlayerCrouchState(this, stateMachine, "crouch");
         dive = new PlayerDiveState(this, stateMachine, "jump");
         aimGun = new PlayerAimGunState(this, stateMachine, "idle");
-        parry = new PlayerParryState(this, stateMachine, "idle");
+        parry = new PlayerParryState(this, stateMachine, "parry");
         execute = new PlayerExecutionState(this, stateMachine, "execution");
         heal = new PlayerHealState(this, stateMachine, "dash");
         dialogue = new PlayerDialogueState(this, stateMachine, "idle");
+        impact = new PlayerImpactState(this, stateMachine, "impact");
         #endregion
     }
 
@@ -193,8 +203,12 @@ public class Player : Entity
             if(SkillManager.instance.dash.CanUseSkill())
             {
                 stateMachine.ChangeState(dash);
+                if(IsGroundDetected())
+                    InstantiateFX(dashFX, groundCheck, new Vector3(0, .5f), new Vector3(0, facingDir == -1 ? 0 : 180, 0));
+                else
+                    Instantiate(airDashFX, transform.position, Quaternion.identity);
                 creatingAfterImage = true;
-                InvokeRepeating(nameof(CreateAfterImage), 0, .015f);
+                InvokeRepeating(nameof(CreateAfterImage), 0, .01f);
                 if(SkillManager.instance.isSkillUnlocked("Incense & Iron"))
                     Instantiate(dashCheckerPrefab, transform.position, Quaternion.identity);
             }
@@ -293,10 +307,10 @@ public class Player : Entity
     public void AssignNewHalo(ReapersHalo newHalo) => halo = newHalo;
     public void AssignCrosshair(Crosshair crosshair) => this.crosshair = crosshair;
     public void AssignExecutionTarget(Enemy enemyToExecute) => this.enemyToExecute = enemyToExecute;
+    
     public void AssignLadder(BoxCollider2D ladder) => ladderToClimb = ladder;
     #endregion
 
-    public void TestingEffect() => SetVelocity(0, 100);
 
     #region Collisions
     private void OnCollisionEnter2D(Collision2D other) 
@@ -341,6 +355,22 @@ public class Player : Entity
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
     }
     #endregion
+
+    public void WallSlideFX(bool enable)
+    {
+        if(enable)
+            InvokeRepeating(nameof(CreateWallSlideFX), 0, .6f);
+        else
+            CancelInvoke(nameof(CreateWallSlideFX));
+    }
+
+    private void CreateWallSlideFX()
+    {
+        GameObject newFX = Instantiate(wallSlideFX, wallCheck.position + new Vector3(-.5f * facingDir,.2f), Quaternion.identity);
+        newFX.transform.Rotate(0, facingDir == -1 ? 0 : 180, -270);
+    }
+
+    public void InstantiateFX(GameObject fx, Transform pos, Vector3 offset, Vector3 rotation) => Instantiate(fx, pos.position + offset, Quaternion.identity).transform.Rotate(rotation.x, rotation.y, rotation.z);
 
     protected override void OnDrawGizmos()
     {

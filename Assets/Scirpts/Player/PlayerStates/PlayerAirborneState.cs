@@ -38,13 +38,13 @@ public class PlayerAirborneState : PlayerState
             player.SetVelocity(player.movementSpeed * .8f * xInput, rb.linearVelocityY);
 
         if(player.IsGroundDetected() && !player.isBusy)
+        {
+            player.InstantiateFX(player.landFX, player.groundCheck, new Vector3(0, .8f), Vector3.zero);    
             stateMachine.ChangeState(player.idle);
+        }
 
         if(player.IsWallDetected() && rb.linearVelocityY < 0 && player.canWallSlide)
             stateMachine.ChangeState(player.wallSlide);
-
-        if(player.ladderToClimb && yInput != 0 && !player.isBusy)
-            stateMachine.ChangeState(player.climb);
 
         if(Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Mouse0) && SkillManager.instance.isSkillUnlocked("Into The Abyss"))
             stateMachine.ChangeState(player.dive);

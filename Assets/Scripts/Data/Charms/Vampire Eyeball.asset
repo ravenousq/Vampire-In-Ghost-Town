@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5c05333c89d684ebbeea7fc11a4577, type: 3}
+  m_Name: Vampire Eyeball
+  m_EditorClassIdentifier: 
+  itemType: 2
+  itemName: Vampire Eyeball
+  icon: {fileID: 21300000, guid: f8dd9bb92f76e1147ab0a532d4b03289, type: 3}
+  description: "Eyeball belonging to The Vampire Of Ghost Town. Its pupil shifts
+    in spasms and the surface remains perfectly moist, as if freshly gathered. By
+    holding it one feels eerie insight within.\L\LPerfect dashes slow down time for
+    a brief moment."
+  equipEffects:
+  - {fileID: 11400000, guid: 8310532e2c4bc774fa7482beaac7a10c, type: 2}
