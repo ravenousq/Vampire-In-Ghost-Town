@@ -3,24 +3,24 @@ using UnityEngine;
 
 public class ItemsUI : MonoBehaviour
 {
-    [SerializeField] private KeyItemDisplay display;
-    [SerializeField] private ItemSlotUI[] items;
-    [SerializeField] private int selectedIndex = 0;
-    [SerializeField] private ItemData currentData = null;
+    [SerializeField] protected ItemDisplay display;
+    protected ItemSlotUI[] items;
+    protected int selectedIndex = 0;
+    protected ItemData currentData = null;
 
-    private void Awake() 
+    protected virtual void Awake() 
     {
         items = GetComponentsInChildren<ItemSlotUI>();
     }
 
-    private void Start() 
+    protected virtual void Start() 
     {
         items[selectedIndex].Select(true);
         currentData = items[selectedIndex]?.item?.itemData;
         display.SetUp(currentData);
     }
 
-    private void Update() 
+    protected virtual void Update() 
     {
         // if(selectedIndex == 0)
         //     display.SetUp(items[selectedIndex]?.item?.itemData);

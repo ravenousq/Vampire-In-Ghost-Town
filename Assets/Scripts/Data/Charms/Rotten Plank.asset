@@ -15,8 +15,8 @@ MonoBehaviour:
   itemType: 2
   itemName: Rotten Plank
   icon: {fileID: 21300000, guid: 7e13109e4482ebb41b6f02370afc8461, type: 3}
-  description: 'Those unworthy of being born anew must be crucified. Bloodied nails
-    embedded in this piece of wood indicate its purpose was to ascend the broken,
+  itemDescription: 'Those unworthy of being born anew must be crucified. Bloodied
+    nails embedded in this piece of wood indicate its purpose was to ascend the broken,
     but just maybe it bore witness to absolution.
 
 

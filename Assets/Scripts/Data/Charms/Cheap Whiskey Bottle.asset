@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 2
   itemName: Cheap Whiskey Bottle
   icon: {fileID: 21300000, guid: 68e5b05381930c848a9aa3cdbba364c1, type: 3}
-  description: "A well-renowned bottle of whiskey in these parts. Sots and topers
+  itemDescription: "A well-renowned bottle of whiskey in these parts. Sots and topers
     have sparked more than a few scrimmages over it\u2019s artificial yet oddly intoxicating
     flavor.  This particular batch leaves a sharp, tangy aftertaste on ones tongue.\n\nSlightly
     boosts vitality."

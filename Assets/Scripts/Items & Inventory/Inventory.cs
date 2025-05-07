@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections.LowLevel.Unsafe;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -29,7 +30,7 @@ public class Inventory : MonoBehaviour
     public List<InventoryItem> charms;
     public Dictionary<CharmData, InventoryItem> charmsDictionary;
 
-    public List<InventoryItem> equipedCharms;
+    public InventoryItem[] equipedCharms;
     public Dictionary<CharmData, InventoryItem> equipedCharmsDictionary;
 
     [Header("Inventory UI")]
@@ -55,7 +56,7 @@ public class Inventory : MonoBehaviour
         charms = new List<InventoryItem>();
         charmsDictionary = new Dictionary<CharmData, InventoryItem>();
 
-        equipedCharms = new List<InventoryItem>();
+        equipedCharms = new InventoryItem[5];
         equipedCharmsDictionary = new Dictionary<CharmData, InventoryItem>();
 
         notesSlots = ui.notesParent.GetComponentsInChildren<ItemSlotUI>();
@@ -70,38 +71,38 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public void EquipCharm(CharmData item)
+    public void EquipCharm(CharmData item, int slotToEquip = -1)
     {
         if(!item)
             return;
 
         if(equipedCharmsDictionary.ContainsKey(item))
         {
-            UnequipCharm(item);
-            return;
-        }
-        
-        for (int i = 0; i < equipedCharmsSlots.Length; i++)
-        {
-            if(equipedCharmsSlots[i].item == null)
-                break;
-            else if(i == equipedCharmsSlots.Length - 1)
-                return;
+            for (int i = 0; i < equipedCharms.Length; i++)
+            {
+                if(equipedCharms[i]?.itemData == item)
+                {
+                    UnequipCharm(item, i);
+                    return;
+                }
+            }
         }
 
         InventoryItem newCharm = new InventoryItem(item);
-        equipedCharms.Add(newCharm);
+        if(equipedCharms[slotToEquip] != null)
+            UnequipCharm(equipedCharms[slotToEquip].itemData as CharmData, slotToEquip);
+        equipedCharms[slotToEquip] = newCharm;
         equipedCharmsDictionary.Add(item, newCharm);
         item.EquipEffects();
 
         UpdateSlotUI();
     }
 
-    public void UnequipCharm(CharmData item)
+    public void UnequipCharm(CharmData item, int slotToUnequip = -1)
     {
         if(equipedCharmsDictionary.TryGetValue(item, out InventoryItem value))
         {
-            equipedCharms.Remove(value);
+            equipedCharms[slotToUnequip] = null;
             equipedCharmsDictionary.Remove(item);
             item.UnequipEffects();
         }
@@ -133,7 +134,7 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < charms.Count; i++)
             charmsSlots[i].UpdateSlot(charms[i]);
 
-        for (int i = 0; i < equipedCharms.Count; i++)
+        for (int i = 0; i < equipedCharms.Length; i++)
             equipedCharmsSlots[i].UpdateSlot(equipedCharms[i]);
     }
 

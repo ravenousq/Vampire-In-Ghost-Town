@@ -103,7 +103,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -112,7 +112,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -141,7 +141,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -688,7 +688,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -697,7 +697,30 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      B801-6_0: -432383081384995592
+      B801-6_1: -2554185063358387513
+      B801-6_10: 2401025281821081882
+      B801-6_11: -3643730337404993911
+      B801-6_12: -3598422941165634618
+      B801-6_13: -5224522787723049323
+      B801-6_14: -7500380401356341190
+      B801-6_15: 8899839189620956848
+      B801-6_16: 7815611944293447401
+      B801-6_17: -2153596616286456873
+      B801-6_18: 5960813453423301089
+      B801-6_19: 476888636926231432
+      B801-6_2: 2153657275481799743
+      B801-6_20: -4673180974251390671
+      B801-6_21: -8760922088987102358
+      B801-6_22: 1968810857606533180
+      B801-6_3: 3537868910078582306
+      B801-6_4: 8849042634983577364
+      B801-6_5: 834128723774977923
+      B801-6_6: -469176089807514375
+      B801-6_7: 6738864777726373702
+      B801-6_8: 3661397524738578307
+      B801-6_9: 1061743636137543753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

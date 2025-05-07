@@ -32,6 +32,8 @@ public class Enemy : Entity
     [SerializeField] private ItemObject itemPrefab;
     [SerializeField] private ItemData drop;
     [SerializeField] private Transform itemDropPosition;
+    [Header("FX")]
+    [SerializeField] protected GameObject bloodFX;
 
     Player player;
 
@@ -51,6 +53,7 @@ public class Enemy : Entity
         player = PlayerManager.instance.player;
 
         stats = GetComponent<EnemyStats>();
+        stats.OnDamaged += BloodFX;
         SwitchKnockability();
     }
 
@@ -83,7 +86,7 @@ public class Enemy : Entity
 
             if(hit.GetComponent<PerfectDashChecker>())
             {
-                Debug.Log("Perfect Dash");
+                //Debug.Log("Perfect Dash");
 
                 player.SlowDownTime();
 
@@ -100,6 +103,8 @@ public class Enemy : Entity
     public override void Die()
     {
         base.Die();
+
+        stats.OnDamaged -= BloodFX;
 
         if(drop)
             Instantiate(itemPrefab, itemDropPosition.position, Quaternion.identity).SetUpItem(drop);
@@ -224,6 +229,15 @@ public class Enemy : Entity
     }
 
     #endregion
+
+    private void BloodFX()
+    {
+        float yOffset = cd.size.y/3;
+        Instantiate(bloodFX, new Vector3(
+        transform.position.x - (player.transform.position.x > transform.position.x ? cd.size.x/8 : -cd.size.x/8),
+        transform.position.y + Random.Range(-yOffset, yOffset)),
+        Quaternion.Euler(0, player.transform.position.x > transform.position.x && facingDir != player.facingDir ? 180 : 0, Random.Range(-30, 30))).transform.parent = transform;
+    }
 
     protected override void OnDrawGizmos()
     {

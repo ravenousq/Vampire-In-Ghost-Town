@@ -15,6 +15,7 @@ public class PlayerAirborneState : PlayerState
     {
         base.Enter();
 
+        //rb.gravityScale = player.gravityScale;
         bufferTimer = 0;
 
         if(player.allowCoyote)

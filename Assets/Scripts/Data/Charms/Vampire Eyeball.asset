@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 2
   itemName: Vampire Eyeball
   icon: {fileID: 21300000, guid: f8dd9bb92f76e1147ab0a532d4b03289, type: 3}
-  description: "Eyeball belonging to The Vampire Of Ghost Town. Its pupil shifts
+  itemDescription: "Eyeball belonging to The Vampire Of Ghost Town. Its pupil shifts
     in spasms and the surface remains perfectly moist, as if freshly gathered. By
     holding it one feels eerie insight within.\L\LPerfect dashes slow down time for
     a brief moment."

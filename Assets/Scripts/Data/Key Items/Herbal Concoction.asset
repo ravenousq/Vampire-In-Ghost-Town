@@ -15,12 +15,12 @@ MonoBehaviour:
   itemType: 1
   itemName: Herbal Concoction
   icon: {fileID: 21300000, guid: b5ac32e1ca969fe41acee3ffd17f7e11, type: 3}
-  description: 'Brewed out of various perennials and weeds. Even tough it smell resembles
-    an incense blended with alcohol, there are very few able to prepare such convoluted
-    mixture.  The clergy keeps their secrets sealed.
+  itemDescription: 'Brewed out of various perennials and weeds. Even tough it smell
+    resembles an incense blended with alcohol, there are very few able to prepare
+    such convoluted mixture.  The clergy keeps their secrets sealed.
 
 
-    Fills HP. Brew new concoction
-    at Campfire.'
+    Fills
+    HP. Brew new concoction at Campfire.'
   pickUpEffects:
   - {fileID: 11400000, guid: 5c9e64d3046f17f4494a58462d2f1a64, type: 2}

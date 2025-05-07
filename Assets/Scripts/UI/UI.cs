@@ -56,6 +56,9 @@ public class UI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            if(selectedIndex == 3)
+                notesTab.GetComponent<NotesUI>().Reset();
+
             menuButtons[selectedIndex].Select(false);
             selectedIndex--;
             if (selectedIndex < 0)
@@ -66,6 +69,9 @@ public class UI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            if(selectedIndex == 3)
+                notesTab.GetComponent<NotesUI>().Reset();
+
             menuButtons[selectedIndex].Select(false);
             selectedIndex = (selectedIndex + 1) % menuButtons.Length;
             menuButtons[selectedIndex].Select(true);
@@ -92,9 +98,13 @@ public class UI : MonoBehaviour
             Time.timeScale = 0;
 
             Inventory.instance.UpdateSlotUI();
-            GetComponentInChildren<ItemsUI>().SwitchTo();
+            GetComponentInChildren<ItemsUI>()?.SwitchTo();
+            //GetComponentInChildren<NotesUI>()?.Reset();
         }
         else
+        {
+            GetComponentInChildren<NotesUI>()?.Reset();
             Time.timeScale = 1;
+        }
     }
 }

@@ -15,12 +15,12 @@ MonoBehaviour:
   itemType: 2
   itemName: Dead Man's Specie
   icon: {fileID: 2568793466295339303, guid: bbccc7b497496ca44a18c18724930e4f, type: 3}
-  description: 'One of the coins that sealed fate of many. The jingle of money crafted
-    a beast unstoppable in its hunt for vengeance.  Whoever dared to flip this coin
-    is already as good as dead. Its glowing aura causes ones cupidity to boil.
+  itemDescription: 'One of the coins that sealed fate of many. The jingle of money
+    crafted a beast unstoppable in its hunt for vengeance.  Whoever dared to flip
+    this coin is already as good as dead. Its glowing aura causes ones cupidity to
+    boil.
 
 
-    Increases
-    received currency from fallen enemies.'
+    Increases received currency from fallen enemies.'
   equipEffects:
   - {fileID: 11400000, guid: 552341a0eb44bbf44884b2017f691e98, type: 2}

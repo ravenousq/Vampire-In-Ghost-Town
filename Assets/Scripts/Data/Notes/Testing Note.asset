@@ -15,4 +15,10 @@ MonoBehaviour:
   itemType: 0
   itemName: Testing Note
   icon: {fileID: -8412689590225003355, guid: 43a0a17551b31544d82a1a2cf84bfd0a, type: 3}
-  description: This item is a test if this system works okay.
+  itemDescription: This is a description fr.
+  noteContent: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+    in culpa qui officia deserunt mollit anim id est laborum.

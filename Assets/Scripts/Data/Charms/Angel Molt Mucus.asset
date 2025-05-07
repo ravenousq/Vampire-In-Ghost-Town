@@ -15,8 +15,8 @@ MonoBehaviour:
   itemType: 2
   itemName: Angel Molt Mucus
   icon: {fileID: -6582009276801769156, guid: 89bba0447a50fd1439671fb761fc1121, type: 3}
-  description: 'Harvested from massacred remains of a chosen grub. The process is
-    agonizing and debilitating, but ascension takes precedence. This sludgy pulp
+  itemDescription: 'Harvested from massacred remains of a chosen grub. The process
+    is agonizing and debilitating, but ascension takes precedence. This sludgy pulp
     sustains the grubs just long enough to complete their divine purpose.
 
 

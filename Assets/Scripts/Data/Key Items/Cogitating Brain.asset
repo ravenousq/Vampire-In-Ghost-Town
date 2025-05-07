@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 1
   itemName: Cogitating Brain
   icon: {fileID: 2733544961961851100, guid: 218dfad7dffe6bf47aa8b593185212b6, type: 3}
-  description: "This fleshy mush of nerves seems to be consumed in thoughts even
+  itemDescription: "This fleshy mush of nerves seems to be consumed in thoughts even
     heeding it\u2019s sorry state. It\u2019s eyes are fixated, not reacting to any
     stimulus and the flesh itself pulsates calmly.\n\nGrants insight into ones existence,
     raising the survivability."

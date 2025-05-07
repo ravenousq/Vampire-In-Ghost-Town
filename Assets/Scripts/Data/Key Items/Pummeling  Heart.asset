@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 1
   itemName: Pummeling  Heart
   icon: {fileID: 21300000, guid: a7649a63fbe5b2b409a0e26159e8526f, type: 3}
-  description: "Even though separated from it\u2019s owner, this mysterious heart
+  itemDescription: "Even though separated from it\u2019s owner, this mysterious heart
     keeps on pounding in a malevolent tone. Each thump echoes with a chiming sound,
     bringing visions of warm blood and cries for mercy.\n\nGrants inhuman sense of
     violence, raising the ferocity."

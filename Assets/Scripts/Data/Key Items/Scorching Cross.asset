@@ -15,8 +15,8 @@ MonoBehaviour:
   itemType: 1
   itemName: Scorching Cross
   icon: {fileID: 21300000, guid: bf5265633de958844810392c8cf5f42b, type: 3}
-  description: "Ordinary wooden cross possessed by every priest. Even though it is
-    warm in touch and produces sparks, it won\u2019t combust into flames.\n\nGrants
+  itemDescription: "Ordinary wooden cross possessed by every priest. Even though
+    it is warm in touch and produces sparks, it won\u2019t combust into flames.\n\nGrants
     refuge from blasphemous vermin. Maybe the sacristy fairy tales hold some truth
     in them after all."
   pickUpEffects:

@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 2
   itemName: Beast's Claw
   icon: {fileID: 21300000, guid: 9556ea8f01dabf24791ea64b52e2b485, type: 3}
-  description: 'Gargantuan, deformed claw of a blood-starved beast. Mere visions
+  itemDescription: 'Gargantuan, deformed claw of a blood-starved beast. Mere visions
     of its owner sends chills down ones spine, yet talon radiates a strange, almost
     sacred aura. Nonetheless, it stirs a primal thirst for fresh blood and flesh.
 

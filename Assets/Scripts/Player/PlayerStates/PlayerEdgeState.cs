@@ -1,9 +1,10 @@
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerEdgeState : PlayerState
 {
-    private float defaultGravityScale;
+    public float defaultGravityScale;
     private bool climbing;
     float xTarget;
 
@@ -19,7 +20,7 @@ public class PlayerEdgeState : PlayerState
         stateTimer = 1f;
         climbing = false;
         defaultGravityScale = rb.gravityScale;
-        rb.gravityScale = 0;
+        rb.bodyType = RigidbodyType2D.Kinematic;
         xTarget = player.transform.position.x + player.cd.size.x * player.facingDir;
         skills.ChangeLockOnAllSkills(true);
     }
@@ -29,6 +30,9 @@ public class PlayerEdgeState : PlayerState
         base.Update();
 
         player.ResetVelocity();
+
+        if(player.isKnocked)
+            stateMachine.ChangeState(player.airborne);
 
         if(stateTimer < 0 && !climbing && Input.GetKeyDown(KeyCode.S))
             stateMachine.ChangeState(player.airborne);
@@ -54,7 +58,9 @@ public class PlayerEdgeState : PlayerState
     {
         base.Exit();
 
-        rb.gravityScale = defaultGravityScale;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+
+        //rb.gravityScale = defaultGravityScale;
         player.BusyFor(.4f);
         skills.ChangeLockOnAllSkills(false);
     }

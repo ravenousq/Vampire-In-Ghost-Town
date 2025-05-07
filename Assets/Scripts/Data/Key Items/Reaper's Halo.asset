@@ -15,8 +15,8 @@ MonoBehaviour:
   itemType: 1
   itemName: Reaper's Halo
   icon: {fileID: -8036536037805907077, guid: 980654a43bc3b404b8b4c2c80c21a6ab, type: 3}
-  description: "Resembles a crown of thorns with sharp blades sticking out of it.
-    A particularly cruel weaponry, even for the standards of The Evangelists. This
+  itemDescription: "Resembles a crown of thorns with sharp blades sticking out of
+    it. Especially cruel weaponry, even for the standards of The Evangelists. This
     particular Halo is covered in blood clots which suggest it being put to good
     use already. \n\nCan be thrown in any direction. Bounces off of walls and cuts
     through everything on it\u2019s path."

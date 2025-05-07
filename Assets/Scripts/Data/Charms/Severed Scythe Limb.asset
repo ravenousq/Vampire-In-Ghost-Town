@@ -15,8 +15,8 @@ MonoBehaviour:
   itemType: 2
   itemName: Severed Scythe Limb
   icon: {fileID: 8916209223919105418, guid: e4c1a2ffcab16054ea1b732783efb6b5, type: 3}
-  description: "Morphed body part of a reliable servant. Beasts neither scheme nor
-    do they grumble, but simply obey their owners will. This severed scythe stands
+  itemDescription: "Morphed body part of a reliable servant. Beasts neither scheme
+    nor do they grumble, but simply obey their owners will. This severed scythe stands
     as proof, having cleaved through countless rebellious heads in unquestioning
     service.\L\nIncreases chances to bypass enemy defenses."
   equipEffects:

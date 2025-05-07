@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 2
   itemName: Native Sand
   icon: {fileID: 21300000, guid: 5db04ca5aa2581947856fa7e47077da9, type: 3}
-  description: "A bottle of sand originating from Arizona desert. For most it\u2019s
+  itemDescription: "A bottle of sand originating from Arizona desert. For most it\u2019s
     nothing but a useless pile of dirt and only few know it\u2019s true meaning and
     the legend behind it. Its secret is being spread in a silent way.\n\nSlightly
     increases movement speed."

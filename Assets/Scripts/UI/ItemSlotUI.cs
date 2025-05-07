@@ -22,15 +22,18 @@ public class ItemSlotUI : MonoBehaviour, IPointerDownHandler, IPointerEnterHandl
 
     public void UpdateSlot(InventoryItem item)
     {
+        if(item == null)
+            return;
+
         this.item = item;
         itemImage.color = Color.white;
 
         if(gameObject.name.Contains("Equipped Charm Slot") || item != null)
            frame.color = Color.white;
          
-        if(item != null)
+        if(item != null && item.itemData != null)
         {
-            itemImage.sprite = item.itemData.icon;
+            itemImage.sprite = item?.itemData.icon;
             itemText.text = item.stackSize > 1 ? item.stackSize.ToString() : "";
         }
     }

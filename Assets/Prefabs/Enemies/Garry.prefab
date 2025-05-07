@@ -81,6 +81,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 4235565483072219220, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
   drop: {fileID: 0}
   itemDropPosition: {fileID: 2080757399622271911}
+  bloodFX: {fileID: 6396697000753152540, guid: d3d3863bf7b8bc74f871f02e218f2ae7, type: 3}
   whatIsRoute:
     serializedVersion: 2
     m_Bits: 256

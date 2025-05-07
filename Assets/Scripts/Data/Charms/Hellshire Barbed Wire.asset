@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 2
   itemName: Hellshire Barbed Wire
   icon: {fileID: 7188378612884400379, guid: fc244fa974b5e354ba13c45355ddbdb9, type: 3}
-  description: "Hellshire holds its bad reputation for a reason. The Church holds
+  itemDescription: "Hellshire holds its bad reputation for a reason. The Church holds
     no sway there, and delinquency walks boldly in broad daylight. Still, some say
     it's safer than Ghost Town.\n\nIncreases amount of times Reaper\u2019s Halo can
     bounce before returning to The Gunman."

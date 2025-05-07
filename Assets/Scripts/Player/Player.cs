@@ -52,6 +52,7 @@ public class Player : Entity
     [Header("Combat")]
     public LayerMask whatIsEnemy;
     public GameObject reloadTorso;
+    public GameObject healTorso;
 
 
     [Header("Abilities & Stats")]
@@ -120,7 +121,7 @@ public class Player : Entity
         aimGun = new PlayerAimGunState(this, stateMachine, "idle");
         parry = new PlayerParryState(this, stateMachine, "parry");
         execute = new PlayerExecutionState(this, stateMachine, "execution");
-        heal = new PlayerHealState(this, stateMachine, "dash");
+        heal = new PlayerHealState(this, stateMachine, "reload");
         dialogue = new PlayerDialogueState(this, stateMachine, "idle");
         impact = new PlayerImpactState(this, stateMachine, "impact");
         edge = new PlayerEdgeState(this, stateMachine, "idle");

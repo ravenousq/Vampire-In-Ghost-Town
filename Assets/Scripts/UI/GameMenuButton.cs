@@ -6,14 +6,9 @@ public class GameMenuButton : MonoBehaviour
 {
     [SerializeField] private Image selectionImage;
     [SerializeField] private Color selectionColor;
+    [SerializeField] private Color defaultColor;
     public GameObject menuToTurnOn;
     private bool selected;
-    private Color defaultColor;
-
-    private void Start() 
-    {
-        defaultColor = GetComponentInChildren<TextMeshProUGUI>().color;    
-    }
 
 
     public void Select(bool selected)

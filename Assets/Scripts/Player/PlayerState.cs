@@ -25,6 +25,9 @@ public class PlayerState
 
     public virtual void Enter()
     {
+        if(Time.timeScale == 0)
+            return;
+
         player.anim.SetBool(animBoolName, true);
         rb = player.rb;
         trigger = false;
@@ -45,6 +48,9 @@ public class PlayerState
 
     public virtual void Exit()
     {
+        if(Time.timeScale == 0)
+            return;
+            
         player.anim.SetBool(animBoolName, false);
 
         AxisInput();
