@@ -6,21 +6,21 @@ enum BarType { Health, Poise}
 public class HealthbarUI : MonoBehaviour
 {
     [SerializeField] BarType barType;
-    private Entity entity;
-    private CharacterStats stats;
-    private RectTransform myTransform;
+    [SerializeField] private Entity entity;
+    [SerializeField] private CharacterStats stats;
+    RectTransform myTransform;
 
     private Slider slider;
 
     private void Start() 
     {
-        entity = GetComponentInParent<Entity>();
+        //entity = GetComponentInParent<Entity>();
 
-        entity.OnFlipped += FlipUI;
+        //entity.OnFlipped += FlipUI;
 
         myTransform = GetComponent<RectTransform>();
-        slider = GetComponentInChildren<Slider>();
-        stats = GetComponentInParent<CharacterStats>();
+        slider = GetComponent<Slider>();
+        //stats = GetComponentInParent<CharacterStats>();
 
         if(barType == BarType.Health)
         {

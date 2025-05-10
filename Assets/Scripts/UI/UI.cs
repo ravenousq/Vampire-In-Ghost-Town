@@ -29,7 +29,10 @@ public class UI : MonoBehaviour
     [SerializeField] private GameObject itemsTab;
     [SerializeField] private GameObject mapTab;
     [SerializeField] private GameObject charmsTab;
+    [SerializeField] private GameObject blessingsTab;
     [SerializeField] private GameObject notesTab;
+    [Space]
+    [SerializeField] private GameObject InGameUI;
     private int selectedIndex;
 
     private void Start() 
@@ -56,8 +59,12 @@ public class UI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if(selectedIndex == 3)
+            if(selectedIndex == 4)
                 notesTab.GetComponent<NotesUI>().Reset();
+            else if(selectedIndex == 2)
+                charmsTab.GetComponent<CharmsUI>().TabSwitch();
+            else if(selectedIndex == 3)
+                blessingsTab.GetComponent<BlessingsUI>().TabSwitch();
 
             menuButtons[selectedIndex].Select(false);
             selectedIndex--;
@@ -69,8 +76,12 @@ public class UI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if(selectedIndex == 3)
+            if(selectedIndex == 4)
                 notesTab.GetComponent<NotesUI>().Reset();
+            else if(selectedIndex == 2)
+                charmsTab.GetComponent<CharmsUI>().TabSwitch();
+            else if(selectedIndex == 3)
+                blessingsTab.GetComponent<BlessingsUI>().TabSwitch();
 
             menuButtons[selectedIndex].Select(false);
             selectedIndex = (selectedIndex + 1) % menuButtons.Length;
@@ -99,11 +110,12 @@ public class UI : MonoBehaviour
 
             Inventory.instance.UpdateSlotUI();
             GetComponentInChildren<ItemsUI>()?.SwitchTo();
-            //GetComponentInChildren<NotesUI>()?.Reset();
         }
         else
         {
             GetComponentInChildren<NotesUI>()?.Reset();
+            GetComponentInChildren<BlessingsUI>()?.TabSwitch();
+            GetComponentInChildren<CharmsUI>()?.TabSwitch();
             Time.timeScale = 1;
         }
     }

@@ -7,6 +7,7 @@ public class AmmoUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI ammoText;
     [SerializeField] private Image ammoImage;
+    [SerializeField] private Color textColor;
     private bool checker = true;
 
     private void Awake()
@@ -31,7 +32,7 @@ public class AmmoUI : MonoBehaviour
             {
                 checker = false;
                 ammoImage.color = Color.white;
-                ammoText.color = Color.white;
+                ammoText.color = textColor;
                 UpdateAmmo();
             }
         }

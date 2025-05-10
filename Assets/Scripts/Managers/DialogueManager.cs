@@ -160,6 +160,7 @@ public class DialogueManager : MonoBehaviour
         CancelInvoke();
         canScroll = false;
         NextLine();
+        
     }
 
     public void EndDialogue()
@@ -167,6 +168,6 @@ public class DialogueManager : MonoBehaviour
         currentDialogue.GetComponent<NPC>().DialogueEnded();
         currentDialogue = null;
         dialogueUI.gameObject.SetActive(false);
-        PlayerManager.instance.player.dialogue.EndDialogue();
+        PlayerManager.instance.player.DialogueEnded();
     }
 }

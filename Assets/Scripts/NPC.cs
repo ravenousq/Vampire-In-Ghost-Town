@@ -16,6 +16,9 @@ public class NPC : MonoBehaviour
     }
 
     [SerializeField] protected string npcName;
+    [SerializeField] protected Transform dialoguePoint;
+    [Tooltip("-1 => facing left, 1 => facing right")]
+    [SerializeField] protected int requiredFacingDir;
     protected DialogueManager dialogueManager;
     protected Player player;
     protected bool canStartDialogue;
@@ -42,12 +45,12 @@ public class NPC : MonoBehaviour
 
         if(canStartDialogue)
         {
-            if(Input.GetKeyDown(KeyCode.C))
+            if(Input.GetKeyDown(KeyCode.C) && player.IsGroundDetected())
             {   
                 timer = 10;
                 canStartDialogue = false;
                 dialogueOngoing = true;
-                player.DialogueStarted();
+                player.DialogueStarted(dialoguePoint, requiredFacingDir);
                 dialogueManager.InitializeDialogue(dialogue);
             }
         }    

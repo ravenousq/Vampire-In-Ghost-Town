@@ -29,13 +29,13 @@ public class ItemsUI : MonoBehaviour
             SwitchTo(selectedIndex - 7 < 0 ? selectedIndex + 21 : selectedIndex - 7);
 
         if(Input.GetKeyDown(KeyCode.A))
-            SwitchTo(selectedIndex - 1 < 0 ? items.Length - 1 : selectedIndex -1);
+            SwitchTo(selectedIndex % 7 == 0 ? selectedIndex + 6 : selectedIndex - 1);
 
         if(Input.GetKeyDown(KeyCode.S))
         SwitchTo(selectedIndex + 7 > items.Length - 1 ? selectedIndex - 21 : selectedIndex + 7); 
 
         if(Input.GetKeyDown(KeyCode.D))
-            SwitchTo(selectedIndex + 1 == items.Length ? 0 : selectedIndex +1);
+            SwitchTo((selectedIndex + 1) % 7 == 0 ? selectedIndex - 6 : selectedIndex + 1);
     }
 
     public void SwitchTo(int index = 0)

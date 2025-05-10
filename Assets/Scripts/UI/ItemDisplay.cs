@@ -3,19 +3,25 @@ using UnityEngine;
 
 public class ItemDisplay : MonoBehaviour
 {
-    [SerializeField] protected TextMeshProUGUI itemName;
-    [SerializeField] protected TextMeshProUGUI itemDescription;
+    [SerializeField] protected TextMeshProUGUI title;
+    [SerializeField] protected TextMeshProUGUI description;
 
     public void SetUp(ItemData itemData)
     {
         if(itemData == null)
         {
-            itemName.text = "";
-            itemDescription.text = "";
+            title.text = "";
+            description.text = "";
             return;
         }
 
-        itemName.text = itemData.itemName;
-        itemDescription.text = itemData.itemDescription;
+        title.text = itemData.itemName;
+        description.text = itemData.itemDescription;
+    }
+
+    public void SetUp(string title, string description)
+    {
+        this.title.text = title;
+        this.description.text = description;
     }
 }

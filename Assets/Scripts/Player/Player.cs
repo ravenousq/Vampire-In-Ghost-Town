@@ -48,6 +48,8 @@ public class Player : Entity
     [Header("Collision")]
     [SerializeField] public Transform edgeCheck;
     public float edgeCheckDistance;
+    public Transform dialoguePoint { get; private set; } = null;
+    public int dialogueFacingDir { get; private set; }
 
     [Header("Combat")]
     public LayerMask whatIsEnemy;
@@ -305,9 +307,18 @@ public class Player : Entity
         Time.timeScale = 0;
     }
 
-    public void DialogueStarted()
+    public void DialogueStarted(Transform dialoguePoint, int dialogueFacingDir)
     {
+        this.dialoguePoint = dialoguePoint;
+        this.dialogueFacingDir = dialogueFacingDir;
+
         stateMachine.ChangeState(dialogue);
+    }
+
+    public void DialogueEnded()
+    {
+        dialoguePoint = null;
+        stateMachine.ChangeState(idle);
     }
 
     #region Assigners    

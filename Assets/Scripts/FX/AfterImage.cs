@@ -25,7 +25,7 @@ public class AfterImage : MonoBehaviour
 
     private void Update() 
     {
-        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, Mathf.Lerp(sr.color.a, 0, fadeSpeed));
+        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, Mathf.Lerp(sr.color.a, 0, fadeSpeed * Time.deltaTime));
     }
 
 }

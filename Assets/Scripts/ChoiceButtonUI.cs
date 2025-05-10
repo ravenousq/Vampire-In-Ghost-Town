@@ -10,7 +10,7 @@ public class ChoiceButtonUI : MonoBehaviour
 
     private void Awake() 
     {
-        myText = GetComponent<TextMeshProUGUI>();    
+        myText = GetComponentInChildren<TextMeshProUGUI>();    
         
         images = GetComponentsInChildren<Image>();
         foreach(Image image in images)
@@ -47,11 +47,6 @@ public class ChoiceButtonUI : MonoBehaviour
             }
             else
             {
-                myText.ForceMeshUpdate();
-                Vector3 firstChar = myText.textInfo.characterInfo[0].bottomLeft;
-                RectTransform imagePosition = images[0].GetComponent<RectTransform>();
-                imagePosition.anchoredPosition = new Vector2(firstChar.x - images[1].rectTransform.rect.width, imagePosition.anchoredPosition.y);
-
                 foreach(Image image in images)
                     image.color = Color.white;
             }
@@ -77,11 +72,6 @@ public class ChoiceButtonUI : MonoBehaviour
         {
             foreach(Image image in images)
                 image.GetComponent<RectTransform>().localScale *= highlighted ? 1.2f : 1/1.2f;
-
-            myText.ForceMeshUpdate();
-            Vector3 firstChar = myText.textInfo.characterInfo[0].bottomLeft;
-            RectTransform imagePosition = images[0].GetComponent<RectTransform>();
-            imagePosition.anchoredPosition = new Vector2(firstChar.x - images[1].rectTransform.rect.width, imagePosition.anchoredPosition.y);
         }
     }
 }

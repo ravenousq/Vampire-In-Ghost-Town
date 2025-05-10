@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: 430bab1526e1c2646a04f75a5c517d87
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4210174524712920373
+    second: Skill_Tree1_0
+  - first:
+      213: -5379230056883205004
+    second: Skill_Tree1_1
+  - first:
+      213: -1465939285681558991
+    second: Skill_Tree1_2
+  - first:
+      213: 3192975582737020359
+    second: Skill_Tree1_3
+  - first:
+      213: -3397782987508201815
+    second: Skill_Tree1_4
+  - first:
+      213: 7782361766805066125
+    second: Skill_Tree1_5
+  - first:
+      213: -1738814722006571509
+    second: Skill_Tree1_6
+  - first:
+      213: 4385195078732230642
+    second: Skill_Tree1_7
+  - first:
+      213: -6184349355141954328
+    second: Skill_Tree1_8
+  - first:
+      213: -2252217193711753837
+    second: Skill_Tree1_9
+  - first:
+      213: -4230007635485163904
+    second: Skill_Tree1_10
+  - first:
+      213: 2099843858753545078
+    second: Skill_Tree1_11
+  - first:
+      213: 4601064104394814982
+    second: Skill_Tree1_12
+  - first:
+      213: -197970384026296698
+    second: Skill_Tree1_13
+  - first:
+      213: 6144188653199847500
+    second: Skill_Tree1_14
+  - first:
+      213: -959117868913292097
+    second: Skill_Tree1_15
+  - first:
+      213: 7926515605727610262
+    second: Skill_Tree1_16
+  - first:
+      213: -7873289895376211470
+    second: Skill_Tree1_17
+  - first:
+      213: -9122650118651905971
+    second: Skill_Tree1_18
+  - first:
+      213: 4709019660004036402
+    second: Skill_Tree1_19
+  - first:
+      213: -7673017763960577710
+    second: Skill_Tree1_20
+  - first:
+      213: 4384093966910564689
+    second: Skill_Tree1_21
+  - first:
+      213: 7255065798280027723
+    second: Skill_Tree1_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Skill_Tree1_0
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 522
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 535a9eb7c6b8d6a30800000000000000
+      internalID: 4210174524712920373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_1
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 522
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47c4f5e73c22955b0800000000000000
+      internalID: -5379230056883205004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_2
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 522
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13a29ae8cffe7abe0800000000000000
+      internalID: -1465939285681558991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 522
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c53989106abf4c20800000000000000
+      internalID: 3192975582737020359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_4
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 424
+        width: 154
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a645b50066a8d0d0800000000000000
+      internalID: -3397782987508201815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_5
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 272
+        width: 230
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d815fff4bc0800c60800000000000000
+      internalID: 7782361766805066125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_6
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 372
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b062494193d7ed7e0800000000000000
+      internalID: -1738814722006571509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_7
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 372
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ff20aab0b75bdc30800000000000000
+      internalID: 4385195078732230642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_8
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 372
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e409df0707cc2aa0800000000000000
+      internalID: -6184349355141954328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_9
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 372
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 395a8c325648eb0e0800000000000000
+      internalID: -2252217193711753837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 122
+        width: 81
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08e77b1977efb45c0800000000000000
+      internalID: -4230007635485163904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_11
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 122
+        width: 81
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6736ac43dd4242d10800000000000000
+      internalID: 2099843858753545078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_12
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 272
+        width: 154
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 606f04bec634adf30800000000000000
+      internalID: 4601064104394814982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_13
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 222
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e90101cfaa04df0800000000000000
+      internalID: -197970384026296698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_14
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 222
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4076fad60b844550800000000000000
+      internalID: 6144188653199847500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_15
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 222
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbc81bd316780b2f0800000000000000
+      internalID: -959117868913292097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_16
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 222
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6950cf962f3a00e60800000000000000
+      internalID: 7926515605727610262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_17
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 122
+        width: 230
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f1bd6cfd847cb290800000000000000
+      internalID: -7873289895376211470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_18
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 72
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d48f39b0d06d56180800000000000000
+      internalID: -9122650118651905971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_19
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 72
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23f0fda6e6cc95140800000000000000
+      internalID: 4709019660004036402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_20
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 72
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2512edf3ff6f38590800000000000000
+      internalID: -7673017763960577710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_21
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 72
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15923a72c3e67dc30800000000000000
+      internalID: 4384093966910564689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Tree1_22
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 72
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4e119097eb2fa460800000000000000
+      internalID: 7255065798280027723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Skill_Tree1_0: 4210174524712920373
+      Skill_Tree1_1: -5379230056883205004
+      Skill_Tree1_10: -4230007635485163904
+      Skill_Tree1_11: 2099843858753545078
+      Skill_Tree1_12: 4601064104394814982
+      Skill_Tree1_13: -197970384026296698
+      Skill_Tree1_14: 6144188653199847500
+      Skill_Tree1_15: -959117868913292097
+      Skill_Tree1_16: 7926515605727610262
+      Skill_Tree1_17: -7873289895376211470
+      Skill_Tree1_18: -9122650118651905971
+      Skill_Tree1_19: 4709019660004036402
+      Skill_Tree1_2: -1465939285681558991
+      Skill_Tree1_20: -7673017763960577710
+      Skill_Tree1_21: 4384093966910564689
+      Skill_Tree1_22: 7255065798280027723
+      Skill_Tree1_3: 3192975582737020359
+      Skill_Tree1_4: -3397782987508201815
+      Skill_Tree1_5: 7782361766805066125
+      Skill_Tree1_6: -1738814722006571509
+      Skill_Tree1_7: 4385195078732230642
+      Skill_Tree1_8: -6184349355141954328
+      Skill_Tree1_9: -2252217193711753837
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

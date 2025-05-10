@@ -1,9 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.EventSystems;
-using Unity.VisualScripting;
-using System.Diagnostics;
 
 public class ItemDisplayUI : MonoBehaviour
 {
@@ -59,14 +56,14 @@ public class ItemDisplayUI : MonoBehaviour
                 {
                     confirmation = !confirmation;
                     disappearingDuration = .1f;
-                    Destroy(transform.parent.gameObject);
-                    
                     DialogueManager.instance.Invoke(nameof(DialogueManager.instance.InvokeNextLine), .1f);
+                    Destroy(transform.parent.gameObject);
                 }
             }
         }
         
-        
+        if((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.C)) && !confirmation)
+            Destroy(gameObject);
     }
 
     private void Appear()

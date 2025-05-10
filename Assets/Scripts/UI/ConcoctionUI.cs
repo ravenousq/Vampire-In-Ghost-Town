@@ -7,6 +7,7 @@ public class ConcoctionUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI concoctionStacks;
     [SerializeField] private Image concoctionIcon;
+    [SerializeField] private Image concoctionFrame;
     private ConcoctionController skill;
     private bool checker = true;
 
@@ -27,6 +28,7 @@ public class ConcoctionUI : MonoBehaviour
                 checker = false;
                 concoctionIcon.color = Color.white;
                 concoctionStacks.color = Color.white;
+                concoctionFrame.color = Color.white;
                 UpdateConcoctionStacks();
             }
         }    

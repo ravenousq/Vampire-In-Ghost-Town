@@ -28,17 +28,23 @@ public class CharmsUI : MonoBehaviour
     {
         if(navigatingCharms)
         {
+            if(Input.GetKeyDown(KeyCode.X))
+            {
+                navigatingCharms = false;
+                SwitchToCharm(-1);
+            }
+
             if(Input.GetKeyDown(KeyCode.W))
                 SwitchToCharm(charmIndex - 7 < 0 ? charmIndex + 14 : charmIndex - 7);
 
             if(Input.GetKeyDown(KeyCode.A))
-                SwitchToCharm(charmIndex - 1 < 0 ? charms.Length - 1 : charmIndex -1);
+                SwitchToCharm(charmIndex % 7 == 0 ? charmIndex + 6 : charmIndex - 1);
 
             if(Input.GetKeyDown(KeyCode.S))
-            SwitchToCharm(charmIndex + 7 > charms.Length - 1 ? charmIndex - 14 : charmIndex + 7); 
+                SwitchToCharm(charmIndex + 7 > charms.Length - 1 ? charmIndex - 14 : charmIndex + 7); 
 
             if(Input.GetKeyDown(KeyCode.D))
-                SwitchToCharm(charmIndex + 1 == charms.Length ? 0 : charmIndex +1);
+                SwitchToCharm((charmIndex + 1) % 7 == 0 ? charmIndex - 6 : charmIndex + 1);
         }
         else
         {
@@ -47,7 +53,6 @@ public class CharmsUI : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.D))
                 SwitchToSlot(slotIndex + 1 == charmSlots.Length ? 0 : slotIndex + 1);
-            
         }   
 
         if(Input.GetKeyDown(KeyCode.C)) 
@@ -55,9 +60,7 @@ public class CharmsUI : MonoBehaviour
             navigatingCharms = !navigatingCharms;
 
             if(navigatingCharms)
-            {
-                SwitchToCharm(charmIndex);
-            }
+                SwitchToCharm(GetCharmIndex(charmSlots[slotIndex].item));
             else
             {
                 if(charms[charmIndex]?.item?.itemData != null)
@@ -66,6 +69,20 @@ public class CharmsUI : MonoBehaviour
                 SwitchToCharm(-1);
             }
         }
+    }
+
+    private int GetCharmIndex(InventoryItem item)
+    {
+        if(item == null)
+            return charmIndex;
+        
+        for (int i = 0; i < charms.Length; i++)
+        {
+            if(charms[i].item.itemData == item.itemData)
+                return i;
+        }
+
+        return charmIndex;
     }
 
     public void SwitchToSlot(int index)
@@ -88,7 +105,6 @@ public class CharmsUI : MonoBehaviour
             return;
         }
         
-
         if(index != charmIndex)
             charms[charmIndex].Select(false);
 
@@ -97,5 +113,13 @@ public class CharmsUI : MonoBehaviour
         charms[charmIndex].Select(true);
         currentData = charms[charmIndex]?.item?.itemData;
         display.SetUp(currentData);
+    }
+
+    public void TabSwitch()
+    {
+        SwitchToCharm(-1);
+        charmIndex = 0;
+        navigatingCharms = false;
+        SwitchToSlot(0);
     }
 }

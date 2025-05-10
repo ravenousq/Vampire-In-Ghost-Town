@@ -32,9 +32,9 @@ public class NotesUI : ItemsUI
             fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, focused ? defaultFade : 0);
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) && scroll.value != 1)
             scroll.value += .75f * Time.unscaledDeltaTime;
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S) && scroll.value != 0)
             scroll.value -= .75f * Time.unscaledDeltaTime;
     }
 
