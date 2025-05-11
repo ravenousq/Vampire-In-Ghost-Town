@@ -3,6 +3,8 @@ using UnityEngine;
 public class EnemyStats : CharacterStats
 {
     private Enemy enemy;
+    [Header("Drop")]
+    [SerializeField] private int[] currencyToDrop = { 0, 0};
 
     [Header("Level")]
     [SerializeField] private int level = 1;
@@ -40,6 +42,9 @@ public class EnemyStats : CharacterStats
     public override void Die()
     {
         base.Die();
+        int souls = Random.Range(currencyToDrop[0], currencyToDrop[1]) * level;
+
+        PlayerManager.instance.AddCurrency(souls);
 
         if(SkillManager.instance.isSkillUnlocked("Welcome To Hell"))
             SkillManager.instance.shoot.ModifyBullets(bulletsToRecover);

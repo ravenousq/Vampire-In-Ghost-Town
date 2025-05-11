@@ -29,6 +29,7 @@ public class Enemy : Entity
     public bool canBeExecuted { get; private set; }
 
     [Header("Drop")]
+    
     [SerializeField] private ItemObject itemPrefab;
     [SerializeField] private ItemData drop;
     [SerializeField] private Transform itemDropPosition;

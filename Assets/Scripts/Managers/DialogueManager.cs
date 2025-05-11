@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour
     private bool canScroll;
     private float scrollbarCap;
     private bool effect;
-    private bool nextLineBlockade;
+    private bool canSkip;
 
     private void Start() 
     {
@@ -70,7 +70,10 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = currentDialogue.currentLine.dialogueText;
 
         Invoke(nameof(StartScrolling), 3f);
+        Invoke(nameof(AllowSkip), .5f);
     }
+
+    private void AllowSkip() => canSkip = true;
 
     private void StartScrolling()
     {
@@ -157,10 +160,13 @@ public class DialogueManager : MonoBehaviour
 
     public void SkipDialogueLine()
     {
+        if(!canSkip)
+            return;
+
         CancelInvoke();
         canScroll = false;
+        canSkip = false;
         NextLine();
-        
     }
 
     public void EndDialogue()

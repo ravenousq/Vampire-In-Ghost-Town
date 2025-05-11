@@ -10,11 +10,8 @@ public class IncreaseCurrency : ItemEffect
     {
         base.Effect();
 
-        //increase money by percentage
+        PlayerManager.instance.AddMultiplier(percentage);
     }
 
-    public override void Countereffect()
-    {
-        base.Countereffect();
-    }
+    public override void Countereffect() => PlayerManager.instance.AddMultiplier(-percentage);
 }

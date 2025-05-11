@@ -4,62 +4,69 @@ using UnityEngine.UI
 public class BlessingsUI : MonoBehaviour
 {
     [SerializeField] private GameObject skillsParent;
-    [SerializeField] private SkillButtonUI[] skills;
+    [SerializeField] public SkillButtonUI[] skills;
     [SerializeField] private Image skillImage;
     [SerializeField] private SkillButtonUI defaultIndex;
-    [SerializeField] private ItemDisplay skillDisplay;
+    [SerializeField] private SkillDisplay skillDisplay;
+    [SerializeField] private SoulsUI soulsUI;
+    
     private int currentIndex;
+    private float purchaseTimer;
 
     private void Start() 
     {
-        skills = skillsParent.GetComponentsInChildren<SkillButtonUI>();    
+        skills = skillsParent.GetComponentsInChildren<SkillButtonUI>(true);    
         for (int i = 0; i < skills.Length; i++)
         {
             skills[i].SetIndex(i, this);
         }
 
         skills[0].Select(true);
-        skillDisplay.SetUp(skills[currentIndex].GetName(), skills[currentIndex].GetDescription());
+        skillDisplay.SetUp(skills[currentIndex].GetName(), skills[currentIndex].GetDescription(), skills[currentIndex].GetPrice());
         skillImage.sprite = skills[currentIndex].skillImage;
     }
 
     private void Update() 
     {
         if(Input.GetKeyDown(KeyCode.W))
-        {
-            skills[currentIndex].Select(false);
-            currentIndex = skills[currentIndex].GetNavigation(KeyCode.W);
-            skills[currentIndex].Select(true);
-            skillDisplay.SetUp(skills[currentIndex].GetName(), skills[currentIndex].GetDescription());
-            skillImage.sprite = skills[currentIndex].skillImage;
-        }
+            NavigateTo(KeyCode.W);
 
         if(Input.GetKeyDown(KeyCode.A))
-        {
-            skills[currentIndex].Select(false);
-            currentIndex = skills[currentIndex].GetNavigation(KeyCode.A);
-            skills[currentIndex].Select(true);   
-            skillDisplay.SetUp(skills[currentIndex].GetName(), skills[currentIndex].GetDescription());
-            skillImage.sprite = skills[currentIndex].skillImage;
-        }
+            NavigateTo(KeyCode.A);
 
         if(Input.GetKeyDown(KeyCode.S))
-        {
-            skills[currentIndex].Select(false);
-            currentIndex = skills[currentIndex].GetNavigation(KeyCode.S);
-            skills[currentIndex].Select(true);
-            skillDisplay.SetUp(skills[currentIndex].GetName(), skills[currentIndex].GetDescription());
-            skillImage.sprite = skills[currentIndex].skillImage;
-        }
+            NavigateTo(KeyCode.S);
 
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            skills[currentIndex].Select(false);
-            currentIndex = skills[currentIndex].GetNavigation(KeyCode.D);
-            skills[currentIndex].Select(true);
-            skillDisplay.SetUp(skills[currentIndex].GetName(), skills[currentIndex].GetDescription());
-            skillImage.sprite = skills[currentIndex].skillImage;
-        }    
+        if (Input.GetKeyDown(KeyCode.D))
+            NavigateTo(KeyCode.D);
+
+        if(Input.GetKeyDown(KeyCode.C) && skills[currentIndex].canBePurchased && PlayerManager.instance.CanAfford(skills[currentIndex].GetIntPrice()))
+            skills[currentIndex].SetPurchase(true);
+
+        if(Input.GetKeyUp(KeyCode.C))
+            skills[currentIndex].SetPurchase(false);
+        
+    }
+
+    public void RemoveSouls(int price)
+    {
+        soulsUI.ModifySouls(-price);
+        UI.instance.UpdateInGameSouls();
+    }
+
+    public void UpdateAll()
+    {
+        foreach (SkillButtonUI skill in skills)
+            skill.UpdatePurchase();
+    }
+
+    private void NavigateTo(KeyCode keyCode)
+    {
+        skills[currentIndex].Select(false);
+        currentIndex = skills[currentIndex].GetNavigation(keyCode);
+        skills[currentIndex].Select(true);
+        skillDisplay.SetUp(skills[currentIndex].GetName(), skills[currentIndex].GetDescription(), skills[currentIndex].GetPrice());
+        skillImage.sprite = skills[currentIndex].GetImage();
     }
 
     public Row GetRowByIndex(int index)
@@ -72,10 +79,29 @@ public class BlessingsUI : MonoBehaviour
 
     public void TabSwitch()
     {
+        Start();
+        soulsUI.UpdateSouls();
         skills[currentIndex].Select(false);
         currentIndex = 0;
         skills[currentIndex].Select(true);   
-        skillDisplay.SetUp(skills[currentIndex].GetName(), skills[currentIndex].GetDescription());
+        skillDisplay.SetUp(skills[currentIndex].GetName(), skills[currentIndex].GetDescription(), skills[currentIndex].GetPrice());
         skillImage.sprite = skills[currentIndex].skillImage;
+    }
+
+    public void UnlockSecretSkill(string name)
+    {
+        Start();
+
+        foreach (SkillButtonUI skill in skills)
+        {
+            if(skill.IsSecret() && skill.GetName(false) == name)
+            {
+                skill.Purchase();
+                
+                UpdateAll();
+
+                return;
+            }
+        }
     }
 }

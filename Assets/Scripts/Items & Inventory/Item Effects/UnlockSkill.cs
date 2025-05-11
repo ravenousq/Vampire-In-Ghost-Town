@@ -8,6 +8,7 @@ public class UnlockSkill : ItemEffect
 
     public override void Effect()
     {
+        UI.instance.UnlockSecretSkill(skillToUnlock);
         SkillManager.instance.UnlockSkill(skillToUnlock);
     }
 }

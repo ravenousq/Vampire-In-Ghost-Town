@@ -124,7 +124,8 @@ public class Crosshair : MonoBehaviour
 
     public void AddCurrency()
     {
-        Debug.Log("Player recieves " + reward + " currency.");
+        PlayerManager.instance.AddCurrency(reward);
+        UI.instance.ModifySouls(reward);
     }
 
     private void GatherTargets()

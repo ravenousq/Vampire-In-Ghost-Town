@@ -33,11 +33,13 @@ public class UI : MonoBehaviour
     [SerializeField] private GameObject notesTab;
     [Space]
     [SerializeField] private GameObject InGameUI;
+    [SerializeField] private SoulsUI inGameSoulsUI;
     private int selectedIndex;
 
     private void Start() 
     {
-        gameMenu.SetActive(false);    
+        blessingsTab.GetComponent<BlessingsUI>().TabSwitch();
+        gameMenu.SetActive(false);
     }
 
     private void Update() 
@@ -63,13 +65,15 @@ public class UI : MonoBehaviour
                 notesTab.GetComponent<NotesUI>().Reset();
             else if(selectedIndex == 2)
                 charmsTab.GetComponent<CharmsUI>().TabSwitch();
-            else if(selectedIndex == 3)
-                blessingsTab.GetComponent<BlessingsUI>().TabSwitch();
 
             menuButtons[selectedIndex].Select(false);
             selectedIndex--;
+
             if (selectedIndex < 0)
                 selectedIndex = menuButtons.Length - 1;
+
+            if(selectedIndex  == 3)
+                blessingsTab.GetComponentInChildren<BlessingsUI>(true).TabSwitch();
 
             menuButtons[selectedIndex].Select(true);
         }
@@ -80,11 +84,15 @@ public class UI : MonoBehaviour
                 notesTab.GetComponent<NotesUI>().Reset();
             else if(selectedIndex == 2)
                 charmsTab.GetComponent<CharmsUI>().TabSwitch();
-            else if(selectedIndex == 3)
-                blessingsTab.GetComponent<BlessingsUI>().TabSwitch();
+            else if(selectedIndex + 1 == 3)
+                blessingsTab.GetComponentInChildren<BlessingsUI>(true).TabSwitch();
 
             menuButtons[selectedIndex].Select(false);
             selectedIndex = (selectedIndex + 1) % menuButtons.Length;
+
+            if(selectedIndex  == 3)
+                blessingsTab.GetComponentInChildren<BlessingsUI>(true).TabSwitch();
+
             menuButtons[selectedIndex].Select(true);
         }
     }
@@ -119,4 +127,8 @@ public class UI : MonoBehaviour
             Time.timeScale = 1;
         }
     }
+
+    public void UnlockSecretSkill(string name) => GetComponentInChildren<BlessingsUI>(true).UnlockSecretSkill(name);
+    public void ModifySouls(int souls) => GetComponentInChildren<SoulsUI>(true).ModifySouls(souls);
+    public void UpdateInGameSouls() => inGameSoulsUI.UpdateSouls();
 }

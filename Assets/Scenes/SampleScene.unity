@@ -488,11 +488,12 @@ RectTransform:
   - {fileID: 8575146}
   - {fileID: 901230705}
   - {fileID: 418363470}
+  - {fileID: 162611645}
   m_Father: {fileID: 1912386386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -500, y: -36}
+  m_AnchoredPosition: {x: -500, y: -12}
   m_SizeDelta: {x: 600, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &47135429
@@ -542,11 +543,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 47135427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeb03dd79d061b442810d775d9a531c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 20c2c410bd61f8045bbb443604ec9c39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 901230706}
   description: {fileID: 418363471}
+  priceText: {fileID: 162611646}
 --- !u!4 &53946659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1425051654096860369, guid: fe1b96d8e243c034987cadab7b047d45, type: 3}
@@ -1226,6 +1228,81 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d8757170a78464f8f8a9b1e970b989, type: 3}
+--- !u!1 &111012627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 111012628}
+  - component: {fileID: 111012630}
+  - component: {fileID: 111012629}
+  m_Layer: 5
+  m_Name: Frame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &111012628
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111012627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.14, y: 1.14, z: 1.14}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1477553179}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 101, y: 16}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &111012629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111012627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 380428591405701880, guid: 0fec484413ea5f74fbfe8400285f0087, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &111012630
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111012627}
+  m_CullTransparentMesh: 1
 --- !u!1 &111153602
 GameObject:
   m_ObjectHideFlags: 0
@@ -2142,11 +2219,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: d35d744b3deecbd459c451e35c7bf5c3, type: 2}
     - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.8
+      value: 11.7
       objectReference: {fileID: 0}
     - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.6
+      value: -12.9
       objectReference: {fileID: 0}
     - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2458,6 +2535,142 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &162611644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 162611645}
+  - component: {fileID: 162611647}
+  - component: {fileID: 162611646}
+  m_Layer: 5
+  m_Name: Price Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &162611645
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162611644}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 47135428}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 131, y: -131.3}
+  m_SizeDelta: {x: 350, y: 75}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &162611646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162611644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Price: 1000$'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: fbc07166d0d48aa44b1287ef29ced488, type: 2}
+  m_sharedMaterial: {fileID: 255786425675240141, guid: fbc07166d0d48aa44b1287ef29ced488, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4285894056
+  m_fontColor: {r: 0.65882355, g: 0.5529412, b: 0.45882356, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 28
+  m_fontSizeBase: 28
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &162611647
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162611644}
+  m_CullTransparentMesh: 1
 --- !u!1 &163144633
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,142 +2812,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &175324890
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 175324891}
-  - component: {fileID: 175324893}
-  - component: {fileID: 175324892}
-  m_Layer: 5
-  m_Name: Snippet (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &175324891
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175324890}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1053010282}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1425.4, y: -75}
-  m_SizeDelta: {x: 400, y: 100}
-  m_Pivot: {x: 0.5, y: 0}
---- !u!114 &175324892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175324890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: <color=#81675D>X</color><color=#493B39> - Return</color>
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fbc07166d0d48aa44b1287ef29ced488, type: 2}
-  m_sharedMaterial: {fileID: 255786425675240141, guid: fbc07166d0d48aa44b1287ef29ced488, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &175324893
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175324890}
-  m_CullTransparentMesh: 1
 --- !u!1001 &181770467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3361,6 +3438,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 99999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Sermon Of Rifles
       objectReference: {fileID: 0}
@@ -3370,8 +3455,16 @@ PrefabInstance:
       objectReference: {fileID: -239938658076461202, guid: 2597ba751ed60f8469920a0190d4582c, type: 3}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillDescription
-      value: The Gunman delivers a rapid barrage of three precise projectiles, each
+      value: 'The Gunman delivers a rapid barrage of three precise projectiles, each
         shot dealing significant Poise damage to any enemy caught in their path.
+
+
+        Not
+        implemented yet lmao'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
@@ -3530,6 +3623,100 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.11679077}
   m_SizeDelta: {x: 0, y: -182.0438}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &258789465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 258789466}
+  - component: {fileID: 258789469}
+  - component: {fileID: 258789468}
+  - component: {fileID: 258789467}
+  m_Layer: 5
+  m_Name: In Game Souls UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &258789466
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258789465}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1323182636}
+  - {fileID: 2036096920}
+  m_Father: {fileID: 1281404232}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 720, y: 487}
+  m_SizeDelta: {x: 101, y: 16}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &258789467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258789465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.39607847, g: 0.31764707, b: 0.2901961, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &258789468
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258789465}
+  m_CullTransparentMesh: 1
+--- !u!114 &258789469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258789465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca17f6a23fc05f46bd9c664a6d5f82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulsText: {fileID: 2036096921}
+  textPrefab: {fileID: 4309058651818212699, guid: dae99ef2b692a2b47983259987e43eb5, type: 3}
+  textSpeed: 100
+  textIdleSpeed: 2
 --- !u!224 &268568909 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6251133843613874556, guid: 2ac4c33440dc0374dbdfc5b228be3767, type: 3}
@@ -3651,6 +3838,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 761872743}
     m_Modifications:
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Into The Abyss
       objectReference: {fileID: 0}
@@ -3672,9 +3863,18 @@ PrefabInstance:
       objectReference: {fileID: 4796767825433389355, guid: 94ff29852b96a3a47aeab74fc6bc5721, type: 3}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillDescription
-      value: While airborne, the Gunman plunges downward in a deadly dive, slamming
+      value: 'While airborne, the Gunman plunges downward in a deadly dive, slamming
         into the ground with force. The impact triggers a shockwave, damaging all
         enemies in the area around the landing point.
+
+
+
+        Press <color=#AB6158>S
+        + M1</color> while airborne to dive down.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
@@ -4631,6 +4831,7 @@ MonoBehaviour:
   stunTime: 4
   poiseTracker: 0
   debugDamage: 0
+  currencyToDrop: 0000000000000000
   level: 1
   percentageModifier: 0.4
   bulletsToRecover: 0
@@ -5701,14 +5902,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -6025,8 +6226,20 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Paradise Of The Architect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: hasNoPrice
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillImage
@@ -6034,8 +6247,12 @@ PrefabInstance:
       objectReference: {fileID: -8406385122911472804, guid: 92f046a3cbb2f2d4cab725cef5c52857, type: 3}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillDescription
-      value: 'The Gunman gains the ability to slide along walls with fluid precision,
-        defying gravity as he leaps while in motion. '
+      value: "The Gunman gains the ability to slide along walls with fluid precision,
+        defying gravity as he leaps while in motion. \n\nNot implemented yet lmao."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
@@ -6790,10 +7007,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1053010282}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -75}
-  m_SizeDelta: {x: 400, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &472053935
 MonoBehaviour:
@@ -6815,7 +7032,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <color=#81675D>C</color><color=#493B39> - Select</color>
+  m_text: <color=#81675D>Hold C</color><color=#493B39> - Purchase</color>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fbc07166d0d48aa44b1287ef29ced488, type: 2}
   m_sharedMaterial: {fileID: 255786425675240141, guid: fbc07166d0d48aa44b1287ef29ced488, type: 2}
@@ -8497,6 +8714,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Heretic Hunter
       objectReference: {fileID: 0}
@@ -8509,6 +8734,14 @@ PrefabInstance:
       value: Wanted Dead now can be performed while sliding a wall, preventing enemies
         to attack The Gunman mid-aim.
       objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1937187973}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10397,10 +10630,10 @@ RectTransform:
   - {fileID: 2097842217}
   m_Father: {fileID: 1100236228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -81.8149}
-  m_SizeDelta: {x: 320, y: 60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &746713515
 MonoBehaviour:
@@ -11000,7 +11233,7 @@ RectTransform:
   m_Father: {fileID: 1656029737}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -834.7656, y: 38.893555}
   m_SizeDelta: {x: -8357.148, y: -1679.2}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11540,7 +11773,7 @@ MonoBehaviour:
     value: 3
     modifiers: 
   damage:
-    value: 10
+    value: 15
     modifiers: 
   agility:
     value: 8
@@ -12082,6 +12315,7 @@ Transform:
   - {fileID: 1912333601}
   - {fileID: 2087878694}
   - {fileID: 2006810660}
+  - {fileID: 1017349120}
   - {fileID: 1687113833}
   - {fileID: 1739595543}
   - {fileID: 441845009}
@@ -13216,8 +13450,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 761872743}
     m_Modifications:
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: hasPrice
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Sanctus Dominus
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: hasNoPrice
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillImage
@@ -13225,9 +13471,17 @@ PrefabInstance:
       objectReference: {fileID: 6798988215675955134, guid: 4c3cd719c0f4729448a7f8c077db1d51, type: 3}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillDescription
-      value: For a fleeting moment, the Gunman brandishes his cross, parrying incoming
+      value: 'For a fleeting moment, the Gunman brandishes his cross, parrying incoming
         attacks with unwavering faith. Enemies struck during this sacred defiance
         suffer heavy Poise damage, their aggression shattered by divine retribution.
+
+
+        Press
+        <color=#AB6158>Q</color> to parry.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
@@ -13503,8 +13757,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Faster Than The Flame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: hasNoPrice
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillImage
@@ -13512,8 +13774,16 @@ PrefabInstance:
       objectReference: {fileID: -4780433621625631885, guid: 0a2288ed11b533b4ba6d8a723f75a576, type: 3}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillDescription
-      value: The Gunman dashes in any direction with blistering speed, becoming momentarily
-        resistant to incoming damage.
+      value: 'The Gunman dashes in any direction with blistering speed, becoming
+        momentarily resistant to incoming damage.
+
+
+        Press <color=#AB6158>LShift</color>
+        to dash.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
@@ -13641,6 +13911,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
   m_PrefabInstance: {fileID: 938803673}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &938803675 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+  m_PrefabInstance: {fileID: 938803673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8aa3e58698c31d48be9b57ab307bf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &944479547
 GameObject:
   m_ObjectHideFlags: 0
@@ -13947,11 +14228,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: e2679bbaa9b506348bf7115ce26c8d94, type: 2}
     - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 45.43
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.52
+      value: 14.6
       objectReference: {fileID: 0}
     - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14722,6 +15003,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1017349120 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
+  m_PrefabInstance: {fileID: 1437602952}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1026012113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15152,7 +15438,6 @@ RectTransform:
   m_Children:
   - {fileID: 1168214589}
   - {fileID: 472053934}
-  - {fileID: 175324891}
   m_Father: {fileID: 1912386386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -15214,6 +15499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 797759660}
+  multiplier: 1
 --- !u!4 &1056210826
 Transform:
   m_ObjectHideFlags: 0
@@ -16173,6 +16459,14 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Dance Macabre
       objectReference: {fileID: 0}
@@ -16186,6 +16480,18 @@ PrefabInstance:
         deadly precision. If the enemy\u2019s health is below 30%, the strike becomes
         an instant execution. No mercy, only death."
       objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[0]'
+      value: 
+      objectReference: {fileID: 938803675}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1862123068}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -16326,7 +16632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1142484034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16444,6 +16750,7 @@ MonoBehaviour:
   blessingsTab: {fileID: 1912386385}
   notesTab: {fileID: 1648585481}
   InGameUI: {fileID: 1281404231}
+  inGameSoulsUI: {fileID: 258789469}
 --- !u!1 &1144382344
 GameObject:
   m_ObjectHideFlags: 0
@@ -16926,10 +17233,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1053010282}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 494.59998, y: -75}
-  m_SizeDelta: {x: 400, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1168214590
 MonoBehaviour:
@@ -17189,6 +17496,7 @@ MonoBehaviour:
   stunTime: 4
   poiseTracker: 0
   debugDamage: 0
+  currencyToDrop: 0000000000000000
   level: 1
   percentageModifier: 0.4
   bulletsToRecover: 0
@@ -18059,10 +18367,10 @@ RectTransform:
   - {fileID: 1226860160}
   m_Father: {fileID: 1100236228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 290, y: -81.8149}
-  m_SizeDelta: {x: 320, y: 60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1260765746
 MonoBehaviour:
@@ -18748,6 +19056,7 @@ MonoBehaviour:
   stunTime: 4
   poiseTracker: 0
   debugDamage: 0
+  currencyToDrop: 0000000000000000
   level: 1
   percentageModifier: 0.4
   bulletsToRecover: 0
@@ -18831,6 +19140,7 @@ RectTransform:
   - {fileID: 7138667535505253974}
   - {fileID: 1656029737}
   - {fileID: 76464153}
+  - {fileID: 258789466}
   m_Father: {fileID: 1142484037}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -19006,9 +19316,9 @@ RectTransform:
   - {fileID: 1100236228}
   - {fileID: 1731695034}
   - {fileID: 1308595872}
-  - {fileID: 2074356018}
   - {fileID: 410897825}
   - {fileID: 2100081784}
+  - {fileID: 2074356018}
   - {fileID: 1912386386}
   - {fileID: 1648585482}
   m_Father: {fileID: 1142484037}
@@ -19150,8 +19460,8 @@ Transform:
   m_GameObject: {fileID: 1303320197}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -44.7721, y: 52.5252, z: 0}
-  m_LocalScale: {x: 19.67745, y: 11.838756, z: 1.1626}
+  m_LocalPosition: {x: -44.7721, y: 53.3212, z: 0}
+  m_LocalScale: {x: 19.67745, y: 10.246443, z: 1.1626}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 698673683}
@@ -19583,10 +19893,10 @@ RectTransform:
   - {fileID: 1530425100}
   m_Father: {fileID: 1100236228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1630, y: -81.8149}
-  m_SizeDelta: {x: 320, y: 60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1319792595
 MonoBehaviour:
@@ -19716,6 +20026,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322803363}
+  m_CullTransparentMesh: 1
+--- !u!1 &1323182635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1323182636}
+  - component: {fileID: 1323182638}
+  - component: {fileID: 1323182637}
+  m_Layer: 5
+  m_Name: Frame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1323182636
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323182635}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.14, y: 1.14, z: 1.14}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 258789466}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 101, y: 16}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1323182637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323182635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 380428591405701880, guid: 0fec484413ea5f74fbfe8400285f0087, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1323182638
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323182635}
   m_CullTransparentMesh: 1
 --- !u!1001 &1345872579
 PrefabInstance:
@@ -20073,6 +20458,14 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 7500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Welcome To Hell
       objectReference: {fileID: 0}
@@ -20086,6 +20479,18 @@ PrefabInstance:
         of the fallen. The stronger the foe, the greater the reward, turning each
         kill into fuel for the fight.
       objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1883319329}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1546651287}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -21041,6 +21446,205 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6251133843613874556, guid: 2ac4c33440dc0374dbdfc5b228be3767, type: 3}
   m_PrefabInstance: {fileID: 2033109931}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1426781413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1426781414}
+  - component: {fileID: 1426781416}
+  - component: {fileID: 1426781415}
+  m_Layer: 5
+  m_Name: Souls Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1426781414
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426781413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1477553179}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.7517, y: 0.1214}
+  m_SizeDelta: {x: 100, y: 15}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1426781415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426781413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: '2137
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: fbc07166d0d48aa44b1287ef29ced488, type: 2}
+  m_sharedMaterial: {fileID: 255786425675240141, guid: fbc07166d0d48aa44b1287ef29ced488, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4285894056
+  m_fontColor: {r: 0.65882355, g: 0.5529412, b: 0.45882356, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 12
+  m_fontSizeBase: 12
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 3.0046387, y: 2.5101495, z: 2.8681984, w: 0.72875977}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1426781416
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426781413}
+  m_CullTransparentMesh: 1
+--- !u!1001 &1437602952
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 827443921}
+    m_Modifications:
+    - target: {fileID: 1032608403085998038, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
+      propertyPath: m_Name
+      value: Fragment of Distant Reality
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235565483072219220, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: f3a1f465836d3b141932e7ba8138c8cb, type: 2}
+    - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 80.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 38.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
 --- !u!1001 &1452854664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21052,6 +21656,14 @@ PrefabInstance:
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: row
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
@@ -21067,6 +21679,18 @@ PrefabInstance:
         Gunman\u2019s revolvers, blending speed and precision to keep the chamber
         full in the heat of battle."
       objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[0]'
+      value: 
+      objectReference: {fileID: 938803675}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1862123068}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -21331,6 +21955,100 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6251133843613874556, guid: 2ac4c33440dc0374dbdfc5b228be3767, type: 3}
   m_PrefabInstance: {fileID: 1263339963}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1477553178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1477553179}
+  - component: {fileID: 1477553182}
+  - component: {fileID: 1477553181}
+  - component: {fileID: 1477553180}
+  m_Layer: 5
+  m_Name: Souls UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1477553179
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477553178}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 111012628}
+  - {fileID: 1426781414}
+  m_Father: {fileID: 1912386386}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -583, y: 289}
+  m_SizeDelta: {x: 101, y: 16}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1477553180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477553178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.39607847, g: 0.31764707, b: 0.2901961, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1477553181
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477553178}
+  m_CullTransparentMesh: 1
+--- !u!114 &1477553182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477553178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca17f6a23fc05f46bd9c664a6d5f82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulsText: {fileID: 1426781415}
+  textPrefab: {fileID: 4309058651818212699, guid: dae99ef2b692a2b47983259987e43eb5, type: 3}
+  textSpeed: 100
+  textIdleSpeed: 0
 --- !u!1 &1477680226
 GameObject:
   m_ObjectHideFlags: 0
@@ -21534,6 +22252,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Ashen Rain
       objectReference: {fileID: 0}
@@ -21547,6 +22273,18 @@ PrefabInstance:
         a volley that rains death across all targets. Though the damage is split,
         each kill yields greater rewards, turning chaos into profit.
       objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1937187973}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1937187973}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -22429,6 +23167,7 @@ MonoBehaviour:
   stunTime: 4
   poiseTracker: 0
   debugDamage: 0
+  currencyToDrop: 0000000000000000
   level: 1
   percentageModifier: 0.4
   bulletsToRecover: 0
@@ -22952,6 +23691,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 761872743}
     m_Modifications:
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Wanted Dead
       objectReference: {fileID: 0}
@@ -22969,9 +23712,14 @@ PrefabInstance:
       objectReference: {fileID: 8946364539148671109, guid: 932f946fc1f28524c96ab06e8971b408, type: 3}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillDescription
-      value: 'The Gunman freezes in place and can aim freely. After a few seconds
+      value: "The Gunman freezes in place and can aim freely. After a few seconds
         he takes a shot dealing large amount of damage to targeted enemy. If attack
-        is lethal, The Gunman gains additional currency. '
+        is lethal, The Gunman gains additional currency. \n\nPress <color=#AB6158>F</color>
+        to start aiming and <color=#AB6158>M1</color> to mark targets."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
@@ -24818,9 +25566,9 @@ MonoBehaviour:
     clip: {fileID: 0}
     effect: []
     itemsToGive: []
-  - dialogueText: He was a good man... Was the one to uncover holy scrolls before
-      my eyes and edify me into becoming who I am now. May his soul now rest among
-      the saints.
+  - dialogueText: He was a good man... The one to uncover holy scrolls before my
+      eyes and edify me into becoming who I am now. May his soul now rest among the
+      saints.
     nextIndex: 10
     newFirstLine: 0
     clip: {fileID: 0}
@@ -25139,6 +25887,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Closer To The Sun
       objectReference: {fileID: 0}
@@ -25152,6 +25908,18 @@ PrefabInstance:
         of the strike launches him upward, propelling him into the air for a follow-up
         assault or escape.
       objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[0]'
+      value: 
+      objectReference: {fileID: 566669825}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1276239798}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -25732,8 +26500,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: hasPrice
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Die By The Blade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: hasNoPrice
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillImage
@@ -25743,7 +26523,12 @@ PrefabInstance:
       propertyPath: skillDescription
       value: "The Gunman hurls a Reaper\u2019s Halo, sending it ricocheting off walls
         with deadly precision. Enemies caught in its path are struck, each bounce
-        bringing the blade closer to its next victim."
+        bringing the blade closer to its next victim.\n\nHold <color=#AB6158>M2</color>
+        to aim and release to throw The Reaper's Halo."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
@@ -26042,10 +26827,10 @@ RectTransform:
   - {fileID: 835241744}
   m_Father: {fileID: 1100236228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 625, y: -81.8149}
-  m_SizeDelta: {x: 320, y: 60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1779420720
 MonoBehaviour:
@@ -26114,8 +26899,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
-      value: Bless'em With The Blade
+      value: Bless 'em With The Blade
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillImage
@@ -26125,8 +26918,21 @@ PrefabInstance:
       propertyPath: skillDescription
       value: "The Reaper\u2019s Halo now orbits around the Gunman, a relentless spinning
         blade that damages any enemy unfortunate enough to come too close. A deadly
-        aura that grants no reprieve."
+        aura that grants no reprieve.\n\nPress <color=#AB6158>M2 + M1</color> to
+        throw orbiting Halo."
       objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1873363214}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1797047085}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -26237,7 +27043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7505391397478580244, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Name
-      value: Bless'em With The Blade
+      value: Bless 'em With The Blade
       objectReference: {fileID: 0}
     - target: {fileID: 8357233472352535770, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Sprite
@@ -26261,6 +27067,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Legend Of Steel
       objectReference: {fileID: 0}
@@ -26271,8 +27085,13 @@ PrefabInstance:
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillDescription
       value: "The Gunman halts the Reaper\u2019s Halo in mid-air, causing it to spin
-        violently for several seconds before it returns to him. "
+        violently for several seconds before it returns to him. \n\nPress <color=#AB6158>M2</color>
+        while Halo is released to halt it."
       objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1888330190}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -26399,6 +27218,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
   m_PrefabInstance: {fileID: 1797047083}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1797047085 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+  m_PrefabInstance: {fileID: 1797047083}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8aa3e58698c31d48be9b57ab307bf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1802356671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26410,6 +27240,14 @@ PrefabInstance:
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: row
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
@@ -26425,6 +27263,18 @@ PrefabInstance:
         him, deflecting enemy attacks from all directions. A shield of divine will,
         turning every strike away with unyielding force.
       objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1276239798}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1276239798}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -27109,6 +27959,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Amen & Attack
       objectReference: {fileID: 0}
@@ -27120,6 +27978,10 @@ PrefabInstance:
       propertyPath: skillDescription
       value: All skills are now free from the constraints of ammunition, allowing
         the Gunman to unleash his full arsenal without restraint.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
@@ -27352,6 +28214,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Sweet Vendetta
       objectReference: {fileID: 0}
@@ -27361,10 +28231,22 @@ PrefabInstance:
       objectReference: {fileID: -2285999358349264884, guid: b5fe3665225a1874e8b2132d406725fe, type: 3}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillDescription
-      value: The Gunman unleashes a devastating special attack on stunned enemies,
+      value: 'The Gunman unleashes a devastating special attack on stunned enemies,
         dealing massive damage. During the execution of Sweet Vendetta, he becomes
         invincible, a force of vengeance that cannot be stopped.
+
+
+        Press
+        <color=#AB6158>M1</color> near stunned enemy to execute him.'
       objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1276239798}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -27491,11 +28373,44 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
   m_PrefabInstance: {fileID: 1862123066}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1862123068 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+  m_PrefabInstance: {fileID: 1862123066}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8aa3e58698c31d48be9b57ab307bf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1865644336 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4555775894742502624, guid: 54d8757170a78464f8f8a9b1e970b989, type: 3}
   m_PrefabInstance: {fileID: 106890961}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1873363214 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+  m_PrefabInstance: {fileID: 1802356671}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8aa3e58698c31d48be9b57ab307bf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1883319329 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+  m_PrefabInstance: {fileID: 1854995135}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8aa3e58698c31d48be9b57ab307bf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1883915242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27593,6 +28508,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d8757170a78464f8f8a9b1e970b989, type: 3}
+--- !u!114 &1888330190 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+  m_PrefabInstance: {fileID: 1759688951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8aa3e58698c31d48be9b57ab307bf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1897607091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
@@ -27832,7 +28758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1912386386
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27852,6 +28778,7 @@ RectTransform:
   - {fileID: 761872743}
   - {fileID: 1053010282}
   - {fileID: 47135428}
+  - {fileID: 1477553179}
   m_Father: {fileID: 1293589760}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -27876,6 +28803,7 @@ MonoBehaviour:
   skillImage: {fileID: 1270767573}
   defaultIndex: {fileID: 1937187973}
   skillDisplay: {fileID: 47135431}
+  soulsUI: {fileID: 1477553182}
 --- !u!1 &1912775106
 GameObject:
   m_ObjectHideFlags: 0
@@ -29109,6 +30037,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: isSecret
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Spill Blood On Fire
       objectReference: {fileID: 0}
@@ -29121,6 +30057,10 @@ PrefabInstance:
       value: "Each enemy killed by the Reaper\u2019s Halo replenishes 3 bullets,
         fueling the Gunman\u2019s relentless assault with the blood of his foes."
       objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: 'shouldBeUnlocked.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1888330190}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -29534,11 +30474,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 783eddec4fcadb4478849d2d66f63bb7, type: 2}
     - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 81.06
+      value: 46.2
       objectReference: {fileID: 0}
     - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 38.3
+      value: 11.57
       objectReference: {fileID: 0}
     - target: {fileID: 6730819961969156093, guid: b52d8e2e6cdfaf546baf7fddc1fd407c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29926,6 +30866,144 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ac4c33440dc0374dbdfc5b228be3767, type: 3}
+--- !u!1 &2036096919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2036096920}
+  - component: {fileID: 2036096922}
+  - component: {fileID: 2036096921}
+  m_Layer: 5
+  m_Name: Souls Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2036096920
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036096919}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 258789466}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.7517, y: 0.1214}
+  m_SizeDelta: {x: 100, y: 15}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2036096921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036096919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: '2137
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: fbc07166d0d48aa44b1287ef29ced488, type: 2}
+  m_sharedMaterial: {fileID: 255786425675240141, guid: fbc07166d0d48aa44b1287ef29ced488, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4285894056
+  m_fontColor: {r: 0.65882355, g: 0.5529412, b: 0.45882356, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 12
+  m_fontSizeBase: 12
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 3.0046387, y: 2.5101495, z: 2.8681984, w: 0.72875977}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &2036096922
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036096919}
+  m_CullTransparentMesh: 1
 --- !u!224 &2037646545 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6470148848636804951, guid: f685ad55ae040674aa6e4261ffcfbb90, type: 3}
@@ -29971,10 +31049,10 @@ RectTransform:
   - {fileID: 232313146}
   m_Father: {fileID: 1100236228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1295, y: -81.8149}
-  m_SizeDelta: {x: 320, y: 60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2046267211
 MonoBehaviour:
@@ -30103,43 +31181,43 @@ MonoBehaviour:
   unlockableSkills:
     items:
     - key: Wanted Dead
-      value: 1
+      value: 0
     - key: Ashen Rain
-      value: 1
+      value: 0
     - key: Heretic Hunter
-      value: 1
+      value: 0
     - key: Amen & Attack
       value: 0
     - key: Sermon of Rifles
       value: 0
     - key: Welcome To Hell
-      value: 1
+      value: 0
     - key: Into The Abyss
-      value: 1
+      value: 0
     - key: Closer To The Sun
-      value: 1
+      value: 0
     - key: Sanctus Dominus
       value: 0
     - key: Anima Mundi
-      value: 1
+      value: 0
     - key: Sweet Vendetta
-      value: 1
+      value: 0
     - key: Faster Than The Flame
-      value: 1
+      value: 0
     - key: Incense & Iron
-      value: 1
+      value: 0
     - key: Dance Macabre
-      value: 1
+      value: 0
     - key: Vokul Fen Mah
-      value: 1
+      value: 0
     - key: Die By The Blade
       value: 0
     - key: Legend Of Steel
-      value: 1
+      value: 0
     - key: Spill Blood On Fire
-      value: 1
+      value: 0
     - key: Bless 'em With The Blade
-      value: 1
+      value: 0
     - key: Astral Elixir
       value: 0
     - key: Constellation of Tears
@@ -31640,7 +32718,7 @@ RectTransform:
   m_Father: {fileID: 7138667535505253974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -849.02734, y: 38.893555}
   m_SizeDelta: {x: -8385.6875, y: -1679.2}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -31681,7 +32759,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1425051654096860369, guid: fe1b96d8e243c034987cadab7b047d45, type: 3}
       propertyPath: m_LocalScale.x
-      value: 6.3748183
+      value: 7.672094
       objectReference: {fileID: 0}
     - target: {fileID: 1425051654096860369, guid: fe1b96d8e243c034987cadab7b047d45, type: 3}
       propertyPath: m_LocalScale.y
@@ -31693,7 +32771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1425051654096860369, guid: fe1b96d8e243c034987cadab7b047d45, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 43.9088
+      value: 44.5574
       objectReference: {fileID: 0}
     - target: {fileID: 1425051654096860369, guid: fe1b96d8e243c034987cadab7b047d45, type: 3}
       propertyPath: m_LocalPosition.z
@@ -31753,6 +32831,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 761872743}
     m_Modifications:
     - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: price
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: skillName
       value: Vokul Fen Mah
       objectReference: {fileID: 0}
@@ -31765,6 +32847,10 @@ PrefabInstance:
       value: Bullets fired by the Gunman now pierce through enemies, hitting all
         in their path. Each successive target takes slightly reduced damage, but
         a well-placed shot can still cut down a crowd.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449167906404624949, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
+      propertyPath: shouldBeUnlocked.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498007772142084480, guid: c2acf30ee0c478c49b3e6b035c448f5f, type: 3}
       propertyPath: m_Pivot.x
@@ -32051,6 +33137,14 @@ PrefabInstance:
     - target: {fileID: 3573776407977360261, guid: f1606742898e95c4b98134a81c0e876c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 2.159
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585438628731849624, guid: f1606742898e95c4b98134a81c0e876c, type: 3}
+      propertyPath: health.value
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585438628731849624, guid: f1606742898e95c4b98134a81c0e876c, type: 3}
+      propertyPath: 'currencyToDrop.Array.data[0]'
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 6518382380872775608, guid: f1606742898e95c4b98134a81c0e876c, type: 3}
       propertyPath: m_LocalPosition.x

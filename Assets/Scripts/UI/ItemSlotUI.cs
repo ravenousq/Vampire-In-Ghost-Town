@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class ItemSlotUI : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
+public class ItemSlotUI : MonoBehaviour
 {
     [SerializeField] private Image frame;
     [SerializeField] private Image itemImage;
@@ -48,33 +48,6 @@ public class ItemSlotUI : MonoBehaviour, IPointerDownHandler, IPointerEnterHandl
         itemImage.color = Color.clear;
         itemText.text = "";
 
-    }
-
-    public virtual void OnPointerDown(PointerEventData eventData)
-    {
-        if(item == null || !item.itemData)
-            return;
-
-        if(item.itemData.itemType == ItemType.Charm)
-            Inventory.instance.EquipCharm(item.itemData as CharmData);
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if(item == null || !item.itemData || gameObject.name.Contains("Equipped Charm Slot"))
-            return;
-
-        itemDescription.gameObject.SetActive(true);
-        itemDescription.SetUp(item.itemData.itemName, item.itemData.itemDescription);
-        AchorDescription();
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        if(item == null || !item.itemData)
-            return;
-
-        itemDescription.gameObject.SetActive(false);
     }
 
     public void AchorDescription(float xPadding = 500, float yPadding = 175)

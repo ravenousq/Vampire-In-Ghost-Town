@@ -19,7 +19,7 @@ public class ItemDisplay : MonoBehaviour
         description.text = itemData.itemDescription;
     }
 
-    public void SetUp(string title, string description)
+    public virtual void SetUp(string title, string description, string price = "")
     {
         this.title.text = title;
         this.description.text = description;

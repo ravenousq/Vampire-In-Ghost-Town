@@ -28,7 +28,6 @@ public class PlayerQuickstepState : PlayerState
             rb.linearVelocity = new Vector2(player.quickstepSpeed * direction, rb.linearVelocityY);
         else
             player.ResetVelocity();
-        //ignore damage
 
         if(trigger)
             stateMachine.ChangeState(player.idle);

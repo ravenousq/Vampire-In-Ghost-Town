@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    value: 200
+    value: 1
     modifiers: 
   poise:
     value: 12
@@ -120,6 +120,7 @@ MonoBehaviour:
   stunTime: 4
   poiseTracker: 0
   debugDamage: 0
+  currencyToDrop: e8030000d0070000
   level: 1
   percentageModifier: 0.4
   bulletsToRecover: 6

@@ -15,10 +15,20 @@ public class SkillButtonUI : MonoBehaviour
     [SerializeField] private string skillName = "";
     [TextArea]
     [SerializeField] private string skillDescription;
+    [SerializeField] private int price;
     [SerializeField] public Sprite skillImage;
     [Space]
     [SerializeField] private Image skillIcon;
-    [SerializeField] private SkillButtonUI shouldBeUnlocked;
+    [SerializeField] public SkillButtonUI[] shouldBeUnlocked;
+    [SerializeField] private Image lockImage;
+    [SerializeField] private Image secretImage;
+    [SerializeField] private bool isSecret;
+    [SerializeField] private bool hasNoPrice;
+    [SerializeField] private float purchaseSpeed;
+    public bool canBePurchased { get; private set; }
+    public bool unlocked { get; private set; }
+    private bool isPurchasing;
+    private bool guard;
 
     [Header("Navigation")]
     public Row row;
@@ -26,20 +36,83 @@ public class SkillButtonUI : MonoBehaviour
     public bool selected { get; private set; }
     public int index { get; private set; }
 
+    private void Update() 
+    {
+        lockImage.fillAmount = Mathf.Clamp(isPurchasing ? 
+            lockImage.fillAmount - (purchaseSpeed * .01f * Time.unscaledDeltaTime) : 
+            lockImage.fillAmount + (purchaseSpeed * .05f * Time.unscaledDeltaTime), 0, 1);
+
+        if(lockImage.fillAmount == 0 && !guard)
+        {
+            guard = true;
+            Purchase();
+            boss.UpdateAll();
+        }
+    }
+
     public void SetIndex(int index, BlessingsUI boss)
     {
-        this.index = index; 
+        this.index = index;
         this.boss = boss;
+
+        for (int i = 0; i < shouldBeUnlocked.Length; i++)
+            if(shouldBeUnlocked[i].isSecret)
+            {
+                isSecret = true;
+                break;
+            }
+        
+        secretImage.gameObject.SetActive(isSecret);
+        
+        UpdatePurchase();
     }
+
+    public void UpdatePurchase()
+    {
+        if(isSecret && shouldBeUnlocked.Length == 0 && !unlocked)
+            return;
+
+        foreach (SkillButtonUI skill in boss.skills)
+        {
+            for (int i = 0; i < shouldBeUnlocked.Length; i++)
+                if ((skill.GetName(false) == shouldBeUnlocked[i].GetName(false))&& !skill.unlocked)   
+                    return;     
+        }
+            
+        canBePurchased = true;
+        isSecret = false;
+        secretImage.gameObject.SetActive(false);
+        
+        if(unlocked)
+            canBePurchased = !false;
+        lockImage.gameObject.SetActive(!unlocked);
+    }
+
     public void Select(bool selected)
     {
         this.selected = selected;
         transform.localScale = selected ? new Vector3(.85f, .85f) : new Vector3(.75f, .75f);
     }
 
-    public string GetName() => skillName;
-    public string GetDescription() => skillDescription;
- 
+    public string GetName(bool uiPurpose = true) => uiPurpose ? isSecret ? "???" : skillName : skillName ;
+    public string GetDescription() => isSecret ? "" : skillDescription;
+    public Sprite GetImage() => isSecret ? secretImage.sprite : skillIcon.sprite;
+    public string GetPrice() => isSecret ? "???" : hasNoPrice ? "N/A" : price.ToString();
+    public int GetIntPrice() => price;
+    public bool IsSecret() => isSecret;
+
+    public void Purchase()
+    {
+        if(!hasNoPrice)
+        {
+            PlayerManager.instance.RemoveCurrency(price);
+            boss.RemoveSouls(price);
+        }
+        SkillManager.instance.UnlockSkill(skillName);
+        isSecret = false;
+        unlocked = true;
+    }
+
     public int GetNavigation(KeyCode keyCode)
     {
         int index = this.index;
@@ -59,7 +132,6 @@ public class SkillButtonUI : MonoBehaviour
                     while(boss.GetRowByIndex(index) == row)
                         index -= 1;
                 }
-    
                 break;
             }
             case KeyCode.A:
@@ -79,7 +151,6 @@ public class SkillButtonUI : MonoBehaviour
                     while(boss.GetRowByIndex(index) == row)
                         index += 1;
                 }
-    
                 break;
             }
             case KeyCode.D:
@@ -124,4 +195,6 @@ public class SkillButtonUI : MonoBehaviour
             skillIcon.SetNativeSize();
         }
     }
+
+    public void SetPurchase(bool isPruchasing) => this.isPurchasing = isPruchasing;
 }

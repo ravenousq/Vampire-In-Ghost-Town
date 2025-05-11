@@ -45,7 +45,7 @@ public class NPC : MonoBehaviour
 
         if(canStartDialogue)
         {
-            if(Input.GetKeyDown(KeyCode.C) && player.IsGroundDetected())
+            if(Input.GetKeyDown(KeyCode.C) && player.IsGroundDetected() && Time.timeScale == 1)
             {   
                 timer = 10;
                 canStartDialogue = false;

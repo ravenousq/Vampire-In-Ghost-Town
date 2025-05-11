@@ -35,7 +35,7 @@ public class PlayerGroundedState : PlayerState
 
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if(!SkillManager.instance.isSkillUnlocked("Faster Than The Flame") && stateMachine.current != player.reload)
+            if(!SkillManager.instance.isSkillUnlocked("Faster Than The Flame") && stateMachine.current != player.reload && !player.CloseToEdge()) 
                 stateMachine.ChangeState(player.quickstep);
         }
         
