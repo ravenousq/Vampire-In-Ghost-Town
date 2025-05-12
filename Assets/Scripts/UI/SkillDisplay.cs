@@ -9,6 +9,6 @@ public class SkillDisplay : ItemDisplay
     {
         base.SetUp(title, description);
 
-        priceText.text = $"Price: {price}";
+        priceText.text = (price == null || price  == "0") ? "" : $"Price: {price}";
     }
 }

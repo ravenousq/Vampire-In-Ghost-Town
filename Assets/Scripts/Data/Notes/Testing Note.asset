@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   itemName: Testing Note
+  price: 1000
   icon: {fileID: -8412689590225003355, guid: 43a0a17551b31544d82a1a2cf84bfd0a, type: 3}
   itemDescription: This is a description fr.
   noteContent: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

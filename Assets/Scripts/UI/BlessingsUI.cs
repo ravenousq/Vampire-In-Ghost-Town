@@ -11,7 +11,7 @@ public class BlessingsUI : MonoBehaviour
     [SerializeField] private SoulsUI soulsUI;
     
     private int currentIndex;
-    private float purchaseTimer;
+    public bool triedToPurchase { get; private set; }
 
     private void Start() 
     {
@@ -40,8 +40,16 @@ public class BlessingsUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
             NavigateTo(KeyCode.D);
 
-        if(Input.GetKeyDown(KeyCode.C) && skills[currentIndex].canBePurchased && PlayerManager.instance.CanAfford(skills[currentIndex].GetIntPrice()))
-            skills[currentIndex].SetPurchase(true);
+        if(Input.GetKeyDown(KeyCode.C) && !triedToPurchase)
+        {
+            if(PlayerManager.instance.CanAfford(skills[currentIndex].GetIntPrice()) && skills[currentIndex].canBePurchased)
+                skills[currentIndex].SetPurchase(true);
+            else
+            {
+                skills[currentIndex].NotEnoughCurrency();
+                triedToPurchase = true;
+            }
+        }
 
         if(Input.GetKeyUp(KeyCode.C))
             skills[currentIndex].SetPurchase(false);
@@ -87,6 +95,8 @@ public class BlessingsUI : MonoBehaviour
         skillDisplay.SetUp(skills[currentIndex].GetName(), skills[currentIndex].GetDescription(), skills[currentIndex].GetPrice());
         skillImage.sprite = skills[currentIndex].skillImage;
     }
+
+    public void StopBlockade() => triedToPurchase = false;
 
     public void UnlockSecretSkill(string name)
     {

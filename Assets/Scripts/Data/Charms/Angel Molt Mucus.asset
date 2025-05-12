@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 2
   itemName: Angel Molt Mucus
+  price: 1
   icon: {fileID: -6582009276801769156, guid: 89bba0447a50fd1439671fb761fc1121, type: 3}
   itemDescription: 'Harvested from massacred remains of a chosen grub. The process
     is agonizing and debilitating, but ascension takes precedence. This sludgy pulp
@@ -22,5 +23,6 @@ MonoBehaviour:
 
     Posture
     recovers more quickly.'
+  noteContent: 
   equipEffects:
   - {fileID: 11400000, guid: f1741ae3448ec564ea15fbc6a9a12b66, type: 2}

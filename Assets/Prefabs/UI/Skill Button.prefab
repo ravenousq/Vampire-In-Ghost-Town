@@ -463,4 +463,7 @@ MonoBehaviour:
   isSecret: 0
   hasNoPrice: 0
   purchaseSpeed: 100
+  blockadeTime: 0.3
+  shakeSpeed: 100
   row: 0
+  movingRight: 0

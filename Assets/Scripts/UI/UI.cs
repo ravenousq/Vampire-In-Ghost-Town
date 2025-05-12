@@ -23,6 +23,9 @@ public class UI : MonoBehaviour
     public Transform equipedCharmsParent;
     public ItemDescriptionUI itemDescription;
 
+    [Header("NPC Shop UI")]
+    [SerializeField] private NPCShopUI npcShop;
+
     [Header("Game Menu")]
     [SerializeField] private GameObject gameMenu;
     [SerializeField] private GameMenuButton[] menuButtons;
@@ -34,6 +37,9 @@ public class UI : MonoBehaviour
     [Space]
     [SerializeField] private GameObject InGameUI;
     [SerializeField] private SoulsUI inGameSoulsUI;
+    
+    [Header("Debug")]
+    [SerializeField] private NPC amelia;
     private int selectedIndex;
 
     private void Start() 
@@ -44,6 +50,13 @@ public class UI : MonoBehaviour
 
     private void Update() 
     {
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            Time.timeScale = !npcShop.gameObject.activeSelf ? 0 : 1;
+            EnableNPCShop(!npcShop.gameObject.activeSelf);
+            npcShop.SetUp("Nun Amelia", amelia.stock);
+        }
+
         if(Input.GetKeyDown(KeyCode.P))
         {
             gameMenu.SetActive(!gameMenu.activeSelf);    
@@ -95,6 +108,11 @@ public class UI : MonoBehaviour
 
             menuButtons[selectedIndex].Select(true);
         }
+    }
+
+    public void EnableNPCShop(bool enable)
+    {
+        npcShop.gameObject.SetActive(enable);
     }
 
     private void DefaultMenu()

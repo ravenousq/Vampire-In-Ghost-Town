@@ -34,6 +34,7 @@ public class SoulsUI : MonoBehaviour
 
     public void ModifySouls(int souls, bool wait = true) 
     {
+        fadingTexts.RemoveAll(text => text == null);
         this.souls += souls;
 
         if(!wait)
@@ -44,7 +45,6 @@ public class SoulsUI : MonoBehaviour
 
         FadingText newText = Instantiate(textPrefab, transform.position - new Vector3(0, 50 + (fadingTexts.Count * 50), 0), Quaternion.identity);
         newText.transform.SetParent(gameObject.transform);
-        fadingTexts.RemoveAll(text => text == null);
         fadingTexts.Add(newText);
         fadingText = newText;
         fadingText.SetUp((souls < 0 ? "" : "+") + souls.ToString(), textIdleSpeed, textSpeed, transform, soulsText.alignment);

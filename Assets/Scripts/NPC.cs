@@ -19,6 +19,9 @@ public class NPC : MonoBehaviour
     [SerializeField] protected Transform dialoguePoint;
     [Tooltip("-1 => facing left, 1 => facing right")]
     [SerializeField] protected int requiredFacingDir;
+
+    [Header("Shop")]
+    [SerializeField] public ItemData[] stock;
     protected DialogueManager dialogueManager;
     protected Player player;
     protected bool canStartDialogue;

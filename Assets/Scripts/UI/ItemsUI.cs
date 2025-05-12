@@ -4,7 +4,7 @@ using UnityEngine;
 public class ItemsUI : MonoBehaviour
 {
     [SerializeField] protected ItemDisplay display;
-    protected ItemSlotUI[] items;
+    [SerializeField] protected ItemSlotUI[] items;
     protected int selectedIndex = 0;
     protected ItemData currentData = null;
 
@@ -22,8 +22,6 @@ public class ItemsUI : MonoBehaviour
 
     protected virtual void Update() 
     {
-        // if(selectedIndex == 0)
-        //     display.SetUp(items[selectedIndex]?.item?.itemData);
 
         if(Input.GetKeyDown(KeyCode.W))
             SwitchTo(selectedIndex - 7 < 0 ? selectedIndex + 21 : selectedIndex - 7);
@@ -38,7 +36,7 @@ public class ItemsUI : MonoBehaviour
             SwitchTo((selectedIndex + 1) % 7 == 0 ? selectedIndex - 6 : selectedIndex + 1);
     }
 
-    public void SwitchTo(int index = 0)
+    public void SwitchTo(int index = 0, bool price = false)
     {
         if (index != selectedIndex)
             items[selectedIndex].Select(false);
@@ -48,7 +46,15 @@ public class ItemsUI : MonoBehaviour
         items[selectedIndex].Select(true);
 
         currentData = items[selectedIndex]?.item?.itemData;
-        display.SetUp(currentData);
+        
+        if(!price)
+            display.SetUp(currentData);
+        else
+            display.SetUp(
+            currentData?.itemName,
+            currentData?.itemDescription,
+            currentData?.price.ToString()
+        );
     }
 
 }

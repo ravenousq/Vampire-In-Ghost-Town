@@ -154,6 +154,18 @@ public class Inventory : MonoBehaviour
         //UpdateSlotUI();
     }
 
+    public void AddItemMute(ItemData item)
+    {
+        if (item.itemType == ItemType.Note)
+            AddToNotes(item);
+
+        if (item.itemType == ItemType.KeyItem)
+            AddToKeyItems(item as KeyItemData);
+
+        if (item.itemType == ItemType.Charm)
+            AddToCharms(item as CharmData);
+    }
+
     public bool HasItem(ItemData item)
     {
         if(item.itemType == ItemType.KeyItem && keyItemsDictionary.ContainsKey(item as KeyItemData))

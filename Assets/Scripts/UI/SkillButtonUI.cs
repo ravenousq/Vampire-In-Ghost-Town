@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Security;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,19 +26,34 @@ public class SkillButtonUI : MonoBehaviour
     [SerializeField] private bool isSecret;
     [SerializeField] private bool hasNoPrice;
     [SerializeField] private float purchaseSpeed;
+    [SerializeField] private float blockadeTime;
+    [SerializeField] private float shakeSpeed;
     public bool canBePurchased { get; private set; }
     public bool unlocked { get; private set; }
     private bool isPurchasing;
     private bool guard;
+    private Vector3 defaultPosition;
 
     [Header("Navigation")]
     public Row row;
     private BlessingsUI boss;
     public bool selected { get; private set; }
     public int index { get; private set; }
+    public int movingRight;
+
+    private void Start() 
+    {
+        defaultPosition = transform.position;    
+    }
 
     private void Update() 
     {
+        if(movingRight != 0)
+        {
+            transform.Translate(new Vector3(movingRight * shakeSpeed * Time.unscaledDeltaTime, 0f, 0f), Space.World);
+            return;
+        }
+
         lockImage.fillAmount = Mathf.Clamp(isPurchasing ? 
             lockImage.fillAmount - (purchaseSpeed * .01f * Time.unscaledDeltaTime) : 
             lockImage.fillAmount + (purchaseSpeed * .05f * Time.unscaledDeltaTime), 0, 1);
@@ -75,7 +91,7 @@ public class SkillButtonUI : MonoBehaviour
         foreach (SkillButtonUI skill in boss.skills)
         {
             for (int i = 0; i < shouldBeUnlocked.Length; i++)
-                if ((skill.GetName(false) == shouldBeUnlocked[i].GetName(false))&& !skill.unlocked)   
+                if ((skill.GetName(false) == shouldBeUnlocked[i].GetName(false)) && !skill.unlocked && skill.isSecret)   
                     return;     
         }
             
@@ -193,6 +209,30 @@ public class SkillButtonUI : MonoBehaviour
         {
             skillIcon.sprite = skillImage;
             skillIcon.SetNativeSize();
+        }
+    }
+
+    public void NotEnoughCurrency()
+    {
+        movingRight = 1;
+        StartCoroutine(BlockRoutine(blockadeTime, blockadeTime/10));
+    }
+
+    private IEnumerator BlockRoutine(float blockadeTime, float interval)
+    {
+        movingRight *= -1;
+
+        yield return new WaitForSecondsRealtime(this.blockadeTime/10);
+
+        blockadeTime -= interval;
+
+        if(blockadeTime > 0)
+            StartCoroutine(BlockRoutine(blockadeTime, interval));
+        else
+        {
+            movingRight = 0;
+            transform.position = defaultPosition;
+            boss.StopBlockade();
         }
     }
 
