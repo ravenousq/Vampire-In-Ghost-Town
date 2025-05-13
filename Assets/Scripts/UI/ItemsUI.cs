@@ -10,11 +10,11 @@ public class ItemsUI : MonoBehaviour
 
     protected virtual void Awake() 
     {
-        items = GetComponentsInChildren<ItemSlotUI>();
     }
 
     protected virtual void Start() 
     {
+        items = GetComponentsInChildren<ItemSlotUI>();
         items[selectedIndex].Select(true);
         currentData = items[selectedIndex]?.item?.itemData;
         display.SetUp(currentData);
@@ -38,6 +38,8 @@ public class ItemsUI : MonoBehaviour
 
     public void SwitchTo(int index = 0, bool price = false)
     {
+        Start();
+
         if (index != selectedIndex)
             items[selectedIndex].Select(false);
 

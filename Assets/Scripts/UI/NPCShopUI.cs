@@ -6,6 +6,8 @@ public class NPCShopUI : ItemsUI
 {
     [SerializeField] private TextMeshProUGUI npcName;
     private List<ItemData> stock;
+    private NPC currentNPC;
+    private int exitIndex;
 
     protected override void Awake()
     {
@@ -14,34 +16,47 @@ public class NPCShopUI : ItemsUI
         stock = new List<ItemData>();
     }
 
-    public void SetUp(string npcName, ItemData[] stock)
+    public void SetUp(NPC npc, int index)
     {
+        Awake();
+        Start();
+        
+        currentNPC = npc;
+        exitIndex = index;
+
         if(!gameObject.activeSelf)
         {
-            this.stock.Clear();
+            stock.Clear();
             return;
         }
 
-        this.npcName.text = npcName;
+        npcName.text = npc.GetName();
 
-        for (int i = 0; i < stock.Length; i++)
-        {
-            items[i].UpdateSlot(new InventoryItem(stock[i]));
+        if(npc.stock.Count != 0)
+            for (int i = 0; i < npc.stock.Count; i++)
+            {
+                items[i].UpdateSlot(new InventoryItem(npc.stock[i]));
 
-            this.stock.Add(stock[i]);
-        }
+                stock.Add(npc.stock[i]);
+            }
         
-        currentData = stock[0];
+        currentData = stock.Count > 0 ? stock[0] : null;
 
         display.SetUp(
-            currentData.itemName,
-            currentData.itemDescription,
-            currentData.price.ToString()
+            currentData == null ? "" : currentData.itemName,
+            currentData == null ? "" : currentData.itemDescription,
+            currentData == null ? "" : currentData.price.ToString()
         );
     }
 
     protected override void Update()
     {
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            DialogueManager.instance.NextLine(exitIndex);
+            UI.instance.SwitchShop(currentNPC, exitIndex);
+        }
+
         if(Input.GetKeyDown(KeyCode.W))
             SwitchTo(selectedIndex - 5 < 0 ? selectedIndex + 5 : selectedIndex - 5, true);
 
@@ -58,8 +73,10 @@ public class NPCShopUI : ItemsUI
         {
             if(PlayerManager.instance.CanAfford(currentData.price))
             {
+                PlayerManager.instance.RemoveCurrency(currentData.price);
                 UI.instance.ModifySouls(-currentData.price);
                 Inventory.instance.AddItemMute(currentData);
+                currentNPC.RemoveItemFromStock(currentData);
                 stock.Remove(currentData);
 
                 // foreach (ItemData item in stock)

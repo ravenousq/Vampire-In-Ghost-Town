@@ -87,6 +87,8 @@ public class CharmsUI : MonoBehaviour
 
     public void SwitchToSlot(int index)
     {
+
+
         if(index != slotIndex)
             charmSlots[slotIndex].Select(false);
         
@@ -99,6 +101,9 @@ public class CharmsUI : MonoBehaviour
 
     public void SwitchToCharm(int index)
     {
+        if(charms.Length == 0)
+            Awake();
+
         if(index == -1)
         {
             charms[charmIndex].Select(false);

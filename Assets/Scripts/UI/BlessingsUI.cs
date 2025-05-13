@@ -62,6 +62,9 @@ public class BlessingsUI : MonoBehaviour
         UI.instance.UpdateInGameSouls();
     }
 
+    public void UpdateSouls() => soulsUI.UpdateSouls();
+    
+
     public void UpdateAll()
     {
         foreach (SkillButtonUI skill in skills)

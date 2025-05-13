@@ -30,16 +30,20 @@ public class SoulsUI : MonoBehaviour
         if (currentSouls != souls && !canModifyUI && fadingText == null)
             StartCoroutine(AddRoutine());
         
+        if(Input.GetKeyDown(KeyCode.M))
+            Debug.Log(gameObject.name + ": currentSouls: " + currentSouls + ", souls: " + souls);
     }
 
     public void ModifySouls(int souls, bool wait = true) 
     {
         fadingTexts.RemoveAll(text => text == null);
         this.souls += souls;
+        Debug.Log(gameObject.name + " souls assigned done");
 
         if(!wait)
         {
             currentSouls = souls;
+            Debug.Log(gameObject.name + " souls skipped");
             return;
         }
 
@@ -48,6 +52,7 @@ public class SoulsUI : MonoBehaviour
         fadingTexts.Add(newText);
         fadingText = newText;
         fadingText.SetUp((souls < 0 ? "" : "+") + souls.ToString(), textIdleSpeed, textSpeed, transform, soulsText.alignment);
+        Debug.Log(gameObject.name + " text done");
     }
 
     private IEnumerator AddRoutine()

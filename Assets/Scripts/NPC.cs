@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
@@ -21,7 +22,7 @@ public class NPC : MonoBehaviour
     [SerializeField] protected int requiredFacingDir;
 
     [Header("Shop")]
-    [SerializeField] public ItemData[] stock;
+    [SerializeField] public List<ItemData> stock;
     protected DialogueManager dialogueManager;
     protected Player player;
     protected bool canStartDialogue;
@@ -81,6 +82,10 @@ public class NPC : MonoBehaviour
         timer = 1;
         dialogueOngoing = false;
     } 
+
+    public void RemoveItemFromStock(ItemData item) => stock.Remove(item);
+
+    public string GetName() => npcName;
 
     private void OnValidate() 
     {

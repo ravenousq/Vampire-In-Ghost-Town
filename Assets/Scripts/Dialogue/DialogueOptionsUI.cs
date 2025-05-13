@@ -13,8 +13,9 @@ public class DialogueOptionsUI : MonoBehaviour
     [SerializeField] private ChoiceButtonUI buttonPrefab;
     private List<ChoiceButtonUI> buttons;
     private int highlightedButton = 0;
+    private bool shop = false;
+    private NPC npc;
     
-
     private void Update()
     {
         NavigateOptions();
@@ -26,16 +27,18 @@ public class DialogueOptionsUI : MonoBehaviour
             if (possibleChoices.TryGetValue(buttons[highlightedButton].myText.text, out int value))
                 chosenIndex = value;
 
-            DialogueManager.instance.NextLine(chosenIndex);
+            if(!buttons[highlightedButton].goToShop)
+                DialogueManager.instance.NextLine(chosenIndex);
+            else
+                UI.instance.SwitchShop(npc, chosenIndex);
 
             foreach (Transform child in transform)
                 Destroy(child.gameObject);
 
-
-
             gameObject.SetActive(false);
         }
     }
+
 
     private void NavigateOptions()
     {
@@ -53,6 +56,7 @@ public class DialogueOptionsUI : MonoBehaviour
 
             buttons[highlightedButton].Highlight();
         }
+
         else if (Input.GetKeyDown(KeyCode.W))
         {
             nextButton = (highlightedButton + 1) % buttons.Count;
@@ -68,11 +72,14 @@ public class DialogueOptionsUI : MonoBehaviour
         }
     }
 
-    public void SetUpChoices(Dictionary<string, int> choices, ItemData requiredItem)
+    public void SetUpNPC(NPC npc) => this.npc = npc;
+    public void SetUpChoices(Dictionary<string, int> choices, ItemData requiredItem, bool shop)
     {
         possibleChoices = new Dictionary<string, int>(choices);
 
         buttons = new List<ChoiceButtonUI>();
+
+        this.shop = shop;
 
         if(requiredItem == null)
             DoSimpleChoice();
@@ -80,8 +87,10 @@ public class DialogueOptionsUI : MonoBehaviour
             GiveItemChoice(requiredItem);
     }
 
+
     private void DoSimpleChoice()
     {
+        Debug.Log("Simple Choice");
         List<string> keys = new List<string>(possibleChoices.Keys);
         
         for (int i = 0; i < keys.Count; i++)
@@ -90,7 +99,7 @@ public class DialogueOptionsUI : MonoBehaviour
 
             ChoiceButtonUI newButton = Instantiate(buttonPrefab);
             newButton.gameObject.transform.SetParent(transform);
-            newButton.SetUp(key);
+            newButton.SetUp(key, null, i == 0 && shop);
             buttons.Add(newButton);
 
             if (i == 0)

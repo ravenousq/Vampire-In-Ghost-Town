@@ -16,7 +16,7 @@ public class SimpleChoiceEffect : DialogueEffect
         
         manager.EnableDialogueUI(false);
         manager.EnableChoiceUI(true);
-        manager.SetUpChoices(choices);
+        manager.SetUpChoices(choices, false);
         
     }
 }

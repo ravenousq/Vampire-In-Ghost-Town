@@ -88,14 +88,19 @@ public class SkillButtonUI : MonoBehaviour
         if(isSecret && shouldBeUnlocked.Length == 0 && !unlocked)
             return;
 
-        foreach (SkillButtonUI skill in boss.skills)
-        {
-            for (int i = 0; i < shouldBeUnlocked.Length; i++)
-                if ((skill.GetName(false) == shouldBeUnlocked[i].GetName(false)) && !skill.unlocked && skill.isSecret)   
-                    return;     
-        }
-            
         canBePurchased = true;
+
+        for (int i = 0; i < shouldBeUnlocked.Length; i++)
+        {
+            if (!shouldBeUnlocked[i].unlocked)  
+            {
+                canBePurchased = false;
+
+                if(shouldBeUnlocked[i].isSecret)
+                    return;     
+            }
+        }
+
         isSecret = false;
         secretImage.gameObject.SetActive(false);
         

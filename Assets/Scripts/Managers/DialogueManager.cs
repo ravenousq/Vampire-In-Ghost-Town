@@ -33,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     private float scrollbarCap;
     private bool effect;
     private bool canSkip;
+    public NPC myNPC { get; private set; }
 
     private void Start() 
     {
@@ -99,7 +100,13 @@ public class DialogueManager : MonoBehaviour
             choiceUI.SetActive(enable);
     }
 
-    public void SetUpChoices(Dictionary<string, int> choices, ItemData requiredItem = null) => choiceUI.GetComponent<DialogueOptionsUI>().SetUpChoices(choices, requiredItem);
+    public void SetUpNPC(NPC npc) => myNPC = npc;
+    public void SetUpChoices(Dictionary<string, int> choices, bool shop, ItemData requiredItem = null)
+    {
+        if(myNPC)
+            choiceUI.GetComponent<DialogueOptionsUI>().SetUpNPC(myNPC);
+        choiceUI.GetComponent<DialogueOptionsUI>().SetUpChoices(choices, requiredItem, shop);
+    }
 
     public void InvokeNextLine() => NextLine();
 

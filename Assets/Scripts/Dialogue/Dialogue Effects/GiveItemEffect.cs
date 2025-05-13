@@ -17,6 +17,6 @@ public class GiveItemEffect : DialogueEffect
         
         manager.EnableDialogueUI(false);
         manager.EnableChoiceUI(true);
-        manager.SetUpChoices(choices, requiredItem);
+        manager.SetUpChoices(choices, false, requiredItem);
     }
 }

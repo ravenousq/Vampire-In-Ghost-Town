@@ -19,6 +19,7 @@ public class ChoiceButtonUI : MonoBehaviour
 
     private ItemData requiredItem;
     private bool highlighted;
+    public bool goToShop { get; private set; }
     private Color originalColor;
 
     private void Update() 
@@ -29,7 +30,7 @@ public class ChoiceButtonUI : MonoBehaviour
         }
     }
 
-    public void SetUp(string newText, ItemData requiredItem = null)
+    public void SetUp(string newText, ItemData requiredItem = null, bool shop = false)
     {
         originalColor = myText.color;     
         myText.text = newText;
@@ -51,6 +52,8 @@ public class ChoiceButtonUI : MonoBehaviour
                     image.color = Color.white;
             }
         }
+
+        goToShop = shop;
     }
 
     public void Highlight()
